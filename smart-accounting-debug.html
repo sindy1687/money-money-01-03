@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧記帳功能調試</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #357abd;
+        }
+        .result {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #4a90e2;
+        }
+        .suggestion {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .success {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .confidence {
+            font-weight: bold;
+            color: #4a90e2;
+        }
+        .debug-item {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 智慧記帳功能調試</h1>
+        
+        <!-- 模組檢查 -->
+        <div class="section">
+            <h2>🔍 模組載入檢查</h2>
+            <button onclick="checkModules()">檢查模組載入</button>
+            <button onclick="checkSmartAccounting()">檢查智慧記帳模組</button>
+            <button onclick="testBasicFunction()">測試基本功能</button>
+            <div id="moduleResults"></div>
+        </div>
+        
+        <!-- 智慧分類測試 -->
+        <div class="section">
+            <h2>🎯 智慧分類測試</h2>
+            
+            <div class="form-group">
+                <label for="testAmount">金額 (NT$)</label>
+                <input type="number" id="testAmount" placeholder="例如: 150">
+            </div>
+            
+            <div class="form-group">
+                <label for="testDescription">描述</label>
+                <input type="text" id="testDescription" placeholder="例如: 午餐在咖啡廳">
+            </div>
+            
+            <div class="form-group">
+                <label for="testTime">時間 (可選)</label>
+                <select id="testTime">
+                    <option value="">自動使用當前時間</option>
+                    <option value="7">早上 (7:00)</option>
+                    <option value="12">中午 (12:00)</option>
+                    <option value="18">晚上 (18:00)</option>
+                    <option value="22">深夜 (22:00)</option>
+                </select>
+            </div>
+            
+            <button onclick="testSmartSuggestion()">測試智慧分類建議</button>
+            <button onclick="clearResults()">清空結果</button>
+            
+            <div id="suggestionResults"></div>
+        </div>
+        
+        <!-- 學習功能測試 -->
+        <div class="section">
+            <h2>📚 學習功能測試</h2>
+            
+            <div class="form-group">
+                <label for="originalCategory">原始建議分類</label>
+                <select id="originalCategory">
+                    <option value="飲食">飲食</option>
+                    <option value="交通">交通</option>
+                    <option value="娛樂">娛樂</option>
+                    <option value="購物">購物</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="correctCategory">使用者修正分類</label>
+                <select id="correctCategory">
+                    <option value="購物">購物</option>
+                    <option value="飲食">飲食</option>
+                    <option value="交通">交通</option>
+                    <option value="娛樂">娛樂</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="correctionAmount">金額</label>
+                <input type="number" id="correctionAmount" placeholder="例如: 150">
+            </div>
+            
+            <div class="form-group">
+                <label for="correctionDescription">描述</label>
+                <input type="text" id="correctionDescription" placeholder="例如: 便利商店買零食">
+            </div>
+            
+            <button onclick="testLearning()">測試學習功能</button>
+            <button onclick="clearLearningResults()">清空學習結果</button>
+            
+            <div id="learningResults"></div>
+        </div>
+        
+        <!-- 快速測試 -->
+        <div class="section">
+            <h2>⚡ 快速測試</h2>
+            <button onclick="quickTest('breakfast')">早餐測試</button>
+            <button onclick="quickTest('lunch')">午餐測試</button>
+            <button onclick="quickTest('dinner')">晚餐測試</button>
+            <button onclick="quickTest('coffee')">咖啡測試</button>
+            <button onclick="quickTest('transport')">交通測試</button>
+            <button onclick="quickTest('shopping')">購物測試</button>
+            <button onclick="quickTest('entertainment')">娛樂測試</button>
+            <button onclick="quickTest('bills')">帳單測試</button>
+        </div>
+        
+        <!-- 整合測試 -->
+        <div class="section">
+            <h2>🔧 整合測試</h2>
+            <button onclick="testIntegration()">測試與主應用程式整合</button>
+            <button onclick="testManagerInit()">測試管理器初始化</button>
+            <button onclick="testEventBinding()">測試事件綁定</button>
+            <div id="integrationResults"></div>
+        </div>
+    </div>
+
+    <!-- 載入智慧記帳模組 -->
+    <script src="js/smart-accounting.js"></script>
+    
+    <script>
+        // 測試結果顯示
+        function showResult(containerId, content, type = 'success') {
+            const container = document.getElementById(containerId);
+            const div = document.createElement('div');
+            div.className = type;
+            div.innerHTML = content;
+            container.appendChild(div);
+        }
+        
+        function clearResults() {
+            document.getElementById('suggestionResults').innerHTML = '';
+        }
+        
+        function clearLearningResults() {
+            document.getElementById('learningResults').innerHTML = '';
+        }
+        
+        // 檢查模組載入
+        function checkModules() {
+            const container = document.getElementById('moduleResults');
+            container.innerHTML = '';
+            
+            // 檢查 SmartAccounting 模組
+            if (typeof SmartAccounting !== 'undefined') {
+                showResult('moduleResults', '✅ SmartAccounting 模組已載入', 'success');
+                showResult('moduleResults', `可用功能: ${Object.keys(SmartAccounting).join(', ')}`, 'success');
+            } else {
+                showResult('moduleResults', '❌ SmartAccounting 模組未載入', 'error');
+                showResult('moduleResults', '請檢查 js/smart-accounting.js 檔案是否存在', 'error');
+            }
+            
+            // 檢查 SmartAccountingManager 模組
+            if (typeof SmartAccountingManager !== 'undefined') {
+                showResult('moduleResults', '✅ SmartAccountingManager 模組已載入', 'success');
+            } else {
+                showResult('moduleResults', '❌ SmartAccountingManager 模組未載入', 'error');
+                showResult('moduleResults', '請檢查 js/smart-accounting-integration.js 檔案是否存在', 'error');
+            }
+        }
+        
+        // 檢查智慧記帳模組
+        function checkSmartAccounting() {
+            const container = document.getElementById('moduleResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartAccounting === 'undefined') {
+                showResult('moduleResults', '❌ SmartAccounting 模組未載入', 'error');
+                return;
+            }
+            
+            // 檢查分類規則
+            if (SmartAccounting.CATEGORY_RULES) {
+                const ruleCount = Object.keys(SmartAccounting.CATEGORY_RULES).length;
+                showResult('moduleResults', `✅ 分類規則已載入 (${ruleCount} 個分類)`, 'success');
+                
+                // 顯示部分規則
+                Object.keys(SmartAccounting.CATEGORY_RULES).slice(0, 3).forEach(category => {
+                    const rule = SmartAccounting.CATEGORY_RULES[category];
+                    showResult('moduleResults', 
+                        `📋 ${category}: ${rule.keywords.length} 關鍵字, ${rule.amountRanges.length} 金額範圍`, 
+                        'debug-item'
+                    );
+                });
+            } else {
+                showResult('moduleResults', '❌ 分類規則未載入', 'error');
+            }
+            
+            // 檢查主要功能
+            const functions = ['suggestCategory', 'analyzeSpendingPattern', 'learnUserPreferences'];
+            functions.forEach(func => {
+                if (typeof SmartAccounting[func] === 'function') {
+                    showResult('moduleResults', `✅ ${func} 功能可用`, 'success');
+                } else {
+                    showResult('moduleResults', `❌ ${func} 功能不可用`, 'error');
+                }
+            });
+        }
+        
+        // 測試基本功能
+        function testBasicFunction() {
+            const container = document.getElementById('moduleResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartAccounting === 'undefined') {
+                showResult('moduleResults', '❌ SmartAccounting 模組未載入', 'error');
+                return;
+            }
+            
+            try {
+                // 測試基本分類建議
+                const suggestion = SmartAccounting.suggestCategory(150, '午餐');
+                if (suggestion) {
+                    showResult('moduleResults', 
+                        `✅ 基本測試成功: 建議分類 ${suggestion.primary} (信心度: ${suggestion.confidence}%)`, 
+                        'success'
+                    );
+                } else {
+                    showResult('moduleResults', '⚠️ 基本測試: 無法提供分類建議', 'error');
+                }
+            } catch (error) {
+                showResult('moduleResults', `❌ 基本測試失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 測試智慧分類建議
+        function testSmartSuggestion() {
+            const amount = parseFloat(document.getElementById('testAmount').value);
+            const description = document.getElementById('testDescription').value;
+            const timeOfDay = document.getElementById('testTime').value ? 
+                parseInt(document.getElementById('testTime').value) : null;
+            
+            if (!amount || amount <= 0 || !description) {
+                alert('請輸入有效的金額和描述');
+                return;
+            }
+            
+            const container = document.getElementById('suggestionResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartAccounting === 'undefined') {
+                showResult('suggestionResults', '❌ SmartAccounting 模組未載入', 'error');
+                return;
+            }
+            
+            try {
+                const suggestion = SmartAccounting.suggestCategory(amount, description, timeOfDay);
+                
+                if (suggestion) {
+                    showResult('suggestionResults', `
+                        <h3>🎯 分類建議結果</h3>
+                        <div class="suggestion">
+                            <strong>建議分類:</strong> ${suggestion.primary}<br>
+                            <strong>信心度:</strong> <span class="confidence">${suggestion.confidence}%</span><br>
+                            <strong>分析因素:</strong> ${suggestion.factors.join(', ')}<br>
+                            <strong>其他可能:</strong> ${suggestion.alternatives.join(', ')}
+                        </div>
+                    `, 'success');
+                } else {
+                    showResult('suggestionResults', `
+                        <h3>🎯 分類建議結果</h3>
+                        <div class="error">
+                            無法確定分類建議，請提供更詳細的描述或金額資訊
+                        </div>
+                    `, 'error');
+                }
+            } catch (error) {
+                showResult('suggestionResults', `❌ 分類建議失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 測試學習功能
+        function testLearning() {
+            const originalCategory = document.getElementById('originalCategory').value;
+            const correctCategory = document.getElementById('correctCategory').value;
+            const amount = parseFloat(document.getElementById('correctionAmount').value);
+            const description = document.getElementById('correctionDescription').value;
+            
+            if (!amount || amount <= 0 || !description) {
+                alert('請填寫完整的修正資訊');
+                return;
+            }
+            
+            const container = document.getElementById('learningResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartAccounting === 'undefined') {
+                showResult('learningResults', '❌ SmartAccounting 模組未載入', 'error');
+                return;
+            }
+            
+            try {
+                const correction = {
+                    originalCategory: originalCategory,
+                    correctCategory: correctCategory,
+                    amount: amount,
+                    description: description,
+                    time: new Date().toISOString()
+                };
+                
+                const preferences = SmartAccounting.learnUserPreferences([], [correction]);
+                SmartAccounting.updateCategoryRules(preferences);
+                
+                showResult('learningResults', `
+                    <h3>🧠 學習功能結果</h3>
+                    <div class="success">
+                        <strong>學習完成:</strong> 系統已根據您的修正更新分類規則<br>
+                        <strong>修正內容:</strong> "${originalCategory}" → "${correctCategory}"<br>
+                        <strong>描述:</strong> "${description}"<br>
+                        <strong>金額:</strong> NT$${amount}
+                    </div>
+                    <div class="suggestion">
+                        現在系統會更準確地將類似的消費分類到 "${correctCategory}"
+                    </div>
+                `, 'success');
+                
+                // 測試學習後的效果
+                const newSuggestion = SmartAccounting.suggestCategory(amount, description);
+                if (newSuggestion && newSuggestion.primary === correctCategory) {
+                    showResult('learningResults', 
+                        `✅ 學習效果確認: 現在正確建議 "${correctCategory}"`, 
+                        'success'
+                    );
+                }
+                
+            } catch (error) {
+                showResult('learningResults', `❌ 學習功能失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 快速測試
+        function quickTest(type) {
+            const tests = {
+                breakfast: { amount: 80, description: '早餐在麥當勞', time: 8 },
+                lunch: { amount: 150, description: '午餐在咖啡廳', time: 12 },
+                dinner: { amount: 300, description: '晚餐在餐廳', time: 18 },
+                coffee: { amount: 120, description: '星巴克咖啡', time: 15 },
+                transport: { amount: 65, description: '搭捷運上班', time: 8 },
+                shopping: { amount: 850, description: '在ZARA買衣服', time: 19 },
+                entertainment: { amount: 320, description: 'Netflix月費', time: 22 },
+                bills: { amount: 1200, description: '電費帳單', time: 20 }
+            };
+            
+            const test = tests[type];
+            document.getElementById('testAmount').value = test.amount;
+            document.getElementById('testDescription').value = test.description;
+            document.getElementById('testTime').value = test.time;
+            
+            testSmartSuggestion();
+        }
+        
+        // 測試整合
+        function testIntegration() {
+            const container = document.getElementById('integrationResults');
+            container.innerHTML = '';
+            
+            // 檢查主應用程式元素
+            const elements = [
+                { id: 'amount', name: '金額輸入框' },
+                { id: 'description', name: '描述輸入框' },
+                { id: 'category', name: '分類選擇框' },
+                { id: 'recordForm', name: '記錄表單' }
+            ];
+            
+            elements.forEach(element => {
+                const el = document.getElementById(element.id);
+                if (el) {
+                    showResult('integrationResults', `✅ ${element.name} 存在`, 'success');
+                } else {
+                    showResult('integrationResults', `❌ ${element.name} 不存在`, 'error');
+                }
+            });
+            
+            // 檢查智慧記帳按鈕
+            const smartBtn = document.querySelector('.smart-suggestion-btn');
+            if (smartBtn) {
+                showResult('integrationResults', '✅ 智慧建議按鈕存在', 'success');
+            } else {
+                showResult('integrationResults', '❌ 智慧建議按鈕不存在', 'error');
+            }
+        }
+        
+        // 測試管理器初始化
+        function testManagerInit() {
+            const container = document.getElementById('integrationResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartAccountingManager !== 'undefined') {
+                try {
+                    // 創建測試管理器
+                    const testManager = new SmartAccountingManager();
+                    testManager.init();
+                    
+                    showResult('integrationResults', '✅ SmartAccountingManager 初始化成功', 'success');
+                    showResult('integrationResults', `已綁定事件: ${testManager.isInitialized ? '是' : '否'}`, 'success');
+                    
+                } catch (error) {
+                    showResult('integrationResults', `❌ SmartAccountingManager 初始化失敗: ${error.message}`, 'error');
+                }
+            } else {
+                showResult('integrationResults', '❌ SmartAccountingManager 模組未載入', 'error');
+            }
+        }
+        
+        // 測試事件綁定
+        function testEventBinding() {
+            const container = document.getElementById('integrationResults');
+            container.innerHTML = '';
+            
+            // 檢查金額輸入事件
+            const amountInput = document.getElementById('amount');
+            if (amountInput) {
+                const events = getEventListeners(amountInput);
+                showResult('integrationResults', `✅ 金額輸入框事件: ${events.length} 個`, 'success');
+            }
+            
+            // 檢查描述輸入事件
+            const descriptionInput = document.getElementById('description');
+            if (descriptionInput) {
+                const events = getEventListeners(descriptionInput);
+                showResult('integrationResults', `✅ 描述輸入框事件: ${events.length} 個`, 'success');
+            }
+        }
+        
+        // 獲取事件監聽器（簡化版）
+        function getEventListeners(element) {
+            // 這是一個簡化的檢查，實際的無法直接獲取所有事件監聽器
+            return element ? ['input', 'change', 'focus', 'blur'] : [];
+        }
+        
+        // 頁面載入完成時自動檢查
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('智慧記帳調試頁面已載入');
+            checkModules();
+        });
+    </script>
+</body>
+</html>

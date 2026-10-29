@@ -1,0 +1,16 @@
+cutecreatures: {
+            fab: '🌿',
+            navLedger: '🐾',
+            navWallet: '🌱',
+            navInvestment: '🍃',
+            navChart: '🌿',
+            navSettings: '🌿'
+        },
+        spacegold: {
+            fab: '🚀',
+            navLedger: '🪐',
+            navWallet: '✨',
+            navInvestment: '💫',
+            navChart: '🌟',
+            navSettings: '🚀'
+        }

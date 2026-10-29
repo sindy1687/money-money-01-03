@@ -1,0 +1,483 @@
+/* ========== 星河幻境主題 ========== */
+:root[data-theme="starry"] {
+    /* 主要顏色系統 */
+    --color-primary: #6B46C1;
+    --color-primary-light: #8B5CF6;
+    --color-primary-lighter: #A78BFA;
+    --color-primary-dark: #5B21B6;
+    
+    /* 次要顏色系統 */
+    --color-secondary: #EC4899;
+    --color-secondary-light: #F472B6;
+    --color-secondary-dark: #DB2777;
+    
+    /* 強調顏色系統 */
+    --color-accent: #06B6D4;
+    --color-accent-light: #22D3EE;
+    --color-accent-dark: #0891B2;
+    
+    /* 背景顏色系統 */
+    --bg-primary: linear-gradient(135deg, rgba(107, 70, 193, 0.12) 0%, rgba(236, 72, 153, 0.08) 50%, rgba(6, 182, 212, 0.06) 100%);
+    --bg-body: rgba(15, 23, 42, 0.95);
+    --bg-body-strong: rgba(15, 23, 42, 0.98);
+    --bg-gradient: linear-gradient(135deg, #6B46C1 0%, #EC4899 50%, #06B6D4 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(107, 70, 193, 0.08) 0%, rgba(236, 72, 153, 0.06) 50%, rgba(6, 182, 212, 0.04) 100%);
+    --bg-white: rgba(255, 255, 255, 0.08);
+    --bg-card: rgba(255, 255, 255, 0.12);
+    --bg-light: rgba(107, 70, 193, 0.15);
+    --bg-lighter: rgba(236, 72, 153, 0.12);
+    --bg-soft: rgba(6, 182, 212, 0.1);
+    --bg-soft-strong: rgba(107, 70, 193, 0.25);
+    
+    /* 文字顏色系統 */
+    --text-primary: rgba(248, 250, 252, 0.95);
+    --text-secondary: rgba(203, 213, 225, 0.8);
+    --text-tertiary: rgba(148, 163, 184, 0.7);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.95);
+    
+    /* 邊框顏色系統 */
+    --border-primary: rgba(107, 70, 193, 0.6);
+    --border-light: rgba(107, 70, 193, 0.2);
+    --border-medium: rgba(236, 72, 153, 0.4);
+    --card-border-color: rgba(107, 70, 193, 0.5);
+    --control-border-color: rgba(236, 72, 153, 0.3);
+    --table-border-color: rgba(6, 182, 212, 0.2);
+    
+    /* 陰影系統 */
+    --shadow-primary: 0 20px 60px rgba(107, 70, 193, 0.4);
+    --shadow-primary-lg: 0 30px 80px rgba(107, 70, 193, 0.35);
+    
+    /* RGBA透明度變數 */
+    --color-primary-rgba-08: rgba(107, 70, 193, 0.08);
+    --color-primary-rgba-10: rgba(107, 70, 193, 0.1);
+    --color-primary-rgba-15: rgba(107, 70, 193, 0.15);
+    --color-primary-rgba-20: rgba(107, 70, 193, 0.2);
+    --color-primary-rgba-25: rgba(107, 70, 193, 0.25);
+    --color-primary-rgba-30: rgba(107, 70, 193, 0.3);
+    --color-primary-rgba-40: rgba(107, 70, 193, 0.4);
+    
+    --color-primary-light-rgba-08: rgba(139, 92, 246, 0.08);
+    --color-primary-light-rgba-10: rgba(139, 92, 246, 0.1);
+    --color-primary-light-rgba-15: rgba(139, 92, 246, 0.15);
+    --color-primary-light-rgba-20: rgba(139, 92, 246, 0.2);
+    --color-primary-light-rgba-25: rgba(139, 92, 246, 0.25);
+    --color-primary-light-rgba-30: rgba(139, 92, 246, 0.3);
+    --color-primary-light-rgba-40: rgba(139, 92, 246, 0.4);
+    
+    --color-secondary-rgba-08: rgba(236, 72, 153, 0.08);
+    --color-secondary-rgba-10: rgba(236, 72, 153, 0.1);
+    --color-secondary-rgba-15: rgba(236, 72, 153, 0.15);
+    --color-secondary-rgba-20: rgba(236, 72, 153, 0.2);
+    --color-secondary-rgba-25: rgba(236, 72, 153, 0.25);
+    --color-secondary-rgba-30: rgba(236, 72, 153, 0.3);
+    --color-secondary-rgba-40: rgba(236, 72, 153, 0.4);
+    
+    --color-accent-rgba-08: rgba(6, 182, 212, 0.08);
+    --color-accent-rgba-10: rgba(6, 182, 212, 0.1);
+    --color-accent-rgba-15: rgba(6, 182, 212, 0.15);
+    --color-accent-rgba-20: rgba(6, 182, 212, 0.2);
+    --color-accent-rgba-25: rgba(6, 182, 212, 0.25);
+    --color-accent-rgba-30: rgba(6, 182, 212, 0.3);
+    --color-accent-rgba-40: rgba(6, 182, 212, 0.4);
+    
+    /* 漸層背景 */
+    --bg-light-gradient: linear-gradient(135deg, rgba(107, 70, 193, 0.15) 0%, rgba(236, 72, 153, 0.12) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(107, 70, 193, 0.15) 0%, rgba(236, 72, 153, 0.12) 100%);
+    
+    /* 操作面板背景 */
+    --action-side-bg: color-mix(in srgb, rgba(15, 23, 42, 0.92) 75%, rgba(107, 70, 193, 0.08));
+    --action-side-bg-hover: color-mix(in srgb, rgba(15, 23, 42, 0.92) 65%, rgba(107, 70, 193, 0.2));
+    --action-side-text: rgba(248, 250, 252, 0.96);
+}
+
+/* 星河幻境主題基礎樣式 */
+:root[data-theme="starry"] body {
+    background: transparent;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+:root[data-theme="starry"] body::before {
+    display: none;
+}
+
+/* 頁面背景透明化 */
+:root[data-theme="starry"] .page-ledger,
+:root[data-theme="starry"] .page-input,
+:root[data-theme="starry"] .page-chart,
+:root[data-theme="starry"] .page-budget,
+:root[data-theme="starry"] .page-monthly-planner,
+:root[data-theme="starry"] .page-daily-budget,
+:root[data-theme="starry"] .page-settings,
+:root[data-theme="starry"] .page-category-manage,
+:root[data-theme="starry"] .page-investment,
+:root[data-theme="starry"] .page-wallet,
+:root[data-theme="starry"] .page-history,
+:root[data-theme="starry"] .page-planner,
+:root[data-theme="starry"] .page-manage-investment,
+:root[data-theme="starry"] .page-annual-report,
+:root[data-theme="starry"] .page-diary {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+/* 卡片樣式系統 */
+:root[data-theme="starry"] .card,
+:root[data-theme="starry"] .record-card,
+:root[data-theme="starry"] .ledger-card,
+:root[data-theme="starry"] .summary-card,
+:root[data-theme="starry"] .budget-card,
+:root[data-theme="starry"] .wallet-card,
+:root[data-theme="starry"] .chart-card,
+:root[data-theme="starry"] .investment-card,
+:root[data-theme="starry"] .manage-investment-card,
+:root[data-theme="starry"] .annual-report-card,
+:root[data-theme="starry"] .diary-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(107, 70, 193, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 15px 35px rgba(107, 70, 193, 0.25) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="starry"] .card:hover,
+:root[data-theme="starry"] .record-card:hover,
+:root[data-theme="starry"] .ledger-card:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(236, 72, 153, 0.5) !important;
+    box-shadow: 0 20px 45px rgba(107, 70, 193, 0.35) !important;
+    transform: translateY(-5px) !important;
+}
+
+/* 文字顏色系統 */
+:root[data-theme="starry"] .card h1,
+:root[data-theme="starry"] .card h2,
+:root[data-theme="starry"] .card h3,
+:root[data-theme="starry"] .card h4,
+:root[data-theme="starry"] .card h5,
+:root[data-theme="starry"] .card h6,
+:root[data-theme="starry"] .card .title,
+:root[data-theme="starry"] .card .subtitle,
+:root[data-theme="starry"] .card .card-title,
+:root[data-theme="starry"] .card .card-subtitle {
+    color: var(--color-primary-light) !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="starry"] .card .text,
+:root[data-theme="starry"] .card .description,
+:root[data-theme="starry"] .card .content,
+:root[data-theme="starry"] .card p,
+:root[data-theme="starry"] .card span,
+:root[data-theme="starry"] .card div {
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="starry"] .card .highlight,
+:root[data-theme="starry"] .card .accent,
+:root[data-theme="starry"] .card .primary-text {
+    color: var(--color-secondary) !important;
+}
+
+:root[data-theme="starry"] .card .secondary-text,
+:root[data-theme="starry"] .card .muted-text {
+    color: var(--text-secondary) !important;
+}
+
+/* 按鈕樣式系統 */
+:root[data-theme="starry"] .btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: var(--text-white) !important;
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+:root[data-theme="starry"] .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+:root[data-theme="starry"] .btn:hover::before {
+    left: 100%;
+}
+
+:root[data-theme="starry"] .btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 25px rgba(107, 70, 193, 0.5) !important;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 50%, var(--color-accent-light) 100%) !important;
+}
+
+/* 返回按鈕 */
+:root[data-theme="starry"] .back-btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: var(--text-white) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="starry"] .back-btn:hover {
+    transform: scale(1.1) rotate(15deg) !important;
+    box-shadow: 0 8px 20px rgba(107, 70, 193, 0.6) !important;
+}
+
+/* 模態框系統 */
+:root[data-theme="starry"] .modal,
+:root[data-theme="starry"] .dialog,
+:root[data-theme="starry"] .popup {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border: 2px solid rgba(107, 70, 193, 0.5) !important;
+    border-radius: 25px !important;
+    backdrop-filter: blur(25px) !important;
+    box-shadow: 0 25px 50px rgba(107, 70, 193, 0.4) !important;
+}
+
+/* 小森對話框 */
+:root[data-theme="starry"] .xiaosen-dialog {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border: 2px solid var(--color-primary) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .xiaosen-dialog .dialog-title {
+    color: var(--color-primary-light) !important;
+}
+
+:root[data-theme="starry"] .xiaosen-dialog .dialog-content {
+    color: var(--text-primary) !important;
+}
+
+/* 專用卡片樣式 */
+:root[data-theme="starry"] .investment-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(107, 70, 193, 0.4) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .record-card {
+    background: linear-gradient(135deg, rgba(107, 70, 193, 0.08) 0%, rgba(236, 72, 153, 0.06) 50%, rgba(6, 182, 212, 0.04) 100%) !important;
+    border: 1px solid rgba(236, 72, 153, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .budget-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(6, 182, 212, 0.4) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .monthly-planning-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(107, 70, 193, 0.4) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .investment-settings-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(236, 72, 153, 0.4) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .holding-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(6, 182, 212, 0.4) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .buying-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(107, 70, 193, 0.4) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .selling-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(236, 72, 153, 0.4) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .dividend-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(6, 182, 212, 0.4) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .regular-investment-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(107, 70, 193, 0.4) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+/* 動畫效果 */
+@keyframes starryFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+@keyframes starryGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(107, 70, 193, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(236, 72, 153, 0.5); }
+}
+
+@keyframes starryGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+:root[data-theme="starry"] .btn:hover {
+    animation: starryFloat 3s ease-in-out infinite;
+}
+
+:root[data-theme="starry"] .card:hover {
+    animation: starryGlow 2s ease-in-out infinite;
+}
+
+/* 特殊效果 */
+:root[data-theme="starry"] .portfolio-shares:hover {
+    background: linear-gradient(135deg, rgba(107, 70, 193, 0.3) 0%, rgba(236, 72, 153, 0.3) 100%) !important;
+    transform: scale(1.08) !important;
+    box-shadow: 0 8px 25px rgba(107, 70, 193, 0.5) !important;
+}
+
+:root[data-theme="starry"] .stock-grid-card-tag--shares:hover {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.25) 0%, rgba(6, 182, 212, 0.25) 100%) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4) !important;
+}
+
+/* 滾動條樣式 */
+:root[data-theme="starry"] ::-webkit-scrollbar {
+    width: 12px;
+}
+
+:root[data-theme="starry"] ::-webkit-scrollbar-track {
+    background: rgba(107, 70, 193, 0.1);
+    border-radius: 10px;
+}
+
+:root[data-theme="starry"] ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: 10px;
+}
+
+:root[data-theme="starry"] ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
+}
+
+/* 導航系統 */
+:root[data-theme="starry"] .bottom-nav {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border-top: 1px solid rgba(107, 70, 193, 0.3) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+:root[data-theme="starry"] .nav-item {
+    color: var(--text-secondary) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="starry"] .nav-item.active {
+    color: var(--color-primary-light) !important;
+}
+
+:root[data-theme="starry"] .nav-item:hover {
+    color: var(--color-secondary) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 表單元素 */
+:root[data-theme="starry"] input,
+:root[data-theme="starry"] textarea,
+:root[data-theme="starry"] select {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(107, 70, 193, 0.3) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+:root[data-theme="starry"] input:focus,
+:root[data-theme="starry"] textarea:focus,
+:root[data-theme="starry"] select:focus {
+    border-color: var(--color-secondary) !important;
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3) !important;
+}
+
+:root[data-theme="starry"] input::placeholder,
+:root[data-theme="starry"] textarea::placeholder {
+    color: var(--text-tertiary) !important;
+}
+
+/* FAB按鈕 */
+:root[data-theme="starry"] .fab {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+    box-shadow: 0 8px 25px rgba(107, 70, 193, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="starry"] .fab:hover {
+    transform: scale(1.1) rotate(15deg) !important;
+    box-shadow: 0 12px 35px rgba(107, 70, 193, 0.6) !important;
+}
+
+/* 統計項目 */
+:root[data-theme="starry"] .stat-item {
+    background: linear-gradient(135deg, var(--color-primary-rgba-10) 0%, var(--color-primary-rgba-15) 50%, var(--color-primary-rgba-08) 100%) !important;
+    border: 1px solid var(--color-primary-rgba-20) !important;
+    box-shadow: 0 4px 12px var(--color-primary-rgba-15) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+:root[data-theme="starry"] .stat-item:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-primary-rgba-20) 50%, var(--color-primary-rgba-12) 100%) !important;
+    box-shadow: 0 6px 16px var(--color-primary-rgba-20) !important;
+    transform: translateY(-2px) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* 每日支出顯示 */
+:root[data-theme="starry"] .daily-expense-display,
+:root[data-theme="starry"] .daily-expense-in-history {
+    background: linear-gradient(135deg, var(--color-primary-rgba-10) 0%, var(--color-primary-rgba-15) 50%, var(--color-primary-rgba-10) 100%) !important;
+    border: 1px solid var(--color-primary-rgba-20) !important;
+    box-shadow: 0 2px 6px var(--color-primary-rgba-15) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="starry"] .daily-expense-display:hover,
+:root[data-theme="starry"] .daily-expense-in-history:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-primary-rgba-20) 50%, var(--color-primary-rgba-15) 100%) !important;
+    box-shadow: 0 4px 10px var(--color-primary-rgba-20) !important;
+    transform: translateY(-1px) !important;
+}

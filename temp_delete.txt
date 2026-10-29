@@ -1,0 +1,7 @@
+getrich: {
+    fab: '?ßß',
+    navLedger: '?ê±',
+    navWallet: '?í∞',
+    navInvestment: '??',
+    navChart: '?éØ',
+    navSettings: '??'

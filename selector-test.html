@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS選擇器測試</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .test-box {
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+            margin: 10px 0;
+            border: 2px solid #999;
+            padding: 10px;
+            text-align: center;
+            line-height: 80px;
+            font-weight: bold;
+        }
+        
+        /* 測試不同的選擇器 */
+        /* 選擇器1: 屬性選擇器 */
+        [data-theme="festive"] .test1 {
+            background: red !important;
+            border: 5px solid blue !important;
+        }
+        
+        /* 選擇器2: 根元素選擇器 */
+        :root[data-theme="festive"] .test2 {
+            background: green !important;
+            border: 5px solid yellow !important;
+        }
+        
+        /* 選擇器3: HTML選擇器 */
+        html[data-theme="festive"] .test3 {
+            background: orange !important;
+            border: 5px solid purple !important;
+        }
+        
+        /* 選擇器4: 類選擇器 */
+        .festive .test4 {
+            background: pink !important;
+            border: 5px solid black !important;
+        }
+        
+        /* 選擇器5: 直接ID選擇器 */
+        #festive-theme .test5 {
+            background: cyan !important;
+            border: 5px solid magenta !important;
+        }
+        
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 12px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .controls {
+            margin: 20px 0;
+        }
+        
+        .controls button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .controls button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 CSS選擇器測試</h1>
+        
+        <div class="controls">
+            <button onclick="setTheme('festive')">設置節日慶典主題</button>
+            <button onclick="setTheme('blue')">設置藍色主題</button>
+            <button onclick="setTheme('')">清除主題</button>
+            <button onclick="addClass()">添加festive類</button>
+            <button onclick="removeClass()">移除festive類</button>
+            <button onclick="checkAll()">檢查所有狀態</button>
+        </div>
+
+        <div class="test-box test1">測試1: [data-theme]</div>
+        <div class="test-box test2">測試2: :root[data-theme]</div>
+        <div class="test-box test3">測試3: html[data-theme]</div>
+        <div class="test-box test4">測試4: .festive</div>
+        <div class="test-box test5" id="festive-theme">測試5: #festive-theme</div>
+        
+        <div class="debug-info">
+            <div>HTML根元素: <span id="htmlElement">檢查中...</span></div>
+            <div>data-theme屬性: <span id="dataTheme">檢查中...</span></div>
+            <div>class屬性: <span id="classAttr">檢查中...</span></div>
+            <div>測試1背景: <span id="test1Bg">檢查中...</span></div>
+            <div>測試2背景: <span id="test2Bg">檢查中...</span></div>
+            <div>測試3背景: <span id="test3Bg">檢查中...</span></div>
+            <div>測試4背景: <span id="test4Bg">檢查中...</span></div>
+            <div>測試5背景: <span id="test5Bg">檢查中...</span></div>
+        </div>
+    </div>
+
+    <script>
+        function setTheme(theme) {
+            console.log('設置主題:', theme);
+            const root = document.documentElement;
+            if (theme) {
+                root.setAttribute('data-theme', theme);
+            } else {
+                root.removeAttribute('data-theme');
+            }
+            updateDebugInfo();
+        }
+        
+        function addClass() {
+            console.log('添加festive類');
+            const root = document.documentElement;
+            root.classList.add('festive');
+            updateDebugInfo();
+        }
+        
+        function removeClass() {
+            console.log('移除festive類');
+            const root = document.documentElement;
+            root.classList.remove('festive');
+            updateDebugInfo();
+        }
+        
+        function checkAll() {
+            console.log('=== 檢查所有狀態 ===');
+            
+            const root = document.documentElement;
+            console.log('根元素:', root);
+            console.log('根元素標籤:', root.tagName);
+            console.log('根元素屬性:', root.attributes);
+            console.log('data-theme:', root.getAttribute('data-theme'));
+            console.log('classList:', Array.from(root.classList));
+            
+            // 檢查每個測試框
+            for (let i = 1; i <= 5; i++) {
+                const box = document.querySelector(`.test${i}`);
+                if (box) {
+                    const style = getComputedStyle(box);
+                    console.log(`測試${i}:`, {
+                        background: style.backgroundColor,
+                        border: style.borderColor
+                    });
+                }
+            }
+            
+            // 檢查CSS規則
+            const styleSheets = document.styleSheets;
+            console.log('樣式表數量:', styleSheets.length);
+            
+            for (let i = 0; i < styleSheets.length; i++) {
+                try {
+                    const sheet = styleSheets[i];
+                    const rules = sheet.cssRules || sheet.rules;
+                    
+                    for (let j = 0; j < rules.length; j++) {
+                        const rule = rules[j];
+                        if (rule.selectorText && rule.selectorText.includes('festive')) {
+                            console.log(`找到節日慶典規則: ${rule.selectorText}`);
+                        }
+                    }
+                } catch (e) {
+                    console.warn(`無法讀取樣式表 ${i}:`, e);
+                }
+            }
+            
+            updateDebugInfo();
+        }
+        
+        function updateDebugInfo() {
+            const root = document.documentElement;
+            
+            document.getElementById('htmlElement').textContent = root.tagName.toLowerCase();
+            document.getElementById('dataTheme').textContent = root.getAttribute('data-theme') || '(無)';
+            document.getElementById('classAttr').textContent = root.className || '(無)';
+            
+            for (let i = 1; i <= 5; i++) {
+                const box = document.querySelector(`.test${i}`);
+                if (box) {
+                    const style = getComputedStyle(box);
+                    document.getElementById(`test${i}Bg`).textContent = style.backgroundColor;
+                }
+            }
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                updateDebugInfo();
+                checkAll();
+            }, 100);
+        });
+    </script>
+</body>
+</html>

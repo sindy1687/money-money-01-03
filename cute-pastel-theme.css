@@ -1,0 +1,684 @@
+/* ========== 可愛粉彩主題 - 基於提供的可愛動物圖片 ========== */
+
+:root[data-theme="cutePastel"] {
+    /* 主要顏色系統 - 基於圖片中的粉色系 */
+    --color-primary: #ff69b4;
+    --color-primary-light: #ff91c7;
+    --color-primary-lighter: #ffb3d9;
+    --color-primary-dark: #e05a9c;
+    
+    /* 次要顏色 - 淡藍色 */
+    --color-secondary: #87ceeb;
+    --color-secondary-light: #add8e6;
+    --color-secondary-dark: #5f9ea0;
+    
+    /* 強調色 - 淡黃色 */
+    --color-accent: #fff8dc;
+    --color-accent-light: #fffacd;
+    --color-accent-dark: #f0e68c;
+    
+    /* 狀態顏色 */
+    --color-success: #98fb98;
+    --color-danger: #ffb6c1;
+    --color-warning: #ffd700;
+    --color-info: #87ceeb;
+    --color-error: var(--color-danger);
+    
+    /* 背景顏色系統 - 使用漸層色彩 */
+    --bg-primary: linear-gradient(135deg, rgba(255, 238, 248, 0.95) 0%, rgba(255, 245, 245, 0.92) 25%, rgba(240, 248, 255, 0.92) 50%, rgba(255, 250, 240, 0.92) 75%, rgba(245, 255, 245, 0.92) 100%);
+    --bg-body: rgba(255, 238, 248, 0.88);
+    --bg-body-strong: rgba(255, 238, 248, 0.94);
+    --bg-gradient: linear-gradient(135deg, #ffeef8 0%, #fff5f5 25%, #f0f8ff 50%, #fffaf0 75%, #f5fff5 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(255, 105, 180, 0.08) 0%, rgba(135, 206, 235, 0.15) 100%);
+    --bg-white: rgba(255, 255, 255, 0.85);
+    --bg-card: rgba(255, 238, 248, 0.88);
+    --bg-light: rgba(255, 245, 245, 0.75);
+    --bg-lighter: rgba(240, 248, 255, 0.65);
+    --bg-soft: rgba(255, 250, 240, 0.55);
+    --bg-soft-strong: rgba(255, 245, 245, 0.78);
+    
+    /* 文字顏色系統 - 使用對比色確保可讀性 */
+    --text-primary: rgba(64, 64, 64, 0.95);
+    --text-secondary: rgba(89, 89, 89, 0.78);
+    --text-tertiary: rgba(128, 128, 128, 0.62);
+    --text-strong: rgba(32, 32, 32, 0.98);
+    --text-white: rgba(255, 255, 255, 0.96);
+    
+    /* 邊框顏色系統 */
+    --border-primary: rgba(255, 105, 180, 0.65);
+    --border-light: rgba(255, 238, 248, 0.24);
+    --border-medium: rgba(255, 105, 180, 0.4);
+    --card-border-color: rgba(255, 105, 180, 0.45);
+    --control-border-color: rgba(255, 238, 248, 0.32);
+    --table-border-color: rgba(255, 238, 248, 0.22);
+    
+    /* 陰影系統 */
+    --shadow-primary: 0 20px 60px rgba(255, 105, 180, 0.3);
+    --shadow-primary-lg: 0 30px 80px rgba(255, 105, 180, 0.25);
+    
+    /* RGBA 透明度變體 */
+    --color-primary-rgba-08: rgba(255, 105, 180, 0.08);
+    --color-primary-rgba-10: rgba(255, 105, 180, 0.1);
+    --color-primary-rgba-15: rgba(255, 105, 180, 0.15);
+    --color-primary-rgba-20: rgba(255, 105, 180, 0.2);
+    --color-primary-rgba-25: rgba(255, 105, 180, 0.25);
+    --color-primary-rgba-30: rgba(255, 105, 180, 0.3);
+    --color-primary-rgba-40: rgba(255, 105, 180, 0.4);
+    --color-primary-light-rgba-08: rgba(255, 145, 199, 0.08);
+    --color-primary-light-rgba-10: rgba(255, 145, 199, 0.1);
+    --color-primary-light-rgba-15: rgba(255, 145, 199, 0.15);
+    --color-primary-light-rgba-20: rgba(255, 145, 199, 0.2);
+    --color-primary-light-rgba-25: rgba(255, 145, 199, 0.25);
+    --color-primary-light-rgba-30: rgba(255, 145, 199, 0.3);
+    --color-primary-light-rgba-40: rgba(255, 145, 199, 0.4);
+    --color-secondary-rgba-08: rgba(135, 206, 235, 0.08);
+    --color-secondary-rgba-10: rgba(135, 206, 235, 0.1);
+    --color-secondary-rgba-15: rgba(135, 206, 235, 0.15);
+    --color-secondary-rgba-20: rgba(135, 206, 235, 0.2);
+    --color-secondary-rgba-25: rgba(135, 206, 235, 0.25);
+    --color-secondary-rgba-30: rgba(135, 206, 235, 0.3);
+    --color-secondary-rgba-40: rgba(135, 206, 235, 0.4);
+    
+    /* 漸層背景 */
+    --bg-light-gradient: linear-gradient(135deg, rgba(255, 238, 248, 0.85) 0%, rgba(255, 238, 248, 0.65) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(255, 238, 248, 0.85) 0%, rgba(255, 238, 248, 0.65) 100%);
+    
+    /* 側邊欄顏色 */
+    --action-side-bg: color-mix(in srgb, rgba(255, 238, 248, 0.92) 75%, rgba(255, 105, 180, 0.08));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 238, 248, 0.92) 65%, rgba(255, 105, 180, 0.2));
+    --action-side-text: rgba(64, 64, 64, 0.96);
+}
+
+/* 背景設定 */
+:root[data-theme="cutePastel"] body {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+:root[data-theme="cutePastel"] body::before {
+    display: none;
+}
+
+/* 頁面背景透明化 */
+:root[data-theme="cutePastel"] .page-ledger {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="cutePastel"] .page-input,
+:root[data-theme="cutePastel"] .page-chart,
+:root[data-theme="cutePastel"] .page-budget,
+:root[data-theme="cutePastel"] .page-monthly-planner,
+:root[data-theme="cutePastel"] .page-daily-budget,
+:root[data-theme="cutePastel"] .page-settings,
+:root[data-theme="cutePastel"] .page-category-manage,
+:root[data-theme="cutePastel"] .page-investment,
+:root[data-theme="cutePastel"] .page-wallet,
+:root[data-theme="cutePastel"] .page-history,
+:root[data-theme="cutePastel"] .page-planner {
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+/* 卡片樣式 */
+:root[data-theme="cutePastel"] .card,
+:root[data-theme="cutePastel"] .record-card,
+:root[data-theme="cutePastel"] .budget-card,
+:root[data-theme="cutePastel"] .investment-card,
+:root[data-theme="cutePastel"] .accounting-card,
+:root[data-theme="cutePastel"] .wallet-budget-card,
+:root[data-theme="cutePastel"] .monthly-planning-card,
+:root[data-theme="cutePastel"] .investment-settings-card,
+:root[data-theme="cutePastel"] .holding-card,
+:root[data-theme="cutePastel"] .buying-card,
+:root[data-theme="cutePastel"] .selling-card,
+:root[data-theme="cutePastel"] .dividend-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-primary);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root[data-theme="cutePastel"] .card:hover,
+:root[data-theme="cutePastel"] .record-card:hover,
+:root[data-theme="cutePastel"] .budget-card:hover,
+:root[data-theme="cutePastel"] .investment-card:hover,
+:root[data-theme="cutePastel"] .accounting-card:hover,
+:root[data-theme="cutePastel"] .wallet-budget-card:hover,
+:root[data-theme="cutePastel"] .monthly-planning-card:hover,
+:root[data-theme="cutePastel"] .investment-settings-card:hover,
+:root[data-theme="cutePastel"] .holding-card:hover,
+:root[data-theme="cutePastel"] .buying-card:hover,
+:root[data-theme="cutePastel"] .selling-card:hover,
+:root[data-theme="cutePastel"] .dividend-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-primary-lg);
+    border-color: var(--color-primary);
+}
+
+/* 按鈕樣式 */
+:root[data-theme="cutePastel"] .btn,
+:root[data-theme="cutePastel"] .btn-primary,
+:root[data-theme="cutePastel"] .btn-secondary,
+:root[data-theme="cutePastel"] .btn-success,
+:root[data-theme="cutePastel"] .btn-danger,
+:root[data-theme="cutePastel"] .btn-warning,
+:root[data-theme="cutePastel"] .btn-info {
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 12px 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+}
+
+:root[data-theme="cutePastel"] .btn:hover,
+:root[data-theme="cutePastel"] .btn-primary:hover,
+:root[data-theme="cutePastel"] .btn-secondary:hover,
+:root[data-theme="cutePastel"] .btn-success:hover,
+:root[data-theme="cutePastel"] .btn-danger:hover,
+:root[data-theme="cutePastel"] .btn-warning:hover,
+:root[data-theme="cutePastel"] .btn-info:hover {
+    background: var(--color-primary);
+    color: var(--text-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
+}
+
+/* 彈窗樣式 */
+:root[data-theme="cutePastel"] .modal,
+:root[data-theme="cutePastel"] .dialog,
+:root[data-theme="cutePastel"] .popup {
+    background: var(--bg-white);
+    border: 1px solid var(--border-primary);
+    border-radius: 20px;
+    box-shadow: var(--shadow-primary-lg);
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="cutePastel"] .modal-header,
+:root[data-theme="cutePastel"] .dialog-header,
+:root[data-theme="cutePastel"] .popup-header {
+    background: var(--bg-gradient);
+    border-bottom: 1px solid var(--border-primary);
+    border-radius: 20px 20px 0 0;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* 表格樣式 */
+:root[data-theme="cutePastel"] table {
+    background: var(--bg-white);
+    border: 1px solid var(--table-border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+:root[data-theme="cutePastel"] th {
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-primary);
+}
+
+:root[data-theme="cutePastel"] td {
+    border-bottom: 1px solid var(--table-border-color);
+    color: var(--text-primary);
+}
+
+:root[data-theme="cutePastel"] tr:hover td {
+    background: var(--bg-gradient-light);
+}
+
+/* 輸入框樣式 */
+:root[data-theme="cutePastel"] input,
+:root[data-theme="cutePastel"] select,
+:root[data-theme="cutePastel"] textarea {
+    background: var(--bg-white);
+    border: 1px solid var(--control-border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="cutePastel"] input:focus,
+:root[data-theme="cutePastel"] select:focus,
+:root[data-theme="cutePastel"] textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+    outline: none;
+}
+
+/* 側邊欄樣式 */
+:root[data-theme="cutePastel"] .sidebar,
+:root[data-theme="cutePastel"] .action-sidebar {
+    background: var(--action-side-bg);
+    border-right: 1px solid var(--border-primary);
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="cutePastel"] .sidebar-item,
+:root[data-theme="cutePastel"] .action-sidebar-item {
+    color: var(--action-side-text);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="cutePastel"] .sidebar-item:hover,
+:root[data-theme="cutePastel"] .action-sidebar-item:hover {
+    background: var(--action-side-bg-hover);
+    color: var(--color-primary);
+}
+
+/* 支出模式分析頁面特殊樣式 */
+:root[data-theme="cutePastel"] .spending-analysis-container {
+    background: var(--bg-gradient);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow-primary);
+}
+
+:root[data-theme="cutePastel"] .spending-chart {
+    background: var(--bg-white);
+    border: 1px solid var(--border-primary);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 16px 0;
+}
+
+:root[data-theme="cutePastel"] .spending-category-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="cutePastel"] .spending-category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* 文字美化 */
+:root[data-theme="cutePastel"] h1,
+:root[data-theme="cutePastel"] h2,
+:root[data-theme="cutePastel"] h3,
+:root[data-theme="cutePastel"] h4,
+:root[data-theme="cutePastel"] h5,
+:root[data-theme="cutePastel"] h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(255, 105, 180, 0.1);
+}
+
+/* 日期相關樣式修復 */
+:root[data-theme="cutePastel"] .record-card-date {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+    padding: 4px 8px;
+    font-weight: 600;
+    font-size: 12px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.15);
+}
+
+:root[data-theme="cutePastel"] .date-text,
+:root[data-theme="cutePastel"] .time-text,
+:root[data-theme="cutePastel"] .datetime {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+}
+
+:root[data-theme="cutePastel"] .date-input {
+    background: var(--bg-white);
+    color: var(--text-primary);
+    border: 1px solid var(--control-border-color);
+    border-radius: 8px;
+}
+
+:root[data-theme="cutePastel"] .date-input::-webkit-datetime-edit-text {
+    color: var(--text-primary);
+}
+
+:root[data-theme="cutePastel"] .date-input::-webkit-datetime-edit-month-field,
+:root[data-theme="cutePastel"] .date-input::-webkit-datetime-edit-day-field,
+:root[data-theme="cutePastel"] .date-input::-webkit-datetime-edit-year-field {
+    color: var(--text-primary);
+}
+
+:root[data-theme="cutePastel"] .date-btn {
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+:root[data-theme="cutePastel"] .filter-date-input {
+    background: var(--bg-white);
+    color: var(--text-primary);
+    border: 1px solid var(--control-border-color);
+}
+
+:root[data-theme="cutePastel"] .filter-date-separator {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="cutePastel"] .transaction-item .date,
+:root[data-theme="cutePastel"] .transaction-item .time,
+:root[data-theme="cutePastel"] .transaction-item .datetime,
+:root[data-theme="cutePastel"] .group-header {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="cutePastel"] .record-date {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+}
+
+:root[data-theme="cutePastel"] .investment-record-date {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+}
+
+:root[data-theme="cutePastel"] .form-date-wrapper .form-date-icon {
+    color: var(--color-primary);
+}
+
+/* 日期輸入框特殊修復 */
+:root[data-theme="cutePastel"] input[type="date"] {
+    background: var(--bg-white) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--control-border-color) !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="cutePastel"] input[type="date"]:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1) !important;
+}
+
+:root[data-theme="cutePastel"] input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: none !important;
+    opacity: 1 !important;
+    color: var(--color-primary) !important;
+}
+
+:root[data-theme="cutePastel"] input[type="date"]::-webkit-inner-spin-button,
+:root[data-theme="cutePastel"] input[type="date"]::-webkit-outer-spin-button {
+    height: auto !important;
+}
+
+:root[data-theme="cutePastel"] #dateInput {
+    background: var(--bg-white) !important;
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="cutePastel"] #dateInput::-webkit-datetime-edit-text {
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="cutePastel"] #dateInput::-webkit-datetime-edit-month-field,
+:root[data-theme="cutePastel"] #dateInput::-webkit-datetime-edit-day-field,
+:root[data-theme="cutePastel"] #dateInput::-webkit-datetime-edit-year-field {
+    color: var(--text-primary) !important;
+}
+
+/* 頁面頭部日期顯示修復 */
+:root[data-theme="cutePastel"] .current-date,
+:root[data-theme="cutePastel"] .header-date,
+:root[data-theme="cutePastel"] .page-date,
+:root[data-theme="cutePastel"] .display-date {
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    padding: 4px 8px !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-primary) !important;
+}
+
+/* 圖表日期文字修復 */
+:root[data-theme="cutePastel"] .chart-date,
+:root[data-theme="cutePastel"] .chart-month,
+:root[data-theme="cutePastel"] .chart-year,
+:root[data-theme="cutePastel"] .chart-day,
+:root[data-theme="cutePastel"] .chart-time,
+:root[data-theme="cutePastel"] *[data-date],
+:root[data-theme="cutePastel"] *[data-month],
+:root[data-theme="cutePastel"] *[data-year],
+:root[data-theme="cutePastel"] *[data-day],
+:root[data-theme="cutePastel"] *[data-time] {
+    color: var(--text-primary) !important;
+    fill: var(--text-primary) !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="cutePastel"] svg text,
+:root[data-theme="cutePastel"] .trend-chart *,
+:root[data-theme="cutePastel"] .line-chart *,
+:root[data-theme="cutePastel"] .chart-container *,
+:root[data-theme="cutePastel"] canvas *,
+:root[data-theme="cutePastel"] .x-axis *,
+:root[data-theme="cutePastel"] .y-axis *,
+:root[data-theme="cutePastel"] .axis *,
+:root[data-theme="cutePastel"] .tick *,
+:root[data-theme="cutePastel"] .label * {
+    color: var(--text-primary) !important;
+    fill: var(--text-primary) !important;
+}
+
+/* 數字鍵盤樣式 */
+:root[data-theme="cutePastel"] .keyboard {
+    background: var(--bg-white);
+    border: 2px solid var(--border-primary);
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: var(--shadow-primary);
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="cutePastel"] .key-btn {
+    background: var(--bg-white);
+    border: 2px solid var(--control-border-color);
+    color: var(--color-primary);
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 20px;
+    min-height: 56px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.1);
+}
+
+:root[data-theme="cutePastel"] .key-btn:hover {
+    background: var(--bg-gradient-light);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.2);
+}
+
+:root[data-theme="cutePastel"] .key-btn:active {
+    transform: scale(0.95);
+    background: var(--color-primary-rgba-20);
+}
+
+/* 運算符號按鈕 - 使用深色確保可見性 */
+:root[data-theme="cutePastel"] .key-btn.operator {
+    background: linear-gradient(135deg, #ff69b4 0%, #e05a9c 100%) !important;
+    color: var(--text-white) !important;
+    border-color: var(--color-primary-dark) !important;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+:root[data-theme="cutePastel"] .key-btn.operator:hover {
+    background: linear-gradient(135deg, #e05a9c 0%, #d63384 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 105, 180, 0.3);
+}
+
+/* 等號按鈕 */
+:root[data-theme="cutePastel"] .key-btn.equal {
+    background: linear-gradient(135deg, var(--color-success) 0%, #22c55e 100%) !important;
+    color: var(--text-white) !important;
+    border-color: var(--color-success) !important;
+    font-weight: 800;
+}
+
+:root[data-theme="cutePastel"] .key-btn.equal:hover {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(152, 251, 152, 0.3);
+}
+
+/* 刪除按鈕 */
+:root[data-theme="cutePastel"] .key-btn.delete {
+    background: linear-gradient(135deg, var(--color-danger) 0%, #ff6b6b 100%) !important;
+    color: var(--text-white) !important;
+    border-color: var(--color-danger) !important;
+}
+
+:root[data-theme="cutePastel"] .key-btn.delete:hover {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 182, 193, 0.3);
+}
+
+/* 數字按鈕特殊樣式 */
+:root[data-theme="cutePastel"] .key-btn[data-key="0"] {
+    flex: 2;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+:root[data-theme="cutePastel"] .key-btn[data-key="1"],
+:root[data-theme="cutePastel"] .key-btn[data-key="2"],
+:root[data-theme="cutePastel"] .key-btn[data-key="3"],
+:root[data-theme="cutePastel"] .key-btn[data-key="4"],
+:root[data-theme="cutePastel"] .key-btn[data-key="5"],
+:root[data-theme="cutePastel"] .key-btn[data-key="6"],
+:root[data-theme="cutePastel"] .key-btn[data-key="7"],
+:root[data-theme="cutePastel"] .key-btn[data-key="8"],
+:root[data-theme="cutePastel"] .key-btn[data-key="9"] {
+    color: var(--color-primary);
+    font-weight: 800;
+}
+
+/* 鍵盤行樣式 */
+:root[data-theme="cutePastel"] .keyboard-row {
+    display: flex;
+    gap: 8px;
+}
+
+:root[data-theme="cutePastel"] .keyboard-row .key-btn.operator {
+    order: -1; /* 運算符在左側 */
+}
+
+:root[data-theme="cutePastel"] .card-title,
+:root[data-theme="cutePastel"] .modal-title,
+:root[data-theme="cutePastel"] .dialog-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+:root[data-theme="cutePastel"] .text-primary {
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="cutePastel"] .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+:root[data-theme="cutePastel"] .text-success {
+    color: var(--color-success) !important;
+}
+
+:root[data-theme="cutePastel"] .text-danger {
+    color: var(--color-danger) !important;
+}
+
+:root[data-theme="cutePastel"] .text-warning {
+    color: var(--color-warning) !important;
+}
+
+:root[data-theme="cutePastel"] .text-info {
+    color: var(--color-info) !important;
+}
+
+/* 滾動條樣式 */
+:root[data-theme="cutePastel"] ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+:root[data-theme="cutePastel"] ::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-radius: 4px;
+}
+
+:root[data-theme="cutePastel"] ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+}
+
+:root[data-theme="cutePastel"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+}
+
+/* 動畫效果 */
+@keyframes cutePastel-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+:root[data-theme="cutePastel"] .btn-primary:active {
+    animation: cutePastel-pulse 0.3s ease-in-out;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    :root[data-theme="cutePastel"] .card,
+    :root[data-theme="cutePastel"] .record-card,
+    :root[data-theme="cutePastel"] .budget-card,
+    :root[data-theme="cutePastel"] .investment-card,
+    :root[data-theme="cutePastel"] .accounting-card,
+    :root[data-theme="cutePastel"] .wallet-budget-card,
+    :root[data-theme="cutePastel"] .monthly-planning-card,
+    :root[data-theme="cutePastel"] .investment-settings-card,
+    :root[data-theme="cutePastel"] .holding-card,
+    :root[data-theme="cutePastel"] .buying-card,
+    :root[data-theme="cutePastel"] .selling-card,
+    :root[data-theme="cutePastel"] .dividend-card {
+        border-radius: 12px;
+        margin: 8px;
+    }
+    
+    :root[data-theme="cutePastel"] .btn,
+    :root[data-theme="cutePastel"] .btn-primary,
+    :root[data-theme="cutePastel"] .btn-secondary,
+    :root[data-theme="cutePastel"] .btn-success,
+    :root[data-theme="cutePastel"] .btn-danger,
+    :root[data-theme="cutePastel"] .btn-warning,
+    :root[data-theme="cutePastel"] .btn-info {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}

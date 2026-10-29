@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翡翠王子主題測試</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .theme-selector {
+            margin-bottom: 20px;
+        }
+        .test-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .card {
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-selector">
+        <button onclick="setTheme('default')">預設主題</button>
+        <button onclick="setTheme('emeraldPrince')">翡翠王子主題</button>
+        <button onclick="setTheme('goldenElegance')">鎏金之夢主題</button>
+    </div>
+
+    <div class="test-content">
+        <div class="card">
+            <h2>翡翠王子主題測試</h2>
+            <p>這是一個測試卡片，用來驗證翡翠王子主題的樣式效果。</p>
+            <button class="btn">測試按鈕</button>
+            <button class="btn primary">主要按鈕</button>
+        </div>
+
+        <div class="card">
+            <h3>主題特色</h3>
+            <ul>
+                <li>翡翠綠色調設計</li>
+                <li>金色點綴元素</li>
+                <li>現代化漸變效果</li>
+                <li>精緻的陰影和邊框</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>測試各種元素</h3>
+            <input type="text" placeholder="測試輸入框" style="padding: 8px; margin: 5px;">
+            <select style="padding: 8px; margin: 5px;">
+                <option>選擇選項</option>
+                <option>選項1</option>
+                <option>選項2</option>
+            </select>
+            <textarea placeholder="測試文字區域" style="padding: 8px; margin: 5px; width: 200px; height: 60px;"></textarea>
+        </div>
+    </div>
+
+    <script>
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('selectedTheme', themeName);
+        }
+
+        // 載入保存的主題
+        const savedTheme = localStorage.getItem('selectedTheme') || 'default';
+        setTheme(savedTheme);
+    </script>
+</body>
+</html>

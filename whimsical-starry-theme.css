@@ -1,0 +1,593 @@
+/* ========== 夢幻星空主題 ========== */
+:root[data-theme="whimsicalStarry"] {
+    /* 主色调 - 基于图片中的深蓝色星空 */
+    --color-primary: #4A5FC1;
+    --color-primary-light: #6B7FE8;
+    --color-primary-lighter: #8B9BF5;
+    --color-primary-dark: #3A4FA1;
+    --color-primary-darker: #2A3F81;
+    
+    /* 次要色调 - 梦幻薰衣草紫 */
+    --color-secondary: #9B84C7;
+    --color-secondary-light: #B19CD9;
+    --color-secondary-lighter: #C8B6DB;
+    --color-secondary-dark: #8570B5;
+    --color-secondary-darker: #755CA5;
+    
+    /* 强调色 - 柔和粉色 */
+    --color-accent: #FFB3D9;
+    --color-accent-light: #FFC3E3;
+    --color-accent-lighter: #FFD3ED;
+    --color-accent-dark: #FFA3CF;
+    --color-accent-darker: #FF93C5;
+    
+    /* 背景色 - 星空渐变色 */
+    --bg-primary: linear-gradient(135deg, #1a237e 0%, #283593 20%, #3949ab 40%, #5e35b1 60%, #7e57c2 80%, #9575cd 100%);
+    --bg-secondary: linear-gradient(135deg, #0d47a1 0%, #1565c0 25%, #1976d2 50%, #1e88e5 75%, #2196f3 100%);
+    --bg-tertiary: rgba(26, 35, 126, 0.9);
+    --bg-quaternary: rgba(40, 53, 147, 0.8);
+    --bg-white: rgba(255, 255, 255, 0.95);
+    --bg-light: rgba(74, 95, 193, 0.15);
+    --bg-lighter: rgba(107, 127, 232, 0.1);
+    --bg-lightest: rgba(139, 155, 245, 0.08);
+    --bg-soft: linear-gradient(135deg, rgba(155, 132, 199, 0.2) 0%, rgba(177, 156, 217, 0.3) 100%);
+    --bg-card: rgba(255, 255, 255, 0.1);
+    --bg-modal: rgba(255, 255, 255, 0.15);
+    --bg-overlay: rgba(26, 35, 126, 0.4);
+    
+    /* 文字颜色 - 明亮清晰 */
+    --text-primary: #FFFFFF;
+    --text-secondary: #E8EAF6;
+    --text-tertiary: #C5CAE9;
+    --text-white: #FFFFFF;
+    --text-muted: #9FA8DA;
+    --text-inverse: #1a237e;
+    
+    /* 边框颜色 - 星光效果 */
+    --border-light: rgba(255, 255, 255, 0.2);
+    --border-medium: rgba(255, 255, 255, 0.3);
+    --border-strong: rgba(255, 255, 255, 0.4);
+    --border-dark: rgba(255, 255, 255, 0.5);
+    
+    /* 阴影颜色 - 发光效果 */
+    --shadow-light: rgba(139, 155, 245, 0.3);
+    --shadow-medium: rgba(139, 155, 245, 0.4);
+    --shadow-strong: rgba(139, 155, 245, 0.5);
+    
+    /* 按钮颜色 - 星光渐变 */
+    --btn-primary-bg: linear-gradient(135deg, #4A5FC1 0%, #6B7FE8 50%, #8B9BF5 100%);
+    --btn-primary-hover: linear-gradient(135deg, #3A4FA1 0%, #5B6FD8 50%, #7B8BE5 100%);
+    --btn-secondary-bg: linear-gradient(135deg, #9B84C7 0%, #B19CD9 50%, #C8B6DB 100%);
+    --btn-secondary-hover: linear-gradient(135deg, #8570B5 0%, #A58CC9 50%, #B8A6CB 100%);
+    --btn-accent-bg: linear-gradient(135deg, #FFB3D9 0%, #FFC3E3 50%, #FFD3ED 100%);
+    --btn-accent-hover: linear-gradient(135deg, #FFA3CF 0%, #FFB3DF 50%, #FFC3EF 100%);
+}
+
+/* 全局样式 */
+:root[data-theme="whimsicalStarry"] body {
+    background: var(--bg-primary);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+/* 添加星空背景效果 */
+:root[data-theme="whimsicalStarry"] body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.pinimg.com/736x/2a/20/38/2a2038686a48d048cc0b21e4f2ba44a5.jpg') center/cover;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* 美化文字 - 星光渐变效果 */
+:root[data-theme="whimsicalStarry"] h1,
+:root[data-theme="whimsicalStarry"] h2,
+:root[data-theme="whimsicalStarry"] h3,
+:root[data-theme="whimsicalStarry"] h4,
+:root[data-theme="whimsicalStarry"] h5,
+:root[data-theme="whimsicalStarry"] h6 {
+    background: linear-gradient(135deg, #FFFFFF 0%, #E8EAF6 25%, #FFB3D9 50%, #C5CAE9 75%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+:root[data-theme="whimsicalStarry"] .card-title,
+:root[data-theme="whimsicalStarry"] .modal-title,
+:root[data-theme="whimsicalStarry"] .page-title {
+    background: linear-gradient(135deg, #8B9BF5 0%, #FFB3D9 50%, #C8B6DB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* 卡片样式 - 星空玻璃效果 */
+:root[data-theme="whimsicalStarry"] .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px var(--shadow-light), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="whimsicalStarry"] .card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+:root[data-theme="whimsicalStarry"] .card:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+:root[data-theme="whimsicalStarry"] .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px var(--shadow-medium), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-color: var(--border-medium);
+}
+
+/* 按钮样式 - 星光按钮 */
+:root[data-theme="whimsicalStarry"] .btn {
+    border-radius: 30px;
+    padding: 14px 28px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="whimsicalStarry"] .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+:root[data-theme="whimsicalStarry"] .btn:hover::before {
+    left: 100%;
+}
+
+:root[data-theme="whimsicalStarry"] .btn-primary {
+    background: var(--btn-primary-bg);
+    color: white;
+    box-shadow: 0 6px 20px var(--shadow-light), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="whimsicalStarry"] .btn-primary:hover {
+    background: var(--btn-primary-hover);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px var(--shadow-medium), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+:root[data-theme="whimsicalStarry"] .btn-secondary {
+    background: var(--btn-secondary-bg);
+    color: white;
+    box-shadow: 0 6px 20px var(--shadow-light), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="whimsicalStarry"] .btn-secondary:hover {
+    background: var(--btn-secondary-hover);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px var(--shadow-medium), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+:root[data-theme="whimsicalStarry"] .btn-accent {
+    background: var(--btn-accent-bg);
+    color: white;
+    box-shadow: 0 6px 20px var(--shadow-light), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="whimsicalStarry"] .btn-accent:hover {
+    background: var(--btn-accent-hover);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px var(--shadow-medium), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* 模态框样式 - 星空玻璃 */
+:root[data-theme="whimsicalStarry"] .modal {
+    background: var(--bg-modal);
+    border: 1px solid var(--border-light);
+    border-radius: 25px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 20px 80px var(--shadow-medium), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="whimsicalStarry"] .modal-header {
+    background: linear-gradient(135deg, rgba(74, 95, 193, 0.2) 0%, rgba(155, 132, 199, 0.2) 100%);
+    border-bottom: 1px solid var(--border-light);
+    border-radius: 25px 25px 0 0;
+    backdrop-filter: blur(10px);
+}
+
+/* 导航栏样式 - 星空导航 */
+:root[data-theme="whimsicalStarry"] .navbar {
+    background: rgba(26, 35, 126, 0.8);
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 6px 30px var(--shadow-light);
+}
+
+:root[data-theme="whimsicalStarry"] .nav-link {
+    color: var(--text-primary);
+    font-weight: 600;
+    transition: all 0.4s ease;
+    border-radius: 25px;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="whimsicalStarry"] .nav-link:hover {
+    background: var(--bg-light);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+:root[data-theme="whimsicalStarry"] .nav-link.active {
+    background: var(--btn-primary-bg);
+    color: white;
+    box-shadow: 0 4px 20px var(--shadow-light);
+}
+
+/* 表单样式 - 星空输入框 */
+:root[data-theme="whimsicalStarry"] .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-light);
+    border-radius: 15px;
+    padding: 14px 18px;
+    color: var(--text-primary);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(15px);
+}
+
+:root[data-theme="whimsicalStarry"] .form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(74, 95, 193, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* 标签页样式 */
+:root[data-theme="whimsicalStarry"] .nav-tabs {
+    border-bottom: 1px solid var(--border-light);
+}
+
+:root[data-theme="whimsicalStarry"] .nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="whimsicalStarry"] .nav-tabs .nav-link:hover {
+    border-bottom-color: var(--color-secondary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="whimsicalStarry"] .nav-tabs .nav-link.active {
+    border-bottom-color: var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+}
+
+/* 进度条样式 - 星光进度条 */
+:root[data-theme="whimsicalStarry"] .progress {
+    background: var(--bg-light);
+    border-radius: 15px;
+    height: 12px;
+    overflow: hidden;
+}
+
+:root[data-theme="whimsicalStarry"] .progress-bar {
+    background: linear-gradient(135deg, #4A5FC1 0%, #9B84C7 50%, #FFB3D9 100%);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    animation: progressGlow 2s ease-in-out infinite;
+}
+
+@keyframes progressGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+}
+
+/* 徽章样式 */
+:root[data-theme="whimsicalStarry"] .badge {
+    border-radius: 15px;
+    padding: 8px 16px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="whimsicalStarry"] .badge-primary {
+    background: var(--btn-primary-bg);
+    color: white;
+    box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+:root[data-theme="whimsicalStarry"] .badge-secondary {
+    background: var(--btn-secondary-bg);
+    color: white;
+    box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+:root[data-theme="whimsicalStarry"] .badge-accent {
+    background: var(--btn-accent-bg);
+    color: white;
+    box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+/* 警告框样式 */
+:root[data-theme="whimsicalStarry"] .alert {
+    border-radius: 15px;
+    border: none;
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-light);
+}
+
+:root[data-theme="whimsicalStarry"] .alert-info {
+    background: rgba(74, 95, 193, 0.2);
+    color: var(--text-primary);
+    border-color: var(--border-medium);
+}
+
+:root[data-theme="whimsicalStarry"] .alert-success {
+    background: rgba(155, 132, 199, 0.2);
+    color: var(--text-primary);
+    border-color: var(--border-medium);
+}
+
+:root[data-theme="whimsicalStarry"] .alert-warning {
+    background: rgba(255, 179, 217, 0.2);
+    color: var(--text-primary);
+    border-color: var(--border-medium);
+}
+
+/* 浮动操作按钮 - 星光FAB */
+:root[data-theme="whimsicalStarry"] .fab {
+    background: var(--btn-primary-bg);
+    color: white;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    box-shadow: 0 10px 30px var(--shadow-medium), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(15px);
+}
+
+:root[data-theme="whimsicalStarry"] .fab:hover {
+    transform: scale(1.15) rotate(180deg);
+    box-shadow: 0 15px 40px var(--shadow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* 分页样式 */
+:root[data-theme="whimsicalStarry"] .pagination .page-link {
+    border: none;
+    margin: 0 6px;
+    border-radius: 12px;
+    color: var(--text-primary);
+    background: var(--bg-light);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="whimsicalStarry"] .pagination .page-link:hover {
+    background: var(--btn-primary-bg);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+:root[data-theme="whimsicalStarry"] .pagination .page-item.active .page-link {
+    background: var(--btn-primary-bg);
+    color: white;
+    box-shadow: 0 4px 20px var(--shadow-light);
+}
+
+/* 表格样式 */
+:root[data-theme="whimsicalStarry"] .table {
+    background: var(--bg-card);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+
+:root[data-theme="whimsicalStarry"] .table th {
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+:root[data-theme="whimsicalStarry"] .table td {
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+/* 工具提示样式 */
+:root[data-theme="whimsicalStarry"] .tooltip {
+    backdrop-filter: blur(15px);
+}
+
+:root[data-theme="whimsicalStarry"] .tooltip-inner {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    backdrop-filter: blur(10px);
+}
+
+/* 下拉菜单样式 */
+:root[data-theme="whimsicalStarry"] .dropdown-menu {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px var(--shadow-medium);
+    backdrop-filter: blur(20px);
+}
+
+:root[data-theme="whimsicalStarry"] .dropdown-item {
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    margin: 6px 10px;
+}
+
+:root[data-theme="whimsicalStarry"] .dropdown-item:hover {
+    background: var(--bg-light);
+    color: var(--color-primary);
+}
+
+/* 滑块样式 */
+:root[data-theme="whimsicalStarry"] .form-range {
+    accent-color: var(--color-primary);
+}
+
+:root[data-theme="whimsicalStarry"] .form-range::-webkit-slider-thumb {
+    background: var(--btn-primary-bg);
+    border: 3px solid white;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    width: 24px;
+    height: 24px;
+}
+
+:root[data-theme="whimsicalStarry"] .form-range::-moz-range-thumb {
+    background: var(--btn-primary-bg);
+    border: 3px solid white;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    width: 24px;
+    height: 24px;
+}
+
+/* 特定页面样式 - 投資專區、定期定額、預算設定、錢包、設定 */
+:root[data-theme="whimsicalStarry"] .investment-card,
+:root[data-theme="whimsicalStarry"] .accounting-card,
+:root[data-theme="whimsicalStarry"] .wallet-card,
+:root[data-theme="whimsicalStarry"] .budget-card,
+:root[data-theme="whimsicalStarry"] .settings-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 12px 40px var(--shadow-light), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="whimsicalStarry"] .investment-card::before,
+:root[data-theme="whimsicalStarry"] .accounting-card::before,
+:root[data-theme="whimsicalStarry"] .wallet-card::before,
+:root[data-theme="whimsicalStarry"] .budget-card::before,
+:root[data-theme="whimsicalStarry"] .settings-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.8s ease;
+    opacity: 0;
+}
+
+:root[data-theme="whimsicalStarry"] .investment-card:hover::before,
+:root[data-theme="whimsicalStarry"] .accounting-card:hover::before,
+:root[data-theme="whimsicalStarry"] .wallet-card:hover::before,
+:root[data-theme="whimsicalStarry"] .budget-card:hover::before,
+:root[data-theme="whimsicalStarry"] .settings-card:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+:root[data-theme="whimsicalStarry"] .investment-card:hover,
+:root[data-theme="whimsicalStarry"] .accounting-card:hover,
+:root[data-theme="whimsicalStarry"] .wallet-card:hover,
+:root[data-theme="whimsicalStarry"] .budget-card:hover,
+:root[data-theme="whimsicalStarry"] .settings-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 60px var(--shadow-medium), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-color: var(--border-medium);
+}
+
+/* 动画效果 - 星光闪烁 */
+@keyframes starryTwinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(0.95); }
+}
+
+@keyframes dreamyFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+:root[data-theme="whimsicalStarry"] .starry-animation {
+    animation: starryTwinkle 2s ease-in-out infinite;
+}
+
+:root[data-theme="whimsicalStarry"] .dreamy-animation {
+    animation: dreamyFloat 4s ease-in-out infinite;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    :root[data-theme="whimsicalStarry"] .card {
+        border-radius: 15px;
+        margin: 10px;
+    }
+    
+    :root[data-theme="whimsicalStarry"] .btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+    :root[data-theme="whimsicalStarry"] .modal {
+        margin: 20px;
+        border-radius: 20px;
+    }
+    
+    :root[data-theme="whimsicalStarry"] .investment-card,
+    :root[data-theme="whimsicalStarry"] .accounting-card,
+    :root[data-theme="whimsicalStarry"] .wallet-card,
+    :root[data-theme="whimsicalStarry"] .budget-card,
+    :root[data-theme="whimsicalStarry"] .settings-card {
+        padding: 20px;
+        margin: 10px;
+    }
+}

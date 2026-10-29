@@ -1,0 +1,249 @@
+/* ========== Cyberpunk City 主題 ========== */
+:root[data-theme="cyberpunkCity"] {
+    --color-primary: #ff3f81;
+    --color-primary-dark: #bb0055;
+    --color-secondary: #00f2ff;
+    --color-secondary-dark: #00a1c4;
+    --color-accent: #ffd800;
+    --color-accent-dark: #d4aa00;
+    --text-primary: #f8f8f2;
+    --text-secondary: rgba(248, 248, 248, 0.85);
+    --text-muted: rgba(248, 248, 248, 0.55);
+    --text-strong: #ffffff;
+    --bg-body: #050014;
+    --bg-gradient: linear-gradient(135deg, #050014 0%, #10002a 35%, #1c1b45 65%, #2b1c56 100%);
+    --bg-card: linear-gradient(145deg, #120122, #1c1943 35%, #201d5d 70%, #301d6f 100%);
+    --bg-card-strong: linear-gradient(135deg, #1a0f2f, #2f1b5a, #2b1d55);
+    --bg-panel: #0c0c1e;
+    --border-color: rgba(255, 63, 129, 0.35);
+    --border-color-strong: rgba(0, 242, 255, 0.6);
+    --shadow-primary: 0 25px 45px rgba(0, 0, 0, 0.65);
+    --shadow-secondary: 0 15px 30px rgba(0, 0, 0, 0.55);
+    --btn-gradient: linear-gradient(135deg, #ff3f81, #ff6cb2 40%, #00f2ff);
+    --btn-gradient-hover: linear-gradient(135deg, #bb0055, #ff6cb2, #00a1c4);
+    --btn-outline: rgba(255, 255, 255, 0.35);
+}
+
+:root[data-theme="cyberpunkCity"] body {
+    background: #01020a;
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', 'Poppins', 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+:root[data-theme="cyberpunkCity"] body::before,
+:root[data-theme="cyberpunkCity"] body::after {
+    display: none;
+}
+
+:root[data-theme="cyberpunkCity"] .theme-video-background {
+    opacity: 0.65;
+}
+
+:root[data-theme="cyberpunkCity"] .theme-video-gradient {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.95));
+}
+
+:root[data-theme="cyberpunkCity"] .page-input,
+:root[data-theme="cyberpunkCity"] .page-investment,
+:root[data-theme="cyberpunkCity"] .page-chart,
+:root[data-theme="cyberpunkCity"] .page-budget,
+:root[data-theme="cyberpunkCity"] .page-monthly-planner,
+:root[data-theme="cyberpunkCity"] .page-daily-budget,
+:root[data-theme="cyberpunkCity"] .page-settings,
+:root[data-theme="cyberpunkCity"] .page-category-manage,
+:root[data-theme="cyberpunkCity"] .page-wallet,
+:root[data-theme="cyberpunkCity"] .page-history,
+:root[data-theme="cyberpunkCity"] .page-planner,
+:root[data-theme="cyberpunkCity"] .page-manage-investment,
+:root[data-theme="cyberpunkCity"] .page-annual-report,
+:root[data-theme="cyberpunkCity"] .page-diary,
+:root[data-theme="cyberpunkCity"] .installment-management-page,
+:root[data-theme="cyberpunkCity"] .installment-setup-page,
+:root[data-theme="cyberpunkCity"] .smart-accounting {
+    background: rgba(5, 5, 15, 0.95) !important;
+    border: 1px solid rgba(0, 242, 255, 0.5) !important;
+    border-radius: 22px !important;
+    box-shadow: var(--shadow-primary) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .card,
+:root[data-theme="cyberpunkCity"] .record-card,
+:root[data-theme="cyberpunkCity"] .ledger-card,
+:root[data-theme="cyberpunkCity"] .summary-card,
+:root[data-theme="cyberpunkCity"] .budget-card,
+:root[data-theme="cyberpunkCity"] .wallet-card,
+:root[data-theme="cyberpunkCity"] .chart-card,
+:root[data-theme="cyberpunkCity"] .investment-card,
+:root[data-theme="cyberpunkCity"] .manage-investment-card,
+:root[data-theme="cyberpunkCity"] .annual-report-card,
+:root[data-theme="cyberpunkCity"] .diary-card,
+:root[data-theme="cyberpunkCity"] .smart-accounting-card,
+:root[data-theme="cyberpunkCity"] .monthly-planning-card,
+:root[data-theme="cyberpunkCity"] .investment-settings-card,
+:root[data-theme="cyberpunkCity"] .holding-card,
+:root[data-theme="cyberpunkCity"] .buying-card,
+:root[data-theme="cyberpunkCity"] .selling-card,
+:root[data-theme="cyberpunkCity"] .dividend-card,
+:root[data-theme="cyberpunkCity"] .wallet-budget-card,
+:root[data-theme="cyberpunkCity"] .modal-card,
+:root[data-theme="cyberpunkCity"] .popup-card {
+    background: var(--bg-card-strong) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 20px !important;
+    box-shadow: var(--shadow-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* 投資頁面：現價與昨收改為黑色文字以確保對比度 */
+:root[data-theme="cyberpunkCity"] .stock-grid-card-price-number,
+:root[data-theme="cyberpunkCity"] .stock-grid-card-price-unit,
+:root[data-theme="cyberpunkCity"] .stock-grid-card-price-arrow,
+:root[data-theme="cyberpunkCity"] .stock-grid-card-price-prev-label,
+:root[data-theme="cyberpunkCity"] .stock-grid-card-price-prev {
+    color: #000 !important;
+}
+
+:root[data-theme="cyberpunkCity"] .investment-card {
+    background: var(--bg-card-strong) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 20px !important;
+    box-shadow: var(--shadow-secondary) !important;
+}
+
+
+:root[data-theme="cyberpunkCity"] .card h1,
+:root[data-theme="cyberpunkCity"] .card h2,
+:root[data-theme="cyberpunkCity"] .card h3,
+:root[data-theme="cyberpunkCity"] .card h4,
+:root[data-theme="cyberpunkCity"] .card h5,
+:root[data-theme="cyberpunkCity"] .card h6,
+:root[data-theme="cyberpunkCity"] .card .title,
+:root[data-theme="cyberpunkCity"] .card .card-title,
+:root[data-theme="cyberpunkCity"] .card .card-subtitle {
+    color: var(--color-secondary) !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="cyberpunkCity"] .card p,
+:root[data-theme="cyberpunkCity"] .card span,
+:root[data-theme="cyberpunkCity"] .card .text {
+    color: var(--text-strong) !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+:root[data-theme="cyberpunkCity"] .card .muted-text,
+:root[data-theme="cyberpunkCity"] .card small {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .card .highlight,
+:root[data-theme="cyberpunkCity"] .card .accent,
+:root[data-theme="cyberpunkCity"] .card .primary-text {
+    color: var(--color-secondary) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .btn,
+:root[data-theme="cyberpunkCity"] .buy-action-btn,
+:root[data-theme="cyberpunkCity"] .dca-action-btn,
+:root[data-theme="cyberpunkCity"] .primary,
+:root[data-theme="cyberpunkCity"] .secondary,
+:root[data-theme="cyberpunkCity"] .input-btn,
+:root[data-theme="cyberpunkCity"] .allocation-btn,
+:root[data-theme="cyberpunkCity"] .summary-toggle,
+:root[data-theme="cyberpunkCity"] .add-btn,
+:root[data-theme="cyberpunkCity"] .form-submit-btn,
+:root[data-theme="cyberpunkCity"] .form-delete-btn {
+    background: var(--btn-gradient) !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    color: var(--text-strong) !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 15px 30px rgba(255, 63, 129, 0.35) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .btn:hover,
+:root[data-theme="cyberpunkCity"] .buy-action-btn:hover,
+:root[data-theme="cyberpunkCity"] .dca-action-btn:hover {
+    background: var(--btn-gradient-hover) !important;
+    transform: translateY(-3px) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .modal,
+:root[data-theme="cyberpunkCity"] .dialog,
+:root[data-theme="cyberpunkCity"] .popup {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color-strong) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .back-btn,
+:root[data-theme="cyberpunkCity"] .input-back-btn {
+    background: transparent !important;
+    border: 2px solid var(--color-secondary) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .back-btn:hover,
+:root[data-theme="cyberpunkCity"] .input-back-btn:hover {
+    border-color: var(--color-accent) !important;
+    color: var(--color-accent) !important;
+    transform: rotate(-5deg) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .xiaosen-dialog {
+    background: linear-gradient(135deg, #081028, #12052a, #1f1440) !important;
+    border: 1px solid rgba(255, 63, 129, 0.6) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+    border-radius: 18px !important;
+}
+
+:root[data-theme="cyberpunkCity"] .xiaosen-dialog .dialog-title {
+    color: var(--color-primary) !important;
+    font-size: 1.05rem !important;
+}
+
+:root[data-theme="cyberpunkCity"] .xiaosen-dialog .dialog-content {
+    color: var(--text-secondary) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .smart-accounting-card {
+    background: linear-gradient(135deg, #120128, #1a0b35, #1f1440) !important;
+    border: 1px solid rgba(0, 242, 255, 0.35) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .record-type-tab.active,
+:root[data-theme="cyberpunkCity"] .tab-btn.active {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+:root[data-theme="cyberpunkCity"] .category-section {
+    box-shadow: none !important;
+}
+
+:root[data-theme="cyberpunkCity"] .input-section {
+    background: linear-gradient(145deg, #07020f, #1b1140, #21194f) !important;
+    border: 1px solid rgba(0, 242, 255, 0.3) !important;
+    border-radius: 24px !important;
+}
+
+:root[data-theme="cyberpunkCity"] .input-btn,
+:root[data-theme="cyberpunkCity"] .custom-date-btn,
+:root[data-theme="cyberpunkCity"] .input-top-row button,
+:root[data-theme="cyberpunkCity"] .input-second-row button {
+    background: linear-gradient(135deg, #ff3f81, #00f2ff) !important;
+    color: #050014 !important;
+}
+
+:root[data-theme="cyberpunkCity"] ::selection {
+    background: rgba(255, 63, 129, 0.5);
+    color: #fff;
+}
+
+@media (max-width: 720px) {
+    :root[data-theme="cyberpunkCity"] .xiaosen-dialog {
+        width: calc(100% - 24px) !important;
+    }
+}

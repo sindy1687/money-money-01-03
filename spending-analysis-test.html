@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支出模式分析測試</title>
+    <link rel="stylesheet" href="css/smart-accounting.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: all 0.2s;
+        }
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+        }
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .data-preview {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>📊 支出模式分析測試</h1>
+            <p>測試支出模式分析和消費洞察功能</p>
+        </div>
+        
+        <div class="test-section">
+            <h2>系統檢查</h2>
+            <button class="test-button" onclick="checkSystem()">檢查系統狀態</button>
+            <div id="systemResults"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>數據管理</h2>
+            <button class="test-button" onclick="loadTestData()">載入測試數據</button>
+            <button class="test-button" onclick="clearData()">清除數據</button>
+            <button class="test-button" onclick="showDataPreview()">顯示數據預覽</button>
+            <div id="dataResults"></div>
+            <div id="dataPreview" class="data-preview" style="display: none;"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>分析測試</h2>
+            <button class="test-button" onclick="testAnalysisWithEmptyData()">測試空數據</button>
+            <button class="test-button" onclick="testAnalysisWithSampleData()">測試樣本數據</button>
+            <button class="test-button" onclick="testAnalysisWithRealData()">測試真實數據</button>
+            <div id="analysisResults"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>UI 測試</h2>
+            <button class="test-button" onclick="showAnalysisPanel()">顯示分析面板</button>
+        </div>
+    </div>
+
+    <!-- 載入智慧記帳系統 -->
+    <script src="js/smart-accounting.js"></script>
+    <script src="js/smart-accounting-integration.js"></script>
+    
+    <script>
+        // 測試數據
+        const testData = [
+            { date: '2026-01-15', type: 'expense', amount: 150, category: '餐飲', description: '午餐' },
+            { date: '2026-01-16', type: 'expense', amount: 280, category: '交通', description: '計程車' },
+            { date: '2026-01-17', type: 'expense', amount: 1200, category: '購物', description: '衣服' },
+            { date: '2026-01-18', type: 'expense', amount: 80, category: '餐飲', description: '早餐' },
+            { date: '2026-01-19', type: 'expense', amount: 350, category: '娛樂', description: '電影票' },
+            { date: '2026-01-20', type: 'expense', amount: 600, category: '購物', description: '日用品' },
+            { date: '2026-01-21', type: 'expense', amount: 180, category: '餐飲', description: '晚餐' },
+            { date: '2026-01-22', type: 'expense', amount: 220, category: '交通', description: '捷運' },
+            { date: '2026-01-23', type: 'expense', amount: 450, category: '娛樂', description: 'KTV' },
+            { date: '2026-01-24', type: 'expense', amount: 320, category: '餐飲', description: '聚餐' }
+        ];
+        
+        // 顯示結果
+        function showResult(elementId, message, type = 'info') {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+        
+        // 檢查系統狀態
+        function checkSystem() {
+            const results = [];
+            
+            // 檢查 SmartAccounting 模組
+            if (typeof SmartAccounting !== 'undefined') {
+                results.push('✅ SmartAccounting 模組已載入');
+                
+                // 檢查分析方法
+                if (typeof SmartAccounting.analyzeSpendingPattern === 'function') {
+                    results.push('✅ analyzeSpendingPattern 方法存在');
+                } else {
+                    results.push('❌ analyzeSpendingPattern 方法不存在');
+                }
+                
+                // 檢查智慧記帳管理器
+                if (typeof smartAccountingManager !== 'undefined') {
+                    results.push('✅ smartAccountingManager 實例已創建');
+                } else {
+                    results.push('❌ smartAccountingManager 實例未創建');
+                }
+            } else {
+                results.push('❌ SmartAccounting 模組未載入');
+            }
+            
+            showResult('systemResults', results.join('<br>'), 'success');
+        }
+        
+        // 載入測試數據
+        function loadTestData() {
+            localStorage.setItem('accountingRecords', JSON.stringify(testData));
+            showResult('dataResults', '✅ 測試數據已載入', 'success');
+        }
+        
+        // 清除數據
+        function clearData() {
+            localStorage.removeItem('accountingRecords');
+            document.getElementById('dataPreview').style.display = 'none';
+            showResult('dataResults', '✅ 數據已清除', 'success');
+        }
+        
+        // 顯示數據預覽
+        function showDataPreview() {
+            const records = JSON.parse(localStorage.getItem('accountingRecords') || '[]');
+            const preview = document.getElementById('dataPreview');
+            
+            if (records.length > 0) {
+                preview.textContent = JSON.stringify(records, null, 2);
+                preview.style.display = 'block';
+                showResult('dataResults', `📊 當前有 ${records.length} 筆記錄`, 'info');
+            } else {
+                preview.style.display = 'none';
+                showResult('dataResults', '📭 沒有記錄', 'info');
+            }
+        }
+        
+        // 測試空數據分析
+        function testAnalysisWithEmptyData() {
+            if (typeof SmartAccounting !== 'undefined') {
+                const analysis = SmartAccounting.analyzeSpendingPattern([], 'monthly');
+                
+                if (analysis && analysis.error) {
+                    showResult('analysisResults', `✅ 空數據處理正確: ${analysis.error}`, 'success');
+                } else {
+                    showResult('analysisResults', '❌ 空數據處理有問題', 'error');
+                }
+            } else {
+                showResult('analysisResults', '❌ SmartAccounting 模組未載入', 'error');
+            }
+        }
+        
+        // 測試樣本數據分析
+        function testAnalysisWithSampleData() {
+            if (typeof SmartAccounting !== 'undefined') {
+                const analysis = SmartAccounting.analyzeSpendingPattern(testData, 'monthly');
+                
+                if (analysis && !analysis.error) {
+                    const results = [
+                        `✅ 分析成功`,
+                        `📊 總支出: NT$${analysis.totalSpent.toLocaleString()}`,
+                        `📈 交易次數: ${analysis.transactionCount}`,
+                        `💰 日均消費: NT$${Math.round(analysis.dailyAverage)}`,
+                        `🏷️ 分類數量: ${analysis.topCategories.length}`,
+                        `💡 洞察數量: ${analysis.insights.length}`,
+                        `🎯 建議數量: ${analysis.recommendations.length}`
+                    ];
+                    showResult('analysisResults', results.join('<br>'), 'success');
+                } else {
+                    showResult('analysisResults', `❌ 分析失敗: ${analysis?.error || '未知錯誤'}`, 'error');
+                }
+            } else {
+                showResult('analysisResults', '❌ SmartAccounting 模組未載入', 'error');
+            }
+        }
+        
+        // 測試真實數據分析
+        function testAnalysisWithRealData() {
+            if (typeof SmartAccounting !== 'undefined') {
+                const records = JSON.parse(localStorage.getItem('accountingRecords') || '[]');
+                
+                if (records.length > 0) {
+                    const analysis = SmartAccounting.analyzeSpendingPattern(records, 'monthly');
+                    
+                    if (analysis && !analysis.error) {
+                        const results = [
+                            `✅ 真實數據分析成功`,
+                            `📊 總支出: NT$${analysis.totalSpent.toLocaleString()}`,
+                            `📈 交易次數: ${analysis.transactionCount}`,
+                            `💰 日均消費: NT$${Math.round(analysis.dailyAverage)}`,
+                            `🏷️ 分類數量: ${analysis.topCategories.length}`,
+                            `💡 洞察數量: ${analysis.insights.length}`,
+                            `🎯 建議數量: ${analysis.recommendations.length}`
+                        ];
+                        showResult('analysisResults', results.join('<br>'), 'success');
+                    } else {
+                        showResult('analysisResults', `❌ 分析失敗: ${analysis?.error || '未知錯誤'}`, 'error');
+                    }
+                } else {
+                    showResult('analysisResults', '❌ 沒有真實數據，請先載入測試數據', 'error');
+                }
+            } else {
+                showResult('analysisResults', '❌ SmartAccounting 模組未載入', 'error');
+            }
+        }
+        
+        // 顯示分析面板
+        function showAnalysisPanel() {
+            if (typeof smartAccountingManager !== 'undefined') {
+                smartAccountingManager.analyzeSpendingPattern();
+            } else {
+                alert('智慧記帳管理器未載入');
+            }
+        }
+        
+        // 頁面載入時自動檢查系統
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                checkSystem();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

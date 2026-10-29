@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧記帳測試</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #357abd;
+        }
+        .result {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #4a90e2;
+        }
+        .suggestion {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .insight {
+            background: #fff3e0;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+            border-left: 3px solid #ff9800;
+        }
+        .recommendation {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+            border-left: 3px solid #4caf50;
+        }
+        .confidence {
+            font-weight: bold;
+            color: #4a90e2;
+        }
+        .test-data {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        .sample-record {
+            background: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border-left: 3px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 智慧記帳功能測試</h1>
+        
+        <!-- 分類建議測試 -->
+        <div class="section">
+            <h2>🎯 自動分類建議測試</h2>
+            
+            <div class="form-group">
+                <label for="amount">金額 (NT$)</label>
+                <input type="number" id="amount" placeholder="例如: 150">
+            </div>
+            
+            <div class="form-group">
+                <label for="description">描述</label>
+                <input type="text" id="description" placeholder="例如: 午餐在咖啡廳">
+            </div>
+            
+            <div class="form-group">
+                <label for="timeOfDay">時間 (可選)</label>
+                <select id="timeOfDay">
+                    <option value="">自動使用當前時間</option>
+                    <option value="7">早上 (7:00)</option>
+                    <option value="12">中午 (12:00)</option>
+                    <option value="18">晚上 (18:00)</option>
+                    <option value="22">深夜 (22:00)</option>
+                </select>
+            </div>
+            
+            <button onclick="testCategorySuggestion()">測試分類建議</button>
+            
+            <div id="categoryResult" class="result" style="display: none;"></div>
+        </div>
+        
+        <!-- 支出模式分析測試 -->
+        <div class="section">
+            <h2>📊 支出模式分析測試</h2>
+            
+            <div class="test-data">
+                <h3>測試資料</h3>
+                <div id="sampleRecords">
+                    <div class="sample-record">
+                        <strong>午餐</strong> - NT$150 - 飲食 - 2024-01-15 12:30
+                    </div>
+                    <div class="sample-record">
+                        <strong>捷運</strong> - NT$60 - 交通 - 2024-01-15 08:15
+                    </div>
+                    <div class="sample-record">
+                        <strong>電影票</strong> - NT$280 - 娛樂 - 2024-01-15 19:00
+                    </div>
+                    <div class="sample-record">
+                        <strong>超商購物</strong> - NT$350 - 購物 - 2024-01-14 20:30
+                    </div>
+                    <div class="sample-record">
+                        <strong>咖啡</strong> - NT$85 - 飲食 - 2024-01-14 15:20
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="testSpendingAnalysis()">分析支出模式</button>
+            <button onclick="generateMoreTestData()">生成更多測試資料</button>
+            
+            <div id="analysisResult" class="result" style="display: none;"></div>
+        </div>
+        
+        <!-- 學習功能測試 -->
+        <div class="section">
+            <h2>🧠 學習功能測試</h2>
+            
+            <div class="form-group">
+                <label for="originalCategory">原始建議分類</label>
+                <select id="originalCategory">
+                    <option value="飲食">飲食</option>
+                    <option value="交通">交通</option>
+                    <option value="娛樂">娛樂</option>
+                    <option value="購物">購物</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="correctCategory">使用者修正分類</label>
+                <select id="correctCategory">
+                    <option value="購物">購物</option>
+                    <option value="飲食">飲食</option>
+                    <option value="交通">交通</option>
+                    <option value="娛樂">娛樂</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="correctionAmount">金額</label>
+                <input type="number" id="correctionAmount" placeholder="例如: 150">
+            </div>
+            
+            <div class="form-group">
+                <label for="correctionDescription">描述</label>
+                <input type="text" id="correctionDescription" placeholder="例如: 便利商店買零食">
+            </div>
+            
+            <button onclick="testLearning()">測試學習功能</button>
+            
+            <div id="learningResult" class="result" style="display: none;"></div>
+        </div>
+        
+        <!-- 快速測試按鈕 -->
+        <div class="section">
+            <h2>⚡ 快速測試</h2>
+            <button onclick="quickTest('breakfast')">早餐測試</button>
+            <button onclick="quickTest('commuting')">通勤測試</button>
+            <button onclick="quickTest('shopping')">購物測試</button>
+            <button onclick="quickTest('entertainment')">娛樂測試</button>
+            <button onclick="quickTest('bills')">帳單測試</button>
+        </div>
+    </div>
+
+    <!-- 載入智慧記帳模組 -->
+    <script src="js/smart-accounting.js"></script>
+    
+    <script>
+        // 測試資料
+        let testRecords = [
+            { date: '2024-01-15', time: '12:30', type: 'expense', category: '飲食', amount: 150, description: '午餐' },
+            { date: '2024-01-15', time: '08:15', type: 'expense', category: '交通', amount: 60, description: '捷運' },
+            { date: '2024-01-15', time: '19:00', type: 'expense', category: '娛樂', amount: 280, description: '電影票' },
+            { date: '2024-01-14', time: '20:30', type: 'expense', category: '購物', amount: 350, description: '超商購物' },
+            { date: '2024-01-14', time: '15:20', type: 'expense', category: '飲食', amount: 85, description: '咖啡' }
+        ];
+        
+        // 測試分類建議
+        function testCategorySuggestion() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const description = document.getElementById('description').value;
+            const timeOfDay = document.getElementById('timeOfDay').value ? 
+                parseInt(document.getElementById('timeOfDay').value) : null;
+            
+            if (!amount || amount <= 0) {
+                alert('請輸入有效的金額');
+                return;
+            }
+            
+            const suggestion = SmartAccounting.suggestCategory(amount, description, timeOfDay);
+            const resultDiv = document.getElementById('categoryResult');
+            
+            if (suggestion) {
+                resultDiv.innerHTML = `
+                    <h3>🎯 分類建議結果</h3>
+                    <div class="suggestion">
+                        <strong>建議分類:</strong> ${suggestion.primary}<br>
+                        <strong>信心度:</strong> <span class="confidence">${suggestion.confidence}%</span><br>
+                        <strong>分析因素:</strong> ${suggestion.factors.join(', ')}<br>
+                        <strong>其他可能:</strong> ${suggestion.alternatives.join(', ')}
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <h3>🎯 分類建議結果</h3>
+                    <div class="suggestion">
+                        無法確定分類建議，請提供更詳細的描述或金額資訊
+                    </div>
+                `;
+            }
+            
+            resultDiv.style.display = 'block';
+        }
+        
+        // 測試支出模式分析
+        function testSpendingAnalysis() {
+            const analysis = SmartAccounting.analyzeSpendingPattern(testRecords, 'monthly');
+            const resultDiv = document.getElementById('analysisResult');
+            
+            if (analysis) {
+                let html = `
+                    <h3>📊 支出模式分析結果</h3>
+                    <div><strong>分析期間:</strong> ${analysis.period}</div>
+                    <div><strong>總支出:</strong> NT$${analysis.totalSpent}</div>
+                    <div><strong>交易次數:</strong> ${analysis.transactionCount}</div>
+                    <div><strong>日均消費:</strong> NT$${Math.round(analysis.dailyAverage)}</div>
+                    
+                    <h4>🏆 主要消費類別</h4>
+                `;
+                
+                analysis.topCategories.forEach(cat => {
+                    html += `
+                        <div class="suggestion">
+                            <strong>${cat.category}:</strong> NT$${cat.amount} (${cat.percentage}%)
+                        </div>
+                    `;
+                });
+                
+                html += '<h4>💡 消費洞察</h4>';
+                analysis.insights.forEach(insight => {
+                    html += `
+                        <div class="insight">
+                            <strong>${insight.title}:</strong> ${insight.content}
+                        </div>
+                    `;
+                });
+                
+                html += '<h4>🎯 改善建議</h4>';
+                analysis.recommendations.forEach(rec => {
+                    html += `
+                        <div class="recommendation">
+                            <strong>${rec.title}:</strong> ${rec.content}
+                        </div>
+                    `;
+                });
+                
+                resultDiv.innerHTML = html;
+            } else {
+                resultDiv.innerHTML = `
+                    <h3>📊 支出模式分析結果</h3>
+                    <div class="result">無法進行分析，請檢查資料格式</div>
+                `;
+            }
+            
+            resultDiv.style.display = 'block';
+        }
+        
+        // 生成更多測試資料
+        function generateMoreTestData() {
+            const categories = ['飲食', '交通', '娛樂', '購物', '醫療', '教育'];
+            const descriptions = {
+                '飲食': ['午餐', '晚餐', '咖啡', '早餐', '下午茶'],
+                '交通': ['捷運', '公車', '計程車', '油錢', '停車費'],
+                '娛樂': ['電影', 'KTV', '遊戲', '音樂', '書籍'],
+                '購物': ['衣服', '鞋子', '化妝品', '日用品', '3C產品'],
+                '醫療': ['看醫生', '買藥', '掛號費', '健保費', '身體檢查'],
+                '教育': ['學費', '補習費', '書本費', '課程費', '證照費']
+            };
+            
+            for (let i = 0; i < 20; i++) {
+                const category = categories[Math.floor(Math.random() * categories.length)];
+                const categoryDescriptions = descriptions[category];
+                const description = categoryDescriptions[Math.floor(Math.random() * categoryDescriptions.length)];
+                
+                const date = new Date(2024, 0, Math.floor(Math.random() * 30) + 1);
+                const time = `${Math.floor(Math.random() * 24).toString().padStart(2, '0')}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')}`;
+                
+                testRecords.push({
+                    date: date.toISOString().split('T')[0],
+                    time: time,
+                    type: 'expense',
+                    category: category,
+                    amount: Math.floor(Math.random() * 2000) + 50,
+                    description: description
+                });
+            }
+            
+            // 更新顯示
+            updateSampleRecordsDisplay();
+            alert('已生成20筆測試資料，總共' + testRecords.length + '筆記錄');
+        }
+        
+        // 更新測試資料顯示
+        function updateSampleRecordsDisplay() {
+            const container = document.getElementById('sampleRecords');
+            container.innerHTML = testRecords.slice(-10).map(record => `
+                <div class="sample-record">
+                    <strong>${record.description}</strong> - NT$${record.amount} - ${record.category} - ${record.date} ${record.time}
+                </div>
+            `).join('');
+        }
+        
+        // 測試學習功能
+        function testLearning() {
+            const originalCategory = document.getElementById('originalCategory').value;
+            const correctCategory = document.getElementById('correctCategory').value;
+            const amount = parseFloat(document.getElementById('correctionAmount').value);
+            const description = document.getElementById('correctionDescription').value;
+            
+            if (!amount || amount <= 0 || !description) {
+                alert('請填寫完整的修正資訊');
+                return;
+            }
+            
+            const correction = {
+                originalCategory,
+                correctCategory,
+                amount,
+                description,
+                time: new Date().toISOString()
+            };
+            
+            const preferences = SmartAccounting.learnUserPreferences(testRecords, [correction]);
+            SmartAccounting.updateCategoryRules(preferences);
+            
+            const resultDiv = document.getElementById('learningResult');
+            resultDiv.innerHTML = `
+                <h3>🧠 學習功能結果</h3>
+                <div class="suggestion">
+                    <strong>學習完成:</strong> 系統已根據您的修正更新分類規則<br>
+                    <strong>修正內容:</strong> "${originalCategory}" → "${correctCategory}"<br>
+                    <strong>描述:</strong> "${description}"<br>
+                    <strong>金額:</strong> NT$${amount}
+                </div>
+                <div class="recommendation">
+                    現在系統會更準確地將類似的消費分類到 "${correctCategory}"
+                </div>
+            `;
+            
+            resultDiv.style.display = 'block';
+        }
+        
+        // 快速測試
+        function quickTest(type) {
+            const tests = {
+                breakfast: { amount: 120, description: '早餐在麥當勞', time: 8 },
+                commuting: { amount: 65, description: '搭捷運上班', time: 8 },
+                shopping: { amount: 850, description: '在ZARA買衣服', time: 19 },
+                entertainment: { amount: 320, description: 'Netflix月費', time: 22 },
+                bills: { amount: 1200, description: '電費帳單', time: 20 }
+            };
+            
+            const test = tests[type];
+            document.getElementById('amount').value = test.amount;
+            document.getElementById('description').value = test.description;
+            document.getElementById('timeOfDay').value = test.time;
+            
+            testCategorySuggestion();
+        }
+        
+        // 頁面載入完成後初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('智慧記帳測試頁面已載入');
+            console.log('可用功能:', Object.keys(window.SmartAccounting));
+        });
+    </script>
+</body>
+</html>

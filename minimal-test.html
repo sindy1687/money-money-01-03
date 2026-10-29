@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>極簡測試</title>
+    <style>
+        /* 基礎樣式 */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        /* 測試容器 */
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* 主題切換器 */
+        .theme-switcher {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .theme-switcher button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .theme-switcher button:hover {
+            background: #0056b3;
+        }
+        
+        .theme-switcher button.active {
+            background: #28a745;
+        }
+        
+        /* 測試卡片 */
+        .summary-card {
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background: #ccc; /* 預設灰色背景 */
+        }
+        
+        /* 節日慶典主題 - 直接內嵌CSS */
+        [data-theme="festive"] .summary-card {
+            background: url("https://i.pinimg.com/1200x/ba/24/9a/ba249a3cc3f9f317683f78c240ff0686.jpg") center/cover !important;
+            background-blend-mode: overlay !important;
+            background-color: rgba(230, 57, 70, 0.3) !important;
+            position: relative !important;
+            border: 2px solid #FCA311 !important;
+            border-radius: 20px !important;
+            backdrop-filter: blur(15px) !important;
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.25) !important;
+            overflow: hidden !important;
+            padding: 16px !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        [data-theme="festive"] .summary-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.1) 0%, rgba(252, 163, 17, 0.05) 50%, rgba(6, 255, 165, 0.05) 100%) !important;
+            z-index: 0 !important;
+        }
+        
+        [data-theme="festive"] .summary-card > * {
+            position: relative !important;
+            z-index: 1 !important;
+        }
+        
+        [data-theme="festive"] .summary-card:hover {
+            background-color: rgba(230, 57, 70, 0.4) !important;
+            box-shadow: 0 12px 35px rgba(230, 57, 70, 0.35) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        /* 調試信息 */
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 12px;
+            border: 1px solid #dee2e6;
+        }
+        
+        /* 測試圖片 */
+        .test-image {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            border: 2px solid #ccc;
+            margin: 10px 0;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 極簡測試 - 內嵌CSS</h1>
+        
+        <div class="theme-switcher">
+            <button onclick="switchTheme('blue')">藍色主題</button>
+            <button onclick="switchTheme('pink')">粉色主題</button>
+            <button onclick="switchTheme('festive')" class="active">節日慶典主題</button>
+        </div>
+
+        <div class="summary-card">
+            這是一個測試卡片 - 應該顯示背景圖片
+        </div>
+        
+        <!-- 直接顯示測試圖片 -->
+        <div class="test-image" style="background-image: url('https://i.pinimg.com/1200x/ba/24/9a/ba249a3cc3f9f317683f78c240ff0686.jpg')"></div>
+        
+        <div class="debug-info">
+            <div>當前主題: <span id="currentTheme">檢查中...</span></div>
+            <div>背景圖片: <span id="bgImage">檢查中...</span></div>
+            <div>背景顏色: <span id="bgColor">檢查中...</span></div>
+            <div>邊框顏色: <span id="borderColor">檢查中...</span></div>
+            <div>檢測結果: <span id="testResult">檢查中...</span></div>
+        </div>
+    </div>
+
+    <script>
+        function switchTheme(themeId) {
+            const root = document.documentElement;
+            root.setAttribute('data-theme', themeId);
+            
+            // 更新按鈕狀態
+            document.querySelectorAll('.theme-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 更新調試信息
+            updateDebugInfo();
+        }
+        
+        function updateDebugInfo() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            document.getElementById('currentTheme').textContent = currentTheme;
+            
+            // 檢查摘要卡片
+            const summaryCard = document.querySelector('.summary-card');
+            if (summaryCard) {
+                const style = getComputedStyle(summaryCard);
+                const bgImage = style.backgroundImage;
+                const bgColor = style.backgroundColor;
+                const borderColor = style.borderColor;
+                
+                document.getElementById('bgImage').textContent = bgImage.substring(0, 100) + '...';
+                document.getElementById('bgColor').textContent = bgColor;
+                document.getElementById('borderColor').textContent = borderColor;
+                
+                // 檢測結果
+                const hasBackgroundImage = bgImage && bgImage !== 'none' && bgImage.includes('pinimg');
+                const hasFestiveColor = bgColor.includes('230, 57, 70');
+                const hasFestiveBorder = borderColor.includes('252, 163, 17') || borderColor.includes('252, 163, 17');
+                
+                if (hasBackgroundImage && hasFestiveColor && hasFestiveBorder) {
+                    document.getElementById('testResult').innerHTML = '<span style="color: green;">✅ 成功檢測到節日慶典CSS</span>';
+                } else {
+                    let result = '<span style="color: red;">❌ 未檢測到節日慶典CSS</span><br>';
+                    result += `背景圖片: ${hasBackgroundImage ? '✅' : '❌'}<br>`;
+                    result += `節日顏色: ${hasFestiveColor ? '✅' : '❌'}<br>`;
+                    result += `節日邊框: ${hasFestiveBorder ? '✅' : '❌'}`;
+                    document.getElementById('testResult').innerHTML = result;
+                }
+            }
+            
+            // 測試圖片載入
+            testImageLoad();
+        }
+        
+        function testImageLoad() {
+            const imageUrl = 'https://i.pinimg.com/1200x/ba/24/9a/ba249a3cc3f9f317683f78c240ff0686.jpg';
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            
+            img.onload = function() {
+                console.log('✅ 圖片載入成功:', this.naturalWidth + 'x' + this.naturalHeight);
+            };
+            
+            img.onerror = function() {
+                console.error('❌ 圖片載入失敗:', imageUrl);
+            };
+            
+            img.src = imageUrl;
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(updateDebugInfo, 100);
+        });
+    </script>
+</body>
+</html>

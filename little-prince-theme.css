@@ -1,0 +1,306 @@
+/* ========== 小王子星光主題 - 參考指定圖片配色 ========== */
+
+:root[data-theme="littlePrince"] {
+    /* 主色調 - 披風深藍 */
+    --color-primary: #3E5B9A;
+    --color-primary-light: #5E77B4;
+    --color-primary-lighter: #91A3D6;
+    --color-primary-dark: #2B3E73;
+
+    /* 次要色調 - 王冠/星光金 */
+    --color-secondary: #D6B25E;
+    --color-secondary-light: #E4C87D;
+    --color-secondary-dark: #B8933E;
+
+    /* 強調色 - 柔和薰衣草灰 */
+    --color-accent: #B7A6D4;
+    --color-accent-light: #CABBDF;
+    --color-accent-dark: #9B8ABF;
+
+    /* 狀態顏色 */
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #d97706;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    /* 背景系統 - 以圖片暖霧白為主，避免文字不清楚 */
+    --bg-primary: linear-gradient(135deg, rgba(252, 245, 235, 0.98) 0%, rgba(245, 232, 220, 0.96) 45%, rgba(235, 226, 240, 0.94) 100%);
+    --bg-body: rgba(255, 248, 240, 0.72);
+    --bg-body-strong: rgba(255, 248, 240, 0.86);
+    --bg-gradient: linear-gradient(135deg, rgba(62, 91, 154, 0.20) 0%, rgba(214, 178, 94, 0.16) 50%, rgba(183, 166, 212, 0.16) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(62, 91, 154, 0.10) 0%, rgba(214, 178, 94, 0.08) 100%);
+    --bg-white: rgba(255, 252, 248, 0.95);
+    --bg-card: rgba(255, 252, 248, 0.90);
+    --bg-light: rgba(62, 91, 154, 0.10);
+    --bg-lighter: rgba(62, 91, 154, 0.07);
+    --bg-soft: rgba(214, 178, 94, 0.10);
+    --bg-soft-strong: rgba(214, 178, 94, 0.16);
+    --bg-overlay: rgba(22, 26, 42, 0.45);
+
+    /* 文字顏色 - 以深色系確保在淺卡片上清楚 */
+    --text-primary: rgba(34, 37, 53, 0.96);
+    --text-secondary: rgba(34, 37, 53, 0.78);
+    --text-tertiary: rgba(34, 37, 53, 0.62);
+    --text-strong: rgba(18, 20, 28, 0.98);
+    --text-white: rgba(255, 255, 255, 0.96);
+
+    /* 邊框顏色 */
+    --border-primary: rgba(62, 91, 154, 0.35);
+    --border-light: rgba(62, 91, 154, 0.18);
+    --border-medium: rgba(62, 91, 154, 0.26);
+    --card-border-color: rgba(214, 178, 94, 0.26);
+    --control-border-color: rgba(62, 91, 154, 0.24);
+    --table-border-color: rgba(62, 91, 154, 0.16);
+
+    /* 陰影 */
+    --shadow-primary: 0 18px 55px rgba(26, 28, 40, 0.16);
+    --shadow-primary-lg: 0 28px 80px rgba(26, 28, 40, 0.22);
+
+    /* 透明度變體（供部分元件使用） */
+    --color-primary-rgba-08: rgba(62, 91, 154, 0.08);
+    --color-primary-rgba-10: rgba(62, 91, 154, 0.10);
+    --color-primary-rgba-12: rgba(62, 91, 154, 0.12);
+    --color-primary-rgba-15: rgba(62, 91, 154, 0.15);
+    --color-primary-rgba-18: rgba(62, 91, 154, 0.18);
+    --color-primary-rgba-20: rgba(62, 91, 154, 0.20);
+    --color-primary-rgba-22: rgba(62, 91, 154, 0.22);
+    --color-primary-rgba-25: rgba(62, 91, 154, 0.25);
+    --color-primary-rgba-30: rgba(62, 91, 154, 0.30);
+
+    --color-secondary-rgba-10: rgba(214, 178, 94, 0.10);
+    --color-secondary-rgba-15: rgba(214, 178, 94, 0.15);
+    --color-secondary-rgba-20: rgba(214, 178, 94, 0.20);
+
+    /* 側邊欄顏色 */
+    --action-side-bg: color-mix(in srgb, rgba(255, 252, 248, 0.92) 78%, rgba(62, 91, 154, 0.10));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 252, 248, 0.92) 68%, rgba(62, 91, 154, 0.16));
+    --action-side-text: var(--text-primary);
+}
+
+:root[data-theme="littlePrince"] body {
+    background: url("https://i.pinimg.com/736x/91/87/48/918748238a3b26c91dcacd9926591d57.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+:root[data-theme="littlePrince"] body::before {
+    display: none;
+}
+
+:root[data-theme="littlePrince"] .page-input,
+:root[data-theme="littlePrince"] .page-ledger,
+:root[data-theme="littlePrince"] .page-chart,
+:root[data-theme="littlePrince"] .page-budget,
+:root[data-theme="littlePrince"] .page-monthly-planner,
+:root[data-theme="littlePrince"] .page-daily-budget,
+:root[data-theme="littlePrince"] .page-settings,
+:root[data-theme="littlePrince"] .page-category-manage,
+:root[data-theme="littlePrince"] .page-investment,
+:root[data-theme="littlePrince"] .page-wallet,
+:root[data-theme="littlePrince"] .page-history,
+:root[data-theme="littlePrince"] .page-planner,
+:root[data-theme="littlePrince"] .dividend-page,
+:root[data-theme="littlePrince"] .dca-management-page,
+:root[data-theme="littlePrince"] .dca-setup-page,
+:root[data-theme="littlePrince"] .investment-input-page,
+:root[data-theme="littlePrince"] .installment-management-page,
+:root[data-theme="littlePrince"] .installment-setup-page,
+:root[data-theme="littlePrince"] .wishlist-content,
+:root[data-theme="littlePrince"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="littlePrince"] .card,
+:root[data-theme="littlePrince"] .record-card,
+:root[data-theme="littlePrince"] .ledger-card,
+:root[data-theme="littlePrince"] .summary-card,
+:root[data-theme="littlePrince"] .budget-card,
+:root[data-theme="littlePrince"] .wallet-card,
+:root[data-theme="littlePrince"] .chart-card,
+:root[data-theme="littlePrince"] .investment-card,
+:root[data-theme="littlePrince"] .accounting-card,
+:root[data-theme="littlePrince"] .wallet-budget-card,
+:root[data-theme="littlePrince"] .monthly-planning-card,
+:root[data-theme="littlePrince"] .investment-settings-card,
+:root[data-theme="littlePrince"] .holding-card,
+:root[data-theme="littlePrince"] .buying-card,
+:root[data-theme="littlePrince"] .selling-card,
+:root[data-theme="littlePrince"] .dividend-card,
+:root[data-theme="littlePrince"] .stock-item-card,
+:root[data-theme="littlePrince"] .monthly-planner-card,
+:root[data-theme="littlePrince"] .dividend-stat-card,
+:root[data-theme="littlePrince"] .dca-card,
+:root[data-theme="littlePrince"] .installment-card,
+:root[data-theme="littlePrince"] .dca-item-card,
+:root[data-theme="littlePrince"] .stat-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--card-border-color) !important;
+    box-shadow: var(--shadow-primary) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(14px) saturate(135%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(135%) !important;
+}
+
+:root[data-theme="littlePrince"] .bottom-nav {
+    background: rgba(255, 252, 248, 0.80) !important;
+    border-top: 1px solid var(--border-light) !important;
+    backdrop-filter: blur(18px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(140%) !important;
+}
+
+:root[data-theme="littlePrince"] .nav-item.active {
+    background: var(--color-secondary-rgba-15) !important;
+    box-shadow: 0 10px 24px rgba(26, 28, 40, 0.10) !important;
+}
+
+:root[data-theme="littlePrince"] .modal-content,
+:root[data-theme="littlePrince"] .modal-content-standard,
+:root[data-theme="littlePrince"] .budget-category-modal-content,
+:root[data-theme="littlePrince"] .budget-setting-modal-content,
+:root[data-theme="littlePrince"] .category-modal-content,
+:root[data-theme="littlePrince"] .dca-execute-modal .modal-content,
+:root[data-theme="littlePrince"] .account-modal-content,
+:root[data-theme="littlePrince"] .emoji-modal-content,
+:root[data-theme="littlePrince"] .history-modal-content,
+:root[data-theme="littlePrince"] .portfolio-analysis-content,
+:root[data-theme="littlePrince"] .goal-tracking-content,
+:root[data-theme="littlePrince"] .dialog-content,
+:root[data-theme="littlePrince"] .reminder-panel,
+:root[data-theme="littlePrince"] .spending-analysis-panel {
+    background: var(--bg-white) !important;
+    border: 1px solid var(--border-primary) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    backdrop-filter: blur(18px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(140%) !important;
+}
+
+:root[data-theme="littlePrince"] .modal-overlay,
+:root[data-theme="littlePrince"] .dialog-overlay {
+    background: var(--bg-overlay) !important;
+}
+
+:root[data-theme="littlePrince"] .form-input,
+:root[data-theme="littlePrince"] .form-select,
+:root[data-theme="littlePrince"] .form-textarea,
+:root[data-theme="littlePrince"] .note-input,
+:root[data-theme="littlePrince"] input,
+:root[data-theme="littlePrince"] select,
+:root[data-theme="littlePrince"] textarea {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 1px solid var(--control-border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="littlePrince"] .form-input:focus,
+:root[data-theme="littlePrince"] .form-select:focus,
+:root[data-theme="littlePrince"] .form-textarea:focus,
+:root[data-theme="littlePrince"] .note-input:focus,
+:root[data-theme="littlePrince"] input:focus,
+:root[data-theme="littlePrince"] select:focus,
+:root[data-theme="littlePrince"] textarea:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px var(--color-primary-rgba-15) !important;
+    outline: none !important;
+}
+
+:root[data-theme="littlePrince"] .btn,
+:root[data-theme="littlePrince"] .btn-primary,
+:root[data-theme="littlePrince"] .form-submit-btn,
+:root[data-theme="littlePrince"] .submit-btn,
+:root[data-theme="littlePrince"] button {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+    border: 1px solid rgba(62, 91, 154, 0.24) !important;
+    color: var(--text-white) !important;
+}
+
+:root[data-theme="littlePrince"] .btn:hover,
+:root[data-theme="littlePrince"] .btn-primary:hover,
+:root[data-theme="littlePrince"] .form-submit-btn:hover,
+:root[data-theme="littlePrince"] .submit-btn:hover,
+:root[data-theme="littlePrince"] button:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%) !important;
+}
+
+/* 買入 / 定期定額 按鈕 */
+:root[data-theme="littlePrince"] .buy-action-btn-large,
+:root[data-theme="littlePrince"] .action-btn.buy-btn,
+:root[data-theme="littlePrince"] #actionBuy,
+:root[data-theme="littlePrince"] .buy-btn {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%) !important;
+    border-color: rgba(214, 178, 94, 0.28) !important;
+    color: rgba(34, 37, 53, 0.98) !important;
+}
+
+:root[data-theme="littlePrince"] .dca-action-btn-large,
+:root[data-theme="littlePrince"] .action-btn.dca-btn,
+:root[data-theme="littlePrince"] #actionDCA,
+:root[data-theme="littlePrince"] .dca-btn {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%) !important;
+    border-color: rgba(183, 166, 212, 0.30) !important;
+    color: var(--text-white) !important;
+}
+
+/* 返回按鈕 */
+:root[data-theme="littlePrince"] .back-btn,
+:root[data-theme="littlePrince"] .investment-form-back-btn,
+:root[data-theme="littlePrince"] .auto-transfer-back-btn,
+:root[data-theme="littlePrince"] .auto-transfer-setup-back-btn,
+:root[data-theme="littlePrince"] .dca-back-btn,
+:root[data-theme="littlePrince"] .dca-setup-back-btn {
+    background: rgba(255, 252, 248, 0.78) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+}
+
+/* 智慧分析 / 智慧提醒 */
+:root[data-theme="littlePrince"] .smart-suggestion-btn {
+    background: linear-gradient(135deg, rgba(62, 91, 154, 0.92) 0%, rgba(183, 166, 212, 0.86) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.30) !important;
+    color: var(--text-white) !important;
+}
+
+:root[data-theme="littlePrince"] .smart-suggestion-btn:hover {
+    box-shadow: 0 10px 28px rgba(62, 91, 154, 0.18) !important;
+}
+
+/* 對話框（顧問聊天等） */
+:root[data-theme="littlePrince"] .history-advisor-chat {
+    background: rgba(255, 252, 248, 0.92) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+:root[data-theme="littlePrince"] .advisor-quick-btn {
+    background: rgba(62, 91, 154, 0.08) !important;
+    border: 1px solid rgba(62, 91, 154, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="littlePrince"] .advisor-quick-btn:hover {
+    background: rgba(214, 178, 94, 0.14) !important;
+    border-color: rgba(214, 178, 94, 0.26) !important;
+}
+
+:root[data-theme="littlePrince"] .advisor-chat-input-container {
+    background: rgba(255, 252, 248, 0.92) !important;
+}
+
+:root[data-theme="littlePrince"] .advisor-chat-input {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="littlePrince"] .advisor-send-btn {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%) !important;
+    color: rgba(34, 37, 53, 0.98) !important;
+}
+
+@media (max-width: 480px) {
+    :root[data-theme="littlePrince"] .history-advisor-chat {
+        width: 100% !important;
+        height: 70vh !important;
+        border-radius: 16px 16px 0 0 !important;
+    }
+}

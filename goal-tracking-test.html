@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投資目標追蹤測試</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.success {
+            background-color: #28a745;
+        }
+        .button.warning {
+            background-color: #ffc107;
+            color: #212529;
+        }
+        .button.danger {
+            background-color: #dc3545;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .data-display {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .goal-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .goal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #28a745;
+            transition: width 0.3s ease;
+        }
+        .goal-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .goal-item {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 投資目標追蹤測試</h1>
+    
+    <div class="container">
+        <h3>基礎檢查</h3>
+        <button class="button" onclick="checkBasicFunction()">檢查基礎功能</button>
+        <button class="button" onclick="checkGoalTracking()">檢查目標追蹤函數</button>
+        <div id="basicStatus"></div>
+    </div>
+    
+    <div class="container">
+        <h3>數據管理</h3>
+        <button class="button" onclick="loadTestData()">載入測試數據</button>
+        <button class="button" onclick="loadDefaultGoals()">載入預設目標</button>
+        <button class="button" onclick="showCurrentData()">顯示當前數據</button>
+        <button class="button danger" onclick="clearData()">清除數據</button>
+        <div id="dataStatus"></div>
+        <div id="dataDisplay"></div>
+    </div>
+    
+    <div class="container">
+        <h3>目標追蹤測試</h3>
+        <button class="button success" onclick="testGoalTracking()">測試目標追蹤</button>
+        <button class="button" onclick="testWithModal()">使用彈窗測試</button>
+        <button class="button" onclick="testIndividualGoals()">測試個別目標</button>
+        <div id="trackingStatus"></div>
+        <div id="trackingResult"></div>
+    </div>
+    
+    <div class="container">
+        <h3>整合測試</h3>
+        <button class="button" onclick="testManagerIntegration()">測試管理器整合</button>
+        <button class="button" onclick="simulateButtonClick()">模擬按鈕點擊</button>
+        <div id="integrationStatus"></div>
+    </div>
+
+    <!-- 目標追蹤彈窗 -->
+    <div class="modal" id="goalModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🎯 投資目標追蹤</h3>
+                <button class="close-btn" onclick="closeModal()">✕</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- 載入必要的腳本 -->
+    <script src="js/investment-analysis.js"></script>
+    <script src="js/investment-analysis-integration.js"></script>
+
+    <script>
+        function updateStatus(elementId, message, type = 'success') {
+            const statusDiv = document.getElementById(elementId);
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        function updateDataDisplay(data) {
+            const displayDiv = document.getElementById('dataDisplay');
+            displayDiv.innerHTML = `<div class="data-display">${JSON.stringify(data, null, 2)}</div>`;
+        }
+
+        function checkBasicFunction() {
+            try {
+                let html = '';
+                
+                // 檢查 InvestmentAnalysis 模組
+                if (typeof InvestmentAnalysis === 'undefined') {
+                    throw new Error('InvestmentAnalysis 模組未載入');
+                }
+                html += '<div class="status success">✅ InvestmentAnalysis 模組已載入</div>';
+                
+                // 檢查 trackInvestmentGoals 函數
+                if (typeof InvestmentAnalysis.trackInvestmentGoals !== 'function') {
+                    throw new Error('trackInvestmentGoals 函數不存在');
+                }
+                html += '<div class="status success">✅ trackInvestmentGoals 函數存在</div>';
+                
+                // 檢查 InvestmentAnalysisManager
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未創建');
+                }
+                html += '<div class="status success">✅ InvestmentAnalysisManager 已創建</div>';
+                
+                // 檢查管理器狀態
+                html += `<div class="data-display">管理器狀態: ${JSON.stringify({
+                    isInitialized: investmentAnalysisManager.isInitialized,
+                    holdingsCount: investmentAnalysisManager.currentHoldings.length,
+                    goalsCount: investmentAnalysisManager.currentGoals.length
+                }, null, 2)}</div>`;
+                
+                updateStatus('basicStatus', html);
+                
+            } catch (error) {
+                updateStatus('basicStatus', '❌ 基礎功能檢查失敗: ' + error.message, 'error');
+            }
+        }
+
+        function checkGoalTracking() {
+            try {
+                if (typeof InvestmentAnalysis.trackInvestmentGoals !== 'function') {
+                    throw new Error('trackInvestmentGoals 函數不存在');
+                }
+                
+                // 測試空目標
+                const emptyResult = InvestmentAnalysis.trackInvestmentGoals([], {});
+                if (emptyResult !== null) {
+                    throw new Error('空目標應該返回 null');
+                }
+                
+                updateStatus('basicStatus', '✅ 目標追蹤函數檢查通過');
+                
+            } catch (error) {
+                updateStatus('basicStatus', '❌ 目標追蹤函數檢查失敗: ' + error.message, 'error');
+            }
+        }
+
+        function loadTestData() {
+            // 載入投資記錄
+            const investmentRecords = [
+                {
+                    type: 'buy',
+                    stockCode: '0056',
+                    stockName: '元大台灣50',
+                    date: '2024-01-15',
+                    price: 150.5,
+                    shares: 1000,
+                    fee: 100
+                },
+                {
+                    type: 'buy',
+                    stockCode: '0050',
+                    stockName: '元大高股息',
+                    date: '2024-02-20',
+                    price: 120.3,
+                    shares: 500,
+                    fee: 80
+                }
+            ];
+            
+            // 載入當前價格
+            const currentPrices = {
+                '0056': 155.2,
+                '0050': 125.8
+            };
+            
+            // 載入測試目標
+            const testGoals = [
+                {
+                    id: 'goal1',
+                    name: '退休基金',
+                    type: 'retirement',
+                    targetAmount: 1000000,
+                    targetDate: '2040-12-31',
+                    duration: 240,
+                    monthlyContribution: 10000
+                },
+                {
+                    id: 'goal2',
+                    name: '購屋基金',
+                    type: 'house',
+                    targetAmount: 2000000,
+                    targetDate: '2030-12-31',
+                    duration: 84,
+                    monthlyContribution: 15000
+                },
+                {
+                    id: 'goal3',
+                    name: '教育基金',
+                    type: 'education',
+                    targetAmount: 500000,
+                    targetDate: '2028-12-31',
+                    duration: 60,
+                    monthlyContribution: 5000
+                }
+            ];
+            
+            localStorage.setItem('investmentRecords', JSON.stringify(investmentRecords));
+            localStorage.setItem('stockCurrentPrices', JSON.stringify(currentPrices));
+            localStorage.setItem('investmentGoals', JSON.stringify(testGoals));
+            
+            updateStatus('dataStatus', '✅ 測試數據已載入');
+            
+            // 重新載入管理器數據
+            if (typeof investmentAnalysisManager !== 'undefined') {
+                investmentAnalysisManager.loadData();
+                updateStatus('dataStatus', '✅ 管理器數據已更新');
+            }
+        }
+
+        function loadDefaultGoals() {
+            if (typeof investmentAnalysisManager !== 'undefined') {
+                investmentAnalysisManager.currentGoals = investmentAnalysisManager.getDefaultGoals();
+                localStorage.setItem('investmentGoals', JSON.stringify(investmentAnalysisManager.currentGoals));
+                updateStatus('dataStatus', '✅ 預設目標已載入');
+            } else {
+                updateStatus('dataStatus', '❌ InvestmentAnalysisManager 未定義', 'error');
+            }
+        }
+
+        function showCurrentData() {
+            try {
+                const investmentRecords = JSON.parse(localStorage.getItem('investmentRecords') || '[]');
+                const investmentGoals = JSON.parse(localStorage.getItem('investmentGoals') || '[]');
+                const stockCurrentPrices = JSON.parse(localStorage.getItem('stockCurrentPrices') || '{}');
+                
+                updateDataDisplay({
+                    投資記錄: investmentRecords,
+                    投資目標: investmentGoals,
+                    當前價格: stockCurrentPrices
+                });
+                
+                updateStatus('dataStatus', '✅ 當前數據顯示完成');
+                
+            } catch (error) {
+                updateStatus('dataStatus', '❌ 顯示數據失敗: ' + error.message, 'error');
+            }
+        }
+
+        function clearData() {
+            localStorage.removeItem('investmentRecords');
+            localStorage.removeItem('investmentGoals');
+            localStorage.removeItem('stockCurrentPrices');
+            
+            if (typeof investmentAnalysisManager !== 'undefined') {
+                investmentAnalysisManager.currentHoldings = [];
+                investmentAnalysisManager.currentGoals = [];
+                investmentAnalysisManager.portfolioAnalysis = null;
+                investmentAnalysisManager.goalTracking = null;
+            }
+            
+            updateStatus('dataStatus', '✅ 數據已清除');
+            updateDataDisplay('數據已清除');
+        }
+
+        function testGoalTracking() {
+            try {
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未定義');
+                }
+                
+                // 重新載入數據
+                investmentAnalysisManager.loadData();
+                
+                if (investmentAnalysisManager.currentGoals.length === 0) {
+                    updateStatus('trackingStatus', '⚠️ 沒有目標數據，請先載入測試數據', 'warning');
+                    return;
+                }
+                
+                // 執行投資組合分析
+                const portfolioAnalysis = InvestmentAnalysis.analyzePortfolio(investmentAnalysisManager.currentHoldings);
+                
+                // 執行目標追蹤
+                const goalTracking = InvestmentAnalysis.trackInvestmentGoals(investmentAnalysisManager.currentGoals, portfolioAnalysis);
+                
+                if (!goalTracking) {
+                    throw new Error('目標追蹤返回 null');
+                }
+                
+                updateStatus('trackingStatus', '✅ 目標追蹤測試成功');
+                updateDataDisplay(goalTracking);
+                
+            } catch (error) {
+                updateStatus('trackingStatus', '❌ 目標追蹤測試失敗: ' + error.message, 'error');
+                console.error('目標追蹤錯誤:', error);
+            }
+        }
+
+        function testWithModal() {
+            try {
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未定義');
+                }
+                
+                // 重新載入數據
+                investmentAnalysisManager.loadData();
+                
+                if (investmentAnalysisManager.currentGoals.length === 0) {
+                    updateStatus('trackingStatus', '⚠️ 沒有目標數據，請先載入測試數據', 'warning');
+                    return;
+                }
+                
+                // 執行目標追蹤
+                const portfolioAnalysis = InvestmentAnalysis.analyzePortfolio(investmentAnalysisManager.currentHoldings);
+                const goalTracking = InvestmentAnalysis.trackInvestmentGoals(investmentAnalysisManager.currentGoals, portfolioAnalysis);
+                
+                // 顯示在彈窗中
+                const modalBody = document.getElementById('modalBody');
+                modalBody.innerHTML = renderGoalTracking(goalTracking);
+                
+                document.getElementById('goalModal').style.display = 'flex';
+                updateStatus('trackingStatus', '✅ 彈窗測試成功');
+                
+            } catch (error) {
+                updateStatus('trackingStatus', '❌ 彈窗測試失敗: ' + error.message, 'error');
+                console.error('彈窗錯誤:', error);
+            }
+        }
+
+        function testIndividualGoals() {
+            try {
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未定義');
+                }
+                
+                investmentAnalysisManager.loadData();
+                
+                if (investmentAnalysisManager.currentGoals.length === 0) {
+                    updateStatus('trackingStatus', '⚠️ 沒有目標數據，請先載入測試數據', 'warning');
+                    return;
+                }
+                
+                const portfolioAnalysis = InvestmentAnalysis.analyzePortfolio(investmentAnalysisManager.currentHoldings);
+                const results = [];
+                
+                investmentAnalysisManager.currentGoals.forEach(goal => {
+                    const tracking = InvestmentAnalysis.trackSingleGoal(goal, portfolioAnalysis);
+                    results.push({
+                        目標名稱: goal.name,
+                        追蹤結果: tracking
+                    });
+                });
+                
+                updateStatus('trackingStatus', '✅ 個別目標測試完成');
+                updateDataDisplay(results);
+                
+            } catch (error) {
+                updateStatus('trackingStatus', '❌ 個別目標測試失敗: ' + error.message, 'error');
+            }
+        }
+
+        function testManagerIntegration() {
+            try {
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未定義');
+                }
+                
+                // 檢查初始化
+                if (!investmentAnalysisManager.isInitialized) {
+                    investmentAnalysisManager.init();
+                }
+                
+                // 檢查數據載入
+                investmentAnalysisManager.loadData();
+                
+                // 檢查目標追蹤方法
+                if (typeof investmentAnalysisManager.showGoalTracking !== 'function') {
+                    throw new Error('showGoalTracking 方法不存在');
+                }
+                
+                updateStatus('integrationStatus', '✅ 管理器整合測試成功');
+                
+            } catch (error) {
+                updateStatus('integrationStatus', '❌ 管理器整合測試失敗: ' + error.message, 'error');
+            }
+        }
+
+        function simulateButtonClick() {
+            try {
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未定義');
+                }
+                
+                // 模擬點擊目標追蹤按鈕
+                investmentAnalysisManager.showGoalTracking();
+                updateStatus('integrationStatus', '✅ 模擬按鈕點擊成功');
+                
+                // 3秒後自動關閉
+                setTimeout(() => {
+                    investmentAnalysisManager.hideGoalTracking();
+                    updateStatus('integrationStatus', '✅ 彈窗已自動關閉');
+                }, 3000);
+                
+            } catch (error) {
+                updateStatus('integrationStatus', '❌ 模擬按鈕點擊失敗: ' + error.message, 'error');
+            }
+        }
+
+        function renderGoalTracking(tracking) {
+            let html = '<h4>🎯 投資目標追蹤結果</h4>';
+            
+            // 概況
+            html += '<div class="goal-card">';
+            html += '<h5>📊 目標概況</h5>';
+            html += '<div class="goal-info">';
+            html += `<div class="goal-item"><span>總目標數:</span><span>${tracking.overview.totalGoals}</span></div>`;
+            html += `<div class="goal-item"><span>已完成:</span><span>${tracking.overview.completedGoals}</span></div>`;
+            html += `<div class="goal-item"><span>進行中:</span><span>${tracking.overview.inProgressGoals}</span></div>`;
+            html += `<div class="goal-item"><span>整體進度:</span><span>${Math.round(tracking.overview.totalCurrentAmount / tracking.overview.totalTargetAmount * 100)}%</span></div>`;
+            html += '</div>';
+            html += '</div>';
+            
+            // 個別目標
+            html += '<h5>🎯 個別目標</h5>';
+            tracking.goals.forEach(goal => {
+                html += '<div class="goal-card">';
+                html += `<div class="goal-header">
+                    <strong>${goal.name}</strong>
+                    <span>${goal.status === 'completed' ? '✅ 已完成' : goal.status === 'in_progress' ? '🔄 進行中' : '⏸️ 未開始'}</span>
+                </div>`;
+                html += `<div class="progress-bar">
+                    <div class="progress-fill" style="width: ${goal.progress}%"></div>
+                </div>`;
+                html += '<div class="goal-info">';
+                html += `<div class="goal-item"><span>目標金額:</span><span>NT$${goal.targetAmount.toLocaleString()}</span></div>`;
+                html += `<div class="goal-item"><span>當前進度:</span><span>NT$${goal.currentAmount.toLocaleString()}</span></div>`;
+                html += `<div class="goal-item"><span>完成度:</span><span>${goal.progress}%</span></div>`;
+                html += `<div class="goal-item"><span>剩餘時間:</span><span>${goal.timeRemaining}個月</span></div>`;
+                html += '</div>';
+                html += '</div>';
+            });
+            
+            return html;
+        }
+
+        function closeModal() {
+            document.getElementById('goalModal').style.display = 'none';
+        }
+
+        // 頁面載入時自動檢查
+        window.addEventListener('load', function() {
+            setTimeout(checkBasicFunction, 500);
+        });
+    </script>
+</body>
+</html>

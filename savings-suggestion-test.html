@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>儲蓄建議測試</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .test-button {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: all 0.2s;
+        }
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3);
+        }
+        .result {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #22c55e;
+            background: #f0fdf4;
+        }
+        .result-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+        .result-title {
+            font-weight: 600;
+            color: #16a34a;
+            margin-bottom: 5px;
+        }
+        .result-content {
+            color: #374151;
+            font-size: 14px;
+        }
+        .old-vs-new {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .old-suggestion, .new-suggestion {
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .old-suggestion {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+        }
+        .new-suggestion {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+        .level-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        .level-beginner { background: #dbeafe; color: #1e40af; }
+        .level-intermediate { background: #fef3c7; color: #d97706; }
+        .level-balanced { background: #d1fae5; color: #059669; }
+        .level-advanced { background: #e9d5ff; color: #7c3aed; }
+        .level-high_spender { background: #fee2e2; color: #dc2626; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>💰 儲蓄建議測試</h1>
+            <p>測試修復後的儲蓄建議功能</p>
+        </div>
+        
+        <div class="test-section">
+            <h2>不同消費水平的儲蓄建議</h2>
+            <button class="test-button" onclick="testAllLevels()">測試所有消費水平</button>
+            <button class="test-button" onclick="testLowSpending()">測試低消費</button>
+            <button class="test-button" onclick="testMediumSpending()">測試中等消費</button>
+            <button class="test-button" onclick="testHighSpending()">測試高消費</button>
+            <div id="testResults"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>舊建議 vs 新建議</h2>
+            <button class="test-button" onclick="compareSuggestions()">比較舊新建議</button>
+            <div id="comparisonResults"></div>
+        </div>
+    </div>
+
+    <!-- 載入智慧記帳系統 -->
+    <script src="js/smart-accounting.js"></script>
+    
+    <script>
+        // 測試數據
+        const testScenarios = [
+            {
+                name: '低消費者',
+                dailyAverage: 250,
+                description: '日均消費 NT$250'
+            },
+            {
+                name: '中低消費者',
+                dailyAverage: 600,
+                description: '日均消費 NT$600'
+            },
+            {
+                name: '中等消費者',
+                dailyAverage: 1200,
+                description: '日均消費 NT$1,200'
+            },
+            {
+                name: '高消費者',
+                dailyAverage: 2500,
+                description: '日均消費 NT$2,500'
+            },
+            {
+                name: '很高消費者',
+                dailyAverage: 4000,
+                description: '日均消費 NT$4,000'
+            }
+        ];
+        
+        // 舊的儲蓄建議邏輯（用於比較）
+        function getOldSuggestion(totalSpent) {
+            const suggestedSavings = Math.round(totalSpent * 0.2);
+            return `基於您目前的消費水平，建議每月儲蓄NT$${suggestedSavings}`;
+        }
+        
+        // 測試所有消費水平
+        function testAllLevels() {
+            const results = document.getElementById('testResults');
+            let html = '<div class="result">';
+            
+            testScenarios.forEach(scenario => {
+                const analysis = {
+                    totalSpent: scenario.dailyAverage * 30,
+                    dailyAverage: scenario.dailyAverage
+                };
+                
+                const recommendations = SmartAccounting.generateSpendingRecommendations(analysis);
+                const savingsRec = recommendations.find(r => r.type === 'savings_goal');
+                
+                html += `
+                    <div class="result-item">
+                        <div class="result-title">
+                            ${scenario.name} (${scenario.description})
+                            ${savingsRec && savingsRec.level ? `<span class="level-badge level-${savingsRec.level}">${savingsRec.level}</span>` : ''}
+                        </div>
+                        <div class="result-content">
+                            ${savingsRec ? savingsRec.content : '無儲蓄建議'}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            results.innerHTML = html;
+        }
+        
+        // 測試低消費
+        function testLowSpending() {
+            const analysis = {
+                totalSpent: 250 * 30,
+                dailyAverage: 250
+            };
+            
+            const recommendations = SmartAccounting.generateSpendingRecommendations(analysis);
+            const savingsRec = recommendations.find(r => r.type === 'savings_goal');
+            
+            document.getElementById('testResults').innerHTML = `
+                <div class="result">
+                    <h3>低消費測試結果</h3>
+                    <div class="result-item">
+                        <div class="result-title">儲蓄建議</div>
+                        <div class="result-content">${savingsRec ? savingsRec.content : '無建議'}</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-title">建議金額</div>
+                        <div class="result-content">NT$${savingsRec ? savingsRec.amount : 0}</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-title">儲蓄等級</div>
+                        <div class="result-content">${savingsRec ? savingsRec.level : '無'}</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 測試中等消費
+        function testMediumSpending() {
+            const analysis = {
+                totalSpent: 1200 * 30,
+                dailyAverage: 1200
+            };
+            
+            const recommendations = SmartAccounting.generateSpendingRecommendations(analysis);
+            const savingsRec = recommendations.find(r => r.type === 'savings_goal');
+            
+            document.getElementById('testResults').innerHTML = `
+                <div class="result">
+                    <h3>中等消費測試結果</h3>
+                    <div class="result-item">
+                        <div class="result-title">儲蓄建議</div>
+                        <div class="result-content">${savingsRec ? savingsRec.content : '無建議'}</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-title">建議金額</div>
+                        <div class="result-content">NT$${savingsRec ? savingsRec.amount : 0}</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-title">儲蓄等級</div>
+                        <div class="result-content">${savingsRec ? savingsRec.level : '無'}</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 測試高消費
+        function testHighSpending() {
+            const analysis = {
+                totalSpent: 4000 * 30,
+                dailyAverage: 4000
+            };
+            
+            const recommendations = SmartAccounting.generateSpendingRecommendations(analysis);
+            const savingsRec = recommendations.find(r => r.type === 'savings_goal');
+            
+            document.getElementById('testResults').innerHTML = `
+                <div class="result">
+                    <h3>高消費測試結果</h3>
+                    <div class="result-item">
+                        <div class="result-title">儲蓄建議</div>
+                        <div class="result-content">${savingsRec ? savingsRec.content : '無建議'}</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-title">建議金額</div>
+                        <div class="result-content">NT$${savingsRec ? savingsRec.amount : 0}</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-title">儲蓄等級</div>
+                        <div class="result-content">${savingsRec ? savingsRec.level : '無'}</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 比較舊新建議
+        function compareSuggestions() {
+            let html = '<div class="result">';
+            
+            testScenarios.forEach(scenario => {
+                const totalSpent = scenario.dailyAverage * 30;
+                const oldSuggestion = getOldSuggestion(totalSpent);
+                
+                const analysis = {
+                    totalSpent: totalSpent,
+                    dailyAverage: scenario.dailyAverage
+                };
+                
+                const recommendations = SmartAccounting.generateSpendingRecommendations(analysis);
+                const newSuggestion = recommendations.find(r => r.type === 'savings_goal');
+                
+                html += `
+                    <div style="margin: 20px 0;">
+                        <h4>${scenario.name} (${scenario.description})</h4>
+                        <div class="old-vs-new">
+                            <div class="old-suggestion">
+                                <strong>舊建議：</strong><br>
+                                ${oldSuggestion}
+                            </div>
+                            <div class="new-suggestion">
+                                <strong>新建議：</strong><br>
+                                ${newSuggestion ? newSuggestion.content : '無建議'}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            document.getElementById('comparisonResults').innerHTML = html;
+        }
+        
+        // 頁面載入時自動測試
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                testAllLevels();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

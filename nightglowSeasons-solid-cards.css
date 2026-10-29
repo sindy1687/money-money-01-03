@@ -1,0 +1,217 @@
+/* ========== 夜光四季主題 - 買入、定期定額、股利卡片不透明效果 ========== */
+
+/* 夜光四季主題 - 買入卡片不透明效果 */
+[data-theme="nightglowSeasons"] .buying-card {
+    background: rgba(10, 25, 41, 0.95) !important;
+    backdrop-filter: blur(15px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(15px) saturate(150%) !important;
+    border: 1px solid rgba(100, 255, 218, 0.4) !important;
+    border-radius: 20px !important;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4) !important,
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important,
+        0 0 0 1px rgba(100, 255, 218, 0.2) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[data-theme="nightglowSeasons"] .buying-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(135deg, 
+        rgba(100, 255, 218, 0.08) 0%, 
+        rgba(30, 58, 95, 0.12) 50%, 
+        rgba(26, 54, 93, 0.08) 100%) !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+[data-theme="nightglowSeasons"] .buying-card > * {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+[data-theme="nightglowSeasons"] .buying-card:hover {
+    background: rgba(10, 25, 41, 0.98) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-color: rgba(100, 255, 218, 0.6) !important;
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.5) !important,
+        inset 0 1px 0 rgba(255, 255, 255, 0.25) !important,
+        0 0 20px rgba(100, 255, 218, 0.3) !important;
+    transform: translateY(-4px) scale(1.02) !important;
+}
+
+/* 夜光四季主題 - 定期定額卡片不透明效果 (更新版本) */
+[data-theme="nightglowSeasons"] .monthly-planning-card {
+    background: rgba(10, 25, 41, 0.95) !important;
+    backdrop-filter: blur(15px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(15px) saturate(150%) !important;
+    border: 1px solid rgba(100, 255, 218, 0.4) !important;
+    border-radius: 20px !important;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4) !important,
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important,
+        0 0 0 1px rgba(100, 255, 218, 0.2) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[data-theme="nightglowSeasons"] .monthly-planning-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(135deg, 
+        rgba(100, 255, 218, 0.08) 0%, 
+        rgba(30, 58, 95, 0.12) 50%, 
+        rgba(26, 54, 93, 0.08) 100%) !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+[data-theme="nightglowSeasons"] .monthly-planning-card > * {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+[data-theme="nightglowSeasons"] .monthly-planning-card:hover {
+    background: rgba(10, 25, 41, 0.98) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-color: rgba(100, 255, 218, 0.6) !important;
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.5) !important,
+        inset 0 1px 0 rgba(255, 255, 255, 0.25) !important,
+        0 0 20px rgba(100, 255, 218, 0.3) !important;
+    transform: translateY(-4px) scale(1.02) !important;
+}
+
+/* 夜光四季主題 - 股利卡片不透明效果 (更新版本) */
+[data-theme="nightglowSeasons"] .dividend-card {
+    background: rgba(10, 25, 41, 0.95) !important;
+    backdrop-filter: blur(15px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(15px) saturate(150%) !important;
+    border: 1px solid rgba(100, 255, 218, 0.4) !important;
+    border-radius: 20px !important;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4) !important,
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important,
+        0 0 0 1px rgba(100, 255, 218, 0.2) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[data-theme="nightglowSeasons"] .dividend-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(135deg, 
+        rgba(100, 255, 218, 0.08) 0%, 
+        rgba(30, 58, 95, 0.12) 50%, 
+        rgba(26, 54, 93, 0.08) 100%) !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+[data-theme="nightglowSeasons"] .dividend-card > * {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+[data-theme="nightglowSeasons"] .dividend-card:hover {
+    background: rgba(10, 25, 41, 0.98) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-color: rgba(100, 255, 218, 0.6) !important;
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.5) !important,
+        inset 0 1px 0 rgba(255, 255, 255, 0.25) !important,
+        0 0 20px rgba(100, 255, 218, 0.3) !important;
+    transform: translateY(-4px) scale(1.02) !important;
+}
+
+/* 夜光四季主題 - 所有卡片內文字增強對比度 */
+[data-theme="nightglowSeasons"] .buying-card h2,
+[data-theme="nightglowSeasons"] .buying-card h3,
+[data-theme="nightglowSeasons"] .buying-card .card-title,
+[data-theme="nightglowSeasons"] .monthly-planning-card h2,
+[data-theme="nightglowSeasons"] .monthly-planning-card h3,
+[data-theme="nightglowSeasons"] .monthly-planning-card .card-title,
+[data-theme="nightglowSeasons"] .dividend-card h2,
+[data-theme="nightglowSeasons"] .dividend-card h3,
+[data-theme="nightglowSeasons"] .dividend-card .card-title {
+    color: #64ffda !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+    font-weight: 600 !important;
+}
+
+[data-theme="nightglowSeasons"] .buying-card p,
+[data-theme="nightglowSeasons"] .buying-card .card-text,
+[data-theme="nightglowSeasons"] .monthly-planning-card p,
+[data-theme="nightglowSeasons"] .monthly-planning-card .card-text,
+[data-theme="nightglowSeasons"] .dividend-card p,
+[data-theme="nightglowSeasons"] .dividend-card .card-text {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 夜光四季主題 - 所有卡片按鈕不透明效果 */
+[data-theme="nightglowSeasons"] .buying-card button,
+[data-theme="nightglowSeasons"] .monthly-planning-card button,
+[data-theme="nightglowSeasons"] .dividend-card button {
+    background: rgba(100, 255, 218, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(100, 255, 218, 0.5) !important;
+    color: #64ffda !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-theme="nightglowSeasons"] .buying-card button:hover,
+[data-theme="nightglowSeasons"] .monthly-planning-card button:hover,
+[data-theme="nightglowSeasons"] .dividend-card button:hover {
+    background: rgba(100, 255, 218, 0.35) !important;
+    border-color: rgba(100, 255, 218, 0.7) !important;
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 夜光四季主題 - 所有卡片輸入框不透明效果 */
+[data-theme="nightglowSeasons"] .buying-card input,
+[data-theme="nightglowSeasons"] .buying-card select,
+[data-theme="nightglowSeasons"] .monthly-planning-card input,
+[data-theme="nightglowSeasons"] .monthly-planning-card select,
+[data-theme="nightglowSeasons"] .dividend-card input,
+[data-theme="nightglowSeasons"] .dividend-card select {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(100, 255, 218, 0.4) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="nightglowSeasons"] .buying-card input:focus,
+[data-theme="nightglowSeasons"] .buying-card select:focus,
+[data-theme="nightglowSeasons"] .monthly-planning-card input:focus,
+[data-theme="nightglowSeasons"] .monthly-planning-card select:focus,
+[data-theme="nightglowSeasons"] .dividend-card input:focus,
+[data-theme="nightglowSeasons"] .dividend-card select:focus {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(100, 255, 218, 0.7) !important;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3) !important;
+}

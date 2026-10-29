@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投資資料調試工具</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .debug-item {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .success {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        .warning {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #357abd;
+        }
+        .clear {
+            background: #f44336;
+        }
+        .clear:hover {
+            background: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 投資資料調試工具</h1>
+        
+        <div class="section">
+            <h2>📊 檢查 localStorage 資料</h2>
+            <button onclick="checkInvestmentRecords()">檢查 investmentRecords</button>
+            <button onclick="checkCurrentPrices()">檢查 stockCurrentPrices</button>
+            <button onclick="checkDCAPlans()">檢查 dcaPlans</button>
+            <button onclick="checkAllData()">檢查所有資料</button>
+            <button class="clear" onclick="clearResults()">清空結果</button>
+            
+            <div id="debugResults"></div>
+        </div>
+        
+        <div class="section">
+            <h2>🧮 計算持股組合</h2>
+            <button onclick="calculatePortfolio()">計算當前持股</button>
+            <button onclick="simulateAnalysis()">模擬投資分析</button>
+            
+            <div id="portfolioResults"></div>
+        </div>
+        
+        <div class="section">
+            <h2>🔧 測試資料</h2>
+            <button onclick="addTestData()">新增測試資料</button>
+            <button onclick="clearTestData()">清空測試資料</button>
+            
+            <div id="testDataResults"></div>
+        </div>
+    </div>
+
+    <script>
+        // 載入投資分析模組
+        // 注意：在實際使用中需要先載入 investment-analysis.js
+        
+        function checkInvestmentRecords() {
+            try {
+                const records = JSON.parse(localStorage.getItem('investmentRecords') || '[]');
+                const results = document.getElementById('debugResults');
+                
+                let html = '<h3>📋 investmentRecords</h3>';
+                html += `<div class="debug-item success">記錄數量: ${records.length}</div>`;
+                
+                if (records.length > 0) {
+                    html += '<h4>最近5筆記錄:</h4>';
+                    records.slice(-5).forEach((record, index) => {
+                        html += `
+                            <div class="debug-item">
+                                記錄 ${index + 1}: ${record.type} - ${record.stockCode} - ${record.shares}股 @ $${record.price} (${record.date})
+                            </div>
+                        `;
+                    });
+                    
+                    // 統計資料
+                    const buyRecords = records.filter(r => r.type === 'buy');
+                    const sellRecords = records.filter(r => r.type === 'sell');
+                    const dividendRecords = records.filter(r => r.type === 'dividend');
+                    
+                    html += `
+                        <h4>📈 統計資料:</h4>
+                        <div class="debug-item">買入記錄: ${buyRecords.length}</div>
+                        <div class="debug-item">賣出記錄: ${sellRecords.length}</div>
+                        <div class="debug-item">股利記錄: ${dividendRecords.length}</div>
+                    `;
+                } else {
+                    html += '<div class="debug-item warning">沒有投資記錄</div>';
+                }
+                
+                results.innerHTML = html;
+                
+            } catch (error) {
+                document.getElementById('debugResults').innerHTML = 
+                    `<div class="debug-item error">讀取 investmentRecords 失敗: ${error.message}</div>`;
+            }
+        }
+        
+        function checkCurrentPrices() {
+            try {
+                const prices = JSON.parse(localStorage.getItem('stockCurrentPrices') || '{}');
+                const results = document.getElementById('debugResults');
+                
+                let html = '<h3>💰 stockCurrentPrices</h3>';
+                html += `<div class="debug-item success">股票數量: ${Object.keys(prices).length}</div>`;
+                
+                if (Object.keys(prices).length > 0) {
+                    html += '<h4>當前價格:</h4>';
+                    Object.entries(prices).forEach(([symbol, price]) => {
+                        html += `
+                            <div class="debug-item">${symbol}: $${price}</div>
+                        `;
+                    });
+                } else {
+                    html += '<div class="debug-item warning">沒有當前價格資料</div>';
+                }
+                
+                results.innerHTML = html;
+                
+            } catch (error) {
+                document.getElementById('debugResults').innerHTML = 
+                    `<div class="debug-item error">讀取 stockCurrentPrices 失敗: ${error.message}</div>`;
+            }
+        }
+        
+        function checkDCAPlans() {
+            try {
+                const plans = JSON.parse(localStorage.getItem('dcaPlans') || '[]');
+                const results = document.getElementById('debugResults');
+                
+                let html = '<h3>📅 dcaPlans</h3>';
+                html += `<div class="debug-item success">DCA計劃數量: ${plans.length}</div>`;
+                
+                if (plans.length > 0) {
+                    html += '<h4>DCA計劃:</h4>';
+                    plans.forEach((plan, index) => {
+                        html += `
+                            <div class="debug-item">
+                                計劃 ${index + 1}: ${plan.stockCode} - $${plan.amount}/${plan.frequency}
+                            </div>
+                        `;
+                    });
+                } else {
+                    html += '<div class="debug-item warning">沒有DCA計劃</div>';
+                }
+                
+                results.innerHTML = html;
+                
+            } catch (error) {
+                document.getElementById('debugResults').innerHTML = 
+                    `<div class="debug-item error">讀取 dcaPlans 失敗: ${error.message}</div>`;
+            }
+        }
+        
+        function checkAllData() {
+            checkInvestmentRecords();
+            checkCurrentPrices();
+            checkDCAPlans();
+        }
+        
+        function calculatePortfolio() {
+            try {
+                const records = JSON.parse(localStorage.getItem('investmentRecords') || '[]');
+                const portfolio = {};
+                
+                records.forEach(record => {
+                    if (record.type === 'buy') {
+                        if (!portfolio[record.stockCode]) {
+                            portfolio[record.stockCode] = {
+                                name: record.stockName || record.stockCode,
+                                shares: 0,
+                                totalCost: 0,
+                                avgCost: 0
+                            };
+                        }
+                        
+                        portfolio[record.stockCode].shares += record.shares;
+                        portfolio[record.stockCode].totalCost += record.shares * record.price;
+                        portfolio[record.stockCode].avgCost = portfolio[record.stockCode].totalCost / portfolio[record.stockCode].shares;
+                    } else if (record.type === 'sell') {
+                        if (portfolio[record.stockCode]) {
+                            portfolio[record.stockCode].shares -= record.shares;
+                            if (portfolio[record.stockCode].shares <= 0) {
+                                delete portfolio[record.stockCode];
+                            }
+                        }
+                    }
+                });
+                
+                // 更新當前價格
+                const currentPrices = JSON.parse(localStorage.getItem('stockCurrentPrices') || '{}');
+                Object.keys(portfolio).forEach(symbol => {
+                    if (currentPrices[symbol]) {
+                        portfolio[symbol].currentPrice = currentPrices[symbol];
+                    }
+                });
+                
+                const results = document.getElementById('portfolioResults');
+                let html = '<h3>📊 當前持股組合</h3>';
+                
+                if (Object.keys(portfolio).length > 0) {
+                    html += `<div class="debug-item success">持股數量: ${Object.keys(portfolio).length}</div>`;
+                    
+                    Object.entries(portfolio).forEach(([symbol, data]) => {
+                        const currentValue = data.currentPrice * data.shares;
+                        const cost = data.avgCost * data.shares;
+                        const gain = currentValue - cost;
+                        const gainPercent = cost > 0 ? (gain / cost * 100).toFixed(2) : 0;
+                        
+                        html += `
+                            <div class="debug-item">
+                                <strong>${symbol} (${data.name})</strong><br>
+                                持股: ${data.shares}股 | 成本: $${data.avgCost.toFixed(2)} | 現價: $${data.currentPrice}<br>
+                                總成本: $${cost.toFixed(0)} | 總市值: $${currentValue.toFixed(0)}<br>
+                                損益: $${gain.toFixed(0)} (${gainPercent}%)
+                            </div>
+                        `;
+                    });
+                } else {
+                    html += '<div class="debug-item warning">沒有持股資料</div>';
+                }
+                
+                results.innerHTML = html;
+                
+            } catch (error) {
+                document.getElementById('portfolioResults').innerHTML = 
+                    `<div class="debug-item error">計算持股失敗: ${error.message}</div>`;
+            }
+        }
+        
+        function simulateAnalysis() {
+            try {
+                // 模擬投資分析
+                const records = JSON.parse(localStorage.getItem('investmentRecords') || '[]');
+                const portfolio = {};
+                
+                records.forEach(record => {
+                    if (record.type === 'buy') {
+                        if (!portfolio[record.stockCode]) {
+                            portfolio[record.stockCode] = {
+                                name: record.stockName || record.stockCode,
+                                shares: 0,
+                                totalCost: 0,
+                                avgCost: 0
+                            };
+                        }
+                        
+                        portfolio[record.stockCode].shares += record.shares;
+                        portfolio[record.stockCode].totalCost += record.shares * record.price;
+                        portfolio[record.stockCode].avgCost = portfolio[record.stockCode].totalCost / portfolio[record.stockCode].shares;
+                    } else if (record.type === 'sell') {
+                        if (portfolio[record.stockCode]) {
+                            portfolio[record.stockCode].shares -= record.shares;
+                            if (portfolio[record.stockCode].shares <= 0) {
+                                delete portfolio[record.stockCode];
+                            }
+                        }
+                    }
+                });
+                
+                // 更新當前價格
+                const currentPrices = JSON.parse(localStorage.getItem('stockCurrentPrices') || '{}');
+                Object.keys(portfolio).forEach(symbol => {
+                    if (currentPrices[symbol]) {
+                        portfolio[symbol].currentPrice = currentPrices[symbol];
+                    }
+                });
+                
+                // 轉換為投資分析格式
+                const holdings = Object.entries(portfolio).map(([symbol, data]) => ({
+                    symbol: symbol,
+                    name: data.name,
+                    quantity: data.shares,
+                    currentPrice: data.currentPrice || 0,
+                    avgCost: data.avgCost,
+                    type: 'stock',
+                    currency: 'TWD'
+                }));
+                
+                const results = document.getElementById('portfolioResults');
+                let html = '<h3>🔍 投資分析模擬</h3>';
+                
+                if (holdings.length > 0) {
+                    html += `<div class="debug-item success">可用於分析的持股: ${holdings.length}</div>`;
+                    
+                    holdings.forEach(holding => {
+                        html += `
+                            <div class="debug-item">
+                                ✅ ${holding.symbol} - ${holding.name} - ${holding.quantity}股 - $${holding.currentPrice} - 成本$${holding.avgCost}
+                            </div>
+                        `;
+                    });
+                    
+                    // 檢查投資分析模組
+                    if (typeof InvestmentAnalysis !== 'undefined') {
+                        try {
+                            const analysis = InvestmentAnalysis.analyzePortfolio(holdings);
+                            html += `
+                                <div class="debug-item success">
+                                    ✅ 投資分析成功！總市值: $${analysis.summary.totalValue.toLocaleString()}
+                                </div>
+                            `;
+                        } catch (error) {
+                            html += `
+                                <div class="debug-item error">
+                                    ❌ 投資分析失敗: ${error.message}
+                                </div>
+                            `;
+                        }
+                    } else {
+                        html += `
+                            <div class="debug-item warning">
+                                ⚠️ 投資分析模組未載入
+                            </div>
+                        `;
+                    }
+                } else {
+                    html += '<div class="debug-item warning">沒有持股資料可供分析</div>';
+                }
+                
+                results.innerHTML = html;
+                
+            } catch (error) {
+                document.getElementById('portfolioResults').innerHTML = 
+                    `<div class="debug-item error">模擬分析失敗: ${error.message}</div>`;
+            }
+        }
+        
+        function addTestData() {
+            try {
+                const records = JSON.parse(localStorage.getItem('investmentRecords') || '[]');
+                
+                // 新增測試買入記錄
+                const testRecords = [
+                    {
+                        type: 'buy',
+                        stockCode: '2330',
+                        stockName: '台積電',
+                        date: new Date().toISOString().split('T')[0],
+                        price: 550,
+                        shares: 10,
+                        fee: 0,
+                        isDCA: false,
+                        note: '測試資料',
+                        timestamp: new Date().toISOString()
+                    },
+                    {
+                        type: 'buy',
+                        stockCode: '0050',
+                        stockName: '台灣50',
+                        date: new Date().toISOString().split('T')[0],
+                        price: 150,
+                        shares: 100,
+                        fee: 0,
+                        isDCA: false,
+                        note: '測試資料',
+                        timestamp: new Date().toISOString()
+                    }
+                ];
+                
+                records.push(...testRecords);
+                localStorage.setItem('investmentRecords', JSON.stringify(records));
+                
+                // 新增測試價格
+                const prices = JSON.parse(localStorage.getItem('stockCurrentPrices') || '{}');
+                prices['2330'] = 560;
+                prices['0050'] = 155;
+                localStorage.setItem('stockCurrentPrices', JSON.stringify(prices));
+                
+                document.getElementById('testDataResults').innerHTML = 
+                    '<div class="debug-item success">✅ 測試資料已新增</div>';
+                
+            } catch (error) {
+                document.getElementById('testDataResults').innerHTML = 
+                    `<div class="debug-item error">新增測試資料失敗: ${error.message}</div>`;
+            }
+        }
+        
+        function clearTestData() {
+            try {
+                localStorage.removeItem('investmentRecords');
+                localStorage.removeItem('stockCurrentPrices');
+                localStorage.removeItem('dcaPlans');
+                
+                document.getElementById('testDataResults').innerHTML = 
+                    '<div class="debug-item success">✅ 所有測試資料已清空</div>';
+                
+            } catch (error) {
+                document.getElementById('testDataResults').innerHTML = 
+                    `<div class="debug-item error">清空測試資料失敗: ${error.message}</div>`;
+            }
+        }
+        
+        function clearResults() {
+            document.getElementById('debugResults').innerHTML = '';
+            document.getElementById('portfolioResults').innerHTML = '';
+            document.getElementById('testDataResults').innerHTML = '';
+        }
+        
+        // 頁面載入時自動檢查
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAllData();
+        });
+    </script>
+</body>
+</html>

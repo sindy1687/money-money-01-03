@@ -1,0 +1,562 @@
+/* ========== 蝴蝶忍 (Kochō Shinobu) 主題 - 全新重寫版本 ========== */
+
+:root[data-theme="shinobu"] {
+    /* 主要顏色系統 - 基於蝴蝶忍的紫色和粉色系 */
+    --color-primary: #9B59B6;
+    --color-primary-light: #B873D3;
+    --color-primary-lighter: #D8BFD8;
+    --color-primary-dark: #7D3C98;
+    
+    /* 次要顏色 - 蝴蝶粉色 */
+    --color-secondary: #FFB6C1;
+    --color-secondary-light: #FFC0CB;
+    --color-secondary-dark: #FF91A4;
+    
+    /* 強調色 - 蝴蝶藍綠色 */
+    --color-accent: #87CEEB;
+    --color-accent-light: #ADD8E6;
+    --color-accent-dark: #5F9EA0;
+    
+    /* 狀態顏色 */
+    --color-success: #32CD32;
+    --color-danger: #FF6B6B;
+    --color-warning: #FFD700;
+    --color-info: #87CEEB;
+    --color-error: var(--color-danger);
+    
+    /* 背景顏色系統 */
+    --bg-primary: linear-gradient(135deg, rgba(155, 89, 182, 0.95) 0%, rgba(184, 115, 211, 0.85) 65%, rgba(255, 182, 193, 0.75) 100%);
+    --bg-body: rgba(155, 89, 182, 0.92);
+    --bg-body-strong: rgba(155, 89, 182, 0.96);
+    --bg-gradient: linear-gradient(135deg, #7D3C98 0%, #9B59B6 60%, #FFB6C1 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(155, 89, 182, 0.08) 0%, rgba(255, 182, 193, 0.25) 100%);
+    --bg-white: rgba(255, 255, 255, 0.85);
+    --bg-card: rgba(155, 89, 182, 0.88);
+    --bg-light: rgba(184, 115, 211, 0.75);
+    --bg-lighter: rgba(216, 191, 216, 0.65);
+    --bg-soft: rgba(255, 182, 193, 0.55);
+    --bg-soft-strong: rgba(184, 115, 211, 0.78);
+    
+    /* 文字顏色系統 */
+    --text-primary: rgba(255, 255, 255, 0.95);
+    --text-secondary: rgba(255, 255, 255, 0.78);
+    --text-tertiary: rgba(255, 255, 255, 0.62);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.96);
+    
+    /* 邊框顏色系統 */
+    --border-primary: rgba(255, 182, 193, 0.65);
+    --border-light: rgba(155, 89, 182, 0.24);
+    --border-medium: rgba(255, 182, 193, 0.4);
+    --card-border-color: rgba(255, 182, 193, 0.45);
+    --control-border-color: rgba(155, 89, 182, 0.32);
+    --table-border-color: rgba(155, 89, 182, 0.22);
+    
+    /* 陰影系統 */
+    --shadow-primary: 0 20px 60px rgba(155, 89, 182, 0.4);
+    --shadow-primary-lg: 0 30px 80px rgba(155, 89, 182, 0.35);
+    
+    /* 透明度變數系統 */
+    --color-primary-rgba-08: rgba(155, 89, 182, 0.08);
+    --color-primary-rgba-10: rgba(155, 89, 182, 0.1);
+    --color-primary-rgba-15: rgba(155, 89, 182, 0.15);
+    --color-primary-rgba-20: rgba(155, 89, 182, 0.2);
+    --color-primary-rgba-25: rgba(155, 89, 182, 0.25);
+    --color-primary-rgba-30: rgba(155, 89, 182, 0.3);
+    --color-primary-rgba-40: rgba(155, 89, 182, 0.4);
+    
+    --color-primary-light-rgba-08: rgba(184, 115, 211, 0.08);
+    --color-primary-light-rgba-10: rgba(184, 115, 211, 0.1);
+    --color-primary-light-rgba-15: rgba(184, 115, 211, 0.15);
+    --color-primary-light-rgba-20: rgba(184, 115, 211, 0.2);
+    --color-primary-light-rgba-25: rgba(184, 115, 211, 0.25);
+    --color-primary-light-rgba-30: rgba(184, 115, 211, 0.3);
+    --color-primary-light-rgba-40: rgba(184, 115, 211, 0.4);
+    
+    --color-secondary-rgba-08: rgba(255, 182, 193, 0.08);
+    --color-secondary-rgba-10: rgba(255, 182, 193, 0.1);
+    --color-secondary-rgba-15: rgba(255, 182, 193, 0.15);
+    --color-secondary-rgba-20: rgba(255, 182, 193, 0.2);
+    --color-secondary-rgba-25: rgba(255, 182, 193, 0.25);
+    --color-secondary-rgba-30: rgba(255, 182, 193, 0.3);
+    --color-secondary-rgba-40: rgba(255, 182, 193, 0.4);
+    
+    --color-accent-rgba-08: rgba(135, 206, 235, 0.08);
+    --color-accent-rgba-10: rgba(135, 206, 235, 0.1);
+    --color-accent-rgba-15: rgba(135, 206, 235, 0.15);
+    --color-accent-rgba-20: rgba(135, 206, 235, 0.2);
+    --color-accent-rgba-25: rgba(135, 206, 235, 0.25);
+    --color-accent-rgba-30: rgba(135, 206, 235, 0.3);
+    --color-accent-rgba-40: rgba(135, 206, 235, 0.4);
+    
+    /* 漸層背景 */
+    --bg-light-gradient: linear-gradient(135deg, rgba(155, 89, 182, 0.85) 0%, rgba(155, 89, 182, 0.65) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(155, 89, 182, 0.85) 0%, rgba(155, 89, 182, 0.65) 100%);
+    
+    /* 操作區域 */
+    --action-side-bg: color-mix(in srgb, rgba(155, 89, 182, 0.92) 75%, rgba(255, 182, 193, 0.08));
+    --action-side-bg-hover: color-mix(in srgb, rgba(155, 89, 182, 0.92) 65%, rgba(255, 182, 193, 0.2));
+    --action-side-text: var(--text-primary);
+}
+
+/* ========== 主體背景設定 ========== */
+:root[data-theme="shinobu"] body {
+    background: url("https://i.pinimg.com/736x/26/c9/c0/26c9c0297b0cad3dfa8d6d5c41ccfc18.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="shinobu"] body::before {
+    display: none;
+}
+
+/* ========== 頁面背景透明化 ========== */
+:root[data-theme="shinobu"] .page-input,
+:root[data-theme="shinobu"] .page-ledger,
+:root[data-theme="shinobu"] .page-chart,
+:root[data-theme="shinobu"] .page-budget,
+:root[data-theme="shinobu"] .page-monthly-planner,
+:root[data-theme="shinobu"] .page-daily-budget,
+:root[data-theme="shinobu"] .page-settings,
+:root[data-theme="shinobu"] .page-category-manage,
+:root[data-theme="shinobu"] .page-investment,
+:root[data-theme="shinobu"] .page-wallet,
+:root[data-theme="shinobu"] .page-history,
+:root[data-theme="shinobu"] .page-planner,
+:root[data-theme="shinobu"] .dividend-page,
+:root[data-theme="shinobu"] .dca-management-page,
+:root[data-theme="shinobu"] .dca-setup-page,
+:root[data-theme="shinobu"] .investment-input-page,
+:root[data-theme="shinobu"] .wishlist-content,
+:root[data-theme="shinobu"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+/* ========== 卡片系統 ========== */
+:root[data-theme="shinobu"] .card,
+:root[data-theme="shinobu"] .record-card,
+:root[data-theme="shinobu"] .ledger-card,
+:root[data-theme="shinobu"] .summary-card,
+:root[data-theme="shinobu"] .budget-card,
+:root[data-theme="shinobu"] .wallet-card,
+:root[data-theme="shinobu"] .chart-card,
+:root[data-theme="shinobu"] .investment-card,
+:root[data-theme="shinobu"] .stock-item-card,
+:root[data-theme="shinobu"] .monthly-planner-card,
+:root[data-theme="shinobu"] .dividend-stat-card,
+:root[data-theme="shinobu"] .dca-card,
+:root[data-theme="shinobu"] .installment-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .card:hover,
+:root[data-theme="shinobu"] .record-card:hover,
+:root[data-theme="shinobu"] .investment-card:hover,
+:root[data-theme="shinobu"] .stock-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    border-color: var(--color-secondary);
+}
+
+/* ========== 文字顏色系統 ========== */
+:root[data-theme="shinobu"] .card .value,
+:root[data-theme="shinobu"] .summary-value,
+:root[data-theme="shinobu"] .summary-label,
+:root[data-theme="shinobu"] .stock-card-value,
+:root[data-theme="shinobu"] .stock-card-label,
+:root[data-theme="shinobu"] .stock-card-name,
+:root[data-theme="shinobu"] .stat-label,
+:root[data-theme="shinobu"] .stat-value,
+:root[data-theme="shinobu"] .budget-summary-value,
+:root[data-theme="shinobu"] .budget-summary-label,
+:root[data-theme="shinobu"] .budget-amount,
+:root[data-theme="shinobu"] .budget-total,
+:root[data-theme="shinobu"] .total-budget,
+:root[data-theme="shinobu"] .budget-used,
+:root[data-theme="shinobu"] .used-budget,
+:root[data-theme="shinobu"] .budget-remaining,
+:root[data-theme="shinobu"] .remaining-budget,
+:root[data-theme="shinobu"] .transaction-amount,
+:root[data-theme="shinobu"] .transaction-category,
+:root[data-theme="shinobu"] .transaction-note,
+:root[data-theme="shinobu"] .investment-metric-value,
+:root[data-theme="shinobu"] .investment-metric-label {
+    color: var(--text-primary) !important;
+}
+
+/* ========== 標籤和徽章系統 ========== */
+:root[data-theme="shinobu"] .metric-pill,
+:root[data-theme="shinobu"] .stock-chip,
+:root[data-theme="shinobu"] .badge,
+:root[data-theme="shinobu"] .status-pill {
+    background: var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-primary) !important;
+    backdrop-filter: blur(8px);
+}
+
+/* ========== 卡片偽元素裝飾 ========== */
+:root[data-theme="shinobu"] .investment-card::before,
+:root[data-theme="shinobu"] .stock-item-card::before {
+    background: linear-gradient(135deg, var(--color-primary-rgba-22) 0%, var(--color-primary-light-rgba-45) 65%, var(--color-secondary-rgba-25) 100%);
+}
+
+/* ========== 導航系統 ========== */
+:root[data-theme="shinobu"] .nav-item.active {
+    background: var(--color-primary-rgba-16);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+}
+
+:root[data-theme="shinobu"] .bottom-nav {
+    background: var(--bg-card) !important;
+    border-top: 1px solid var(--border-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+/* ========== 模態框系統 ========== */
+:root[data-theme="shinobu"] .modal-content,
+:root[data-theme="shinobu"] .modal-content-standard,
+:root[data-theme="shinobu"] .budget-category-modal-content,
+:root[data-theme="shinobu"] .budget-setting-modal-content,
+:root[data-theme="shinobu"] .category-modal-content,
+:root[data-theme="shinobu"] .dca-execute-modal .modal-content,
+:root[data-theme="shinobu"] .account-modal-content,
+:root[data-theme="shinobu"] .emoji-modal-content,
+:root[data-theme="shinobu"] .history-modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(16px);
+}
+
+/* ========== 輸入區域 ========== */
+:root[data-theme="shinobu"] .input-section {
+    background: var(--bg-body-strong);
+    border-top: 2px solid var(--border-primary);
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+}
+
+/* ========== 表單元素 ========== */
+:root[data-theme="shinobu"] .form-input,
+:root[data-theme="shinobu"] .form-select,
+:root[data-theme="shinobu"] .form-textarea,
+:root[data-theme="shinobu"] .note-input {
+    background: var(--bg-light) !important;
+    border: 2px solid var(--border-medium) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .form-input:focus,
+:root[data-theme="shinobu"] .form-select:focus,
+:root[data-theme="shinobu"] .form-textarea:focus,
+:root[data-theme="shinobu"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px var(--color-primary-rgba-25) !important;
+    background: var(--bg-lighter) !important;
+}
+
+/* ========== 標題區域 ========== */
+:root[data-theme="shinobu"] .header-section {
+    background: var(--bg-body-strong) !important;
+    border-bottom: 1px solid var(--border-primary) !important;
+    backdrop-filter: blur(12px);
+}
+
+/* ========== 標籤按鈕系統 ========== */
+:root[data-theme="shinobu"] .tab-btn {
+    background: var(--bg-light) !important;
+    border: 1px solid var(--border-medium) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .tab-btn.active {
+    background: var(--color-primary-rgba-20) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+:root[data-theme="shinobu"] .tab-btn:hover {
+    background: var(--color-primary-rgba-15) !important;
+    border-color: var(--border-primary) !important;
+}
+
+/* ========== 數字鍵盤系統 ========== */
+:root[data-theme="shinobu"] .key-btn {
+    background: var(--bg-light) !important;
+    border: 2px solid var(--border-medium) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .key-btn:hover {
+    background: var(--color-primary-rgba-18) !important;
+    border-color: var(--border-primary) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-1px);
+}
+
+:root[data-theme="shinobu"] .key-btn:active {
+    background: var(--color-primary-rgba-25) !important;
+    transform: translateY(0);
+}
+
+:root[data-theme="shinobu"] .key-btn.operator {
+    background: var(--color-secondary-rgba-85) !important;
+    border-color: var(--color-secondary) !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.operator:hover {
+    background: var(--color-secondary-rgba-75) !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.delete {
+    background: var(--color-danger) !important;
+    border-color: var(--color-danger) !important;
+    color: white !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.delete:hover {
+    background: #FF5252 !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.equal {
+    background: var(--color-success) !important;
+    border-color: var(--color-success) !important;
+    color: white !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.equal:hover {
+    background: #28A745 !important;
+}
+
+/* ========== 按鈕系統 ========== */
+:root[data-theme="shinobu"] .btn,
+:root[data-theme="shinobu"] button {
+    background: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .btn:hover,
+:root[data-theme="shinobu"] button:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
+}
+
+/* ========== FAB按鈕 ========== */
+:root[data-theme="shinobu"] .fab-btn {
+    background: var(--color-primary);
+    border: none;
+    box-shadow: 0 12px 30px rgba(155, 89, 182, 0.4);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .fab-btn:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(155, 89, 182, 0.5);
+}
+
+/* ========== 滾動條樣式 ========== */
+:root[data-theme="shinobu"] ::-webkit-scrollbar {
+    width: 8px;
+}
+
+:root[data-theme="shinobu"] ::-webkit-scrollbar-track {
+    background: var(--color-primary-rgba-10);
+    border-radius: 4px;
+}
+
+:root[data-theme="shinobu"] ::-webkit-scrollbar-thumb {
+    background: var(--color-primary-rgba-40);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+:root[data-theme="shinobu"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-rgba-60);
+}
+
+/* ========== 特殊元素樣式 ========== */
+:root[data-theme="shinobu"] .toggle-slider {
+    background: var(--color-primary-rgba-30);
+}
+
+:root[data-theme="shinobu"] .toggle-slider.active {
+    background: var(--color-primary);
+}
+
+:root[data-theme="shinobu"] .dca-item-status.active {
+    background: var(--color-primary-rgba-20);
+    color: var(--text-primary);
+}
+
+:root[data-theme="shinobu"] .emoji-upload-btn:hover {
+    background: var(--color-primary-rgba-15);
+}
+
+:root[data-theme="shinobu"] .record-menu-item.delete:hover {
+    background: var(--color-danger);
+    color: white;
+}
+
+:root[data-theme="shinobu"] .thumbnail-remove {
+    background: var(--color-danger);
+    color: white;
+}
+
+/* ========== 深色模式適配 ========== */
+:root[data-theme="shinobu"] .dark .dividend-reinvest-label {
+    background: var(--color-primary-rgba-20);
+    color: var(--text-primary);
+}
+
+:root[data-theme="shinobu"] :root.dark .entry-detail-content {
+    background: var(--bg-card);
+}
+
+/* ========== 響應式設計 ========== */
+@media (max-width: 768px) {
+    :root[data-theme="shinobu"] .card,
+    :root[data-theme="shinobu"] .record-card,
+    :root[data-theme="shinobu"] .investment-card {
+        border-radius: 16px;
+        margin: 8px;
+    }
+    
+    :root[data-theme="shinobu"] .key-btn {
+        border-radius: 12px;
+        font-size: 18px;
+    }
+}
+
+/* ========== 動畫效果 ========== */
+@keyframes shinobuGlow {
+    0% { box-shadow: 0 0 20px rgba(155, 89, 182, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(155, 89, 182, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(155, 89, 182, 0.3); }
+}
+
+:root[data-theme="shinobu"] .card.glow {
+    animation: shinobuGlow 2s ease-in-out infinite;
+}
+
+/* ========== 特殊效果 ========== */
+:root[data-theme="shinobu"] .stock-grid-card-tag--shares {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-secondary-rgba-20) 100%);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="shinobu"] .portfolio-shares {
+    background: linear-gradient(135deg, var(--color-primary-rgba-20) 0%, var(--color-accent-rgba-15) 100%);
+    border: 2px solid var(--border-primary);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.2);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .portfolio-shares:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(155, 89, 182, 0.3);
+}
+
+/* ========== 統計項目樣式 ========== */
+:root[data-theme="shinobu"] .stat-item {
+    background: linear-gradient(135deg, var(--color-primary-rgba-10) 0%, var(--color-primary-rgba-15) 50%, var(--color-primary-rgba-08) 100%) !important;
+    border: 1px solid var(--color-primary-rgba-20) !important;
+    box-shadow: 0 4px 12px var(--color-primary-rgba-15) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="shinobu"] .stat-item:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-primary-rgba-20) 50%, var(--color-primary-rgba-12) 100%) !important;
+    box-shadow: 0 6px 16px var(--color-primary-rgba-20) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ========== 每日支出樣式 ========== */
+:root[data-theme="shinobu"] .daily-expense-display,
+:root[data-theme="shinobu"] .daily-expense-in-history {
+    background: linear-gradient(135deg, var(--color-primary-rgba-10) 0%, var(--color-primary-rgba-15) 50%, var(--color-primary-rgba-10) 100%) !important;
+    border: 1px solid var(--color-primary-rgba-20) !important;
+    box-shadow: 0 4px 12px var(--color-primary-rgba-15) !important;
+    border-radius: 12px !important;
+    padding: 8px 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="shinobu"] .daily-expense-display:hover,
+:root[data-theme="shinobu"] .daily-expense-in-history:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-primary-rgba-20) 50%, var(--color-primary-rgba-15) 100%) !important;
+    box-shadow: 0 6px 16px var(--color-primary-rgba-20) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ========== 記帳卡片樣式 ========== */
+:root[data-theme="shinobu"] .record-card {
+    background: linear-gradient(135deg, var(--color-primary-rgba-10) 0%, var(--color-primary-rgba-15) 50%, var(--color-primary-rgba-08) 100%) !important;
+    border: 2px solid var(--border-primary) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 12px var(--color-primary-rgba-15) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="shinobu"] .record-card:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-primary-rgba-20) 50%, var(--color-primary-rgba-12) 100%) !important;
+    box-shadow: 0 6px 16px var(--color-primary-rgba-20) !important;
+    transform: translateY(-2px) !important;
+}
+
+:root[data-theme="shinobu"] .record-card::before {
+    background-image: none !important;
+    background: transparent !important;
+    opacity: 0 !important;
+}
+
+/* ========== 主題特色效果 ========== */
+:root[data-theme="shinobu"] .shinobu-special {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+    background-size: 200% 200%;
+    animation: shinobuGradient 3s ease infinite;
+}
+
+@keyframes shinobuGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========== 完成標記 ========== */
+/* 蝴蝶忍主題重寫完成 - 包含完整的顏色系統、現代化設計和豐富的視覺效果 */

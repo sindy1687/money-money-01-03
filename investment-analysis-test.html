@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投資分析測試</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #357abd;
+        }
+        .result {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #4a90e2;
+        }
+        .metric {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .insight {
+            background: #fff3e0;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+            border-left: 3px solid #ff9800;
+        }
+        .recommendation {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+            border-left: 3px solid #4caf50;
+        }
+        .risk-low { color: #4caf50; font-weight: bold; }
+        .risk-medium { color: #ff9800; font-weight: bold; }
+        .risk-high { color: #f44336; font-weight: bold; }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 5px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50, #8bc34a);
+            transition: width 0.3s ease;
+        }
+        .goal-card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .sample-holding {
+            background: #f5f5f5;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .score-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+        }
+        .score-high { background: #4caf50; }
+        .score-medium { background: #ff9800; }
+        .score-low { background: #f44336; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📈 投資分析功能測試</h1>
+        
+        <!-- 投資組合分析測試 -->
+        <div class="section">
+            <h2>📊 投資組合分析測試</h2>
+            
+            <div class="two-column">
+                <div>
+                    <h3>測試資料</h3>
+                    <div id="sampleHoldings">
+                        <div class="sample-holding">
+                            <strong>台積電 (2330)</strong> - 10股 @ $550 - 科技股
+                        </div>
+                        <div class="sample-holding">
+                            <strong>聯發科 (2454)</strong> - 5股 @ $800 - 科技股
+                        </div>
+                        <div class="sample-holding">
+                            <strong>台新金 (2882)</strong> - 20股 @ $15 - 金融股
+                        </div>
+                        <div class="sample-holding">
+                            <strong>中鋼 (2002)</strong> - 15股 @ $35 - 傳產股
+                        </div>
+                        <div class="sample-holding">
+                            <strong>台灣50 (0050)</strong> - 100股 @ $150 - ETF
+                        </div>
+                    </div>
+                    
+                    <button onclick="testPortfolioAnalysis()">分析投資組合</button>
+                    <button onclick="generateMoreHoldings()">生成更多測試資料</button>
+                    <button onclick="addCustomHolding()">新增自訂持股</button>
+                </div>
+                
+                <div>
+                    <h3>自訂持股</h3>
+                    <div class="form-group">
+                        <label for="stockName">股票名稱</label>
+                        <input type="text" id="stockName" placeholder="例如: 台積電">
+                    </div>
+                    <div class="form-group">
+                        <label for="stockSymbol">股票代碼</label>
+                        <input type="text" id="stockSymbol" placeholder="例如: 2330">
+                    </div>
+                    <div class="form-group">
+                        <label for="stockQuantity">持股數量</label>
+                        <input type="number" id="stockQuantity" placeholder="例如: 10">
+                    </div>
+                    <div class="form-group">
+                        <label for="stockPrice">當前價格</label>
+                        <input type="number" id="stockPrice" placeholder="例如: 550">
+                    </div>
+                    <div class="form-group">
+                        <label for="stockCost">成本價格</label>
+                        <input type="number" id="stockCost" placeholder="例如: 500">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="portfolioResult" class="result" style="display: none;"></div>
+        </div>
+        
+        <!-- 投資目標追蹤測試 -->
+        <div class="section">
+            <h2>🎯 投資目標追蹤測試</h2>
+            
+            <div class="two-column">
+                <div>
+                    <h3>測試目標</h3>
+                    <div id="sampleGoals">
+                        <div class="goal-card">
+                            <strong>退休基金</strong><br>
+                            目標: NT$10,000,000<br>
+                            期限: 2045年<br>
+                            狀態: 進行中
+                        </div>
+                        <div class="goal-card">
+                            <strong>教育基金</strong><br>
+                            目標: NT$2,000,000<br>
+                            期限: 2030年<br>
+                            狀態: 進行中
+                        </div>
+                        <div class="goal-card">
+                            <strong>購屋基金</strong><br>
+                            目標: NT$5,000,000<br>
+                            期限: 2028年<br>
+                            狀態: 進行中
+                        </div>
+                    </div>
+                    
+                    <button onclick="testGoalTracking()">追蹤投資目標</button>
+                    <button onclick="addCustomGoal()">新增自訂目標</button>
+                </div>
+                
+                <div>
+                    <h3>自訂目標</h3>
+                    <div class="form-group">
+                        <label for="goalName">目標名稱</label>
+                        <input type="text" id="goalName" placeholder="例如: 退休基金">
+                    </div>
+                    <div class="form-group">
+                        <label for="goalType">目標類型</label>
+                        <select id="goalType">
+                            <option value="retirement">退休基金</option>
+                            <option value="education">教育基金</option>
+                            <option value="house">購屋基金</option>
+                            <option value="general">一般目標</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="goalAmount">目標金額</label>
+                        <input type="number" id="goalAmount" placeholder="例如: 10000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="goalDate">目標日期</label>
+                        <input type="date" id="goalDate">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="goalResult" class="result" style="display: none;"></div>
+        </div>
+        
+        <!-- 快速測試 -->
+        <div class="section">
+            <h2>⚡ 快速測試</h2>
+            <button onclick="quickTest('conservative')">保守型投資組合</button>
+            <button onclick="quickTest('balanced')">平衡型投資組合</button>
+            <button onclick="quickTest('aggressive')">積極型投資組合</button>
+            <button onclick="quickTest('retirement')">退休目標測試</button>
+            <button onclick="quickTest('house')">購屋目標測試</button>
+        </div>
+    </div>
+
+    <!-- 載入投資分析模組 -->
+    <script src="js/investment-analysis.js"></script>
+    
+    <script>
+        // 測試資料
+        let testHoldings = [
+            { symbol: '2330', name: '台積電', quantity: 10, currentPrice: 550, avgCost: 500, type: 'stock' },
+            { symbol: '2454', name: '聯發科', quantity: 5, currentPrice: 800, avgCost: 750, type: 'stock' },
+            { symbol: '2882', name: '台新金', quantity: 20, currentPrice: 15, avgCost: 12, type: 'stock' },
+            { symbol: '2002', name: '中鋼', quantity: 15, currentPrice: 35, avgCost: 30, type: 'stock' },
+            { symbol: '0050', name: '台灣50', quantity: 100, currentPrice: 150, avgCost: 140, type: 'etf' }
+        ];
+        
+        let testGoals = [
+            {
+                id: 'retirement',
+                name: '退休基金',
+                type: 'retirement',
+                targetAmount: 10000000,
+                targetDate: '2045-01-01',
+                duration: 240
+            },
+            {
+                id: 'education',
+                name: '教育基金',
+                type: 'education',
+                targetAmount: 2000000,
+                targetDate: '2030-01-01',
+                duration: 72
+            },
+            {
+                id: 'house',
+                name: '購屋基金',
+                type: 'house',
+                targetAmount: 5000000,
+                targetDate: '2028-01-01',
+                duration: 48
+            }
+        ];
+        
+        // 測試投資組合分析
+        function testPortfolioAnalysis() {
+            const analysis = InvestmentAnalysis.analyzePortfolio(testHoldings);
+            const resultDiv = document.getElementById('portfolioResult');
+            
+            if (analysis) {
+                let html = `
+                    <h3>📊 投資組合分析結果</h3>
+                    
+                    <h4>💰 投資組合概況</h4>
+                    <div class="metric">
+                        <span>總市值:</span>
+                        <strong>NT$${analysis.summary.totalValue.toLocaleString()}</strong>
+                    </div>
+                    <div class="metric">
+                        <span>總成本:</span>
+                        <strong>NT$${analysis.summary.totalCost.toLocaleString()}</strong>
+                    </div>
+                    <div class="metric">
+                        <span>總損益:</span>
+                        <strong style="color: ${analysis.summary.totalGain >= 0 ? '#4caf50' : '#f44336'}">
+                            NT$${analysis.summary.totalGain.toLocaleString()} (${analysis.summary.totalGainPercent.toFixed(1)}%)
+                        </strong>
+                    </div>
+                    <div class="metric">
+                        <span>持股數量:</span>
+                        <strong>${analysis.summary.holdingsCount}</strong>
+                    </div>
+                    
+                    <h4>⚠️ 風險評估</h4>
+                    <div class="metric">
+                        <span>風險評分:</span>
+                        <div class="score-circle score-${analysis.risk.riskLevel}">${analysis.risk.riskScore}</div>
+                    </div>
+                    <div class="metric">
+                        <span>風險等級:</span>
+                        <strong class="risk-${analysis.risk.riskLevel}">${getRiskLevelText(analysis.risk.riskLevel)}</strong>
+                    </div>
+                    <div class="metric">
+                        <span>集中度風險:</span>
+                        <strong>${(analysis.risk.concentrationRisk * 100).toFixed(1)}%</strong>
+                    </div>
+                    <div class="metric">
+                        <span>波動率風險:</span>
+                        <strong>${(analysis.risk.volatilityRisk * 100).toFixed(1)}%</strong>
+                    </div>
+                    
+                    <h4>🌍 分散度分析</h4>
+                    <div class="metric">
+                        <span>分散度分數:</span>
+                        <div class="score-circle score-${getScoreLevel(analysis.diversification.diversificationScore)}">${analysis.diversification.diversificationScore}</div>
+                    </div>
+                `;
+                
+                // 產業分配
+                html += '<h5>產業分配:</h5>';
+                Object.entries(analysis.diversification.sectorAllocation).forEach(([sector, value]) => {
+                    const percentage = (value / analysis.summary.totalValue * 100).toFixed(1);
+                    html += `
+                        <div class="metric">
+                            <span>${sector}:</span>
+                            <strong>${percentage}%</strong>
+                        </div>
+                    `;
+                });
+                
+                // 地域分配
+                html += '<h5>地域分配:</h5>';
+                Object.entries(analysis.diversification.geographicAllocation).forEach(([region, value]) => {
+                    const percentage = (value / analysis.summary.totalValue * 100).toFixed(1);
+                    html += `
+                        <div class="metric">
+                            <span>${region}:</span>
+                            <strong>${percentage}%</strong>
+                        </div>
+                    `;
+                });
+                
+                // 績效分析
+                html += `
+                    <h4>📈 績效分析</h4>
+                    <div class="metric">
+                        <span>最佳表現:</span>
+                        <strong>${analysis.performance.bestPerformer.name} (${analysis.performance.bestPerformer.return.toFixed(1)}%)</strong>
+                    </div>
+                    <div class="metric">
+                        <span>最差表現:</span>
+                        <strong>${analysis.performance.worstPerformer.name} (${analysis.performance.worstPerformer.return.toFixed(1)}%)</strong>
+                    </div>
+                    <div class="metric">
+                        <span>平均報酬率:</span>
+                        <strong>${analysis.performance.averageReturn.toFixed(1)}%</strong>
+                    </div>
+                    <div class="metric">
+                        <span>夏普比率:</span>
+                        <strong>${analysis.performance.sharpeRatio.toFixed(2)}</strong>
+                    </div>
+                `;
+                
+                // 洞察
+                html += '<h4>💡 投資洞察</h4>';
+                analysis.insights.forEach(insight => {
+                    html += `
+                        <div class="insight">
+                            <strong>${insight.title}:</strong> ${insight.content}
+                        </div>
+                    `;
+                });
+                
+                // 建議
+                html += '<h4>🎯 改善建議</h4>';
+                analysis.recommendations.forEach(rec => {
+                    html += `
+                        <div class="recommendation">
+                            <strong>${rec.title}:</strong> ${rec.content}
+                        </div>
+                    `;
+                });
+                
+                resultDiv.innerHTML = html;
+            } else {
+                resultDiv.innerHTML = '<div class="result">無法進行分析，請檢查資料格式</div>';
+            }
+            
+            resultDiv.style.display = 'block';
+        }
+        
+        // 測試目標追蹤
+        function testGoalTracking() {
+            const currentPortfolio = InvestmentAnalysis.analyzePortfolio(testHoldings) || { summary: { totalValue: 100000 } };
+            const tracking = InvestmentAnalysis.trackInvestmentGoals(testGoals, currentPortfolio);
+            const resultDiv = document.getElementById('goalResult');
+            
+            if (tracking) {
+                let html = `
+                    <h3>🎯 投資目標追蹤結果</h3>
+                    
+                    <h4>📊 目標概況</h4>
+                    <div class="metric">
+                        <span>總目標數:</span>
+                        <strong>${tracking.overview.totalGoals}</strong>
+                    </div>
+                    <div class="metric">
+                        <span>已完成:</span>
+                        <strong>${tracking.overview.completedGoals}</strong>
+                    </div>
+                    <div class="metric">
+                        <span>進行中:</span>
+                        <strong>${tracking.overview.inProgressGoals}</strong>
+                    </div>
+                    <div class="metric">
+                        <span>未開始:</span>
+                        <strong>${tracking.overview.notStartedGoals}</strong>
+                    </div>
+                    <div class="metric">
+                        <span>總目標金額:</span>
+                        <strong>NT$${tracking.overview.totalTargetAmount.toLocaleString()}</strong>
+                    </div>
+                    <div class="metric">
+                        <span>當前進度:</span>
+                        <strong>NT$${tracking.overview.totalCurrentAmount.toLocaleString()} (${Math.round(tracking.overview.totalCurrentAmount / tracking.overview.totalTargetAmount * 100)}%)</strong>
+                    </div>
+                    
+                    <h4>🎯 個別目標進度</h4>
+                `;
+                
+                tracking.goals.forEach(goal => {
+                    const statusColor = goal.status === 'completed' ? '#4caf50' : 
+                                       goal.status === 'in_progress' ? '#ff9800' : '#f44336';
+                    
+                    html += `
+                        <div class="goal-card">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong>${goal.name}</strong><br>
+                                    <span style="color: ${statusColor};">狀態: ${getStatusText(goal.status)}</span>
+                                </div>
+                                <div class="score-circle score-${getScoreLevel(goal.progress)}">${goal.progress}%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${goal.progress}%"></div>
+                            </div>
+                            <div style="font-size: 12px; margin-top: 5px;">
+                                目標: NT$${goal.targetAmount.toLocaleString()} | 
+                                當前: NT$${goal.currentAmount.toLocaleString()} | 
+                                剩餘: ${goal.timeRemaining}個月 | 
+                                月需: NT$${goal.monthlyRequired.toLocaleString()}
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                // 洞察
+                html += '<h4>💡 目標洞察</h4>';
+                tracking.insights.forEach(insight => {
+                    html += `
+                        <div class="insight">
+                            <strong>${insight.title}:</strong> ${insight.content}
+                        </div>
+                    `;
+                });
+                
+                // 建議
+                html += '<h4>🎯 改善建議</h4>';
+                tracking.recommendations.forEach(rec => {
+                    html += `
+                        <div class="recommendation">
+                            <strong>${rec.title}:</strong> ${rec.content}
+                        </div>
+                    `;
+                });
+                
+                resultDiv.innerHTML = html;
+            } else {
+                resultDiv.innerHTML = '<div class="result">無法進行追蹤，請檢查資料格式</div>';
+            }
+            
+            resultDiv.style.display = 'block';
+        }
+        
+        // 生成更多測試持股
+        function generateMoreHoldings() {
+            const stocks = [
+                { symbol: '2308', name: '台達電', sector: '電子', price: 250 },
+                { symbol: '2317', name: '鴻海', sector: '電子', price: 120 },
+                { symbol: '1301', name: '台塑', sector: '傳產', price: 80 },
+                { symbol: '1303', name: '南亞', sector: '傳產', price: 70 },
+                { symbol: '2881', name: '富邦金', sector: '金融', price: 45 },
+                { symbol: '2884', name: '玉山金', sector: '金融', price: 20 },
+                { symbol: '4155', name: '藥華', sector: '生技', price: 180 },
+                { symbol: '6532', name: '台新医', sector: '生技', price: 90 }
+            ];
+            
+            for (let i = 0; i < 5; i++) {
+                const stock = stocks[Math.floor(Math.random() * stocks.length)];
+                const quantity = Math.floor(Math.random() * 50) + 1;
+                const costBase = stock.price * (0.8 + Math.random() * 0.4);
+                
+                testHoldings.push({
+                    symbol: stock.symbol,
+                    name: stock.name,
+                    quantity: quantity,
+                    currentPrice: stock.price,
+                    avgCost: costBase,
+                    type: 'stock'
+                });
+            }
+            
+            updateHoldingsDisplay();
+            alert('已生成5筆測試持股，總共' + testHoldings.length + '筆');
+        }
+        
+        // 新增自訂持股
+        function addCustomHolding() {
+            const name = document.getElementById('stockName').value;
+            const symbol = document.getElementById('stockSymbol').value;
+            const quantity = parseInt(document.getElementById('stockQuantity').value);
+            const price = parseFloat(document.getElementById('stockPrice').value);
+            const cost = parseFloat(document.getElementById('stockCost').value);
+            
+            if (!name || !symbol || !quantity || !price || !cost) {
+                alert('請填寫完整的持股資訊');
+                return;
+            }
+            
+            testHoldings.push({
+                symbol: symbol,
+                name: name,
+                quantity: quantity,
+                currentPrice: price,
+                avgCost: cost,
+                type: 'stock'
+            });
+            
+            updateHoldingsDisplay();
+            
+            // 清空表單
+            document.getElementById('stockName').value = '';
+            document.getElementById('stockSymbol').value = '';
+            document.getElementById('stockQuantity').value = '';
+            document.getElementById('stockPrice').value = '';
+            document.getElementById('stockCost').value = '';
+            
+            alert('已新增持股');
+        }
+        
+        // 新增自訂目標
+        function addCustomGoal() {
+            const name = document.getElementById('goalName').value;
+            const type = document.getElementById('goalType').value;
+            const amount = parseFloat(document.getElementById('goalAmount').value);
+            const date = document.getElementById('goalDate').value;
+            
+            if (!name || !amount || !date) {
+                alert('請填寫完整的目標資訊');
+                return;
+            }
+            
+            const targetDate = new Date(date);
+            const now = new Date();
+            const duration = Math.floor((targetDate - now) / (1000 * 60 * 60 * 24 * 30));
+            
+            testGoals.push({
+                id: 'custom_' + Date.now(),
+                name: name,
+                type: type,
+                targetAmount: amount,
+                targetDate: date,
+                duration: duration
+            });
+            
+            updateGoalsDisplay();
+            
+            // 清空表單
+            document.getElementById('goalName').value = '';
+            document.getElementById('goalAmount').value = '';
+            document.getElementById('goalDate').value = '';
+            
+            alert('已新增目標');
+        }
+        
+        // 快速測試
+        function quickTest(type) {
+            const testCases = {
+                conservative: {
+                    holdings: [
+                        { symbol: '0056', name: '高股息ETF', quantity: 100, currentPrice: 30, avgCost: 28, type: 'etf' },
+                        { symbol: '2884', name: '玉山金', quantity: 50, currentPrice: 20, avgCost: 18, type: 'stock' },
+                        { symbol: '1301', name: '台塑', quantity: 30, currentPrice: 80, avgCost: 75, type: 'stock' }
+                    ],
+                    description: '保守型投資組合'
+                },
+                balanced: {
+                    holdings: [
+                        { symbol: '0050', name: '台灣50', quantity: 100, currentPrice: 150, avgCost: 140, type: 'etf' },
+                        { symbol: '2330', name: '台積電', quantity: 5, currentPrice: 550, avgCost: 500, type: 'stock' },
+                        { symbol: '2882', name: '台新金', quantity: 20, currentPrice: 15, avgCost: 12, type: 'stock' },
+                        { symbol: '2308', name: '台達電', quantity: 10, currentPrice: 250, avgCost: 230, type: 'stock' }
+                    ],
+                    description: '平衡型投資組合'
+                },
+                aggressive: {
+                    holdings: [
+                        { symbol: '2330', name: '台積電', quantity: 20, currentPrice: 550, avgCost: 500, type: 'stock' },
+                        { symbol: '2454', name: '聯發科', quantity: 10, currentPrice: 800, avgCost: 750, type: 'stock' },
+                        { symbol: '4155', name: '藥華', quantity: 15, currentPrice: 180, avgCost: 150, type: 'stock' }
+                    ],
+                    description: '積極型投資組合'
+                },
+                retirement: {
+                    goals: [{
+                        id: 'retirement_test',
+                        name: '退休基金測試',
+                        type: 'retirement',
+                        targetAmount: 20000000,
+                        targetDate: '2040-01-01',
+                        duration: 192
+                    }],
+                    description: '退休目標測試'
+                },
+                house: {
+                    goals: [{
+                        id: 'house_test',
+                        name: '購屋基金測試',
+                        type: 'house',
+                        targetAmount: 8000000,
+                        targetDate: '2030-01-01',
+                        duration: 72
+                    }],
+                    description: '購屋目標測試'
+                }
+            };
+            
+            const testCase = testCases[type];
+            
+            if (testCase.holdings) {
+                testHoldings = testCase.holdings;
+                updateHoldingsDisplay();
+                testPortfolioAnalysis();
+            } else if (testCase.goals) {
+                testGoals = testCase.goals;
+                updateGoalsDisplay();
+                testGoalTracking();
+            }
+            
+            alert(`已載入${testCase.description}測試資料`);
+        }
+        
+        // 更新顯示
+        function updateHoldingsDisplay() {
+            const container = document.getElementById('sampleHoldings');
+            container.innerHTML = testHoldings.slice(-10).map(holding => `
+                <div class="sample-holding">
+                    <strong>${holding.name} (${holding.symbol})</strong> - ${holding.quantity}股 @ $${holding.currentPrice} - ${getStockTypeText(holding)}
+                </div>
+            `).join('');
+        }
+        
+        function updateGoalsDisplay() {
+            const container = document.getElementById('sampleGoals');
+            container.innerHTML = testGoals.map(goal => {
+                const targetDate = new Date(goal.targetDate);
+                const now = new Date();
+                const remaining = Math.floor((targetDate - now) / (1000 * 60 * 60 * 24 * 30));
+                
+                return `
+                    <div class="goal-card">
+                        <strong>${goal.name}</strong><br>
+                        目標: NT$${goal.targetAmount.toLocaleString()}<br>
+                        期限: ${goal.targetDate}<br>
+                        剩餘: ${remaining}個月
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // 輔助函數
+        function getRiskLevelText(level) {
+            const texts = {
+                'low': '低風險',
+                'medium': '中等風險',
+                'high': '高風險'
+            };
+            return texts[level] || level;
+        }
+        
+        function getScoreLevel(score) {
+            if (score >= 70) return 'high';
+            if (score >= 40) return 'medium';
+            return 'low';
+        }
+        
+        function getStatusText(status) {
+            const texts = {
+                'completed': '已完成',
+                'in_progress': '進行中',
+                'not_started': '未開始'
+            };
+            return texts[status] || status;
+        }
+        
+        function getStockTypeText(holding) {
+            if (holding.type === 'etf') return 'ETF';
+            if (holding.name.includes('電') || holding.name.includes('半導體')) return '科技股';
+            if (holding.name.includes('金') || holding.name.includes('銀')) return '金融股';
+            if (holding.name.includes('塑') || holding.name.includes('鋼')) return '傳產股';
+            if (holding.name.includes('藥') || holding.name.includes('醫')) return '生技股';
+            return '股票';
+        }
+        
+        // 頁面載入完成
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('投資分析測試頁面已載入');
+            console.log('可用功能:', Object.keys(window.InvestmentAnalysis));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡單測試</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .theme-switcher {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .theme-switcher button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            font-size: 14px;
+        }
+        .theme-switcher button:hover {
+            background: #0056b3;
+        }
+        .theme-switcher button.active {
+            background: #28a745;
+        }
+        .summary-card {
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 12px;
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 簡單測試 - 節日慶典主題</h1>
+        
+        <div class="theme-switcher">
+            <button onclick="switchTheme('blue')">藍色主題</button>
+            <button onclick="switchTheme('pink')">粉色主題</button>
+            <button onclick="switchTheme('festive')" class="active">節日慶典主題</button>
+        </div>
+
+        <div class="summary-card">
+            這是一個測試卡片
+        </div>
+        
+        <div class="debug-info">
+            <div>當前主題: <span id="currentTheme">檢查中...</span></div>
+            <div>背景圖片: <span id="bgImage">檢查中...</span></div>
+            <div>背景顏色: <span id="bgColor">檢查中...</span></div>
+            <div>邊框顏色: <span id="borderColor">檢查中...</span></div>
+            <div>檢測到的CSS規則: <span id="cssDetected">檢查中...</span></div>
+        </div>
+    </div>
+
+    <script>
+        function switchTheme(themeId) {
+            const root = document.documentElement;
+            root.setAttribute('data-theme', themeId);
+            
+            // 更新按鈕狀態
+            document.querySelectorAll('.theme-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 更新調試信息
+            updateDebugInfo();
+        }
+        
+        function updateDebugInfo() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            document.getElementById('currentTheme').textContent = currentTheme;
+            
+            // 檢查摘要卡片
+            const summaryCard = document.querySelector('.summary-card');
+            if (summaryCard) {
+                const style = getComputedStyle(summaryCard);
+                document.getElementById('bgImage').textContent = 
+                    style.backgroundImage.substring(0, 100) + '...';
+                document.getElementById('bgColor').textContent = 
+                    style.backgroundColor;
+                document.getElementById('borderColor').textContent = 
+                    style.borderColor;
+            }
+            
+            // 檢查是否檢測到節日慶典CSS規則
+            detectFestiveCSS();
+        }
+        
+        function detectFestiveCSS() {
+            const summaryCard = document.querySelector('.summary-card');
+            const style = getComputedStyle(summaryCard);
+            const hasBackgroundImage = style.backgroundImage && style.backgroundImage !== 'none';
+            const hasFestiveColor = style.backgroundColor.includes('230, 57, 70');
+            
+            document.getElementById('cssDetected').textContent = 
+                hasBackgroundImage && hasFestiveColor ? '✅ 檢測到節日慶典CSS' : '❌ 未檢測到節日慶典CSS';
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(updateDebugInfo, 100);
+        });
+    </script>
+</body>
+</html>

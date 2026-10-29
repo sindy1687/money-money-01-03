@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代理修復測試</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.success {
+            background-color: #28a745;
+        }
+        .button.warning {
+            background-color: #ffc107;
+            color: #212529;
+        }
+        .button.danger {
+            background-color: #dc3545;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .data-display {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .proxy-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+        .proxy-header {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .proxy-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 代理修復測試</h1>
+    
+    <div class="container">
+        <h3>📊 代理服務測試</h3>
+        <button class="button" onclick="testAllProxies()">測試所有代理</button>
+        <button class="button success" onclick="testSingleProxy('2330')">測試台積電 (2330)</button>
+        <button class="button warning" onclick="testSingleProxy('0056')">測試台灣50 (0056)</button>
+        <div id="proxyStatus"></div>
+        <div id="proxyResults"></div>
+    </div>
+    
+    <div class="container">
+        <h3>🔍 股價獲取測試</h3>
+        <button class="button" onclick="testStockPriceFetch()">測試股價獲取</button>
+        <button class="button success" onclick="testPreviousClose()">測試昨收價</button>
+        <button class="button" onclick="testWithMockData()">使用模擬數據</button>
+        <div id="priceStatus"></div>
+        <div id="priceResults"></div>
+    </div>
+
+    <!-- 載入必要的腳本 -->
+    <script src="script.js"></script>
+
+    <script>
+        function updateStatus(elementId, message, type = 'success') {
+            const statusDiv = document.getElementById(elementId);
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        function updateResults(elementId, data) {
+            const resultsDiv = document.getElementById(elementId);
+            resultsDiv.innerHTML = `<div class="data-display">${JSON.stringify(data, null, 2)}</div>`;
+        }
+
+        async function testAllProxies() {
+            updateStatus('proxyStatus', '🔄 正在測試所有代理服務...', 'warning');
+            
+            const testUrl = 'https://query1.finance.yahoo.com/v8/finance/chart/2330.TW?interval=1d&range=1d';
+            const results = [];
+            
+            for (const proxyBase of publicQuoteProxies) {
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 10000);
+                    
+                    let finalUrl;
+                    if (proxyBase.includes('corsproxy.io')) {
+                        finalUrl = `${proxyBase}${encodeURIComponent(testUrl)}`;
+                    } else if (proxyBase.includes('cors-anywhere')) {
+                        finalUrl = `${proxyBase}${testUrl}`;
+                    } else {
+                        finalUrl = `${proxyBase}${encodeURIComponent(testUrl)}`;
+                    }
+                    
+                    const startTime = Date.now();
+                    const resp = await fetch(finalUrl, { signal: controller.signal });
+                    const endTime = Date.now();
+                    clearTimeout(timeoutId);
+                    
+                    if (resp && resp.ok) {
+                        const text = await resp.text();
+                        let raw = text;
+                        
+                        try {
+                            const wrapped = JSON.parse(text);
+                            if (wrapped && typeof wrapped === 'object' && typeof wrapped.contents === 'string') {
+                                raw = wrapped.contents;
+                            }
+                        } catch (_) {}
+                        
+                        const firstBrace = raw.indexOf('{');
+                        if (firstBrace > 0) raw = raw.slice(firstBrace);
+                        
+                        try {
+                            const data = JSON.parse(raw);
+                            if (data && data.chart && data.chart.result && data.chart.result.length > 0) {
+                                const result = data.chart.result[0];
+                                const currentPrice = result.meta?.regularMarketPrice || result.meta?.previousClose || null;
+                                
+                                results.push({
+                                    proxy: proxyBase,
+                                    status: 'success',
+                                    responseTime: endTime - startTime,
+                                    price: currentPrice,
+                                    error: null
+                                });
+                            } else {
+                                results.push({
+                                    proxy: proxyBase,
+                                    status: 'invalid_data',
+                                    responseTime: endTime - startTime,
+                                    price: null,
+                                    error: 'Invalid data format'
+                                });
+                            }
+                        } catch (parseError) {
+                            results.push({
+                                proxy: proxyBase,
+                                status: 'parse_error',
+                                responseTime: endTime - startTime,
+                                price: null,
+                                error: parseError.message
+                            });
+                        }
+                    } else {
+                        results.push({
+                            proxy: proxyBase,
+                            status: 'http_error',
+                            responseTime: endTime - startTime,
+                            price: null,
+                            error: `HTTP ${resp?.status || 'unknown'}`
+                        });
+                    }
+                } catch (error) {
+                    results.push({
+                        proxy: proxyBase,
+                        status: 'fetch_error',
+                        responseTime: null,
+                        price: null,
+                        error: error.message
+                    });
+                }
+            }
+            
+            // 顯示結果
+            let html = '<div class="status success">✅ 代理測試完成</div>';
+            html += '<div class="proxy-list">';
+            
+            results.forEach(result => {
+                const statusClass = result.status === 'success' ? 'success' : 
+                                   result.status === 'http_error' ? 'danger' : 'warning';
+                
+                html += `<div class="proxy-item">
+                    <div class="proxy-header">${result.proxy}</div>
+                    <div class="proxy-details">
+                        <div>狀態: <span class="status ${statusClass}">${result.status}</span></div>
+                        <div>響應時間: ${result.responseTime}ms</div>
+                        <div>股價: ${result.price || 'N/A'}</div>
+                        <div>錯誤: ${result.error || '無'}</div>
+                    </div>
+                </div>`;
+            });
+            
+            html += '</div>';
+            document.getElementById('proxyResults').innerHTML = html;
+            
+            // 統計
+            const successCount = results.filter(r => r.status === 'success').length;
+            updateStatus('proxyStatus', `✅ 測試完成: ${successCount}/${results.length} 個代理正常工作`, 
+                        successCount > 0 ? 'success' : 'error');
+        }
+
+        async function testSingleProxy(stockCode) {
+            updateStatus('proxyStatus', `🔄 正在測試 ${stockCode} 的股價獲取...`, 'warning');
+            
+            try {
+                // 使用修復後的函數
+                const price = await fetchYahooChartViaPublicProxies(
+                    `https://query1.finance.yahoo.com/v8/finance/chart/${stockCode}.TW?interval=1d&range=1d`, 
+                    stockCode
+                );
+                
+                if (price && price > 0) {
+                    updateStatus('proxyStatus', `✅ 成功獲取 ${stockCode} 股價: ${price}`, 'success');
+                    
+                    // 保存到 localStorage
+                    const prices = JSON.parse(localStorage.getItem('stockCurrentPrices') || '{}');
+                    prices[stockCode] = price;
+                    localStorage.setItem('stockCurrentPrices', JSON.stringify(prices));
+                    
+                    updateResults('proxyResults', {
+                        stockCode: stockCode,
+                        price: price,
+                        timestamp: new Date().toISOString(),
+                        message: '股價獲取成功'
+                    });
+                } else {
+                    updateStatus('proxyStatus', `❌ 無法獲取 ${stockCode} 股價`, 'error');
+                }
+            } catch (error) {
+                updateStatus('proxyStatus', `❌ 測試失敗: ${error.message}`, 'error');
+                updateResults('proxyResults', {
+                    stockCode: stockCode,
+                    error: error.message,
+                    timestamp: new Date().toISOString()
+                });
+            }
+        }
+
+        async function testStockPriceFetch() {
+            updateStatus('priceStatus', '🔄 正在測試股價獲取功能...', 'warning');
+            
+            try {
+                const testStocks = ['2330', '0056', '0050'];
+                const results = {};
+                
+                for (const stockCode of testStocks) {
+                    const price = await fetchYahooChartViaPublicProxies(
+                        `https://query1.finance.yahoo.com/v8/finance/chart/${stockCode}.TW?interval=1d&range=1d`, 
+                        stockCode
+                    );
+                    
+                    results[stockCode] = {
+                        price: price,
+                        status: price && price > 0 ? 'success' : 'failed'
+                    };
+                    
+                    // 短暫延遲避免速率限制
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                }
+                
+                updateStatus('priceStatus', '✅ 股價獲取測試完成', 'success');
+                updateResults('priceResults', results);
+                
+            } catch (error) {
+                updateStatus('priceStatus', `❌ 測試失敗: ${error.message}`, 'error');
+            }
+        }
+
+        async function testPreviousClose() {
+            updateStatus('priceStatus', '🔄 正在測試昨收價獲取...', 'warning');
+            
+            try {
+                const testStocks = ['2330', '0056', '0050'];
+                const results = {};
+                
+                for (const stockCode of testStocks) {
+                    const prevClose = await fetchPreviousCloseOnly(stockCode);
+                    
+                    results[stockCode] = {
+                        previousClose: prevClose,
+                        status: prevClose && prevClose > 0 ? 'success' : 'failed'
+                    };
+                    
+                    // 短暫延遲避免速率限制
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                }
+                
+                updateStatus('priceStatus', '✅ 昨收價測試完成', 'success');
+                updateResults('priceResults', results);
+                
+            } catch (error) {
+                updateStatus('priceStatus', `❌ 測試失敗: ${error.message}`, 'error');
+            }
+        }
+
+        function testWithMockData() {
+            updateStatus('priceStatus', '🔄 正在創建模擬數據...', 'warning');
+            
+            const mockPrices = {
+                '2330': 680,
+                '0056': 155,
+                '0050': 125,
+                '00878': 45
+            };
+            
+            localStorage.setItem('stockCurrentPrices', JSON.stringify(mockPrices));
+            
+            updateStatus('priceStatus', '✅ 模擬數據創建成功', 'success');
+            updateResults('priceResults', {
+                mockData: mockPrices,
+                message: '模擬股價數據已保存到 localStorage',
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        // 頁面載入時顯示當前代理配置
+        window.addEventListener('load', function() {
+            let html = '<div class="status success">✅ 當前代理配置</div>';
+            html += '<div class="proxy-list">';
+            
+            publicQuoteProxies.forEach(proxy => {
+                html += `<div class="proxy-item">
+                    <div class="proxy-header">${proxy}</div>
+                    <div class="proxy-details">
+                        <div>類型: ${getProxyType(proxy)}</div>
+                        <div>狀態: 已配置</div>
+                    </div>
+                </div>`;
+            });
+            
+            html += '</div>';
+            document.getElementById('proxyResults').innerHTML = html;
+        });
+
+        function getProxyType(proxy) {
+            if (proxy.includes('allorigins')) return 'AllOrigins';
+            if (proxy.includes('codetabs')) return 'CodeTabs';
+            if (proxy.includes('corsproxy.io')) return 'CORSProxy.io';
+            if (proxy.includes('cors-anywhere')) return 'CORSAnywhere';
+            return '未知';
+        }
+    </script>
+</body>
+</html>

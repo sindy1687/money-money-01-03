@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html data-theme="festive">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>真實結構測試</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 真實結構測試</h1>
+        
+        <!-- 使用與主應用程式完全相同的HTML結構 -->
+        <div class="overview-summary-grid" id="overviewSummaryGrid">
+            <div class="summary-card primary">
+                <div class="summary-icon">💰</div>
+                <div class="summary-content">
+                    <div class="summary-label">總投入金額</div>
+                    <div class="summary-value auto-size" id="totalInvested">NT$125,000</div>
+                </div>
+            </div>
+            <div class="summary-card highlight">
+                <div class="summary-icon">📊</div>
+                <div class="summary-content">
+                    <div class="summary-label">總市值</div>
+                    <div class="summary-value" id="totalMarketValue">NT$145,000</div>
+                </div>
+            </div>
+            <div class="summary-card highlight">
+                <div class="summary-icon">📈</div>
+                <div class="summary-content">
+                    <div class="summary-label">未實現損益</div>
+                    <div class="summary-value">NT$20,000</div>
+                </div>
+            </div>
+            <div class="summary-card primary">
+                <div class="summary-icon">💵</div>
+                <div class="summary-content">
+                    <div class="summary-label">股息收入</div>
+                    <div class="summary-value">NT$2,500</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <div>當前主題: <span id="currentTheme">festive</span></div>
+            <div>第一個卡片背景: <span id="card1Bg">檢查中...</span></div>
+            <div>第一個卡片邊框: <span id="card1Border">檢查中...</span></div>
+            <div>檢測結果: <span id="testResult">檢查中...</span></div>
+        </div>
+    </div>
+
+    <script>
+        function check() {
+            const firstCard = document.querySelector('.summary-card');
+            if (firstCard) {
+                const style = getComputedStyle(firstCard);
+                const bgImage = style.backgroundImage;
+                const bgColor = style.backgroundColor;
+                const borderColor = style.borderColor;
+                
+                document.getElementById('card1Bg').textContent = bgImage.substring(0, 80) + '...';
+                document.getElementById('card1Border').textContent = borderColor;
+                
+                // 檢測結果
+                const hasBackgroundImage = bgImage && bgImage !== 'none' && bgImage.includes('pinimg');
+                const hasFestiveColor = bgColor.includes('230, 57, 70');
+                
+                if (hasBackgroundImage && hasFestiveColor) {
+                    document.getElementById('testResult').innerHTML = '<span style="color: green;">✅ 成功！真實結構也有效</span>';
+                } else {
+                    let result = '<span style="color: orange;">⚠️ 部分成功</span><br>';
+                    result += `背景圖片: ${hasBackgroundImage ? '✅' : '❌'}<br>`;
+                    result += `節日顏色: ${hasFestiveColor ? '✅' : '❌'}`;
+                    document.getElementById('testResult').innerHTML = result;
+                }
+                
+                console.log('=== 真實結構測試結果 ===');
+                console.log('背景圖片:', bgImage);
+                console.log('背景顏色:', bgColor);
+                console.log('邊框顏色:', borderColor);
+            }
+        }
+        
+        // 頁面載入後檢查
+        setTimeout(check, 200);
+    </script>
+</body>
+</html>

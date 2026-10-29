@@ -1,0 +1,457 @@
+/* ========== 夢幻星河主題 ========== */
+:root[data-theme="dreamyGalaxy"] {
+    /* 主色调 - 基于图片中的薰衣草紫和薄荷绿 */
+    --color-primary: #B19CD9;
+    --color-primary-light: #C8B6DB;
+    --color-primary-lighter: #DDC0F2;
+    --color-primary-dark: #9B84C7;
+    --color-primary-darker: #8570B5;
+    
+    /* 次要色调 - 柔和的薄荷绿 */
+    --color-secondary: #B8E6B8;
+    --color-secondary-light: #C8F0C8;
+    --color-secondary-lighter: #D8FAD8;
+    --color-secondary-dark: #A8D6A8;
+    --color-secondary-darker: #98C698;
+    
+    /* 强调色 - 柔和的粉色 */
+    --color-accent: #FFB3D9;
+    --color-accent-light: #FFC3E3;
+    --color-accent-lighter: #FFD3ED;
+    --color-accent-dark: #FFA3CF;
+    --color-accent-darker: #FF93C5;
+    
+    /* 背景色 - 梦幻渐变色 */
+    --bg-primary: linear-gradient(135deg, #E6E6FA 0%, #F0E6FF 25%, #E6F3E6 50%, #F0FFF0 75%, #FFE6F0 100%);
+    --bg-secondary: linear-gradient(135deg, #DDC0F2 0%, #E6D7F7 25%, #D0E8D0 50%, #E0F5E0 75%, #FFD3E3 100%);
+    --bg-tertiary: rgba(225, 225, 255, 0.9);
+    --bg-quaternary: rgba(240, 240, 255, 0.8);
+    --bg-white: rgba(255, 255, 255, 0.95);
+    --bg-light: rgba(230, 230, 250, 0.7);
+    --bg-lighter: rgba(208, 208, 240, 0.6);
+    --bg-lightest: rgba(186, 186, 230, 0.5);
+    --bg-soft: linear-gradient(135deg, #B8E6B8 0%, #C8F0C8 100%);
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-modal: rgba(255, 255, 255, 0.9);
+    --bg-overlay: rgba(177, 156, 217, 0.2);
+    
+    /* 文字颜色 - 深紫色系 */
+    --text-primary: #4A4A8A;
+    --text-secondary: #6B6BAA;
+    --text-tertiary: #8B8BCA;
+    --text-white: #FFFFFF;
+    --text-muted: #9B9BDB;
+    --text-inverse: #FFFFFF;
+    
+    /* 边框颜色 - 柔和的紫色系 */
+    --border-light: rgba(177, 156, 217, 0.3);
+    --border-medium: rgba(177, 156, 217, 0.5);
+    --border-strong: rgba(177, 156, 217, 0.7);
+    --border-dark: rgba(139, 139, 202, 0.8);
+    
+    /* 阴影颜色 - 柔和的阴影 */
+    --shadow-light: rgba(177, 156, 217, 0.1);
+    --shadow-medium: rgba(177, 156, 217, 0.2);
+    --shadow-strong: rgba(177, 156, 217, 0.3);
+    
+    /* 按钮颜色 */
+    --btn-primary-bg: linear-gradient(135deg, #B19CD9 0%, #C8B6DB 100%);
+    --btn-primary-hover: linear-gradient(135deg, #9B84C7 0%, #B19CD9 100%);
+    --btn-secondary-bg: linear-gradient(135deg, #B8E6B8 0%, #C8F0C8 100%);
+    --btn-secondary-hover: linear-gradient(135deg, #A8D6A8 0%, #B8E6B8 100%);
+    --btn-accent-bg: linear-gradient(135deg, #FFB3D9 0%, #FFC3E3 100%);
+    --btn-accent-hover: linear-gradient(135deg, #FFA3CF 0%, #FFB3D9 100%);
+}
+
+/* 全局样式 */
+:root[data-theme="dreamyGalaxy"] body {
+    background: var(--bg-primary);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 美化文字 */
+:root[data-theme="dreamyGalaxy"] h1,
+:root[data-theme="dreamyGalaxy"] h2,
+:root[data-theme="dreamyGalaxy"] h3,
+:root[data-theme="dreamyGalaxy"] h4,
+:root[data-theme="dreamyGalaxy"] h5,
+:root[data-theme="dreamyGalaxy"] h6 {
+    background: linear-gradient(135deg, #B19CD9 0%, #B8E6B8 50%, #FFB3D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(177, 156, 217, 0.1);
+}
+
+:root[data-theme="dreamyGalaxy"] .card-title,
+:root[data-theme="dreamyGalaxy"] .modal-title,
+:root[data-theme="dreamyGalaxy"] .page-title {
+    background: linear-gradient(135deg, #9B84C7 0%, #A8D6A8 50%, #FFA3CF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* 卡片样式 */
+:root[data-theme="dreamyGalaxy"] .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px var(--shadow-light);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="dreamyGalaxy"] .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 48px var(--shadow-medium);
+    border-color: var(--border-medium);
+}
+
+/* 按钮样式 */
+:root[data-theme="dreamyGalaxy"] .btn {
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="dreamyGalaxy"] .btn-primary {
+    background: var(--btn-primary-bg);
+    color: white;
+    box-shadow: 0 4px 16px var(--shadow-light);
+}
+
+:root[data-theme="dreamyGalaxy"] .btn-primary:hover {
+    background: var(--btn-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px var(--shadow-medium);
+}
+
+:root[data-theme="dreamyGalaxy"] .btn-secondary {
+    background: var(--btn-secondary-bg);
+    color: var(--text-primary);
+    box-shadow: 0 4px 16px var(--shadow-light);
+}
+
+:root[data-theme="dreamyGalaxy"] .btn-secondary:hover {
+    background: var(--btn-secondary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px var(--shadow-medium);
+}
+
+:root[data-theme="dreamyGalaxy"] .btn-accent {
+    background: var(--btn-accent-bg);
+    color: white;
+    box-shadow: 0 4px 16px var(--shadow-light);
+}
+
+:root[data-theme="dreamyGalaxy"] .btn-accent:hover {
+    background: var(--btn-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px var(--shadow-medium);
+}
+
+/* 模态框样式 */
+:root[data-theme="dreamyGalaxy"] .modal {
+    background: var(--bg-modal);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 16px 64px var(--shadow-medium);
+}
+
+:root[data-theme="dreamyGalaxy"] .modal-header {
+    background: linear-gradient(135deg, rgba(177, 156, 217, 0.1) 0%, rgba(184, 230, 184, 0.1) 100%);
+    border-bottom: 1px solid var(--border-light);
+    border-radius: 20px 20px 0 0;
+}
+
+/* 导航栏样式 */
+:root[data-theme="dreamyGalaxy"] .navbar {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 4px 20px var(--shadow-light);
+}
+
+:root[data-theme="dreamyGalaxy"] .nav-link {
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 8px 16px;
+}
+
+:root[data-theme="dreamyGalaxy"] .nav-link:hover {
+    background: var(--bg-light);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+:root[data-theme="dreamyGalaxy"] .nav-link.active {
+    background: var(--btn-primary-bg);
+    color: white;
+}
+
+/* 表单样式 */
+:root[data-theme="dreamyGalaxy"] .form-control {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="dreamyGalaxy"] .form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(177, 156, 217, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* 标签页样式 */
+:root[data-theme="dreamyGalaxy"] .nav-tabs {
+    border-bottom: 1px solid var(--border-light);
+}
+
+:root[data-theme="dreamyGalaxy"] .nav-tabs .nav-link {
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+:root[data-theme="dreamyGalaxy"] .nav-tabs .nav-link:hover {
+    border-bottom-color: var(--color-secondary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dreamyGalaxy"] .nav-tabs .nav-link.active {
+    border-bottom-color: var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+}
+
+/* 进度条样式 */
+:root[data-theme="dreamyGalaxy"] .progress {
+    background: var(--bg-light);
+    border-radius: 10px;
+    height: 8px;
+}
+
+:root[data-theme="dreamyGalaxy"] .progress-bar {
+    background: linear-gradient(135deg, #B19CD9 0%, #B8E6B8 50%, #FFB3D9 100%);
+    border-radius: 10px;
+}
+
+/* 徽章样式 */
+:root[data-theme="dreamyGalaxy"] .badge {
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-weight: 500;
+}
+
+:root[data-theme="dreamyGalaxy"] .badge-primary {
+    background: var(--btn-primary-bg);
+    color: white;
+}
+
+:root[data-theme="dreamyGalaxy"] .badge-secondary {
+    background: var(--btn-secondary-bg);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dreamyGalaxy"] .badge-accent {
+    background: var(--btn-accent-bg);
+    color: white;
+}
+
+/* 警告框样式 */
+:root[data-theme="dreamyGalaxy"] .alert {
+    border-radius: 12px;
+    border: none;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="dreamyGalaxy"] .alert-info {
+    background: rgba(177, 156, 217, 0.1);
+    color: var(--color-primary-dark);
+}
+
+:root[data-theme="dreamyGalaxy"] .alert-success {
+    background: rgba(184, 230, 184, 0.1);
+    color: var(--color-secondary-dark);
+}
+
+:root[data-theme="dreamyGalaxy"] .alert-warning {
+    background: rgba(255, 179, 217, 0.1);
+    color: var(--color-accent-dark);
+}
+
+/* 浮动操作按钮 */
+:root[data-theme="dreamyGalaxy"] .fab {
+    background: var(--btn-primary-bg);
+    color: white;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 8px 24px var(--shadow-medium);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="dreamyGalaxy"] .fab:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 12px 32px var(--shadow-strong);
+}
+
+/* 分页样式 */
+:root[data-theme="dreamyGalaxy"] .pagination .page-link {
+    border: none;
+    margin: 0 4px;
+    border-radius: 10px;
+    color: var(--text-primary);
+    background: var(--bg-light);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="dreamyGalaxy"] .pagination .page-link:hover {
+    background: var(--btn-primary-bg);
+    color: white;
+    transform: translateY(-2px);
+}
+
+:root[data-theme="dreamyGalaxy"] .pagination .page-item.active .page-link {
+    background: var(--btn-primary-bg);
+    color: white;
+}
+
+/* 表格样式 */
+:root[data-theme="dreamyGalaxy"] .table {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+:root[data-theme="dreamyGalaxy"] .table th {
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+:root[data-theme="dreamyGalaxy"] .table td {
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+/* 工具提示样式 */
+:root[data-theme="dreamyGalaxy"] .tooltip {
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="dreamyGalaxy"] .tooltip-inner {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+}
+
+/* 下拉菜单样式 */
+:root[data-theme="dreamyGalaxy"] .dropdown-menu {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px var(--shadow-medium);
+    backdrop-filter: blur(15px);
+}
+
+:root[data-theme="dreamyGalaxy"] .dropdown-item {
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 4px 8px;
+}
+
+:root[data-theme="dreamyGalaxy"] .dropdown-item:hover {
+    background: var(--bg-light);
+    color: var(--color-primary);
+}
+
+/* 滑块样式 */
+:root[data-theme="dreamyGalaxy"] .form-range {
+    accent-color: var(--color-primary);
+}
+
+:root[data-theme="dreamyGalaxy"] .form-range::-webkit-slider-thumb {
+    background: var(--btn-primary-bg);
+    border: 2px solid white;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+:root[data-theme="dreamyGalaxy"] .form-range::-moz-range-thumb {
+    background: var(--btn-primary-bg);
+    border: 2px solid white;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+/* 特定页面样式 */
+:root[data-theme="dreamyGalaxy"] .investment-card,
+:root[data-theme="dreamyGalaxy"] .accounting-card,
+:root[data-theme="dreamyGalaxy"] .wallet-card,
+:root[data-theme="dreamyGalaxy"] .budget-card,
+:root[data-theme="dreamyGalaxy"] .settings-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 32px var(--shadow-light);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="dreamyGalaxy"] .investment-card:hover,
+:root[data-theme="dreamyGalaxy"] .accounting-card:hover,
+:root[data-theme="dreamyGalaxy"] .wallet-card:hover,
+:root[data-theme="dreamyGalaxy"] .budget-card:hover,
+:root[data-theme="dreamyGalaxy"] .settings-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px var(--shadow-medium);
+}
+
+/* 动画效果 */
+@keyframes dreamyFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+:root[data-theme="dreamyGalaxy"] .dreamy-animation {
+    animation: dreamyFloat 3s ease-in-out infinite;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    :root[data-theme="dreamyGalaxy"] .card {
+        border-radius: 12px;
+        margin: 8px;
+    }
+    
+    :root[data-theme="dreamyGalaxy"] .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    :root[data-theme="dreamyGalaxy"] .modal {
+        margin: 16px;
+        border-radius: 16px;
+    }
+}

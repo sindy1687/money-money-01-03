@@ -1,0 +1,869 @@
+/* ========== 翡翠王子主題 ========== */
+::root[data-theme="emeraldPrince"] {
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #666666;
+    --text-inverse: #ffffff;
+    --background-primary: linear-gradient(135deg, #f5f5dc 0%, #8fbc8f 50%, #2e8b57 100%);
+    --background-secondary: rgba(245, 245, 220, 0.8);
+    --background-card: rgba(255, 255, 255, 0.9);
+    --background-input: rgba(255, 255, 255, 0.8);
+    --border-light: rgba(46, 139, 87, 0.3);
+    --border-medium: rgba(46, 139, 87, 0.6);
+    --border-dark: rgba(46, 139, 87, 0.9);
+    --shadow-light: rgba(46, 139, 87, 0.1);
+    --shadow-medium: rgba(46, 139, 87, 0.3);
+    --shadow-dark: rgba(46, 139, 87, 0.5);
+    --color-primary: #2e8b57;
+    --color-secondary: #8fbc8f;
+    --color-accent: #daa520;
+    --color-primary-rgba-20: rgba(46, 139, 87, 0.2);
+    --color-primary-rgba-30: rgba(46, 139, 87, 0.3);
+    --color-primary-rgba-50: rgba(46, 139, 87, 0.5);
+    --color-primary-rgba-80: rgba(46, 139, 87, 0.8);
+    --color-secondary-rgba-20: rgba(143, 188, 143, 0.2);
+    --color-accent-rgba-20: rgba(218, 165, 32, 0.2);
+    --color-accent-rgba-30: rgba(218, 165, 32, 0.3);
+    --color-accent-rgba-50: rgba(218, 165, 32, 0.5);
+    --color-accent-rgba-80: rgba(218, 165, 32, 0.8);
+}
+
+::root[data-theme="emeraldPrince"] body {
+    background: url("https://i.pinimg.com/736x/55/40/2f/55402fb6bcf0c65c832636ad5504499f.jpg") center/cover no-repeat fixed;
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] body::before {
+    display: none;
+}
+
+/* 翡翠王子主題頁面背景 */
+::root[data-theme="emeraldPrince"] .page-ledger,
+::root[data-theme="emeraldPrince"] .page-wallet,
+::root[data-theme="emeraldPrince"] .page-investment,
+::root[data-theme="emeraldPrince"] .page-chart,
+::root[data-theme="emeraldPrince"] .page-settings {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* 翡翠王子主題導航欄 */
+::root[data-theme="emeraldPrince"] .bottom-nav {
+    background: var(--bg-white);
+    border-top: 1px solid var(--border-light);
+}
+
+::root[data-theme="emeraldPrince"] .nav-item {
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .nav-item.active {
+    color: var(--color-primary);
+}
+
+/* 翡翠王子主題浮動按鈕 */
+::root[data-theme="emeraldPrince"] .fab {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--text-inverse);
+}
+
+/* 翡翠王子主題卡片 */
+::root[data-theme="emeraldPrince"] .card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+/* 翡翠王子主題按鈕 */
+::root[data-theme="emeraldPrince"] .btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--text-inverse);
+}
+
+::root[data-theme="emeraldPrince"] .btn:hover {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+/* 翡翠王子主題輸入框 */
+::root[data-theme="emeraldPrince"] input,
+::root[data-theme="emeraldPrince"] textarea,
+::root[data-theme="emeraldPrince"] select {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] input:focus,
+::root[data-theme="emeraldPrince"] textarea:focus,
+::root[data-theme="emeraldPrince"] select:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent-rgba-30);
+}
+
+/* 翡翠王子主題表格 */
+::root[data-theme="emeraldPrince"] table {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+}
+
+::root[data-theme="emeraldPrince"] th {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--text-inverse);
+}
+
+::root[data-theme="emeraldPrince"] td {
+    background: var(--bg-white);
+    color: var(--text-secondary);
+    border-color: var(--border-light);
+}
+
+/* 翡翠王子主題標籤 */
+::root[data-theme="emeraldPrince"] .tag,
+::root[data-theme="emeraldPrince"] .badge {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+    color: var(--text-primary);
+    border: 1px solid var(--border-medium);
+}
+
+/* 翡翠王子主題警告和提示 */
+::root[data-theme="emeraldPrince"] .alert,
+::root[data-theme="emeraldPrince"] .warning {
+    background: var(--bg-white);
+    border: 1px solid var(--color-secondary);
+    color: var(--text-secondary);
+}
+
+::root[data-theme="emeraldPrince"] .success {
+    background: var(--bg-white);
+    border: 1px solid var(--color-primary);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .error {
+    background: var(--bg-white);
+    border: 1px solid #ff0000;
+    color: #8B0000;
+}
+
+/* 翡翠王子主題動畫效果 */
+@keyframes emeraldGlow {
+    0% { box-shadow: 0 0 5px var(--color-primary-rgba-50); }
+    50% { box-shadow: 0 0 20px var(--color-primary-rgba-80); }
+    100% { box-shadow: 0 0 5px var(--color-primary-rgba-50); }
+}
+
+::root[data-theme="emeraldPrince"] .btn:hover {
+    animation: emeraldGlow 2s infinite;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--color-primary-rgba-30);
+    color: var(--text-primary);
+}
+
+/* 翡翠王子主題特殊效果 */
+::root[data-theme="emeraldPrince"] .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-dark);
+    border-color: var(--border-dark);
+}
+
+::root[data-theme="emeraldPrince"] .portfolio-shares {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(240, 230, 140, 0.6) 100%);
+    border: 1px solid var(--border-medium);
+    color: var(--text-primary);
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 8px 16px;
+    backdrop-filter: blur(10px);
+}
+
+::root[data-theme="emeraldPrince"] .stock-grid-card-tag--shares {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(240, 230, 140, 0.6) 100%);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 4px 8px;
+}
+
+/* 翡翠王子主題持股卡片 */
+::root[data-theme="emeraldPrince"] .stock-item-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-name {
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-code {
+    color: var(--text-secondary) !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-price {
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-change {
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-change.positive {
+    color: #2e8b57 !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-change.negative {
+    color: #dc3545 !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-quantity {
+    color: var(--text-secondary) !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-value {
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-profit {
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-profit.positive {
+    color: #2e8b57 !important;
+}
+
+::root[data-theme="emeraldPrince"] .stock-item-card .stock-profit.negative {
+    color: #dc3545 !important;
+}
+
+/* 翡翠王子主題淺色文字調整 */
+::root[data-theme="emeraldPrince"] .budget-summary-label,
+::root[data-theme="emeraldPrince"] .budget-detail-label,
+::root[data-theme="emeraldPrince"] .stat-label,
+::root[data-theme="emeraldPrince"] .dividend-stat-label,
+::root[data-theme="emeraldPrince"] .account-info,
+::root[data-theme="emeraldPrince"] .account-item-name,
+::root[data-theme="emeraldPrince"] .account-item-currency,
+::root[data-theme="emeraldPrince"] .tab-text {
+    color: rgba(52, 73, 94, 0.8) !important;
+}
+
+/* 翡翠王子主題模態框 */
+::root[data-theme="emeraldPrince"] .modal-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 220, 0.9) 100%);
+    border: 2px solid var(--border-medium);
+    border-radius: 20px;
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .modal-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--text-inverse);
+}
+
+::root[data-theme="emeraldPrince"] .modal-title {
+    color: var(--text-inverse);
+}
+
+::root[data-theme="emeraldPrince"] .modal-close {
+    color: var(--text-inverse);
+}
+
+/* 翡翠王子主題進度條 */
+::root[data-theme="emeraldPrince"] .progress-bar {
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+}
+
+::root[data-theme="emeraldPrince"] .progress-track {
+    background: var(--bg-white);
+}
+
+/* 翡翠王子主題圖表容器 */
+::root[data-theme="emeraldPrince"] .chart-container {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+}
+
+::root[data-theme="emeraldPrince"] .chart-title {
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .chart-legend {
+    color: var(--text-secondary);
+}
+
+/* 翡翠王子主題統計卡片 */
+::root[data-theme="emeraldPrince"] .stat-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .stat-value {
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .stat-label {
+    color: var(--text-secondary);
+}
+
+/* 翡翠王子主題預算卡片 */
+::root[data-theme="emeraldPrince"] .budget-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .budget-amount {
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .budget-category {
+    color: var(--text-secondary);
+}
+
+/* 翡翠王子主題股息卡片 */
+::root[data-theme="emeraldPrince"] .dividend-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .dividend-amount {
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .dividend-rate {
+    color: var(--text-secondary);
+}
+
+/* 翡翠王子主題帳戶卡片 */
+::root[data-theme="emeraldPrince"] .account-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .account-balance {
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .account-name {
+    color: var(--text-secondary);
+}
+
+/* 翡翠王子主題交易列表 */
+::root[data-theme="emeraldPrince"] .transaction-item {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .transaction-amount {
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .transaction-category {
+    color: var(--text-secondary);
+}
+
+::root[data-theme="emeraldPrince"] .transaction-date {
+    color: var(--text-muted);
+}
+
+/* 翡翠王子主題設定頁面 */
+::root[data-theme="emeraldPrince"] .setting-item {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .setting-label {
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .setting-value {
+    color: var(--text-secondary);
+}
+
+/* 翡翠王子主題表單 */
+::root[data-theme="emeraldPrince"] .form-group {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .form-label {
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .form-input {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .form-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent-rgba-30);
+}
+
+/* 翡翠王子主題下拉選單 */
+::root[data-theme="emeraldPrince"] .dropdown {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .dropdown-item {
+    background: var(--bg-white);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .dropdown-item:hover {
+    background: var(--color-primary-rgba-20);
+    color: var(--text-primary);
+}
+
+/* 翡翠王子主題選項卡 */
+::root[data-theme="emeraldPrince"] .tab {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+::root[data-theme="emeraldPrince"] .tab.active {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--text-inverse);
+}
+
+::root[data-theme="emeraldPrince"] .tab:hover {
+    background: var(--color-primary-rgba-20);
+    color: var(--text-primary);
+}
+
+/* 翡翠王子主題提示框 */
+::root[data-theme="emeraldPrince"] .tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--text-inverse);
+    border: 1px solid var(--border-medium);
+}
+
+::root[data-theme="emeraldPrince"] .tooltip::after {
+    border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 翡翠王子主題載入動畫 */
+::root[data-theme="emeraldPrince"] .loading {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+}
+
+::root[data-theme="emeraldPrince"] .loading-spinner {
+    border-color: var(--color-primary);
+    border-top-color: transparent;
+}
+
+/* 翡翠王子主題滾動條 */
+::root[data-theme="emeraldPrince"] ::-webkit-scrollbar {
+    width: 8px;
+}
+
+::root[data-theme="emeraldPrince"] ::-webkit-scrollbar-track {
+    background: var(--bg-white);
+}
+
+::root[data-theme="emeraldPrince"] ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+}
+
+::root[data-theme="emeraldPrince"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+}
+
+/* 翡翠王子主題響應式設計 */
+@media (max-width: 768px) {
+    ::root[data-theme="emeraldPrince"] .card {
+        background: var(--bg-white);
+    }
+    
+    ::root[data-theme="emeraldPrince"] .modal-content {
+        background: var(--bg-white);
+    }
+    
+    ::root[data-theme="emeraldPrince"] .bottom-nav {
+        background: var(--bg-white);
+    }
+}
+
+@media (max-width: 480px) {
+    ::root[data-theme="emeraldPrince"] .card {
+        background: var(--bg-white);
+    }
+    
+    ::root[data-theme="emeraldPrince"] .modal-content {
+        background: var(--bg-white);
+    }
+    
+    ::root[data-theme="emeraldPrince"] .bottom-nav {
+        background: var(--bg-white);
+    }
+}
+
+/* ========== 炎之呼吸主題 ========== */
+::root[data-theme="flame"] {
+    --color-primary: #dc2626;
+    --color-primary-light: #ef4444;
+    --color-primary-lighter: #f87171;
+    --color-primary-dark: #b91c1c;
+    --color-secondary: #3b82f6;
+    --color-accent: #fbbf24;
+    --text-primary: #dc2626;
+    --text-secondary: rgba(185, 28, 28, 0.85);
+    --text-tertiary: rgba(147, 51, 234, 0.7);
+    --bg-primary: rgba(220, 38, 38, 0.05);
+    --bg-secondary: rgba(251, 146, 60, 0.08);
+    --bg-light: rgba(220, 38, 38, 0.06);
+    --bg-lighter: rgba(251, 146, 60, 0.04);
+    --bg-soft: rgba(59, 130, 246, 0.03);
+    --bg-card: rgba(255, 255, 255, 0.88);
+    --bg-white: rgba(255, 255, 255, 0.92);
+    --bg-dark: rgba(220, 38, 38, 0.95);
+    --border-light: rgba(220, 38, 38, 0.3);
+    --border-medium: rgba(220, 38, 38, 0.4);
+    --border-strong: rgba(220, 38, 38, 0.65);
+    --color-primary-rgba-08: rgba(220, 38, 38, 0.08);
+    --color-primary-rgba-10: rgba(220, 38, 38, 0.1);
+    --color-primary-rgba-12: rgba(220, 38, 38, 0.12);
+    --color-primary-rgba-15: rgba(220, 38, 38, 0.15);
+    --color-primary-rgba-18: rgba(220, 38, 38, 0.18);
+    --color-primary-rgba-20: rgba(220, 38, 38, 0.2);
+    --color-primary-rgba-25: rgba(220, 38, 38, 0.25);
+    --color-primary-rgba-30: rgba(220, 38, 38, 0.3);
+    --color-primary-rgba-40: rgba(220, 38, 38, 0.4);
+    --color-primary-light-rgba-08: rgba(239, 68, 68, 0.08);
+    --color-primary-light-rgba-10: rgba(239, 68, 68, 0.1);
+    --color-primary-light-rgba-15: rgba(239, 68, 68, 0.15);
+    --color-primary-light-rgba-20: rgba(239, 68, 68, 0.2);
+    --color-primary-light-rgba-25: rgba(239, 68, 68, 0.25);
+}
+
+::root[data-theme="flame"] body {
+    background: url("https://i.pinimg.com/736x/cb/07/77/cb07777a12e39d0811d7de7bb705680b.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+::root[data-theme="flame"] body::before {
+    display: none;
+}
+
+/* Page backgrounds */
+::root[data-theme="flame"] .page-ledger,
+::root[data-theme="flame"] .page-input,
+::root[data-theme="flame"] .page-chart,
+::root[data-theme="flame"] .page-budget,
+::root[data-theme="flame"] .page-monthly-planner,
+::root[data-theme="flame"] .page-daily-budget,
+::root[data-theme="flame"] .page-settings,
+::root[data-theme="flame"] .page-category-manage,
+::root[data-theme="flame"] .page-investment,
+::root[data-theme="flame"] .page-wallet,
+::root[data-theme="flame"] .page-history,
+::root[data-theme="flame"] .page-planner {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+/* Cards */
+::root[data-theme="flame"] .card,
+::root[data-theme="flame"] .record-card,
+::root[data-theme="flame"] .ledger-card,
+::root[data-theme="flame"] .summary-card,
+::root[data-theme="flame"] .budget-card,
+::root[data-theme="flame"] .wallet-card,
+::root[data-theme="flame"] .chart-card,
+::root[data-theme="flame"] .investment-card {
+    background: var(--bg-white) !important;
+    border: 1px solid rgba(220, 38, 38, 0.4) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 14px 34px rgba(220, 38, 38, 0.15) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Investment cards with special gradient */
+::root[data-theme="flame"] .investment-card,
+::root[data-theme="flame"] .stock-item-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(251, 146, 60, 0.1) 25%, rgba(59, 130, 246, 0.05) 50%, rgba(251, 146, 60, 0.1) 75%, rgba(255, 255, 255, 0.95) 100%) !important;
+    border: 2px solid var(--color-primary) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px rgba(220, 38, 38, 0.2), 0 0 30px var(--color-primary-rgba-15) !important;
+}
+
+::root[data-theme="flame"] .investment-card::before,
+::root[data-theme="flame"] .stock-item-card::before {
+    background: linear-gradient(135deg, var(--color-primary-rgba-40) 0%, var(--color-primary-rgba-30) 55%, var(--color-primary-rgba-20) 100%) !important;
+}
+
+/* Stock card text colors */
+::root[data-theme="flame"] .stock-item-card {
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="flame"] .stock-item-card .stock-name,
+::root[data-theme="flame"] .stock-item-card .stock-card-name {
+    color: var(--color-primary) !important;
+}
+
+::root[data-theme="flame"] .stock-item-card .stock-code,
+::root[data-theme="flame"] .stock-item-card .stock-card-code {
+    color: var(--text-secondary) !important;
+}
+
+::root[data-theme="flame"] .stock-item-card .stock-card-value,
+::root[data-theme="flame"] .stock-item-card .stock-card-price {
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="flame"] .stock-item-card .stock-card-change {
+    color: var(--color-secondary) !important;
+}
+
+::root[data-theme="flame"] .stock-item-card .positive {
+    color: #4caf50 !important;
+}
+
+::root[data-theme="flame"] .stock-item-card .negative {
+    color: #f44336 !important;
+}
+
+/* Manage investment card */
+::root[data-theme="flame"] .manage-investment-card {
+    background: var(--bg-white) !important;
+    border: 2px solid rgba(220, 38, 38, 0.4) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px rgba(220, 38, 38, 0.2) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+::root[data-theme="flame"] .manage-investment-card h1,
+::root[data-theme="flame"] .manage-investment-card h2,
+::root[data-theme="flame"] .manage-investment-card h3,
+::root[data-theme="flame"] .manage-investment-card h4,
+::root[data-theme="flame"] .manage-investment-card h5,
+::root[data-theme="flame"] .manage-investment-card h6,
+::root[data-theme="flame"] .manage-investment-card .title,
+::root[data-theme="flame"] .manage-investment-card .subtitle,
+::root[data-theme="flame"] .manage-investment-card .card-title,
+::root[data-theme="flame"] .manage-investment-card .card-subtitle {
+    color: var(--color-primary) !important;
+}
+
+::root[data-theme="flame"] .manage-investment-card .text,
+::root[data-theme="flame"] .manage-investment-card .description,
+::root[data-theme="flame"] .manage-investment-card .content,
+::root[data-theme="flame"] .manage-investment-card p,
+::root[data-theme="flame"] .manage-investment-card span,
+::root[data-theme="flame"] .manage-investment-card div {
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="flame"] .manage-investment-card .highlight,
+::root[data-theme="flame"] .manage-investment-card .accent,
+::root[data-theme="flame"] .manage-investment-card .primary-text {
+    color: var(--color-secondary) !important;
+}
+
+::root[data-theme="flame"] .manage-investment-card .secondary-text,
+::root[data-theme="flame"] .manage-investment-card .muted-text {
+    color: var(--text-secondary) !important;
+}
+
+::root[data-theme="flame"] .manage-investment-card .label,
+::root[data-theme="flame"] .manage-investment-card .form-label {
+    color: var(--color-primary) !important;
+}
+
+::root[data-theme="flame"] .manage-investment-card .value,
+::root[data-theme="flame"] .manage-investment-card .amount {
+    color: var(--color-accent) !important;
+}
+
+/* Annual report, about, diary cards */
+::root[data-theme="flame"] .annual-report-card,
+::root[data-theme="flame"] .about-card,
+::root[data-theme="flame"] .diary-card,
+::root[data-theme="flame"] .mori-dialog-box {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px var(--color-primary-rgba-20) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+::root[data-theme="flame"] .mori-dialog-content {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="flame"] .mori-message {
+    color: var(--text-primary) !important;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+}
+
+::root[data-theme="flame"] .mori-avatar {
+    background: var(--color-primary) !important;
+    border: 3px solid var(--color-primary-dark) !important;
+}
+
+::root[data-theme="flame"] .mori-close {
+    background: var(--color-secondary) !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--color-secondary-dark) !important;
+}
+
+::root[data-theme="flame"] .mori-close:hover {
+    background: var(--color-secondary-dark) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Card backgrounds with theme variables */
+::root[data-theme="flame"] .investment-card,
+::root[data-theme="flame"] .record-card,
+::root[data-theme="flame"] .ledger-card,
+::root[data-theme="flame"] .budget-card,
+::root[data-theme="flame"] .wallet-card,
+::root[data-theme="flame"] .monthly-planner-card,
+::root[data-theme="flame"] .investment-settings-card,
+::root[data-theme="flame"] .holdings-card,
+::root[data-theme="flame"] .buy-card,
+::root[data-theme="flame"] .sell-card,
+::root[data-theme="flame"] .dividend-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+
+/* Back button */
+::root[data-theme="flame"] .back-btn {
+    background: var(--color-primary) !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--color-primary) !important;
+}
+
+::root[data-theme="flame"] .back-btn:hover {
+    background: var(--color-primary-light) !important;
+    border-color: var(--color-primary-light) !important;
+}
+
+/* DCA cards */
+::root[data-theme="flame"] .dca-management-card,
+::root[data-theme="flame"] .dca-card {
+    background: var(--bg-white) !important;
+    border: 2px solid rgba(220, 38, 38, 0.4) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px rgba(220, 38, 38, 0.2) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+/* Modals */
+::root[data-theme="flame"] .modal-content,
+::root[data-theme="flame"] .modal-content-standard,
+::root[data-theme="flame"] .budget-category-modal-content,
+::root[data-theme="flame"] .budget-setting-modal-content,
+::root[data-theme="flame"] .category-modal-content,
+::root[data-theme="flame"] .dca-execute-modal .modal-content,
+::root[data-theme="flame"] .account-modal-content,
+::root[data-theme="flame"] .emoji-modal-content,
+::root[data-theme="flame"] .crop-modal-content,
+::root[data-theme="flame"] .history-modal-content {
+    background: var(--bg-white) !important;
+    border: 1px solid rgba(220, 38, 38, 0.4) !important;
+    box-shadow: 0 18px 44px rgba(220, 38, 38, 0.2) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Komori dialog */
+::root[data-theme="flame"] .komori-dialog {
+    background: var(--bg-white) !important;
+    border: 2px solid rgba(220, 38, 38, 0.4) !important;
+    box-shadow: 0 18px 44px rgba(220, 38, 38, 0.2) !important;
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="flame"] .komori-dialog .komori-title {
+    color: var(--color-primary) !important;
+}
+
+::root[data-theme="flame"] .komori-dialog .komori-message {
+    color: var(--text-primary) !important;
+}
+
+/* Form elements */
+::root[data-theme="flame"] .form-input,
+::root[data-theme="flame"] .form-select,
+::root[data-theme="flame"] .form-textarea,
+::root[data-theme="flame"] .note-input {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 2px solid rgba(220, 38, 38, 0.35) !important;
+    color: var(--text-primary) !important;
+}
+
+::root[data-theme="flame"] .form-input:focus,
+::root[data-theme="flame"] .form-select:focus,
+::root[data-theme="flame"] .form-textarea:focus,
+::root[data-theme="flame"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25) !important;
+    background: var(--bg-white) !important;
+}
+
+/* Buttons */
+::root[data-theme="flame"] .btn-primary {
+    background: var(--color-primary) !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--color-primary) !important;
+}
+
+::root[data-theme="flame"] .btn-primary:hover {
+    background: var(--color-primary-light) !important;
+    border-color: var(--color-primary-light) !important;
+}
+
+::root[data-theme="flame"] .btn-secondary {
+    background: var(--color-secondary) !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--color-secondary) !important;
+}
+
+::root[data-theme="flame"] .btn-secondary:hover {
+    background: color-mix(in srgb, var(--color-secondary) 80%, black) !important;
+    border-color: color-mix(in srgb, var(--color-secondary) 80%, black) !important;
+}
+
+/* Label text colors */
+::root[data-theme="flame"] .budget-summary-label,
+::root[data-theme="flame"] .budget-detail-label,
+::root[data-theme="flame"] .stat-label,
+::root[data-theme="flame"] .dividend-stat-label,
+::root[data-theme="flame"] .account-info,
+::root[data-theme="flame"] .account-item-name,
+::root[data-theme="flame"] .account-item-currency,
+::root[data-theme="flame"] .tab-text {
+    color: rgba(220, 38, 38, 0.8) !important;
+}

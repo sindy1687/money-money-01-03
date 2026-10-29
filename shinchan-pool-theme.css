@@ -1,0 +1,420 @@
+/* Shin-chan Swimming Pool Theme - 小新泳池派對主題 */
+
+/* Root color variables for shinchanPool theme */
+[data-theme="shinchanPool"] {
+    --color-primary: #00CED1;
+    --color-primary-light: #40E0D0;
+    --color-primary-lighter: #7FFFD4;
+    --color-primary-dark: #20B2AA;
+    --color-primary-rgba-08: rgba(0, 206, 209, 0.08);
+    --color-primary-rgba-10: rgba(0, 206, 209, 0.1);
+    --color-primary-rgba-12: rgba(0, 206, 209, 0.12);
+    --color-primary-rgba-15: rgba(0, 206, 209, 0.15);
+    --color-primary-rgba-18: rgba(0, 206, 209, 0.18);
+    --color-primary-rgba-20: rgba(0, 206, 209, 0.2);
+    --color-primary-rgba-25: rgba(0, 206, 209, 0.25);
+    --color-primary-rgba-30: rgba(0, 206, 209, 0.3);
+    --color-primary-light-rgba-08: rgba(64, 224, 208, 0.08);
+    --color-primary-light-rgba-10: rgba(64, 224, 208, 0.1);
+    --color-primary-light-rgba-15: rgba(64, 224, 208, 0.15);
+    --color-primary-light-rgba-20: rgba(64, 224, 208, 0.2);
+    --color-primary-light-rgba-25: rgba(64, 224, 208, 0.25);
+    
+    /* Pool water gradients */
+    --pool-water-gradient: linear-gradient(135deg, #00CED1 0%, #20B2AA 25%, #48D1CC 50%, #40E0D0 75%, #7FFFD4 100%);
+    --pool-tile-gradient: linear-gradient(45deg, #4682B4 0%, #5F9EA0 50%, #87CEEB 100%);
+    --duck-yellow: #FFD700;
+    --duck-orange: #FFA500;
+    
+    /* Text colors with water theme */
+    --text-primary: #2C3E50;
+    --text-secondary: #34495E;
+    --text-accent: #00CED1;
+    --text-light: #FFFFFF;
+    
+    /* Background colors */
+    --bg-primary: rgba(240, 248, 255, 0.95);
+    --bg-secondary: rgba(224, 255, 255, 0.9);
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-modal: rgba(240, 248, 255, 0.98);
+    
+    /* Border colors */
+    --border-primary: #00CED1;
+    --border-secondary: #40E0D0;
+    --border-light: #7FFFD4;
+}
+
+/* Animated water background effect */
+[data-theme="shinchanPool"] body {
+    background: var(--pool-water-gradient);
+    background-attachment: fixed;
+    position: relative;
+}
+
+[data-theme="shinchanPool"] body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(64, 224, 208, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 206, 209, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(127, 255, 212, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+    animation: waterFlow 8s ease-in-out infinite;
+}
+
+@keyframes waterFlow {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { transform: translateY(-10px) scale(1.05); opacity: 0.8; }
+}
+
+/* Water ripple animation */
+[data-theme="shinchanPool"] .water-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(64, 224, 208, 0.4), transparent);
+    animation: ripple 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }
+}
+
+/* Header and navigation with pool theme */
+[data-theme="shinchanPool"] .page-header,
+[data-theme="shinchanPool"] .ledger-header,
+[data-theme="shinchanPool"] .chart-header,
+[data-theme="shinchanPool"] .budget-header,
+[data-theme="shinchanPool"] .monthly-planner-header {
+    background: var(--pool-tile-gradient);
+    color: var(--text-light);
+    border-bottom: 2px solid var(--duck-yellow);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="shinchanPool"] .nav-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+[data-theme="shinchanPool"] .nav-item:hover,
+[data-theme="shinchanPool"] .nav-item.active {
+    background: var(--duck-yellow);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+/* Cards with pool tile effect */
+[data-theme="shinchanPool"] .card,
+[data-theme="shinchanPool"] .modal-content,
+[data-theme="shinchanPool"] .category-item,
+[data-theme="shinchanPool"] .account-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-primary);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px rgba(0, 206, 209, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="shinchanPool"] .card::before,
+[data-theme="shinchanPool"] .modal-content::before,
+[data-theme="shinchanPool"] .category-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+[data-theme="shinchanPool"] .card:hover::before,
+[data-theme="shinchanPool"] .modal-content:hover::before,
+[data-theme="shinchanPool"] .category-item:hover::before {
+    left: 100%;
+}
+
+/* Buttons with water drop effect */
+[data-theme="shinchanPool"] .btn,
+[data-theme="shinchanPool"] .btn-primary,
+[data-theme="shinchanPool"] .fab-btn,
+[data-theme="shinchanPool"] .key-btn,
+[data-theme="shinchanPool"] .tab-btn {
+    background: var(--pool-water-gradient);
+    color: var(--text-light);
+    border: 2px solid var(--border-primary);
+    border-radius: 25px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="shinchanPool"] .btn:hover,
+[data-theme="shinchanPool"] .btn-primary:hover,
+[data-theme="shinchanPool"] .fab-btn:hover,
+[data-theme="shinchanPool"] .key-btn:hover,
+[data-theme="shinchanPool"] .tab-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(0, 206, 209, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #20B2AA 0%, #48D1CC 25%, #00CED1 50%, #40E0D0 75%, #7FFFD4 100%);
+}
+
+[data-theme="shinchanPool"] .btn:active,
+[data-theme="shinchanPool"] .btn-primary:active,
+[data-theme="shinchanPool"] .fab-btn:active,
+[data-theme="shinchanPool"] .key-btn:active,
+[data-theme="shinchanPool"] .tab-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 206, 209, 0.3);
+}
+
+/* Water drop animation for buttons */
+[data-theme="shinchanPool"] .btn::after,
+[data-theme="shinchanPool"] .fab-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+[data-theme="shinchanPool"] .btn:active::after,
+[data-theme="shinchanPool"] .fab-btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Input fields with pool theme */
+[data-theme="shinchanPool"] input,
+[data-theme="shinchanPool"] textarea,
+[data-theme="shinchanPool"] select {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--border-secondary);
+    border-radius: 12px;
+    color: var(--text-primary);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+[data-theme="shinchanPool"] input:focus,
+[data-theme="shinchanPool"] textarea:focus,
+[data-theme="shinchanPool"] select:focus {
+    border-color: var(--duck-yellow);
+    box-shadow: 
+        0 0 0 3px rgba(255, 215, 0, 0.2),
+        0 4px 12px rgba(0, 206, 209, 0.2);
+    outline: none;
+}
+
+/* Special styling for key elements mentioned by user */
+[data-theme="shinchanPool"] .定期定額,
+[data-theme="shinchanPool"] .投資專區,
+[data-theme="shinchanPool"] .預算設定,
+[data-theme="shinchanPool"] .錢包,
+[data-theme="shinchanPool"] .設定 {
+    background: var(--pool-tile-gradient);
+    color: var(--text-light);
+    border: 2px solid var(--duck-yellow);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px 0;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="shinchanPool"] .定期定額::before,
+[data-theme="shinchanPool"] .投資專區::before,
+[data-theme="shinchanPool"] .預算設定::before,
+[data-theme="shinchanPool"] .錢包::before,
+[data-theme="shinchanPool"] .設定::before {
+    content: '🦆';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 24px;
+    opacity: 0.3;
+    transform: rotate(15deg);
+}
+
+/* Floating duck decoration */
+[data-theme="shinchanPool"] .floating-duck {
+    position: fixed;
+    font-size: 32px;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+[data-theme="shinchanPool"] .floating-duck:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+[data-theme="shinchanPool"] .floating-duck:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+[data-theme="shinchanPool"] .floating-duck:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Chart colors adaptation */
+[data-theme="shinchanPool"] .chart-container {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--border-primary);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+/* Modal overlays with water effect */
+[data-theme="shinchanPool"] .modal-overlay {
+    background: rgba(0, 206, 209, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+[data-theme="shinchanPool"] .modal-content {
+    background: var(--bg-modal);
+    border: 3px solid var(--border-primary);
+    border-radius: 20px;
+    box-shadow: 
+        0 20px 60px rgba(0, 206, 209, 0.3),
+        0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabs with water theme */
+[data-theme="shinchanPool"] .tab-section,
+[data-theme="shinchanPool"] .ledger-type-tabs,
+[data-theme="shinchanPool"] .chart-tab-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid var(--border-primary);
+    backdrop-filter: blur(10px);
+}
+
+[data-theme="shinchanPool"] .tab-btn.active,
+[data-theme="shinchanPool"] .ledger-type-tab.active,
+[data-theme="shinchanPool"] .chart-tab-btn.active {
+    background: var(--duck-yellow);
+    color: var(--text-primary);
+    border-bottom: 3px solid var(--duck-orange);
+}
+
+/* Summary stats with pool theme */
+[data-theme="shinchanPool"] .summary-stats,
+[data-theme="shinchanPool"] .budget-summary {
+    background: var(--pool-tile-gradient);
+    border-radius: 16px;
+    padding: 16px;
+    color: var(--text-light);
+    border: 2px solid var(--border-primary);
+}
+
+/* Loading spinner with water bubble effect */
+[data-theme="shinchanPool"] .loading-spinner {
+    border: 3px solid rgba(64, 224, 208, 0.3);
+    border-top: 3px solid var(--duck-yellow);
+    border-radius: 50%;
+    animation: waterBubble 1s linear infinite;
+}
+
+@keyframes waterBubble {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    [data-theme="shinchanPool"] .floating-duck {
+        font-size: 24px;
+    }
+    
+    [data-theme="shinchanPool"] .card,
+    [data-theme="shinchanPool"] .modal-content {
+        border-radius: 12px;
+        margin: 8px;
+    }
+    
+    [data-theme="shinchanPool"] .btn,
+    [data-theme="shinchanPool"] .fab-btn {
+        border-radius: 20px;
+        padding: 12px 20px;
+    }
+}
+
+/* Dark pool effect for better contrast */
+[data-theme="shinchanPool"] .text-gradient {
+    background: var(--pool-water-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* Special glow effect for important elements */
+[data-theme="shinchanPool"] .glow-effect {
+    box-shadow: 
+        0 0 20px rgba(0, 206, 209, 0.5),
+        0 0 40px rgba(64, 224, 208, 0.3),
+        0 0 60px rgba(127, 255, 212, 0.2);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.2); }
+}
+
+/* Water splash effect for interactions */
+[data-theme="shinchanPool"] .splash-effect {
+    position: relative;
+    overflow: visible;
+}
+
+[data-theme="shinchanPool"] .splash-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(64, 224, 208, 0.6), transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s ease;
+}
+
+[data-theme="shinchanPool"] .splash-effect:active::after {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+    transition: all 0.6s ease;
+}

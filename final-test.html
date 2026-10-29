@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html data-theme="festive">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最終測試</title>
+    <style>
+        .test-card {
+            width: 300px;
+            height: 200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border: 5px solid #FCA311;
+            border-radius: 20px;
+        }
+        
+        /* 最簡單的測試 - 直接設置背景圖片 */
+        html[data-theme="festive"] .test-card {
+            background-image: url("https://i.pinimg.com/1200x/ba/24/9a/ba249a3cc3f9f317683f78c240ff0686.jpg") !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-color: rgba(230, 57, 70, 0.5) !important;
+            background-blend-mode: overlay !important;
+        }
+        
+        .info {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-card">
+        測試卡片<br>
+        應該顯示背景圖片
+    </div>
+    
+    <div class="info">
+        <div>HTML標籤: <span id="htmlTag">檢查中...</span></div>
+        <div>主題屬性: <span id="themeAttr">檢查中...</span></div>
+        <div>背景圖片: <span id="bgImage">檢查中...</span></div>
+        <div>背景顏色: <span id="bgColor">檢查中...</span></div>
+        <div>邊框顏色: <span id="borderColor">檢查中...</span></div>
+    </div>
+
+    <script>
+        function check() {
+            const html = document.documentElement;
+            const card = document.querySelector('.test-card');
+            const style = getComputedStyle(card);
+            
+            document.getElementById('htmlTag').textContent = html.tagName;
+            document.getElementById('themeAttr').textContent = html.getAttribute('data-theme');
+            document.getElementById('bgImage').textContent = style.backgroundImage.substring(0, 80) + '...';
+            document.getElementById('bgColor').textContent = style.backgroundColor;
+            document.getElementById('borderColor').textContent = style.borderColor;
+            
+            console.log('=== 檢查結果 ===');
+            console.log('HTML標籤:', html.tagName);
+            console.log('主題屬性:', html.getAttribute('data-theme'));
+            console.log('背景圖片:', style.backgroundImage);
+            console.log('背景顏色:', style.backgroundColor);
+            console.log('邊框顏色:', style.borderColor);
+        }
+        
+        // 頁面載入後檢查
+        setTimeout(check, 100);
+    </script>
+</body>
+</html>

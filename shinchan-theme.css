@@ -1,0 +1,738 @@
+/* ========== 蜡笔小新主题 ========== */
+:root[data-theme="shinchan"] {
+    /* 主色调 - 基于图片中的黄色花朵和蓝天 */
+    --color-primary: #FFD700;
+    --color-primary-light: #FFED4E;
+    --color-primary-lighter: #FFF59D;
+    --color-primary-dark: #FFC107;
+    --color-primary-darker: #FF9800;
+    
+    /* 次要色调 - 天空蓝 */
+    --color-secondary: #4FC3F7;
+    --color-secondary-light: #81D4FA;
+    --color-secondary-lighter: #B3E5FC;
+    --color-secondary-dark: #29B6F6;
+    --color-secondary-darker: #03A9F4;
+    
+    /* 强调色 - 绿色叶子 */
+    --color-accent: #66BB6A;
+    --color-accent-light: #81C784;
+    --color-accent-lighter: #A5D6A7;
+    --color-accent-dark: #4CAF50;
+    --color-accent-darker: #388E3C;
+    
+    /* 背景色 */
+    --bg-primary: #87CEEB;
+    --bg-secondary: #E3F2FD;
+    --bg-tertiary: #FFF8E1;
+    --bg-quaternary: #F1F8E9;
+    --bg-white: #FFFFFF;
+    --bg-light: #FFFDE7;
+    --bg-lighter: #FFF9C4;
+    --bg-lightest: #FFF59D;
+    --bg-soft: #FFEB3B;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-modal: rgba(255, 255, 255, 0.95);
+    --bg-overlay: rgba(135, 206, 235, 0.4);
+    
+    /* 文字颜色 */
+    --text-primary: #2E7D32;
+    --text-secondary: #1565C0;
+    --text-tertiary: #616161;
+    --text-white: #FFFFFF;
+    --text-muted: #757575;
+    --text-inverse: #FFFFFF;
+    
+    /* 边框颜色 */
+    --border-light: rgba(255, 215, 0, 0.3);
+    --border-medium: rgba(255, 193, 7, 0.5);
+    --border-strong: rgba(255, 152, 0, 0.7);
+    --border-dark: rgba(255, 87, 34, 0.8);
+    
+    /* 阴影 */
+    --shadow-sm: 0 2px 4px rgba(255, 193, 7, 0.1);
+    --shadow-md: 0 4px 8px rgba(255, 193, 7, 0.15);
+    --shadow-lg: 0 8px 16px rgba(255, 193, 7, 0.2);
+    --shadow-xl: 0 12px 24px rgba(255, 193, 7, 0.25);
+    
+    /* 渐变 */
+    --bg-gradient: linear-gradient(135deg, #FFD700 0%, #FFED4E 50%, #FFF59D 100%);
+    --bg-gradient-reverse: linear-gradient(135deg, #87CEEB 0%, #4FC3F7 50%, #29B6F6 100%);
+    --bg-light-gradient: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 50%, #FFE082 100%);
+    --bg-light-gradient-reverse: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%);
+    
+    /* 透明度变体 */
+    --color-primary-rgba-08: rgba(255, 215, 0, 0.08);
+    --color-primary-rgba-10: rgba(255, 215, 0, 0.10);
+    --color-primary-rgba-15: rgba(255, 215, 0, 0.15);
+    --color-primary-rgba-20: rgba(255, 215, 0, 0.20);
+    --color-primary-rgba-30: rgba(255, 215, 0, 0.30);
+    --color-primary-rgba-40: rgba(255, 215, 0, 0.40);
+    --color-primary-rgba-50: rgba(255, 215, 0, 0.50);
+    
+    --color-secondary-rgba-08: rgba(79, 195, 247, 0.08);
+    --color-secondary-rgba-10: rgba(79, 195, 247, 0.10);
+    --color-secondary-rgba-15: rgba(79, 195, 247, 0.15);
+    --color-secondary-rgba-20: rgba(79, 195, 247, 0.20);
+    --color-secondary-rgba-30: rgba(79, 195, 247, 0.30);
+    --color-secondary-rgba-40: rgba(79, 195, 247, 0.40);
+    --color-secondary-rgba-50: rgba(79, 195, 247, 0.50);
+    
+    --color-accent-rgba-08: rgba(102, 187, 106, 0.08);
+    --color-accent-rgba-10: rgba(102, 187, 106, 0.10);
+    --color-accent-rgba-15: rgba(102, 187, 106, 0.15);
+    --color-accent-rgba-20: rgba(102, 187, 106, 0.20);
+    --color-accent-rgba-30: rgba(102, 187, 106, 0.30);
+    --color-accent-rgba-40: rgba(102, 187, 106, 0.40);
+    --color-accent-rgba-50: rgba(102, 187, 106, 0.50);
+    
+    /* 字体 */
+    --font-primary: 'Comic Sans MS', 'Noto Sans TC', 'PingFang TC', sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    
+    /* 圆角 */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-full: 50%;
+    
+    /* 过渡 */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.2s ease;
+    --transition-slow: 0.3s ease;
+    
+    /* 间距 */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    
+    /* 字体大小 */
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-base: 16px;
+    --font-lg: 18px;
+    --font-xl: 20px;
+    --font-xxl: 24px;
+    --font-xxxl: 28px;
+    
+    /* 字母间距 */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
+    
+    /* 行高 */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    /* 特殊颜色 */
+    --color-error: #F44336;
+    --color-warning: #FF9800;
+    --color-success: #4CAF50;
+    --color-info: #2196F3;
+    
+    /* 特殊透明度 */
+    --color-error-rgba-20: rgba(244, 67, 54, 0.20);
+    --color-warning-rgba-20: rgba(255, 152, 0, 0.20);
+    --color-success-rgba-20: rgba(76, 175, 80, 0.20);
+    --color-info-rgba-20: rgba(33, 150, 243, 0.20);
+    
+    /* 特殊渐变 */
+    --shadow-primary: 0 4px 12px rgba(255, 193, 7, 0.3);
+    --shadow-primary-lg: 0 8px 24px rgba(255, 193, 7, 0.4);
+    --shadow-secondary: 0 4px 12px rgba(79, 195, 247, 0.3);
+    --shadow-secondary-lg: 0 8px 24px rgba(79, 195, 247, 0.4);
+    --shadow-accent: 0 4px 12px rgba(102, 187, 106, 0.3);
+    --shadow-accent-lg: 0 8px 24px rgba(102, 187, 106, 0.4);
+    
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-hard: 0 8px 32px rgba(0, 0, 0, 0.16);
+    
+    /* 控制颜色 */
+    --control-border-color: var(--border-light);
+    --control-bg-color: var(--bg-white);
+    --control-text-color: var(--text-primary);
+    --control-hover-bg-color: var(--bg-light);
+    --control-active-bg-color: var(--bg-soft);
+    
+    /* 动作颜色 */
+    --action-primary-bg: var(--color-primary);
+    --action-primary-text: var(--text-white);
+    --action-primary-border: var(--color-primary);
+    --action-secondary-bg: var(--color-secondary);
+    --action-secondary-text: var(--text-white);
+    --action-secondary-border: var(--color-secondary);
+    --action-side-text: rgba(255, 255, 255, 0.96);
+}
+
+/* 背景设置 */
+:root[data-theme="shinchan"] body {
+    background: url("https://i.pinimg.com/1200x/c3/66/a8/c366a88a9b62dee30d8628ddae89afa9.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+}
+
+:root[data-theme="shinchan"] body::before {
+    display: none;
+}
+
+/* 页面背景透明化 */
+:root[data-theme="shinchan"] .page-input,
+:root[data-theme="shinchan"] .page-ledger,
+:root[data-theme="shinchan"] .page-chart,
+:root[data-theme="shinchan"] .page-budget,
+:root[data-theme="shinchan"] .page-monthly-planner,
+:root[data-theme="shinchan"] .page-daily-budget,
+:root[data-theme="shinchan"] .page-settings,
+:root[data-theme="shinchan"] .page-category-manage,
+:root[data-theme="shinchan"] .page-investment,
+:root[data-theme="shinchan"] .page-wallet,
+:root[data-theme="shinchan"] .page-history,
+:root[data-theme="shinchan"] .page-planner {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+/* 卡片样式 */
+:root[data-theme="shinchan"] .card,
+:root[data-theme="shinchan"] .record-card,
+:root[data-theme="shinchan"] .ledger-card,
+:root[data-theme="shinchan"] .summary-card,
+:root[data-theme="shinchan"] .budget-card,
+:root[data-theme="shinchan"] .wallet-card,
+:root[data-theme="shinchan"] .chart-card,
+:root[data-theme="shinchan"] .investment-card,
+:root[data-theme="shinchan"] .stock-item-card,
+:root[data-theme="shinchan"] .monthly-planner-card,
+:root[data-theme="shinchan"] .dividend-stat-card,
+:root[data-theme="shinchan"] .dca-card,
+:root[data-theme="shinchan"] .installment-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-primary);
+    backdrop-filter: blur(8px);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="shinchan"] .card:hover,
+:root[data-theme="shinchan"] .record-card:hover,
+:root[data-theme="shinchan"] .ledger-card:hover,
+:root[data-theme="shinchan"] .summary-card:hover,
+:root[data-theme="shinchan"] .budget-card:hover,
+:root[data-theme="shinchan"] .wallet-card:hover,
+:root[data-theme="shinchan"] .chart-card:hover,
+:root[data-theme="shinchan"] .investment-card:hover,
+:root[data-theme="shinchan"] .stock-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary-lg);
+    border-color: var(--border-medium);
+}
+
+/* 投资卡片特殊效果 */
+:root[data-theme="shinchan"] .investment-card::before,
+:root[data-theme="shinchan"] .stock-item-card::before {
+    background: linear-gradient(135deg, var(--color-primary-rgba-20) 0%, var(--color-secondary-rgba-20) 55%, var(--color-accent-rgba-20) 100%);
+    border-radius: var(--radius-lg);
+}
+
+/* 导航栏 */
+:root[data-theme="shinchan"] .nav-item.active {
+    background: var(--color-primary-rgba-30);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-primary);
+}
+
+:root[data-theme="shinchan"] .nav-item:hover {
+    background: var(--color-primary-rgba-20);
+    transform: scale(1.05);
+}
+
+/* 底部导航 */
+:root[data-theme="shinchan"] .bottom-nav {
+    background: var(--bg-card) !important;
+    border-top: 2px solid var(--border-light) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 -4px 16px var(--color-primary-rgba-20);
+}
+
+/* 模态框 */
+:root[data-theme="shinchan"] .modal-content,
+:root[data-theme="shinchan"] .modal-content-standard,
+:root[data-theme="shinchan"] .budget-category-modal-content,
+:root[data-theme="shinchan"] .budget-setting-modal-content,
+:root[data-theme="shinchan"] .category-modal-content,
+:root[data-theme="shinchan"] .dca-execute-modal .modal-content,
+:root[data-theme="shinchan"] .account-modal-content,
+:root[data-theme="shinchan"] .emoji-modal-content,
+:root[data-theme="shinchan"] .history-modal-content {
+    background: var(--bg-modal);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-primary-lg);
+    backdrop-filter: blur(12px);
+}
+
+/* 输入区域 */
+:root[data-theme="shinchan"] .input-section {
+    background: var(--bg-card);
+    border-top: 2px solid var(--border-light);
+    box-shadow: 0 -4px 20px var(--color-primary-rgba-20);
+    backdrop-filter: blur(10px);
+}
+
+/* 表单元素 */
+:root[data-theme="shinchan"] .form-input,
+:root[data-theme="shinchan"] .form-select,
+:root[data-theme="shinchan"] .form-textarea,
+:root[data-theme="shinchan"] .note-input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid var(--border-light) !important;
+    border-radius: var(--radius-md);
+    color: var(--text-primary) !important;
+    font-family: var(--font-primary);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="shinchan"] .form-input:focus,
+:root[data-theme="shinchan"] .form-select:focus,
+:root[data-theme="shinchan"] .form-textarea:focus,
+:root[data-theme="shinchan"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px var(--color-primary-rgba-20) !important;
+    background: var(--bg-white) !important;
+    transform: scale(1.02);
+}
+
+/* 头部区域 */
+:root[data-theme="shinchan"] .header-section {
+    background: var(--bg-card) !important;
+    border-bottom: 2px solid var(--border-light) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px var(--color-primary-rgba-15);
+}
+
+/* 标签页 */
+:root[data-theme="shinchan"] .tab-btn {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 2px solid var(--border-light) !important;
+    border-radius: var(--radius-md);
+    color: var(--text-primary) !important;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="shinchan"] .tab-btn.active {
+    background: var(--bg-gradient) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: var(--text-white) !important;
+    box-shadow: var(--shadow-primary);
+    transform: scale(1.05);
+}
+
+:root[data-theme="shinchan"] .tab-btn:hover {
+    background: var(--color-primary-rgba-20) !important;
+    border-color: var(--border-medium) !important;
+    transform: translateY(-1px);
+}
+
+/* 按钮样式 */
+:root[data-theme="shinchan"] .key-btn {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid var(--border-light) !important;
+    border-radius: var(--radius-md);
+    color: var(--text-primary) !important;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="shinchan"] .key-btn:hover {
+    background: var(--color-primary-rgba-20) !important;
+    border-color: var(--border-medium) !important;
+    box-shadow: var(--shadow-primary);
+    transform: translateY(-2px) scale(1.05);
+}
+
+:root[data-theme="shinchan"] .key-btn:active {
+    background: var(--color-primary-rgba-30) !important;
+    transform: scale(0.95);
+}
+
+:root[data-theme="shinchan"] .key-btn.operator {
+    background: var(--bg-gradient) !important;
+    color: var(--text-white) !important;
+    border-color: var(--color-primary) !important;
+}
+
+:root[data-theme="shinchan"] .key-btn.equal {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%) !important;
+    color: var(--text-white) !important;
+    border-color: var(--color-accent) !important;
+}
+
+:root[data-theme="shinchan"] .key-btn.delete {
+    background: var(--color-error-rgba-20) !important;
+    border-color: var(--color-error) !important;
+    color: var(--color-error) !important;
+}
+
+/* FAB 按钮 */
+:root[data-theme="shinchan"] .fab-btn {
+    background: var(--bg-gradient) !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--color-primary) !important;
+    box-shadow: var(--shadow-primary-lg);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-xxl);
+    border-radius: var(--radius-full);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="shinchan"] .fab-btn:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%) !important;
+    box-shadow: 0 12px 32px var(--color-primary-rgba-40) !important;
+    transform: translateY(-2px) scale(1.1) !important;
+}
+
+:root[data-theme="shinchan"] .fab-btn:active {
+    transform: scale(0.95) !important;
+}
+
+/* 提交按钮 */
+:root[data-theme="shinchan"] .form-submit-btn,
+:root[data-theme="shinchan"] .action-btn,
+:root[data-theme="shinchan"] .btn-primary {
+    background: var(--bg-gradient) !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--color-primary) !important;
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    box-shadow: var(--shadow-primary);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="shinchan"] .form-submit-btn:hover,
+:root[data-theme="shinchan"] .action-btn:hover,
+:root[data-theme="shinchan"] .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary-lg);
+}
+
+/* 删除按钮 */
+:root[data-theme="shinchan"] .form-delete-btn,
+:root[data-theme="shinchan"] .btn-danger {
+    background: var(--color-error-rgba-20) !important;
+    color: var(--color-error) !important;
+    border: 2px solid var(--color-error) !important;
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="shinchan"] .form-delete-btn:hover,
+:root[data-theme="shinchan"] .btn-danger:hover {
+    background: var(--color-error) !important;
+    color: var(--text-white) !important;
+    transform: translateY(-2px);
+}
+
+/* 文字样式 */
+:root[data-theme="shinchan"] h1,
+:root[data-theme="shinchan"] h2,
+:root[data-theme="shinchan"] h3,
+:root[data-theme="shinchan"] h4,
+:root[data-theme="shinchan"] h5,
+:root[data-theme="shinchan"] h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-black);
+    color: var(--text-primary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="shinchan"] .card-title,
+:root[data-theme="shinchan"] .modal-title,
+:root[data-theme="shinchan"] .form-title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-black);
+    color: var(--text-primary);
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+:root[data-theme="shinchan"] .text-primary {
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+:root[data-theme="shinchan"] .text-secondary {
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+:root[data-theme="shinchan"] .text-muted {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* 数值显示 */
+:root[data-theme="shinchan"] .value,
+:root[data-theme="shinchan"] .amount,
+:root[data-theme="shinchan"] .balance {
+    font-family: 'Courier New', monospace;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="shinchan"] .income {
+    color: var(--color-success);
+    font-weight: var(--font-weight-bold);
+}
+
+:root[data-theme="shinchan"] .expense {
+    color: var(--color-error);
+    font-weight: var(--font-weight-bold);
+}
+
+/* 列表项 */
+:root[data-theme="shinchan"] .transaction-item,
+:root[data-theme="shinchan"] .category-item,
+:root[data-theme="shinchan"] .settings-item {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(4px);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="shinchan"] .transaction-item:hover,
+:root[data-theme="shinchan"] .category-item:hover,
+:root[data-theme="shinchan"] .settings-item:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--border-medium);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* 特殊页面样式 */
+:root[data-theme="shinchan"] .dca-card,
+:root[data-theme="shinchan"] .investment-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--color-primary-rgba-10) 50%, var(--bg-card) 100%);
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--shadow-primary-lg);
+}
+
+:root[data-theme="shinchan"] .dca-card:hover,
+:root[data-theme="shinchan"] .investment-card:hover {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--color-primary-rgba-20) 50%, var(--bg-card) 100%);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* 预算相关 */
+:root[data-theme="shinchan"] .budget-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--color-accent-rgba-10) 50%, var(--bg-card) 100%);
+    border: 2px solid var(--color-accent);
+}
+
+:root[data-theme="shinchan"] .budget-progress {
+    background: var(--bg-gradient);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-primary);
+}
+
+/* 钱包相关 */
+:root[data-theme="shinchan"] .wallet-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--color-secondary-rgba-10) 50%, var(--bg-card) 100%);
+    border: 2px solid var(--color-secondary);
+}
+
+:root[data-theme="shinchan"] .account-balance {
+    font-size: var(--font-xxxl);
+    font-weight: var(--font-weight-black);
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 设置页面 */
+:root[data-theme="shinchan"] .settings-item {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="shinchan"] .settings-item:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--color-primary);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* 图表相关 */
+:root[data-theme="shinchan"] .chart-container {
+    background: var(--bg-card);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-primary);
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="shinchan"] .chart-section {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    backdrop-filter: blur(4px);
+}
+
+/* 响应式调整 */
+@media (max-width: 575px) {
+    :root[data-theme="shinchan"] .fab-btn {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 20px !important;
+        bottom: 220px !important;
+        right: 16px !important;
+    }
+    
+    :root[data-theme="shinchan"] .card,
+    :root[data-theme="shinchan"] .modal-content {
+        margin: 8px !important;
+    }
+    
+    :root[data-theme="shinchan"] .form-input,
+    :root[data-theme="shinchan"] .form-select {
+        font-size: 16px !important;
+    }
+}
+
+@media (min-width: 576px) {
+    :root[data-theme="shinchan"] .fab-btn {
+        right: 24px;
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root[data-theme="shinchan"] .fab-btn {
+        right: 40px;
+        width: 64px;
+        height: 64px;
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 992px) {
+    :root[data-theme="shinchan"] .fab-btn {
+        right: 60px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root[data-theme="shinchan"] .fab-btn {
+        right: 80px;
+    }
+}
+
+/* 动画效果 */
+:root[data-theme="shinchan"] .card,
+:root[data-theme="shinchan"] .modal-content,
+:root[data-theme="shinchan"] .fab-btn {
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 悬浮动画 */
+:root[data-theme="shinchan"] .fab-btn:hover {
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1.1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.1);
+    }
+}
+
+/* 特殊效果 */
+:root[data-theme="shinchan"] .investment-card::after,
+:root[data-theme="shinchan"] .dca-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+    border-radius: var(--radius-lg);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+:root[data-theme="shinchan"] .investment-card:hover::after,
+:root[data-theme="shinchan"] .dca-card:hover::after {
+    opacity: 1;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

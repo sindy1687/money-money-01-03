@@ -1,0 +1,556 @@
+/* ========== 夢幻境域主題 - 全新版本 ========== */
+:root[data-theme="dreamy-realm"] {
+    /* 主要顏色系統 - 夢幻粉紫色系 */
+    --color-primary: #9B59B6;
+    --color-primary-light: #BF55EC;
+    --color-primary-lighter: #D7BDE2;
+    --color-primary-dark: #8E44AD;
+    
+    /* 次要顏色系統 - 夢幻藍色 */
+    --color-secondary: #5DADE2;
+    --color-secondary-light: #85C1E9;
+    --color-secondary-dark: #3498DB;
+    
+    /* 強調顏色系統 - 夢幻粉色 */
+    --color-accent: #FF6B9D;
+    --color-accent-light: #FF8FAB;
+    --color-accent-dark: #E91E63;
+    
+    /* 背景顏色系統 */
+    --bg-primary: linear-gradient(135deg, rgba(155, 89, 182, 0.08) 0%, rgba(93, 173, 226, 0.06) 50%, rgba(255, 107, 157, 0.04) 100%);
+    --bg-body: rgba(255, 255, 255, 0.98);
+    --bg-body-strong: rgba(255, 255, 255, 1);
+    --bg-gradient: linear-gradient(135deg, #9B59B6 0%, #5DADE2 50%, #FF6B9D 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(155, 89, 182, 0.05) 0%, rgba(93, 173, 226, 0.03) 50%, rgba(255, 107, 157, 0.02) 100%);
+    --bg-white: rgba(255, 255, 255, 0.95);
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-light: rgba(155, 89, 182, 0.08);
+    --bg-lighter: rgba(93, 173, 226, 0.06);
+    --bg-soft: rgba(255, 107, 157, 0.05);
+    --bg-soft-strong: rgba(155, 89, 182, 0.15);
+    
+    /* 文字顏色系統 */
+    --text-primary: rgba(52, 73, 94, 0.95);
+    --text-secondary: rgba(127, 140, 141, 0.85);
+    --text-tertiary: rgba(149, 165, 166, 0.75);
+    --text-strong: rgba(44, 62, 80, 0.98);
+    --text-white: rgba(255, 255, 255, 0.95);
+    
+    /* 邊框顏色系統 */
+    --border-primary: rgba(155, 89, 182, 0.3);
+    --border-light: rgba(155, 89, 182, 0.15);
+    --border-medium: rgba(93, 173, 226, 0.25);
+    --card-border-color: rgba(155, 89, 182, 0.25);
+    --control-border-color: rgba(93, 173, 226, 0.2);
+    --table-border-color: rgba(255, 107, 157, 0.15);
+    
+    /* 陰影系統 */
+    --shadow-primary: 0 15px 35px rgba(155, 89, 182, 0.15);
+    --shadow-primary-lg: 0 25px 50px rgba(155, 89, 182, 0.12);
+    
+    /* RGBA透明度變數 */
+    --color-primary-rgba-08: rgba(155, 89, 182, 0.08);
+    --color-primary-rgba-10: rgba(155, 89, 182, 0.1);
+    --color-primary-rgba-15: rgba(155, 89, 182, 0.15);
+    --color-primary-rgba-20: rgba(155, 89, 182, 0.2);
+    --color-primary-rgba-25: rgba(155, 89, 182, 0.25);
+    --color-primary-rgba-30: rgba(155, 89, 182, 0.3);
+    --color-primary-rgba-40: rgba(155, 89, 182, 0.4);
+    
+    --color-primary-light-rgba-08: rgba(191, 85, 236, 0.08);
+    --color-primary-light-rgba-10: rgba(191, 85, 236, 0.1);
+    --color-primary-light-rgba-15: rgba(191, 85, 236, 0.15);
+    --color-primary-light-rgba-20: rgba(191, 85, 236, 0.2);
+    --color-primary-light-rgba-25: rgba(191, 85, 236, 0.25);
+    --color-primary-light-rgba-30: rgba(191, 85, 236, 0.3);
+    --color-primary-light-rgba-40: rgba(191, 85, 236, 0.4);
+    
+    --color-secondary-rgba-08: rgba(93, 173, 226, 0.08);
+    --color-secondary-rgba-10: rgba(93, 173, 226, 0.1);
+    --color-secondary-rgba-15: rgba(93, 173, 226, 0.15);
+    --color-secondary-rgba-20: rgba(93, 173, 226, 0.2);
+    --color-secondary-rgba-25: rgba(93, 173, 226, 0.25);
+    --color-secondary-rgba-30: rgba(93, 173, 226, 0.3);
+    --color-secondary-rgba-40: rgba(93, 173, 226, 0.4);
+    
+    --color-accent-rgba-08: rgba(255, 107, 157, 0.08);
+    --color-accent-rgba-10: rgba(255, 107, 157, 0.1);
+    --color-accent-rgba-15: rgba(255, 107, 157, 0.15);
+    --color-accent-rgba-20: rgba(255, 107, 157, 0.2);
+    --color-accent-rgba-25: rgba(255, 107, 157, 0.25);
+    --color-accent-rgba-30: rgba(255, 107, 157, 0.3);
+    --color-accent-rgba-40: rgba(255, 107, 157, 0.4);
+    
+    /* 漸層背景 */
+    --bg-light-gradient: linear-gradient(135deg, rgba(155, 89, 182, 0.1) 0%, rgba(93, 173, 226, 0.08) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(155, 89, 182, 0.1) 0%, rgba(93, 173, 226, 0.08) 100%);
+    
+    /* 操作面板背景 */
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.95) 85%, rgba(155, 89, 182, 0.05));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.95) 75%, rgba(155, 89, 182, 0.15));
+    --action-side-text: rgba(52, 73, 94, 0.95);
+}
+
+/* 夢幻境域主題基礎樣式 */
+:root[data-theme="dreamy-realm"] body {
+    background: linear-gradient(135deg, #faf5ff 0%, #f0f8ff 50%, #fff0f5 100%);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root[data-theme="dreamy-realm"] body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://i.pinimg.com/736x/21/4d/cc/214dccff6dac6b30bebd621afc60669d.jpg") center/cover;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 頁面背景透明化 */
+:root[data-theme="dreamy-realm"] .page-ledger,
+:root[data-theme="dreamy-realm"] .page-input,
+:root[data-theme="dreamy-realm"] .page-chart,
+:root[data-theme="dreamy-realm"] .page-budget,
+:root[data-theme="dreamy-realm"] .page-monthly-planner,
+:root[data-theme="dreamy-realm"] .page-daily-budget,
+:root[data-theme="dreamy-realm"] .page-settings,
+:root[data-theme="dreamy-realm"] .page-category-manage,
+:root[data-theme="dreamy-realm"] .page-investment,
+:root[data-theme="dreamy-realm"] .page-wallet,
+:root[data-theme="dreamy-realm"] .page-history,
+:root[data-theme="dreamy-realm"] .page-planner,
+:root[data-theme="dreamy-realm"] .page-manage-investment,
+:root[data-theme="dreamy-realm"] .page-annual-report,
+:root[data-theme="dreamy-realm"] .page-diary {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+/* 卡片樣式系統 */
+:root[data-theme="dreamy-realm"] .card,
+:root[data-theme="dreamy-realm"] .record-card,
+:root[data-theme="dreamy-realm"] .ledger-card,
+:root[data-theme="dreamy-realm"] .summary-card,
+:root[data-theme="dreamy-realm"] .budget-card,
+:root[data-theme="dreamy-realm"] .wallet-card,
+:root[data-theme="dreamy-realm"] .chart-card,
+:root[data-theme="dreamy-realm"] .investment-card,
+:root[data-theme="dreamy-realm"] .manage-investment-card,
+:root[data-theme="dreamy-realm"] .annual-report-card,
+:root[data-theme="dreamy-realm"] .diary-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(155, 89, 182, 0.2) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="dreamy-realm"] .card:hover,
+:root[data-theme="dreamy-realm"] .record-card:hover,
+:root[data-theme="dreamy-realm"] .ledger-card:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(93, 173, 226, 0.4) !important;
+    box-shadow: 0 15px 40px rgba(93, 173, 226, 0.15) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* 記帳記錄條目 - 不透明版本 */
+:root[data-theme="dreamy-realm"] .record-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 248, 255, 0.92) 50%, rgba(255, 240, 245, 0.9) 100%) !important;
+    border: 1px solid rgba(155, 89, 182, 0.3) !important;
+    border-radius: 18px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .record-card:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(240, 248, 255, 0.97) 50%, rgba(255, 240, 245, 0.95) 100%) !important;
+    border-color: rgba(93, 173, 226, 0.5) !important;
+    box-shadow: 0 12px 35px rgba(93, 173, 226, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 文字顏色系統 */
+:root[data-theme="dreamy-realm"] .card h1,
+:root[data-theme="dreamy-realm"] .card h2,
+:root[data-theme="dreamy-realm"] .card h3,
+:root[data-theme="dreamy-realm"] .card h4,
+:root[data-theme="dreamy-realm"] .card h5,
+:root[data-theme="dreamy-realm"] .card h6,
+:root[data-theme="dreamy-realm"] .card .title,
+:root[data-theme="dreamy-realm"] .card .subtitle,
+:root[data-theme="dreamy-realm"] .card .card-title,
+:root[data-theme="dreamy-realm"] .card .card-subtitle {
+    color: var(--color-primary) !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="dreamy-realm"] .card .text,
+:root[data-theme="dreamy-realm"] .card .description,
+:root[data-theme="dreamy-realm"] .card .content,
+:root[data-theme="dreamy-realm"] .card p,
+:root[data-theme="dreamy-realm"] .card span,
+:root[data-theme="dreamy-realm"] .card div {
+    color: var(--text-primary) !important;
+}
+
+/* 記帳記錄條目專用文字樣式 */
+:root[data-theme="dreamy-realm"] .record-card .text,
+:root[data-theme="dreamy-realm"] .record-card .description,
+:root[data-theme="dreamy-realm"] .record-card .content,
+:root[data-theme="dreamy-realm"] .record-card p,
+:root[data-theme="dreamy-realm"] .record-card span,
+:root[data-theme="dreamy-realm"] .record-card div {
+    color: rgba(52, 73, 94, 0.9) !important;
+}
+
+:root[data-theme="dreamy-realm"] .record-card h1,
+:root[data-theme="dreamy-realm"] .record-card h2,
+:root[data-theme="dreamy-realm"] .record-card h3,
+:root[data-theme="dreamy-realm"] .record-card h4,
+:root[data-theme="dreamy-realm"] .record-card h5,
+:root[data-theme="dreamy-realm"] .record-card h6,
+:root[data-theme="dreamy-realm"] .record-card .title,
+:root[data-theme="dreamy-realm"] .record-card .subtitle {
+    color: var(--color-primary) !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="dreamy-realm"] .record-card .highlight,
+:root[data-theme="dreamy-realm"] .record-card .accent,
+:root[data-theme="dreamy-realm"] .record-card .primary-text {
+    color: var(--color-accent) !important;
+}
+
+:root[data-theme="dreamy-realm"] .record-card .secondary-text,
+:root[data-theme="dreamy-realm"] .record-card .muted-text {
+    color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dreamy-realm"] .card .highlight,
+:root[data-theme="dreamy-realm"] .card .accent,
+:root[data-theme="dreamy-realm"] .card .primary-text {
+    color: var(--color-secondary) !important;
+}
+
+:root[data-theme="dreamy-realm"] .card .secondary-text,
+:root[data-theme="dreamy-realm"] .card .muted-text {
+    color: var(--text-secondary) !important;
+}
+
+/* 按鈕樣式系統 */
+:root[data-theme="dreamy-realm"] .btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: var(--text-white) !important;
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+:root[data-theme="dreamy-realm"] .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+:root[data-theme="dreamy-realm"] .btn:hover::before {
+    left: 100%;
+}
+
+:root[data-theme="dreamy-realm"] .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3) !important;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 50%, var(--color-accent-light) 100%) !important;
+}
+
+/* 返回按鈕 */
+:root[data-theme="dreamy-realm"] .back-btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: var(--text-white) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="dreamy-realm"] .back-btn:hover {
+    transform: scale(1.1) rotate(15deg) !important;
+    box-shadow: 0 6px 15px rgba(155, 89, 182, 0.4) !important;
+}
+
+/* 模態框系統 */
+:root[data-theme="dreamy-realm"] .modal,
+:root[data-theme="dreamy-realm"] .dialog,
+:root[data-theme="dreamy-realm"] .popup {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 2px solid rgba(155, 89, 182, 0.3) !important;
+    border-radius: 25px !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 20px 40px rgba(155, 89, 182, 0.2) !important;
+}
+
+/* 小森對話框 */
+:root[data-theme="dreamy-realm"] .xiaosen-dialog {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid var(--color-primary) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .xiaosen-dialog .dialog-title {
+    color: var(--color-primary) !important;
+}
+
+:root[data-theme="dreamy-realm"] .xiaosen-dialog .dialog-content {
+    color: var(--text-primary) !important;
+}
+
+/* 專用卡片樣式 */
+:root[data-theme="dreamy-realm"] .investment-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(155, 89, 182, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .budget-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(93, 173, 226, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .monthly-planning-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(155, 89, 182, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .investment-settings-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(255, 107, 157, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .holding-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(93, 173, 226, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .buying-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(155, 89, 182, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .selling-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(255, 107, 157, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .dividend-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(93, 173, 226, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .regular-investment-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(155, 89, 182, 0.3) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+/* 夢幻境域特殊動畫效果 */
+@keyframes dreamyFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+@keyframes dreamyGlow {
+    0%, 100% { box-shadow: 0 10px 25px rgba(155, 89, 182, 0.2); }
+    50% { box-shadow: 0 15px 35px rgba(93, 173, 226, 0.3); }
+}
+
+@keyframes dreamyShimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+/* 特殊元素動畫 */
+:root[data-theme="dreamy-realm"] .fab:hover {
+    animation: dreamyFloat 3s ease-in-out infinite;
+}
+
+:root[data-theme="dreamy-realm"] .btn-primary:hover {
+    animation: dreamyGlow 2s ease-in-out infinite;
+}
+
+:root[data-theme="dreamy-realm"] .card:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: dreamyShimmer 2s ease-in-out;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* 夢幻背景效果 */
+:root[data-theme="dreamy-realm"] body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, rgba(155, 89, 182, 0.2), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(93, 173, 226, 0.15), transparent),
+        radial-gradient(1px 1px at 50px 50px, rgba(255, 107, 157, 0.25), transparent),
+        radial-gradient(1px 1px at 80px 10px, rgba(155, 89, 182, 0.2), transparent),
+        radial-gradient(2px 2px at 130px 80px, rgba(93, 173, 226, 0.15), transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: dreamyFloat 100s ease-in-out infinite;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* 導航系統 */
+:root[data-theme="dreamy-realm"] .bottom-nav {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-top: 1px solid rgba(155, 89, 182, 0.2) !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .nav-item {
+    color: var(--text-secondary) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="dreamy-realm"] .nav-item.active {
+    color: var(--color-primary) !important;
+}
+
+:root[data-theme="dreamy-realm"] .nav-item:hover {
+    color: var(--color-secondary) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* 表單元素 */
+:root[data-theme="dreamy-realm"] input,
+:root[data-theme="dreamy-realm"] textarea,
+:root[data-theme="dreamy-realm"] select {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(155, 89, 182, 0.2) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+:root[data-theme="dreamy-realm"] input:focus,
+:root[data-theme="dreamy-realm"] textarea:focus,
+:root[data-theme="dreamy-realm"] select:focus {
+    border-color: var(--color-secondary) !important;
+    box-shadow: 0 0 15px rgba(93, 173, 226, 0.2) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+:root[data-theme="dreamy-realm"] input::placeholder,
+:root[data-theme="dreamy-realm"] textarea::placeholder {
+    color: var(--text-tertiary) !important;
+}
+
+/* FAB按鈕 */
+:root[data-theme="dreamy-realm"] .fab {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%) !important;
+    box-shadow: 0 6px 20px rgba(155, 89, 182, 0.25) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="dreamy-realm"] .fab:hover {
+    transform: scale(1.1) rotate(10deg) !important;
+    box-shadow: 0 8px 25px rgba(155, 89, 182, 0.35) !important;
+}
+
+/* 統計項目 */
+:root[data-theme="dreamy-realm"] .stat-item {
+    background: linear-gradient(135deg, var(--color-primary-rgba-08) 0%, var(--color-primary-rgba-12) 50%, var(--color-primary-rgba-08) 100%) !important;
+    border: 1px solid var(--color-primary-rgba-20) !important;
+    box-shadow: 0 4px 12px var(--color-primary-rgba-15) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+:root[data-theme="dreamy-realm"] .stat-item:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-12) 0%, var(--color-primary-rgba-18) 50%, var(--color-primary-rgba-12) 100%) !important;
+    box-shadow: 0 6px 16px var(--color-primary-rgba-20) !important;
+    transform: translateY(-2px) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* 每日支出顯示 */
+:root[data-theme="dreamy-realm"] .daily-expense-display,
+:root[data-theme="dreamy-realm"] .daily-expense-in-history {
+    background: linear-gradient(135deg, var(--color-primary-rgba-08) 0%, var(--color-primary-rgba-12) 50%, var(--color-primary-rgba-08) 100%) !important;
+    border: 1px solid var(--color-primary-rgba-20) !important;
+    box-shadow: 0 2px 6px var(--color-primary-rgba-15) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="dreamy-realm"] .daily-expense-display:hover,
+:root[data-theme="dreamy-realm"] .daily-expense-in-history:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-12) 0%, var(--color-primary-rgba-18) 50%, var(--color-primary-rgba-12) 100%) !important;
+    box-shadow: 0 4px 10px var(--color-primary-rgba-20) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* 滾動條樣式 */
+:root[data-theme="dreamy-realm"] ::-webkit-scrollbar {
+    width: 10px;
+}
+
+:root[data-theme="dreamy-realm"] ::-webkit-scrollbar-track {
+    background: rgba(155, 89, 182, 0.05);
+    border-radius: 10px;
+}
+
+:root[data-theme="dreamy-realm"] ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: 10px;
+}
+
+:root[data-theme="dreamy-realm"] ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
+}

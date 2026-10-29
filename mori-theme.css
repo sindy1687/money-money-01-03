@@ -1,0 +1,294 @@
+/* ========== 小森主題 - 參考指定圖片配色 ========== */
+
+:root[data-theme="mori"] {
+    /* 主要顏色系統 - 柔和森林綠 + 暖紅點綴 */
+    --color-primary: #3B7A57;
+    --color-primary-light: #5AAE84;
+    --color-primary-lighter: #A7D9C2;
+    --color-primary-dark: #27523B;
+
+    /* 次要顏色 - 外套暖紅 */
+    --color-secondary: #C1462E;
+    --color-secondary-light: #D4634E;
+    --color-secondary-dark: #8E2F1F;
+
+    /* 強調色 - 葉片青綠 */
+    --color-accent: #9CCB5B;
+    --color-accent-light: #B7DD80;
+    --color-accent-dark: #6D9E2E;
+
+    /* 狀態顏色 */
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #0ea5e9;
+    --color-error: var(--color-danger);
+
+    /* 背景顏色系統 - 玻璃感但保持對比 */
+    --bg-primary: linear-gradient(135deg, rgba(25, 52, 38, 0.92) 0%, rgba(40, 85, 60, 0.86) 55%, rgba(168, 215, 195, 0.28) 100%);
+    --bg-body: rgba(20, 38, 28, 0.72);
+    --bg-body-strong: rgba(18, 34, 25, 0.82);
+    --bg-gradient: linear-gradient(135deg, rgba(59, 122, 87, 0.92) 0%, rgba(90, 174, 132, 0.65) 55%, rgba(193, 70, 46, 0.18) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(59, 122, 87, 0.12) 0%, rgba(193, 70, 46, 0.10) 100%);
+    --bg-white: rgba(18, 34, 25, 0.90);
+    --bg-card: rgba(18, 34, 25, 0.82);
+    --bg-light: rgba(28, 56, 40, 0.68);
+    --bg-lighter: rgba(48, 95, 69, 0.52);
+    --bg-soft: rgba(255, 255, 255, 0.14);
+    --bg-soft-strong: rgba(255, 255, 255, 0.22);
+
+    /* 文字顏色系統 */
+    --text-primary: rgba(255, 255, 255, 0.94);
+    --text-secondary: rgba(235, 245, 239, 0.82);
+    --text-tertiary: rgba(215, 230, 222, 0.70);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.96);
+
+    /* 邊框顏色系統 */
+    --border-primary: rgba(90, 174, 132, 0.55);
+    --border-light: rgba(255, 255, 255, 0.16);
+    --border-medium: rgba(167, 217, 194, 0.32);
+    --card-border-color: rgba(167, 217, 194, 0.40);
+    --control-border-color: rgba(167, 217, 194, 0.30);
+    --table-border-color: rgba(255, 255, 255, 0.16);
+
+    /* 陰影系統 */
+    --shadow-primary: 0 18px 55px rgba(0, 0, 0, 0.35);
+    --shadow-primary-lg: 0 28px 80px rgba(0, 0, 0, 0.45);
+
+    /* RGBA 透明度變體 */
+    --color-primary-rgba-08: rgba(59, 122, 87, 0.08);
+    --color-primary-rgba-10: rgba(59, 122, 87, 0.10);
+    --color-primary-rgba-12: rgba(59, 122, 87, 0.12);
+    --color-primary-rgba-15: rgba(59, 122, 87, 0.15);
+    --color-primary-rgba-18: rgba(59, 122, 87, 0.18);
+    --color-primary-rgba-20: rgba(59, 122, 87, 0.20);
+    --color-primary-rgba-22: rgba(59, 122, 87, 0.22);
+    --color-primary-rgba-25: rgba(59, 122, 87, 0.25);
+    --color-primary-rgba-30: rgba(59, 122, 87, 0.30);
+    --color-primary-rgba-40: rgba(59, 122, 87, 0.40);
+
+    --color-primary-light-rgba-10: rgba(90, 174, 132, 0.10);
+    --color-primary-light-rgba-15: rgba(90, 174, 132, 0.15);
+    --color-primary-light-rgba-20: rgba(90, 174, 132, 0.20);
+    --color-primary-light-rgba-25: rgba(90, 174, 132, 0.25);
+    --color-primary-light-rgba-30: rgba(90, 174, 132, 0.30);
+    --color-primary-light-rgba-40: rgba(90, 174, 132, 0.40);
+
+    --color-secondary-rgba-10: rgba(193, 70, 46, 0.10);
+    --color-secondary-rgba-15: rgba(193, 70, 46, 0.15);
+    --color-secondary-rgba-20: rgba(193, 70, 46, 0.20);
+    --color-secondary-rgba-25: rgba(193, 70, 46, 0.25);
+    --color-secondary-rgba-30: rgba(193, 70, 46, 0.30);
+    --color-secondary-rgba-40: rgba(193, 70, 46, 0.40);
+
+    /* 側邊欄顏色 */
+    --action-side-bg: color-mix(in srgb, rgba(18, 34, 25, 0.85) 78%, rgba(90, 174, 132, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(18, 34, 25, 0.85) 68%, rgba(90, 174, 132, 0.22));
+    --action-side-text: var(--text-primary);
+}
+
+:root[data-theme="mori"] body {
+    background: url("https://i.pinimg.com/736x/91/12/d5/9112d581109a8069dff4011d272cd26f.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+:root[data-theme="mori"] body::before {
+    display: none;
+}
+
+:root[data-theme="mori"] .page-input,
+:root[data-theme="mori"] .page-ledger,
+:root[data-theme="mori"] .page-chart,
+:root[data-theme="mori"] .page-budget,
+:root[data-theme="mori"] .page-monthly-planner,
+:root[data-theme="mori"] .page-daily-budget,
+:root[data-theme="mori"] .page-settings,
+:root[data-theme="mori"] .page-category-manage,
+:root[data-theme="mori"] .page-investment,
+:root[data-theme="mori"] .page-wallet,
+:root[data-theme="mori"] .page-history,
+:root[data-theme="mori"] .page-planner,
+:root[data-theme="mori"] .dividend-page,
+:root[data-theme="mori"] .dca-management-page,
+:root[data-theme="mori"] .dca-setup-page,
+:root[data-theme="mori"] .investment-input-page,
+:root[data-theme="mori"] .wishlist-content,
+:root[data-theme="mori"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="mori"] .card,
+:root[data-theme="mori"] .record-card,
+:root[data-theme="mori"] .ledger-card,
+:root[data-theme="mori"] .summary-card,
+:root[data-theme="mori"] .budget-card,
+:root[data-theme="mori"] .wallet-card,
+:root[data-theme="mori"] .chart-card,
+:root[data-theme="mori"] .investment-card,
+:root[data-theme="mori"] .accounting-card,
+:root[data-theme="mori"] .wallet-budget-card,
+:root[data-theme="mori"] .monthly-planning-card,
+:root[data-theme="mori"] .investment-settings-card,
+:root[data-theme="mori"] .holding-card,
+:root[data-theme="mori"] .buying-card,
+:root[data-theme="mori"] .selling-card,
+:root[data-theme="mori"] .dividend-card,
+:root[data-theme="mori"] .stock-item-card,
+:root[data-theme="mori"] .monthly-planner-card,
+:root[data-theme="mori"] .dividend-stat-card,
+:root[data-theme="mori"] .dca-card,
+:root[data-theme="mori"] .installment-card,
+:root[data-theme="mori"] .dca-item-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--card-border-color) !important;
+    box-shadow: var(--shadow-primary) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(14px) saturate(135%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(135%) !important;
+}
+
+:root[data-theme="mori"] .bottom-nav {
+    background: rgba(18, 34, 25, 0.78) !important;
+    border-top: 1px solid var(--border-light) !important;
+    backdrop-filter: blur(18px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(140%) !important;
+}
+
+:root[data-theme="mori"] .nav-item.active {
+    background: var(--color-primary-rgba-20) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25) !important;
+}
+
+:root[data-theme="mori"] .modal-content,
+:root[data-theme="mori"] .modal-content-standard,
+:root[data-theme="mori"] .budget-category-modal-content,
+:root[data-theme="mori"] .budget-setting-modal-content,
+:root[data-theme="mori"] .category-modal-content,
+:root[data-theme="mori"] .dca-execute-modal .modal-content,
+:root[data-theme="mori"] .account-modal-content,
+:root[data-theme="mori"] .emoji-modal-content,
+:root[data-theme="mori"] .history-modal-content {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-primary) !important;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45) !important;
+    backdrop-filter: blur(18px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(140%) !important;
+}
+
+:root[data-theme="mori"] .form-input,
+:root[data-theme="mori"] .form-select,
+:root[data-theme="mori"] .form-textarea,
+:root[data-theme="mori"] .note-input,
+:root[data-theme="mori"] input,
+:root[data-theme="mori"] select,
+:root[data-theme="mori"] textarea {
+    background: var(--bg-light) !important;
+    border: 1px solid var(--control-border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="mori"] .form-input:focus,
+:root[data-theme="mori"] .form-select:focus,
+:root[data-theme="mori"] .form-textarea:focus,
+:root[data-theme="mori"] .note-input:focus,
+:root[data-theme="mori"] input:focus,
+:root[data-theme="mori"] select:focus,
+:root[data-theme="mori"] textarea:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px var(--color-primary-rgba-20) !important;
+    outline: none !important;
+}
+
+:root[data-theme="mori"] .btn,
+:root[data-theme="mori"] .btn-primary,
+:root[data-theme="mori"] .form-submit-btn,
+:root[data-theme="mori"] .submit-btn,
+:root[data-theme="mori"] button {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+    border: 1px solid var(--border-primary) !important;
+    color: var(--text-white) !important;
+}
+
+:root[data-theme="mori"] .btn:hover,
+:root[data-theme="mori"] .btn-primary:hover,
+:root[data-theme="mori"] .form-submit-btn:hover,
+:root[data-theme="mori"] .submit-btn:hover,
+:root[data-theme="mori"] button:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%) !important;
+}
+
+:root[data-theme="mori"] .action-btn.buy-btn,
+:root[data-theme="mori"] #actionBuy,
+:root[data-theme="mori"] .buy-btn {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%) !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+:root[data-theme="mori"] .action-btn.dca-btn,
+:root[data-theme="mori"] #actionDCA,
+:root[data-theme="mori"] .dca-btn {
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-primary) 100%) !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+:root[data-theme="mori"] .back-btn,
+:root[data-theme="mori"] .investment-form-back-btn,
+:root[data-theme="mori"] .auto-transfer-back-btn,
+:root[data-theme="mori"] .auto-transfer-setup-back-btn {
+    background: rgba(18, 34, 25, 0.72) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+}
+
+
+
+:root[data-theme="mori"] .mori-dialog-box {
+    background: rgba(18, 34, 25, 0.82) !important;
+    border: 1px solid var(--border-primary) !important;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45) !important;
+}
+
+:root[data-theme="mori"] .mori-message {
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="mori"] .history-advisor-chat {
+    background: rgba(18, 34, 25, 0.86) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+:root[data-theme="mori"] .advisor-quick-btn {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="mori"] .advisor-quick-btn:hover {
+    background: rgba(90, 174, 132, 0.18) !important;
+    border-color: rgba(90, 174, 132, 0.35) !important;
+}
+
+:root[data-theme="mori"] .advisor-chat-input-container {
+    background: rgba(18, 34, 25, 0.92) !important;
+}
+
+:root[data-theme="mori"] .advisor-chat-input {
+    background: rgba(255, 255, 255, 0.10) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="mori"] .advisor-send-btn {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%) !important;
+}
+
+@media (max-width: 480px) {
+    :root[data-theme="mori"] .history-advisor-chat {
+        width: 100% !important;
+        height: 70vh !important;
+        border-radius: 16px 16px 0 0 !important;
+    }
+}

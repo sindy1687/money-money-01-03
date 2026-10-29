@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧提醒系統測試</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #357abd;
+        }
+        .result {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #4a90e2;
+        }
+        .success {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .warning {
+            background: #fff3e0;
+            color: #f57c00;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .reminder-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #4a90e2;
+        }
+        .reminder-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .reminder-message {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .reminder-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .reminder-action {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .reminder-action:hover {
+            background: #357abd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔔 智慧提醒系統測試</h1>
+        
+        <!-- 系統檢查 -->
+        <div class="section">
+            <h2>🔍 系統檢查</h2>
+            <button onclick="checkSystem()">檢查系統狀態</button>
+            <button onclick="checkPermissions()">檢查通知權限</button>
+            <button onclick="requestPermissions()">請求通知權限</button>
+            <div id="systemResults"></div>
+        </div>
+        
+        <!-- 消費習慣提醒測試 -->
+        <div class="section">
+            <h2>💰 消費習慣提醒測試</h2>
+            
+            <div class="form-group">
+                <label for="consumptionType">提醒類型</label>
+                <select id="consumptionType">
+                    <option value="trend">消費趨勢提醒</option>
+                    <option value="daily_limit">每日消費限制</option>
+                    <option value="category_alert">分類消費警報</option>
+                    <option value="budget_warning">預算警報</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="consumptionAmount">金額</label>
+                <input type="number" id="consumptionAmount" placeholder="例如: 150">
+            </div>
+            
+            <div class="form-group">
+                <label for="consumptionDescription">描述</label>
+                <input type="text" id="consumptionDescription" placeholder="例如: 本週消費增加">
+            </div>
+            
+            <button onclick="testConsumptionReminder()">測試消費提醒</button>
+            <div id="consumptionResults"></div>
+        </div>
+        
+        <!-- 投資機會提醒測試 -->
+        <div class="section">
+            <h2>📈 投資機會提醒測試</h2>
+            
+            <div class="form-group">
+                <label for="investmentType">提醒類型</label>
+                <select id="investmentType">
+                    <option value="cash_surplus">現金過多提醒</option>
+                    <option value="rebalancing">投資組合再平衡</option>
+                    <option value="opportunity">投資機會提醒</option>
+                    <option value="dividend">股息提醒</option>
+                    <option value="market_alert">市場變動提醒</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="investmentAmount">金額</label>
+                <input type="number" id="investmentAmount" placeholder="例如: 50000">
+            </div>
+            
+            <div class="form-group">
+                <label for="investmentDescription">描述</label>
+                <input type="text" id="investmentDescription" placeholder="例如: 多餘現金投資建議">
+            </div>
+            
+            <button onclick="testInvestmentReminder()">測試投資提醒</button>
+            <div id="investmentResults"></div>
+        </div>
+        
+        <!-- 帳單支付提醒測試 -->
+        <div class="section">
+            <h2>📅 帳單支付提醒測試</h2>
+            
+            <div class="form-group">
+                <label for="billType">提醒類型</label>
+                <select id="billType">
+                    <option value="upcoming">帳單即將到期</option>
+                    <option value="due_today">帳單今日到期</option>
+                    <option value="overdue">帳單已過期</option>
+                    <option value="paid">帳單已支付</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="billName">帳單名稱</label>
+                <input type="text" id="billName" placeholder="例如: 電費">
+            </div>
+            
+            <div class="form-group">
+                <label for="billAmount">金額</label>
+                <input type="number" id="billAmount" placeholder="例如: 1200">
+            </div>
+            
+            <div class="form-group">
+                <label for="billDueDate">到期日期</label>
+                <input type="date" id="billDueDate">
+            </div>
+            
+            <button onclick="testBillReminder()">測試帳單提醒</button>
+            <div id="billResults"></div>
+        </div>
+        
+        <!-- 快速測試 -->
+        <div class="section">
+            <h2>⚡ 快速測試</h2>
+            <button onclick="quickTest('high_spending')">高消費提醒</button>
+            <button onclick="quickTest('investment_opportunity')">投資機會提醒</button>
+            <button onclick="quickTest('bill_due')">帳單到期提醒</button>
+            <button onclick="quickTest('all_types')">所有類型提醒</button>
+        </div>
+        
+        <!-- 設定測試 -->
+        <div class="section">
+            <h2>⚙️ 設定測試</h2>
+            <button onclick="testSettings()">測試設定載入</button>
+            <button onclick="testSettingsUpdate()">測試設定更新</button>
+            <button onclick="showReminderHistory()">顯示提醒歷史</button>
+            <button onclick="clearReminderHistory()">清除提醒歷史</button>
+            <div id="settingsResults"></div>
+        </div>
+    </div>
+
+    <!-- 載入智慧提醒系統 -->
+    <script src="js/smart-reminders.js"></script>
+    
+    <script>
+        // 系統檢查
+        function checkSystem() {
+            const container = document.getElementById('systemResults');
+            container.innerHTML = '';
+            
+            // 檢查模組載入
+            if (typeof SmartReminderSystem !== 'undefined') {
+                showResult('systemResults', '✅ SmartReminderSystem 模組已載入', 'success');
+                showResult('systemResults', `系統狀態: ${SmartReminderSystem.isInitialized ? '已初始化' : '未初始化'}`, 'success');
+                showResult('systemResults', `提醒數量: ${SmartReminderSystem.reminders.length}`, 'success');
+            } else {
+                showResult('systemResults', '❌ SmartReminderSystem 模組未載入', 'error');
+                showResult('systemResults', '請檢查 js/smart-reminders.js 檔案是否存在', 'error');
+            }
+            
+            // 檢查通知支援
+            if ('Notification' in window) {
+                showResult('systemResults', '✅ 瀏覽器支援通知功能', 'success');
+                showResult('systemResults', `通知權限: ${Notification.permission}`, 'success');
+            } else {
+                showResult('systemResults', '❌ 瀏覽器不支援通知功能', 'error');
+            }
+        }
+        
+        // 檢查通知權限
+        function checkPermissions() {
+            const container = document.getElementById('systemResults');
+            container.innerHTML = '';
+            
+            if ('Notification' in window) {
+                const permission = Notification.permission;
+                showResult('systemResults', `當前通知權限: ${permission}`, 'success');
+                
+                if (permission === 'granted') {
+                    showResult('systemResults', '✅ 可以顯示瀏覽器通知', 'success');
+                } else if (permission === 'denied') {
+                    showResult('systemResults', '❌ 通知權限被拒絕', 'error');
+                    showResult('systemResults', '請在瀏覽器設定中允許通知', 'warning');
+                } else {
+                    showResult('systemResults', '⚠️ 尚未請求通知權限', 'warning');
+                }
+            } else {
+                showResult('systemResults', '❌ 瀏覽器不支援通知功能', 'error');
+            }
+        }
+        
+        // 請求通知權限
+        function requestPermissions() {
+            if ('Notification' in window) {
+                Notification.requestPermission().then(permission => {
+                    const container = document.getElementById('systemResults');
+                    container.innerHTML = '';
+                    
+                    if (permission === 'granted') {
+                        showResult('systemResults', '✅ 通知權限已獲得', 'success');
+                    } else if (permission === 'denied') {
+                        showResult('systemResults', '❌ 通知權限被拒絕', 'error');
+                    } else {
+                        showResult('systemResults', '⚠️ 通知權限請求已發送', 'warning');
+                    }
+                });
+            }
+        }
+        
+        // 測試消費提醒
+        function testConsumptionReminder() {
+            const container = document.getElementById('consumptionResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartReminderSystem === 'undefined') {
+                showResult('consumptionResults', '❌ SmartReminderSystem 模組未載入', 'error');
+                return;
+            }
+            
+            const type = document.getElementById('consumptionType').value;
+            const amount = parseFloat(document.getElementById('consumptionAmount').value) || 0;
+            const description = document.getElementById('consumptionDescription').value;
+            
+            if (!amount || !description) {
+                showResult('consumptionResults', '❌ 請輸入金額和描述', 'error');
+                return;
+            }
+            
+            try {
+                const data = {
+                    type: type,
+                    amount: amount,
+                    description: description,
+                    thisWeek: amount * 7,
+                    lastWeek: amount * 5,
+                    change: 40
+                };
+                
+                SmartReminderSystem.createConsumptionReminder(type, data);
+                showResult('consumptionResults', '✅ 消費提醒已創建', 'success');
+                
+                // 顯示提醒內容
+                const reminder = {
+                    title: SmartReminderSystem.getConsumptionReminderTitle(type, data),
+                    message: SmartReminderSystem.getConsumptionReminderMessage(type, data)
+                };
+                
+                const reminderDiv = document.createElement('div');
+                reminderDiv.className = 'reminder-item';
+                reminderDiv.innerHTML = `
+                    <div class="reminder-title">${reminder.title}</div>
+                    <div class="reminder-message">${reminder.message}</div>
+                    <div class="reminder-actions">
+                        <button class="reminder-action" onclick="this.parentElement.remove()">關閉</button>
+                    </div>
+                `;
+                
+                container.appendChild(reminderDiv);
+                
+            } catch (error) {
+                showResult('consumptionResults', `❌ 創建消費提醒失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 測試投資提醒
+        function testInvestmentReminder() {
+            const container = document.getElementById('investmentResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartReminderSystem === 'undefined') {
+                showResult('investmentResults', '❌ SmartReminderSystem 模組未載入', 'error');
+                return;
+            }
+            
+            const type = document.getElementById('investmentType').value;
+            const amount = parseFloat(document.getElementById('investmentAmount').value) || 0;
+            const description = document.getElementById('investmentDescription').value;
+            
+            if (!amount || !description) {
+                showResult('investmentResults', '❌ 請輸入金額和描述', 'error');
+                return;
+            }
+            
+            try {
+                const data = {
+                    type: type,
+                    amount: amount,
+                    description: description,
+                    portfolioValue: amount * 10
+                };
+                
+                SmartReminderSystem.createInvestmentReminder(type, data);
+                showResult('investmentResults', '✅ 投資提醒已創建', 'success');
+                
+                // 顯示提醒內容
+                const reminder = {
+                    title: SmartReminderSystem.getInvestmentReminderTitle(type, data),
+                    message: SmartReminderSystem.getInvestmentReminderMessage(type, data)
+                };
+                
+                const reminderDiv = document.createElement('div');
+                reminderDiv.className = 'reminder-item';
+                reminderDiv.innerHTML = `
+                    <div class="reminder-title">${reminder.title}</div>
+                    <div class="reminder-message">${reminder.message}</div>
+                    <div class="reminder-actions">
+                        <button class="reminder-action" onclick="this.parentElement.remove()">關閉</button>
+                    </div>
+                `;
+                
+                container.appendChild(reminderDiv);
+                
+            } catch (error) {
+                showResult('investmentResults', `❌ 創建投資提醒失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 測試帳單提醒
+        function testBillReminder() {
+            const container = document.getElementById('billResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartReminderSystem === 'undefined') {
+                showResult('billResults', '❌ SmartReminderSystem 模組未載入', 'error');
+                return;
+            }
+            
+            const type = document.getElementById('billType').value;
+            const name = document.getElementById('billName').value;
+            const amount = parseFloat(document.getElementById('billAmount').value) || 0;
+            const dueDate = document.getElementById('billDueDate').value;
+            
+            if (!name || !amount || !dueDate) {
+                showResult('billResults', '❌ 請輸入帳單資訊', 'error');
+                return;
+            }
+            
+            try {
+                const data = {
+                    bill: {
+                        id: `test_${Date.now()}`,
+                        name: name,
+                        amount: amount,
+                        dueDate: dueDate,
+                        paid: false
+                    },
+                    daysUntilDue: 3,
+                    daysOverdue: 0
+                };
+                
+                SmartReminderSystem.createBillReminder(type, data);
+                showResult('billResults', '✅ 帳單提醒已創建', 'success');
+                
+                // 顯示提醒內容
+                const reminder = {
+                    title: SmartReminderSystem.getBillReminderTitle(type, data),
+                    message: SmartReminderSystem.getBillReminderMessage(type, data)
+                };
+                
+                const reminderDiv = document.createElement('div');
+                reminderDiv.className = 'reminder-item';
+                reminderDiv.innerHTML = `
+                    <div class="reminder-title">${reminder.title}</div>
+                    <div class="reminder-message">${reminder.message}</div>
+                    <div class="reminder-actions">
+                        <button class="reminder-action" onclick="this.parentElement.remove()">關閉</button>
+                    </div>
+                `;
+                
+                container.appendChild(reminderDiv);
+                
+            } catch (error) {
+                showResult('billResults', `❌ 創建帳單提醒失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 快速測試
+        function quickTest(type) {
+            const tests = {
+                'high_spending': {
+                    type: 'daily_limit',
+                    amount: 5000,
+                    description: '今日消費超標'
+                },
+                'investment_opportunity': {
+                    type: 'opportunity',
+                    amount: 100000,
+                    description: '市場投資機會'
+                },
+                'bill_due': {
+                    type: 'due_today',
+                    name: '電費',
+                    amount: 1200,
+                    dueDate: new Date().toISOString().split('T')[0]
+                },
+                'all_types': [
+                    { type: 'trend', amount: 3000, description: '本週消費增加' },
+                    { type: 'cash_surplus', amount: 80000, description: '現金過多' },
+                    { type: 'upcoming', name: '水費', amount: 300, dueDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().split('T')[0] }
+                ]
+            };
+            
+            const testData = tests[type];
+            
+            if (Array.isArray(testData)) {
+                testData.forEach((test, index) => {
+                    setTimeout(() => {
+                        if (test.type === 'consumption') {
+                            document.getElementById('consumptionType').value = test.type;
+                            document.getElementById('consumptionAmount').value = test.amount;
+                            document.getElementById('consumptionDescription').value = test.description;
+                            testConsumptionReminder();
+                        } else if (test.type === 'investment') {
+                            document.getElementById('investmentType').value = test.type;
+                            document.getElementById('investmentAmount').value = test.amount;
+                            document.getElementById('investmentDescription').value = test.description;
+                            testInvestmentReminder();
+                        } else if (test.type === 'bill') {
+                            document.getElementById('billType').value = test.type;
+                            document.getElementById('billName').value = test.name;
+                            document.getElementById('billAmount').value = test.amount;
+                            document.getElementById('billDueDate').value = test.dueDate;
+                            testBillReminder();
+                        }
+                    }, index * 1000);
+                });
+            } else {
+                if (testData.type === 'consumption') {
+                    document.getElementById('consumptionType').value = testData.type;
+                    document.getElementById('consumptionAmount').value = testData.amount;
+                    document.getElementById('consumptionDescription').value = testData.description;
+                    testConsumptionReminder();
+                } else if (testData.type === 'investment') {
+                    document.getElementById('investmentType').value = testData.type;
+                    document.getElementById('investmentAmount').value = testData.amount;
+                    document.getElementById('investmentDescription').value = testData.description;
+                    testInvestmentReminder();
+                } else if (testData.type === 'bill') {
+                    document.getElementById('billType').value = testData.type;
+                    document.getElementById('billName').value = testData.name;
+                    document.getElementById('billAmount').value = testData.amount;
+                    document.getElementById('billDueDate').value = testData.dueDate;
+                    testBillReminder();
+                }
+            }
+        }
+        
+        // 測試設定
+        function testSettings() {
+            const container = document.getElementById('settingsResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartReminderSystem === 'undefined') {
+                showResult('settingsResults', '❌ SmartReminderSystem 模組未載入', 'error');
+                return;
+            }
+            
+            try {
+                const settings = SmartReminderSystem.settings;
+                showResult('settingsResults', '✅ 設定載入成功', 'success');
+                showResult('settingsResults', `消費提醒: ${settings.consumptionReminders ? '開啟' : '關閉'}`, 'success');
+                showResult('settingsResults', `投資提醒: ${settings.investmentReminders ? '開啟' : '關閉'}`, 'success');
+                showResult('settingsResults', `帳單提醒: ${settings.billReminders ? '開啟' : '關閉'}`, 'success');
+                showResult('settingsResults', `提醒時間: ${settings.reminderTime}`, 'success');
+                showResult('settingsResults', `提醒日期: ${settings.reminderDays.join(', ')}`, 'success');
+            } catch (error) {
+                showResult('settingsResults', `❌ 設定載入失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 測試設定更新
+        function testSettingsUpdate() {
+            const container = document.getElementById('settingsResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartReminderSystem === 'undefined') {
+                showResult('settingsResults', '❌ SmartReminderSystem 模組未載入', 'error');
+                return;
+            }
+            
+            try {
+                const newSettings = {
+                    consumptionReminders: false,
+                    investmentReminders: true,
+                    billReminders: true,
+                    reminderTime: '10:00',
+                    reminderDays: ['tuesday', 'thursday', 'saturday']
+                };
+                
+                SmartReminderSystem.updateSettings(newSettings);
+                showResult('settingsResults', '✅ 設定更新成功', 'success');
+                showResult('settingsResults', '新設定已保存', 'success');
+                
+                // 驗證設定
+                setTimeout(() => {
+                    const updatedSettings = SmartReminderSystem.settings;
+                    showResult('settingsResults', `消費提醒: ${updatedSettings.consumptionReminders ? '開啟' : '關閉'}`, 'success');
+                    showResult('settingsResults', `投資提醒: ${updatedSettings.investmentReminders ? '開啟' : '關閉'}`, 'success');
+                    showResult('settingsResults', `帳單提醒: ${updatedSettings.billReminders ? '開啟' : '關閉'}`, 'success');
+                }, 500);
+                
+            } catch (error) {
+                showResult('settingsResults', `❌ 設定更新失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 顯示提醒歷史
+        function showReminderHistory() {
+            const container = document.getElementById('settingsResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartReminderSystem === 'undefined') {
+                showResult('settingsResults', '❌ SmartReminderSystem 模組未載入', 'error');
+                return;
+            }
+            
+            try {
+                const history = SmartReminderSystem.getReminderHistory();
+                showResult('settingsResults', `提醒歷史 (${history.length} 條)`, 'success');
+                
+                if (history.length === 0) {
+                    showResult('settingsResults', '暫無提醒歷史', 'warning');
+                    return;
+                }
+                
+                history.slice(0, 5).forEach((reminder, index) => {
+                    const reminderDiv = document.createElement('div');
+                    reminderDiv.className = 'reminder-item';
+                    reminderDiv.innerHTML = `
+                        <div class="reminder-title">${reminder.title}</div>
+                        <div class="reminder-message">${reminder.message}</div>
+                        <div style="font-size: 12px; color: #999; margin-top: 8px;">
+                            類型: ${reminder.type} | 子類型: ${reminder.subtype} | 時間: ${new Date(reminder.timestamp).toLocaleString()}
+                        </div>
+                    `;
+                    container.appendChild(reminderDiv);
+                });
+                
+            } catch (error) {
+                showResult('settingsResults', `❌ 顯示提醒歷史失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 清除提醒歷史
+        function clearReminderHistory() {
+            const container = document.getElementById('settingsResults');
+            container.innerHTML = '';
+            
+            if (typeof SmartReminderSystem === 'undefined') {
+                showResult('settingsResults', '❌ SmartReminderSystem 模組未載入', 'error');
+                return;
+            }
+            
+            try {
+                SmartReminderSystem.clearReminderHistory();
+                showResult('settingsResults', '✅ 提醒歷史已清除', 'success');
+            } catch (error) {
+                showResult('settingsResults', `❌ 清除提醒歷史失敗: ${error.message}`, 'error');
+            }
+        }
+        
+        // 顯示結果的通用函數
+        function showResult(containerId, content, type = 'success') {
+            const container = document.getElementById(containerId);
+            const div = document.createElement('div');
+            div.className = type;
+            div.innerHTML = content;
+            container.appendChild(div);
+        }
+        
+        // 頁面載入完成時自動檢查
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('智慧提醒系統測試頁面已載入');
+            checkSystem();
+        });
+    </script>
+</body>
+</html>

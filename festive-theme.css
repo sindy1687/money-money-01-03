@@ -1,0 +1,758 @@
+/* ========== 节日庆典主题 ========== */
+:root[data-theme="festive"] {
+    /* 主色调 - 基于图片中的红色背景 */
+    --color-primary: #D32F2F;
+    --color-primary-light: #F44336;
+    --color-primary-lighter: #EF5350;
+    --color-primary-dark: #C62828;
+    --color-primary-darker: #B71C1C;
+    
+    /* 次要色调 - 橙色/金色 */
+    --color-secondary: #FFB300;
+    --color-secondary-light: #FFC107;
+    --color-secondary-lighter: #FFD54F;
+    --color-secondary-dark: #FFA000;
+    --color-secondary-darker: #FF8F00;
+    
+    /* 强调色 - 明亮黄色 */
+    --color-accent: #FFD700;
+    --color-accent-light: #FFECB3;
+    --color-accent-lighter: #FFF59D;
+    --color-accent-dark: #FFC107;
+    --color-accent-darker: #FF9800;
+    
+    /* 背景色 */
+    --bg-primary: #D32F2F;
+    --bg-secondary: #F44336;
+    --bg-tertiary: #FFEBEE;
+    --bg-quaternary: #FFF3E0;
+    --bg-white: #FFFFFF;
+    --bg-light: #FFEBEE;
+    --bg-lighter: #FFCDD2;
+    --bg-lightest: #EF9A9A;
+    --bg-soft: #FFB300;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-modal: rgba(255, 255, 255, 0.95);
+    --bg-overlay: rgba(211, 47, 47, 0.3);
+    
+    /* 文字颜色 */
+    --text-primary: #B71C1C;
+    --text-secondary: #FF6F00;
+    --text-tertiary: #424242;
+    --text-white: #FFFFFF;
+    --text-muted: #757575;
+    --text-inverse: #FFFFFF;
+    
+    /* 边框颜色 */
+    --border-light: rgba(255, 179, 0, 0.3);
+    --border-medium: rgba(255, 179, 0, 0.5);
+    --border-strong: rgba(255, 179, 0, 0.7);
+    --border-dark: rgba(255, 143, 0, 0.8);
+    
+    /* 阴影 */
+    --shadow-sm: 0 2px 4px rgba(211, 47, 47, 0.15);
+    --shadow-md: 0 4px 8px rgba(211, 47, 47, 0.2);
+    --shadow-lg: 0 8px 16px rgba(211, 47, 47, 0.25);
+    --shadow-xl: 0 12px 24px rgba(211, 47, 47, 0.3);
+    
+    /* 渐变 */
+    --bg-gradient: linear-gradient(135deg, #D32F2F 0%, #F44336 50%, #FF5252 100%);
+    --bg-gradient-reverse: linear-gradient(135deg, #FFB300 0%, #FFC107 50%, #FFD54F 100%);
+    --bg-light-gradient: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 50%, #EF9A9A 100%);
+    --bg-light-gradient-reverse: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 50%, #FFCC80 100%);
+    
+    /* 透明度变体 */
+    --color-primary-rgba-08: rgba(211, 47, 47, 0.08);
+    --color-primary-rgba-10: rgba(211, 47, 47, 0.10);
+    --color-primary-rgba-15: rgba(211, 47, 47, 0.15);
+    --color-primary-rgba-20: rgba(211, 47, 47, 0.20);
+    --color-primary-rgba-30: rgba(211, 47, 47, 0.30);
+    --color-primary-rgba-40: rgba(211, 47, 47, 0.40);
+    --color-primary-rgba-50: rgba(211, 47, 47, 0.50);
+    
+    --color-secondary-rgba-08: rgba(255, 179, 0, 0.08);
+    --color-secondary-rgba-10: rgba(255, 179, 0, 0.10);
+    --color-secondary-rgba-15: rgba(255, 179, 0, 0.15);
+    --color-secondary-rgba-20: rgba(255, 179, 0, 0.20);
+    --color-secondary-rgba-30: rgba(255, 179, 0, 0.30);
+    --color-secondary-rgba-40: rgba(255, 179, 0, 0.40);
+    --color-secondary-rgba-50: rgba(255, 179, 0, 0.50);
+    
+    --color-accent-rgba-08: rgba(255, 215, 0, 0.08);
+    --color-accent-rgba-10: rgba(255, 215, 0, 0.10);
+    --color-accent-rgba-15: rgba(255, 215, 0, 0.15);
+    --color-accent-rgba-20: rgba(255, 215, 0, 0.20);
+    --color-accent-rgba-30: rgba(255, 215, 0, 0.30);
+    --color-accent-rgba-40: rgba(255, 215, 0, 0.40);
+    --color-accent-rgba-50: rgba(255, 215, 0, 0.50);
+    
+    /* 字体 */
+    --font-primary: 'Comic Sans MS', 'Noto Sans TC', 'PingFang TC', sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    
+    /* 圆角 */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-full: 50%;
+    
+    /* 过渡 */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.2s ease;
+    --transition-slow: 0.3s ease;
+    
+    /* 间距 */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    
+    /* 字体大小 */
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-base: 16px;
+    --font-lg: 18px;
+    --font-xl: 20px;
+    --font-xxl: 24px;
+    --font-xxxl: 28px;
+    
+    /* 字母间距 */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
+    
+    /* 行高 */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    /* 特殊颜色 */
+    --color-error: #D32F2F;
+    --color-warning: #FFB300;
+    --color-success: #4CAF50;
+    --color-info: #2196F3;
+    
+    /* 特殊透明度 */
+    --color-error-rgba-20: rgba(211, 47, 47, 0.20);
+    --color-warning-rgba-20: rgba(255, 179, 0, 0.20);
+    --color-success-rgba-20: rgba(76, 175, 80, 0.20);
+    --color-info-rgba-20: rgba(33, 150, 243, 0.20);
+    
+    /* 特殊渐变 */
+    --shadow-primary: 0 4px 12px rgba(211, 47, 47, 0.3);
+    --shadow-primary-lg: 0 8px 24px rgba(211, 47, 47, 0.4);
+    --shadow-secondary: 0 4px 12px rgba(255, 179, 0, 0.3);
+    --shadow-secondary-lg: 0 8px 24px rgba(255, 179, 0, 0.4);
+    --shadow-accent: 0 4px 12px rgba(255, 215, 0, 0.3);
+    --shadow-accent-lg: 0 8px 24px rgba(255, 215, 0, 0.4);
+    
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-hard: 0 8px 32px rgba(0, 0, 0, 0.16);
+    
+    /* 控制颜色 */
+    --control-border-color: var(--border-light);
+    --control-bg-color: var(--bg-white);
+    --control-text-color: var(--text-primary);
+    --control-hover-bg-color: var(--bg-light);
+    --control-active-bg-color: var(--bg-soft);
+    
+    /* 动作颜色 */
+    --action-primary-bg: var(--color-primary);
+    --action-primary-text: var(--text-white);
+    --action-primary-border: var(--color-primary);
+    --action-secondary-bg: var(--color-secondary);
+    --action-secondary-text: var(--text-white);
+    --action-secondary-border: var(--color-secondary);
+    --action-side-text: rgba(255, 255, 255, 0.96);
+}
+
+/* 背景设置 */
+:root[data-theme="festive"] body {
+    background: url("https://i.pinimg.com/736x/c8/57/a1/c857a19b3f5bd274ba864e54dc27f550.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+}
+
+:root[data-theme="festive"] body::before {
+    display: none;
+}
+
+/* 页面背景透明化 */
+:root[data-theme="festive"] .page-input,
+:root[data-theme="festive"] .page-ledger,
+:root[data-theme="festive"] .page-chart,
+:root[data-theme="festive"] .page-budget,
+:root[data-theme="festive"] .page-monthly-planner,
+:root[data-theme="festive"] .page-daily-budget,
+:root[data-theme="festive"] .page-settings,
+:root[data-theme="festive"] .page-category-manage,
+:root[data-theme="festive"] .page-investment,
+:root[data-theme="festive"] .page-wallet,
+:root[data-theme="festive"] .page-history,
+:root[data-theme="festive"] .page-planner {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+/* 卡片样式 */
+:root[data-theme="festive"] .card,
+:root[data-theme="festive"] .record-card,
+:root[data-theme="festive"] .ledger-card,
+:root[data-theme="festive"] .summary-card,
+:root[data-theme="festive"] .budget-card,
+:root[data-theme="festive"] .wallet-card,
+:root[data-theme="festive"] .chart-card,
+:root[data-theme="festive"] .investment-card,
+:root[data-theme="festive"] .stock-item-card,
+:root[data-theme="festive"] .monthly-planner-card,
+:root[data-theme="festive"] .dividend-stat-card,
+:root[data-theme="festive"] .dca-card,
+:root[data-theme="festive"] .installment-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-primary);
+    backdrop-filter: blur(8px);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="festive"] .card:hover,
+:root[data-theme="festive"] .record-card:hover,
+:root[data-theme="festive"] .ledger-card:hover,
+:root[data-theme="festive"] .summary-card:hover,
+:root[data-theme="festive"] .budget-card:hover,
+:root[data-theme="festive"] .wallet-card:hover,
+:root[data-theme="festive"] .chart-card:hover,
+:root[data-theme="festive"] .investment-card:hover,
+:root[data-theme="festive"] .stock-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary-lg);
+    border-color: var(--border-medium);
+}
+
+/* 投资卡片特殊效果 */
+:root[data-theme="festive"] .investment-card::before,
+:root[data-theme="festive"] .stock-item-card::before {
+    background: linear-gradient(135deg, var(--color-primary-rgba-20) 0%, var(--color-secondary-rgba-20) 55%, var(--color-accent-rgba-20) 100%);
+    border-radius: var(--radius-lg);
+}
+
+/* 导航栏 */
+:root[data-theme="festive"] .nav-item.active {
+    background: var(--color-primary-rgba-30);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-primary);
+}
+
+:root[data-theme="festive"] .nav-item:hover {
+    background: var(--color-primary-rgba-20);
+    transform: scale(1.05);
+}
+
+/* 底部导航 */
+:root[data-theme="festive"] .bottom-nav {
+    background: var(--bg-card) !important;
+    border-top: 2px solid var(--border-light) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 -4px 16px var(--color-primary-rgba-20);
+}
+
+/* 模态框 */
+:root[data-theme="festive"] .modal-content,
+:root[data-theme="festive"] .modal-content-standard,
+:root[data-theme="festive"] .budget-category-modal-content,
+:root[data-theme="festive"] .budget-setting-modal-content,
+:root[data-theme="festive"] .category-modal-content,
+:root[data-theme="festive"] .dca-execute-modal .modal-content,
+:root[data-theme="festive"] .account-modal-content,
+:root[data-theme="festive"] .emoji-modal-content,
+:root[data-theme="festive"] .history-modal-content {
+    background: var(--bg-modal);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-primary-lg);
+    backdrop-filter: blur(12px);
+}
+
+/* 输入区域 */
+:root[data-theme="festive"] .input-section {
+    background: var(--bg-card);
+    border-top: 2px solid var(--border-light);
+    box-shadow: 0 -4px 20px var(--color-primary-rgba-20);
+    backdrop-filter: blur(10px);
+}
+
+/* 表单元素 */
+:root[data-theme="festive"] .form-input,
+:root[data-theme="festive"] .form-select,
+:root[data-theme="festive"] .form-textarea,
+:root[data-theme="festive"] .note-input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid var(--border-light) !important;
+    border-radius: var(--radius-md);
+    color: var(--text-primary) !important;
+    font-family: var(--font-primary);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="festive"] .form-input:focus,
+:root[data-theme="festive"] .form-select:focus,
+:root[data-theme="festive"] .form-textarea:focus,
+:root[data-theme="festive"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px var(--color-primary-rgba-20) !important;
+    background: var(--bg-white) !important;
+    transform: scale(1.02);
+}
+
+/* 头部区域 */
+:root[data-theme="festive"] .header-section {
+    background: var(--bg-card) !important;
+    border-bottom: 2px solid var(--border-light) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px var(--color-primary-rgba-15);
+}
+
+/* 标签页 */
+:root[data-theme="festive"] .tab-btn {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 2px solid var(--border-light) !important;
+    border-radius: var(--radius-md);
+    color: var(--text-primary) !important;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="festive"] .tab-btn.active {
+    background: var(--bg-gradient) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: var(--text-white) !important;
+    box-shadow: var(--shadow-primary);
+    transform: scale(1.05);
+}
+
+:root[data-theme="festive"] .tab-btn:hover {
+    background: var(--color-primary-rgba-20) !important;
+    border-color: var(--border-medium) !important;
+    transform: translateY(-1px);
+}
+
+/* 按钮样式 */
+:root[data-theme="festive"] .key-btn {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid var(--border-light) !important;
+    border-radius: var(--radius-md);
+    color: var(--text-primary) !important;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="festive"] .key-btn:hover {
+    background: var(--color-primary-rgba-20) !important;
+    border-color: var(--border-medium) !important;
+    box-shadow: var(--shadow-primary);
+    transform: translateY(-2px) scale(1.05);
+}
+
+:root[data-theme="festive"] .key-btn:active {
+    background: var(--color-primary-rgba-30) !important;
+    transform: scale(0.95);
+}
+
+:root[data-theme="festive"] .key-btn.operator {
+    background: var(--bg-gradient) !important;
+    color: var(--text-white) !important;
+    border-color: var(--color-primary) !important;
+}
+
+:root[data-theme="festive"] .key-btn.equal {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%) !important;
+    color: var(--text-white) !important;
+    border-color: var(--color-accent) !important;
+}
+
+:root[data-theme="festive"] .key-btn.delete {
+    background: var(--color-error-rgba-20) !important;
+    border-color: var(--color-error) !important;
+    color: var(--color-error) !important;
+}
+
+/* FAB 按钮 */
+:root[data-theme="festive"] .fab-btn {
+    background: var(--bg-gradient) !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--color-primary) !important;
+    box-shadow: var(--shadow-primary-lg);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-xxl);
+    border-radius: var(--radius-full);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="festive"] .fab-btn:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%) !important;
+    box-shadow: 0 12px 32px var(--color-primary-rgba-40) !important;
+    transform: translateY(-2px) scale(1.1) !important;
+}
+
+:root[data-theme="festive"] .fab-btn:active {
+    transform: scale(0.95) !important;
+}
+
+/* 提交按钮 */
+:root[data-theme="festive"] .form-submit-btn,
+:root[data-theme="festive"] .action-btn,
+:root[data-theme="festive"] .btn-primary {
+    background: var(--bg-gradient) !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--color-primary) !important;
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    box-shadow: var(--shadow-primary);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="festive"] .form-submit-btn:hover,
+:root[data-theme="festive"] .action-btn:hover,
+:root[data-theme="festive"] .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary-lg);
+}
+
+/* 删除按钮 */
+:root[data-theme="festive"] .form-delete-btn,
+:root[data-theme="festive"] .btn-danger {
+    background: var(--color-error-rgba-20) !important;
+    color: var(--color-error) !important;
+    border: 2px solid var(--color-error) !important;
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="festive"] .form-delete-btn:hover,
+:root[data-theme="festive"] .btn-danger:hover {
+    background: var(--color-error) !important;
+    color: var(--text-white) !important;
+    transform: translateY(-2px);
+}
+
+/* 文字样式 */
+:root[data-theme="festive"] h1,
+:root[data-theme="festive"] h2,
+:root[data-theme="festive"] h3,
+:root[data-theme="festive"] h4,
+:root[data-theme="festive"] h5,
+:root[data-theme="festive"] h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-black);
+    color: var(--text-primary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="festive"] .card-title,
+:root[data-theme="festive"] .modal-title,
+:root[data-theme="festive"] .form-title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-black);
+    color: var(--text-primary);
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+:root[data-theme="festive"] .text-primary {
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+:root[data-theme="festive"] .text-secondary {
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+:root[data-theme="festive"] .text-muted {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* 数值显示 */
+:root[data-theme="festive"] .value,
+:root[data-theme="festive"] .amount,
+:root[data-theme="festive"] .balance {
+    font-family: 'Courier New', monospace;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="festive"] .income {
+    color: var(--color-success);
+    font-weight: var(--font-weight-bold);
+}
+
+:root[data-theme="festive"] .expense {
+    color: var(--color-error);
+    font-weight: var(--font-weight-bold);
+}
+
+/* 列表项 */
+:root[data-theme="festive"] .transaction-item,
+:root[data-theme="festive"] .category-item,
+:root[data-theme="festive"] .settings-item {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(4px);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="festive"] .transaction-item:hover,
+:root[data-theme="festive"] .category-item:hover,
+:root[data-theme="festive"] .settings-item:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--border-medium);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* 特殊页面样式 */
+:root[data-theme="festive"] .dca-card,
+:root[data-theme="festive"] .investment-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--color-primary-rgba-10) 50%, var(--bg-card) 100%);
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--shadow-primary-lg);
+}
+
+:root[data-theme="festive"] .dca-card:hover,
+:root[data-theme="festive"] .investment-card:hover {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--color-primary-rgba-20) 50%, var(--bg-card) 100%);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* 预算相关 */
+:root[data-theme="festive"] .budget-card {
+    background: url("https://i.pinimg.com/1200x/d6/5c/52/d65c524f0242553079b9114e7a25dd0e.jpg") center/cover,
+                linear-gradient(135deg, var(--bg-card) 0%, var(--color-accent-rgba-10) 50%, var(--bg-card) 100%);
+    background-blend-mode: overlay;
+    border: 2px solid var(--color-accent);
+    position: relative;
+}
+
+:root[data-theme="festive"] .budget-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: inherit;
+    z-index: 1;
+}
+
+:root[data-theme="festive"] .budget-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+:root[data-theme="festive"] .budget-progress {
+    background: var(--bg-gradient);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-primary);
+}
+
+/* 钱包相关 */
+:root[data-theme="festive"] .wallet-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--color-secondary-rgba-10) 50%, var(--bg-card) 100%);
+    border: 2px solid var(--color-secondary);
+}
+
+:root[data-theme="festive"] .account-balance {
+    font-size: var(--font-xxxl);
+    font-weight: var(--font-weight-black);
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 设置页面 */
+:root[data-theme="festive"] .settings-item {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    transition: all var(--transition-base);
+}
+
+:root[data-theme="festive"] .settings-item:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--color-primary);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* 图表相关 */
+:root[data-theme="festive"] .chart-container {
+    background: var(--bg-card);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-primary);
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="festive"] .chart-section {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    backdrop-filter: blur(4px);
+}
+
+/* 响应式调整 */
+@media (max-width: 575px) {
+    :root[data-theme="festive"] .fab-btn {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 20px !important;
+        bottom: 220px !important;
+        right: 16px !important;
+    }
+    
+    :root[data-theme="festive"] .card,
+    :root[data-theme="festive"] .modal-content {
+        margin: 8px !important;
+    }
+    
+    :root[data-theme="festive"] .form-input,
+    :root[data-theme="festive"] .form-select {
+        font-size: 16px !important;
+    }
+}
+
+@media (min-width: 576px) {
+    :root[data-theme="festive"] .fab-btn {
+        right: 24px;
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root[data-theme="festive"] .fab-btn {
+        right: 40px;
+        width: 64px;
+        height: 64px;
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 992px) {
+    :root[data-theme="festive"] .fab-btn {
+        right: 60px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root[data-theme="festive"] .fab-btn {
+        right: 80px;
+    }
+}
+
+/* 动画效果 */
+:root[data-theme="festive"] .card,
+:root[data-theme="festive"] .modal-content,
+:root[data-theme="festive"] .fab-btn {
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 悬浮动画 */
+:root[data-theme="festive"] .fab-btn:hover {
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1.1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.1);
+    }
+}
+
+/* 特殊效果 */
+:root[data-theme="festive"] .investment-card::after,
+:root[data-theme="festive"] .dca-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+    border-radius: var(--radius-lg);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+:root[data-theme="festive"] .investment-card:hover::after,
+:root[data-theme="festive"] .dca-card:hover::after {
+    opacity: 1;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

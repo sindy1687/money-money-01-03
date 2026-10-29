@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主題系統測試</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #357abd;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background: #e8f5e8;
+            border: 1px solid #c8e6c9;
+        }
+        .error {
+            background: #ffebee;
+            border-color: #ffcdd2;
+            color: #c62828;
+        }
+        .success {
+            background: #e8f5e8;
+            border-color: #c8e6c9;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🎨 主題系統模組化測試</h1>
+        
+        <div class="status" id="status">
+            正在載入主題模組...
+        </div>
+
+        <h2>📋 模組載入狀態</h2>
+        <div id="module-status">
+            <p>檢查模組載入狀態...</p>
+        </div>
+
+        <h2>🧪 功能測試</h2>
+        <button class="test-button" onclick="testThemeData()">測試主題數據</button>
+        <button class="test-button" onclick="testThemeIcons()">測試圖標配置</button>
+        <button class="test-button" onclick="testThemeCore()">測試核心功能</button>
+        <button class="test-button" onclick="testThemeUI()">測試UI組件</button>
+        <button class="test-button" onclick="applyTestTheme()">應用測試主題</button>
+        <button class="test-button" onclick="showThemeSelector()">顯示主題選擇器</button>
+
+        <h2>📊 測試結果</h2>
+        <div id="test-results">
+            <p>點擊上方按鈕進行測試...</p>
+        </div>
+    </div>
+
+    <!-- 載入主題系統 -->
+    <script src="js/theme.js"></script>
+
+    <script>
+        // 測試函數
+        function updateStatus(message, isError = false) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = isError ? 'status error' : 'status success';
+        }
+
+        function addTestResult(test, result, details = '') {
+            const results = document.getElementById('test-results');
+            const div = document.createElement('div');
+            div.style.cssText = 'padding: 10px; margin: 5px 0; border-radius: 5px; background: ' + 
+                              (result ? '#e8f5e8' : '#ffebee') + '; border: 1px solid ' + 
+                              (result ? '#c8e6c9' : '#ffcdd2') + ';';
+            div.innerHTML = `<strong>${test}:</strong> ${result ? '✅ 通過' : '❌ 失敗'} ${details}`;
+            results.appendChild(div);
+        }
+
+        function checkModuleStatus() {
+            const modules = [
+                { name: 'ThemeData', window: 'ThemeData' },
+                { name: 'ThemeIcons', window: 'ThemeIcons' },
+                { name: 'ThemeCore', window: 'ThemeCore' },
+                { name: 'ThemeUI', window: 'ThemeUI' }
+            ];
+
+            const statusDiv = document.getElementById('module-status');
+            let html = '';
+
+            modules.forEach(module => {
+                const loaded = window[module.window] !== undefined;
+                html += `<p style="color: ${loaded ? 'green' : 'red'};">
+                    ${loaded ? '✅' : '❌'} ${module.name}: ${loaded ? '已載入' : '未載入'}
+                </p>`;
+            });
+
+            statusDiv.innerHTML = html;
+        }
+
+        function testThemeData() {
+            try {
+                const themes = window.ThemeData ? window.ThemeData.themes : [];
+                const categories = window.ThemeData ? window.ThemeData.themeCategories : {};
+                
+                const result = themes.length > 0 && Object.keys(categories).length > 0;
+                addTestResult('主題數據模組', result, 
+                    `主題數量: ${themes.length}, 分類數量: ${Object.keys(categories).length}`);
+                
+                if (result && themes.length > 0) {
+                    addTestResult('夢幻藍夜主題存在', 
+                        themes.some(t => t.id === 'dreamyBlue'), 
+                        '檢查新添加的主題');
+                }
+            } catch (error) {
+                addTestResult('主題數據模組', false, error.message);
+            }
+        }
+
+        function testThemeIcons() {
+            try {
+                const icons = window.ThemeIcons ? window.ThemeIcons.buttonIcons : {};
+                const original = window.ThemeIcons ? window.ThemeIcons.originalButtonIcons : {};
+                
+                const result = Object.keys(icons).length > 0 && Object.keys(original).length > 0;
+                addTestResult('圖標配置模組', result, 
+                    `圖標主題數量: ${Object.keys(icons).length}`);
+                
+                if (result) {
+                    addTestResult('夢幻藍夜圖標存在', 
+                        icons.dreamyBlue !== undefined, 
+                        '檢查新主題的圖標配置');
+                }
+            } catch (error) {
+                addTestResult('圖標配置模組', false, error.message);
+            }
+        }
+
+        function testThemeCore() {
+            try {
+                const core = window.ThemeCore;
+                const functions = ['getCurrentTheme', 'applyTheme', 'updateThemeButtons'];
+                
+                let allLoaded = true;
+                functions.forEach(func => {
+                    if (!core || typeof core[func] !== 'function') {
+                        allLoaded = false;
+                    }
+                });
+                
+                addTestResult('核心功能模組', allLoaded, 
+                    `檢查函數: ${functions.join(', ')}`);
+                
+                if (allLoaded) {
+                    const currentTheme = core.getCurrentTheme();
+                    addTestResult('獲取當前主題', true, `當前主題: ${currentTheme}`);
+                }
+            } catch (error) {
+                addTestResult('核心功能模組', false, error.message);
+            }
+        }
+
+        function testThemeUI() {
+            try {
+                const ui = window.ThemeUI;
+                const functions = ['showThemeSelector', 'createThemeModal', 'renderThemeGrid'];
+                
+                let allLoaded = true;
+                functions.forEach(func => {
+                    if (!ui || typeof ui[func] !== 'function') {
+                        allLoaded = false;
+                    }
+                });
+                
+                addTestResult('UI組件模組', allLoaded, 
+                    `檢查函數: ${functions.join(', ')}`);
+            } catch (error) {
+                addTestResult('UI組件模組', false, error.message);
+            }
+        }
+
+        function applyTestTheme() {
+            try {
+                if (window.ThemeCore) {
+                    window.ThemeCore.applyTheme('dreamyBlue');
+                    addTestResult('應用測試主題', true, '已應用夢幻藍夜主題');
+                    
+                    // 檢查是否成功應用
+                    setTimeout(() => {
+                        const root = document.documentElement;
+                        const currentTheme = root.getAttribute('data-theme');
+                        addTestResult('主題應用驗證', currentTheme === 'dreamyBlue', 
+                            `當前data-theme: ${currentTheme}`);
+                    }, 100);
+                } else {
+                    addTestResult('應用測試主題', false, 'ThemeCore未載入');
+                }
+            } catch (error) {
+                addTestResult('應用測試主題', false, error.message);
+            }
+        }
+
+        function showThemeSelector() {
+            try {
+                if (window.ThemeUI) {
+                    window.ThemeUI.showThemeSelector();
+                    addTestResult('顯示主題選擇器', true, '主題選擇器已顯示');
+                } else {
+                    addTestResult('顯示主題選擇器', false, 'ThemeUI未載入');
+                }
+            } catch (error) {
+                addTestResult('顯示主題選擇器', false, error.message);
+            }
+        }
+
+        // 等待模組載入完成後進行檢查
+        setTimeout(() => {
+            checkModuleStatus();
+            updateStatus('主題模組載入完成，可以開始測試', false);
+        }, 2000);
+    </script>
+</body>
+</html>

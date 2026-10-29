@@ -1,0 +1,98 @@
+/* Search history dropdown styles */
+.search-history-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-white);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.search-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.clear-history-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.clear-history-btn:hover {
+    color: var(--text-primary);
+}
+
+.search-history-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-history-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-history-list li:hover {
+    background-color: var(--bg-hover);
+}
+
+/* 翠綠之夢主題搜尋歷史記錄樣式 */
+:root[data-theme="emerald"] .search-history-dropdown {
+    background: rgba(46, 139, 87, 0.9) !important;
+    border: 2px solid rgba(218, 165, 32, 0.6) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(46, 139, 87, 0.4) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+:root[data-theme="emerald"] .search-history-header {
+    background: rgba(46, 139, 87, 0.3) !important;
+    border-bottom: 2px solid rgba(218, 165, 32, 0.4) !important;
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="emerald"] .search-history-header span {
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="emerald"] .clear-history-btn {
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+}
+
+:root[data-theme="emerald"] .clear-history-btn:hover {
+    color: var(--text-primary) !important;
+    background: rgba(46, 139, 87, 0.3) !important;
+    border-radius: 6px !important;
+}
+
+:root[data-theme="emerald"] .search-history-list li {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    border-bottom: 1px solid rgba(218, 165, 32, 0.2) !important;
+}
+
+:root[data-theme="emerald"] .search-history-list li:hover {
+    background: rgba(46, 139, 87, 0.4) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="emerald"] .search-history-list li:last-child {
+    border-bottom: none !important;
+}

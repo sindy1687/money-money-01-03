@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完整診斷工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/theme.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .diagnosis-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .section h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .summary-card {
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .summary-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .summary-label {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        .summary-value {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background: #0056b3;
+        }
+        .controls button.active {
+            background: #28a745;
+        }
+        .diagnostic-output {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 12px;
+            border: 1px solid #dee2e6;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .status-ok {
+            color: green;
+            font-weight: bold;
+        }
+        .status-error {
+            color: red;
+            font-weight: bold;
+        }
+        .status-warning {
+            color: orange;
+            font-weight: bold;
+        }
+        .check-item {
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .check-item.ok {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .check-item.error {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .check-item.warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagnosis-container">
+        <h1>🔍 完整診斷工具</h1>
+        
+        <div class="controls">
+            <button onclick="runCompleteDiagnosis()">運行完整診斷</button>
+            <button onclick="testTheme('blue')">藍色主題</button>
+            <button onclick="testTheme('pink')">粉色主題</button>
+            <button onclick="testTheme('festive')">節日慶典主題</button>
+            <button onclick="forceApplyFestive()">強制應用節日慶典</button>
+            <button onclick="clearCache()">清除緩存重新載入</button>
+        </div>
+
+        <div class="section">
+            <h3>📊 投資卡片測試</h3>
+            <div class="test-grid" id="testGrid">
+                <div class="summary-card primary">
+                    <div class="summary-icon">💰</div>
+                    <div class="summary-content">
+                        <div class="summary-label">總投入金額</div>
+                        <div class="summary-value auto-size">NT$125,000</div>
+                    </div>
+                </div>
+                <div class="summary-card highlight">
+                    <div class="summary-icon">📊</div>
+                    <div class="summary-content">
+                        <div class="summary-label">總市值</div>
+                        <div class="summary-value">NT$145,000</div>
+                    </div>
+                </div>
+                <div class="summary-card highlight">
+                    <div class="summary-icon">📈</div>
+                    <div class="summary-content">
+                        <div class="summary-label">未實現損益</div>
+                        <div class="summary-value">NT$20,000</div>
+                    </div>
+                </div>
+                <div class="summary-card primary">
+                    <div class="summary-icon">💵</div>
+                    <div class="summary-content">
+                        <div class="summary-label">股息收入</div>
+                        <div class="summary-value">NT$2,500</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🔧 診斷結果</h3>
+            <div class="diagnostic-output" id="diagnosticOutput">
+                <div>等待診斷...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>📋 系統狀態</h3>
+            <div id="systemStatus">
+                <div class="check-item">檢查中...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function runCompleteDiagnosis() {
+            console.log('=== 開始完整診斷 ===');
+            const output = document.getElementById('diagnosticOutput');
+            const status = document.getElementById('systemStatus');
+            
+            let results = [];
+            let statusHtml = '';
+            
+            // 1. 檢查基本環境
+            results.push('=== 基本環境檢查 ===');
+            
+            // 檢查HTML結構
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            results.push(`✓ HTML標籤: ${html.tagName}`);
+            results.push(`✓ 當前主題: ${currentTheme || '(未設置)'}`);
+            
+            // 檢查localStorage
+            const selectedTheme = localStorage.getItem('selectedTheme');
+            const oldTheme = localStorage.getItem('theme');
+            results.push(`✓ localStorage selectedTheme: ${selectedTheme || '(無)'}`);
+            results.push(`✓ localStorage theme: ${oldTheme || '(無)'}`);
+            
+            // 2. 檢查CSS文件
+            results.push('\n=== CSS文件檢查 ===');
+            const styleSheets = document.styleSheets;
+            results.push(`✓ 樣式表數量: ${styleSheets.length}`);
+            
+            let festiveRules = 0;
+            let summaryCardRules = 0;
+            
+            for (let i = 0; i < styleSheets.length; i++) {
+                try {
+                    const sheet = styleSheets[i];
+                    const rules = sheet.cssRules || sheet.rules;
+                    
+                    for (let j = 0; j < rules.length; j++) {
+                        const rule = rules[j];
+                        if (rule.selectorText) {
+                            if (rule.selectorText.includes('festive')) {
+                                festiveRules++;
+                                if (rule.selectorText.includes('summary-card')) {
+                                    summaryCardRules++;
+                                    results.push(`✓ 找到節日慶典summary-card規則: ${rule.selectorText}`);
+                                }
+                            }
+                        }
+                    }
+                } catch (e) {
+                    results.push(`⚠ 樣式表 ${i} 讀取錯誤: ${e.message}`);
+                }
+            }
+            
+            results.push(`✓ 節日慶典CSS規則總數: ${festiveRules}`);
+            results.push(`✓ 節日慶典summary-card規則: ${summaryCardRules}`);
+            
+            // 3. 檢查投資卡片
+            results.push('\n=== 投資卡片檢查 ===');
+            const cards = document.querySelectorAll('.summary-card');
+            results.push(`✓ 找到投資卡片數量: ${cards.length}`);
+            
+            cards.forEach((card, index) => {
+                const style = getComputedStyle(card);
+                const bgImage = style.backgroundImage;
+                const bgColor = style.backgroundColor;
+                const borderColor = style.borderColor;
+                
+                results.push(`\n卡片 ${index + 1}:`);
+                results.push(`  背景圖片: ${bgImage.substring(0, 60)}...`);
+                results.push(`  背景顏色: ${bgColor}`);
+                results.push(`  邊框顏色: ${borderColor}`);
+                
+                // 檢查圖示
+                const icon = card.querySelector('.summary-icon');
+                if (icon) {
+                    const iconStyle = getComputedStyle(icon);
+                    results.push(`  圖示顏色: ${iconStyle.color}`);
+                    results.push(`  圖示大小: ${iconStyle.fontSize}`);
+                }
+                
+                // 檢查文字
+                const content = card.querySelector('.summary-content');
+                if (content) {
+                    const contentStyle = getComputedStyle(content);
+                    results.push(`  內容顏色: ${contentStyle.color}`);
+                }
+            });
+            
+            // 4. 檢查JavaScript函數
+            results.push('\n=== JavaScript函數檢查 ===');
+            results.push(`✓ applyTheme函數: ${typeof applyTheme}`);
+            results.push(`✓ getCurrentTheme函數: ${typeof getCurrentTheme}`);
+            
+            // 5. 檢查圖片載入
+            results.push('\n=== 圖片載入檢查 ===');
+            testImageLoad(results);
+            
+            // 6. 生成狀態報告
+            statusHtml = generateStatusReport(currentTheme, cards, festiveRules, summaryCardRules);
+            
+            // 顯示結果
+            output.innerHTML = `<pre>${results.join('\n')}</pre>`;
+            status.innerHTML = statusHtml;
+            
+            console.log('=== 診斷完成 ===');
+        }
+        
+        function testImageLoad(results) {
+            const imageUrl = 'https://i.pinimg.com/1200x/ba/24/9a/ba249a3cc3f9f317683f78c240ff0686.jpg';
+            
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            
+            img.onload = function() {
+                results.push(`✅ 圖片載入成功: ${this.naturalWidth}x${this.naturalHeight}`);
+            };
+            
+            img.onerror = function() {
+                results.push(`❌ 圖片載入失敗: ${imageUrl}`);
+                results.push(`  可能原因: CORS限制或圖片不存在`);
+            };
+            
+            img.src = imageUrl;
+        }
+        
+        function generateStatusReport(theme, cards, festiveRules, summaryCardRules) {
+            let html = '';
+            
+            // 主題狀態
+            if (theme === 'festive') {
+                html += '<div class="check-item ok">✅ 主題設置正確: 節日慶典</div>';
+            } else {
+                html += '<div class="check-item warning">⚠️ 當前主題不是節日慶典: ' + (theme || '未設置') + '</div>';
+            }
+            
+            // CSS規則狀態
+            if (summaryCardRules > 0) {
+                html += '<div class="check-item ok">✅ CSS規則存在: 找到 ' + summaryCardRules + ' 個節日慶典summary-card規則</div>';
+            } else {
+                html += '<div class="check-item error">❌ CSS規則缺失: 沒有找到節日慶典summary-card規則</div>';
+            }
+            
+            // 卡片狀態
+            if (cards.length > 0) {
+                html += '<div class="check-item ok">✅ 投資卡片存在: 找到 ' + cards.length + ' 個卡片</div>';
+                
+                // 檢查第一個卡片的背景
+                const firstCard = cards[0];
+                const style = getComputedStyle(firstCard);
+                const hasBackgroundImage = style.backgroundImage && style.backgroundImage !== 'none';
+                
+                if (hasBackgroundImage && style.backgroundImage.includes('pinimg')) {
+                    html += '<div class="check-item ok">✅ 背景圖片已應用</div>';
+                } else {
+                    html += '<div class="check-item error">❌ 背景圖片未應用</div>';
+                }
+            } else {
+                html += '<div class="check-item error">❌ 投資卡片缺失: 沒有找到summary-card元素</div>';
+            }
+            
+            // 圖示狀態
+            const firstIcon = document.querySelector('.summary-icon');
+            if (firstIcon) {
+                const iconStyle = getComputedStyle(firstIcon);
+                if (iconStyle.color === 'rgb(255, 255, 255)' || iconStyle.color === 'white') {
+                    html += '<div class="check-item ok">✅ 圖示顏色正確: 白色</div>';
+                } else {
+                    html += '<div class="check-item warning">⚠️ 圖示顏色: ' + iconStyle.color + '</div>';
+                }
+            }
+            
+            return html;
+        }
+        
+        function testTheme(themeId) {
+            if (typeof applyTheme === 'function') {
+                applyTheme(themeId);
+            } else {
+                document.documentElement.setAttribute('data-theme', themeId);
+            }
+            setTimeout(runCompleteDiagnosis, 500);
+        }
+        
+        function forceApplyFestive() {
+            console.log('強制應用節日慶典主題...');
+            document.documentElement.setAttribute('data-theme', 'festive');
+            localStorage.setItem('selectedTheme', 'festive');
+            localStorage.setItem('theme', 'festive');
+            
+            // 強制應用樣式
+            const cards = document.querySelectorAll('.summary-card');
+            cards.forEach((card, index) => {
+                card.style.setProperty('background-image', 'url("https://i.pinimg.com/1200x/ba/24/9a/ba249a3cc3f9f317683f78c240ff0686.jpg")', 'important');
+                card.style.setProperty('background-size', 'cover', 'important');
+                card.style.setProperty('background-position', 'center', 'important');
+                card.style.setProperty('background-color', 'rgba(230, 57, 70, 0.3)', 'important');
+                card.style.setProperty('background-blend-mode', 'overlay', 'important');
+                card.style.setProperty('border', '2px solid rgba(252, 163, 17, 0.72)', 'important');
+                card.style.setProperty('border-radius', '20px', 'important');
+                card.style.setProperty('backdrop-filter', 'blur(15px)', 'important');
+                
+                const icon = card.querySelector('.summary-icon');
+                if (icon) {
+                    icon.style.setProperty('color', 'white', 'important');
+                    icon.style.setProperty('text-shadow', '0 2px 4px rgba(0,0,0,0.5)', 'important');
+                }
+                
+                const content = card.querySelector('.summary-content');
+                if (content) {
+                    content.style.setProperty('color', 'white', 'important');
+                    content.style.setProperty('text-shadow', '0 2px 4px rgba(0,0,0,0.5)', 'important');
+                }
+            });
+            
+            setTimeout(runCompleteDiagnosis, 500);
+        }
+        
+        function clearCache() {
+            console.log('清除緩存並重新載入...');
+            localStorage.clear();
+            location.reload(true);
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(runCompleteDiagnosis, 1000);
+        });
+    </script>
+</body>
+</html>

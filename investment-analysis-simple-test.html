@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投資組合分析測試</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .data-display {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 投資組合分析測試</h1>
+    
+    <div class="container">
+        <h3>快速測試</h3>
+        <button class="button" onclick="testBasicFunction()">基礎功能測試</button>
+        <button class="button" onclick="loadTestData()">載入測試數據</button>
+        <button class="button" onclick="testPortfolioAnalysis()">測試投資組合分析</button>
+        <button class="button" onclick="testWithModal()">使用彈窗測試</button>
+        <div id="status"></div>
+    </div>
+    
+    <div class="container">
+        <h3>數據查看</h3>
+        <button class="button" onclick="showInvestmentRecords()">顯示投資記錄</button>
+        <button class="button" onclick="showHoldings()">顯示持股計算</button>
+        <button class="button" onclick="showCurrentPrices()">顯示當前價格</button>
+        <div id="dataDisplay"></div>
+    </div>
+    
+    <!-- 投資組合分析彈窗 -->
+    <div class="modal" id="portfolioModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📊 投資組合分析</h3>
+                <button class="close-btn" onclick="closeModal()">✕</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- 載入必要的腳本 -->
+    <script src="js/investment-analysis.js"></script>
+    <script src="js/investment-analysis-integration.js"></script>
+
+    <script>
+        function updateStatus(message, type = 'success') {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        function updateDataDisplay(data) {
+            const displayDiv = document.getElementById('dataDisplay');
+            displayDiv.innerHTML = `<div class="data-display">${JSON.stringify(data, null, 2)}</div>`;
+        }
+
+        function testBasicFunction() {
+            try {
+                // 檢查 InvestmentAnalysis 模組
+                if (typeof InvestmentAnalysis === 'undefined') {
+                    throw new Error('InvestmentAnalysis 模組未載入');
+                }
+                
+                // 檢查 InvestmentAnalysisManager
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未創建');
+                }
+                
+                updateStatus('✅ 基礎功能正常 - 模組和管理器都已載入');
+                
+                // 顯示可用方法
+                const methods = Object.keys(InvestmentAnalysis);
+                updateDataDisplay({
+                    InvestmentAnalysis可用方法: methods,
+                    管理器狀態: {
+                        isInitialized: investmentAnalysisManager.isInitialized,
+                        holdingsCount: investmentAnalysisManager.currentHoldings.length,
+                        goalsCount: investmentAnalysisManager.currentGoals.length
+                    }
+                });
+                
+            } catch (error) {
+                updateStatus('❌ 基礎功能測試失敗: ' + error.message, 'error');
+            }
+        }
+
+        function loadTestData() {
+            const testData = [
+                {
+                    type: 'buy',
+                    stockCode: '0056',
+                    stockName: '元大台灣50',
+                    date: '2024-01-15',
+                    price: 150.5,
+                    shares: 1000,
+                    fee: 100,
+                    timestamp: Date.now() - 30 * 24 * 60 * 60 * 1000
+                },
+                {
+                    type: 'buy',
+                    stockCode: '0050',
+                    stockName: '元大高股息',
+                    date: '2024-02-20',
+                    price: 120.3,
+                    shares: 500,
+                    fee: 80,
+                    timestamp: Date.now() - 20 * 24 * 60 * 60 * 1000
+                },
+                {
+                    type: 'buy',
+                    stockCode: '2330',
+                    stockName: '台積電',
+                    date: '2024-03-10',
+                    price: 650.0,
+                    shares: 100,
+                    fee: 150,
+                    timestamp: Date.now() - 10 * 24 * 60 * 60 * 1000
+                }
+            ];
+            
+            const currentPrices = {
+                '0056': 155.2,
+                '0050': 125.8,
+                '2330': 680.5
+            };
+            
+            localStorage.setItem('investmentRecords', JSON.stringify(testData));
+            localStorage.setItem('stockCurrentPrices', JSON.stringify(currentPrices));
+            
+            updateStatus('✅ 測試數據已載入');
+            
+            // 重新載入持股
+            if (typeof investmentAnalysisManager !== 'undefined') {
+                investmentAnalysisManager.loadHoldings();
+                updateStatus('✅ 持股數據已更新: ' + investmentAnalysisManager.currentHoldings.length + ' 檔');
+            }
+        }
+
+        function testPortfolioAnalysis() {
+            try {
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未定義');
+                }
+                
+                // 重新載入數據
+                investmentAnalysisManager.loadHoldings();
+                
+                if (investmentAnalysisManager.currentHoldings.length === 0) {
+                    updateStatus('⚠️ 沒有持股數據，請先載入測試數據', 'warning');
+                    return;
+                }
+                
+                // 執行分析
+                const analysis = InvestmentAnalysis.analyzePortfolio(investmentAnalysisManager.currentHoldings);
+                
+                updateStatus('✅ 投資組合分析完成');
+                updateDataDisplay(analysis);
+                
+            } catch (error) {
+                updateStatus('❌ 投資組合分析失敗: ' + error.message, 'error');
+                console.error('分析錯誤:', error);
+            }
+        }
+
+        function testWithModal() {
+            try {
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未定義');
+                }
+                
+                // 重新載入數據
+                investmentAnalysisManager.loadHoldings();
+                
+                if (investmentAnalysisManager.currentHoldings.length === 0) {
+                    updateStatus('⚠️ 沒有持股數據，請先載入測試數據', 'warning');
+                    return;
+                }
+                
+                // 執行分析
+                const analysis = InvestmentAnalysis.analyzePortfolio(investmentAnalysisManager.currentHoldings);
+                
+                // 顯示在彈窗中
+                const modalBody = document.getElementById('modalBody');
+                modalBody.innerHTML = `
+                    <h4>📊 投資組合分析結果</h4>
+                    <div class="data-display">${JSON.stringify(analysis, null, 2)}</div>
+                `;
+                
+                document.getElementById('portfolioModal').style.display = 'flex';
+                updateStatus('✅ 彈窗測試成功');
+                
+            } catch (error) {
+                updateStatus('❌ 彈窗測試失敗: ' + error.message, 'error');
+                console.error('彈窗錯誤:', error);
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('portfolioModal').style.display = 'none';
+        }
+
+        function showInvestmentRecords() {
+            try {
+                const records = JSON.parse(localStorage.getItem('investmentRecords') || '[]');
+                updateDataDisplay({
+                    投資記錄數量: records.length,
+                    記錄詳情: records
+                });
+                updateStatus('✅ 投資記錄顯示完成');
+            } catch (error) {
+                updateStatus('❌ 顯示投資記錄失敗: ' + error.message, 'error');
+            }
+        }
+
+        function showHoldings() {
+            try {
+                if (typeof investmentAnalysisManager === 'undefined') {
+                    throw new Error('InvestmentAnalysisManager 未定義');
+                }
+                
+                investmentAnalysisManager.loadHoldings();
+                updateDataDisplay({
+                    持股數量: investmentAnalysisManager.currentHoldings.length,
+                    持股詳情: investmentAnalysisManager.currentHoldings
+                });
+                updateStatus('✅ 持股計算顯示完成');
+            } catch (error) {
+                updateStatus('❌ 顯示持股失敗: ' + error.message, 'error');
+            }
+        }
+
+        function showCurrentPrices() {
+            try {
+                const prices = JSON.parse(localStorage.getItem('stockCurrentPrices') || '{}');
+                updateDataDisplay({
+                    當前價格數量: Object.keys(prices).length,
+                    價格詳情: prices
+                });
+                updateStatus('✅ 當前價格顯示完成');
+            } catch (error) {
+                updateStatus('❌ 顯示當前價格失敗: ' + error.message, 'error');
+            }
+        }
+
+        // 頁面載入時自動測試
+        window.addEventListener('load', function() {
+            setTimeout(testBasicFunction, 500);
+        });
+    </script>
+</body>
+</html>
