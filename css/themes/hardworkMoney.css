@@ -1,0 +1,230 @@
+﻿:root[data-theme="hardworkMoney"] {
+    --color-primary: #4a90a4;
+    --color-primary-light: #7fb8c7;
+    --color-primary-lighter: #b8dbe4;
+    --color-primary-dark: #2f6675;
+
+    --color-secondary: #3b6f86;
+    --color-secondary-light: #5f93aa;
+    --color-secondary-dark: #274c5d;
+
+    /* 狀態顏色 */
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    /* 背景 / 卡片（維持高對比） */
+    --bg-primary: linear-gradient(135deg, rgba(250, 253, 255, 0.96) 0%, rgba(232, 245, 250, 0.92) 55%, rgba(127, 184, 199, 0.25) 100%);
+    --bg-body: rgba(250, 253, 255, 0.88);
+    --bg-body-strong: rgba(250, 253, 255, 0.94);
+    --bg-gradient: linear-gradient(135deg, #eaf6fb 0%, #f7fbfe 55%, #d6eef6 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(74, 144, 164, 0.10) 0%, rgba(127, 184, 199, 0.18) 100%);
+    --bg-white: rgba(255, 255, 255, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.88);
+    --bg-light: rgba(232, 245, 250, 0.86);
+    --bg-lighter: rgba(214, 238, 246, 0.78);
+    --bg-soft: rgba(250, 253, 255, 0.74);
+    --bg-soft-strong: rgba(250, 253, 255, 0.88);
+
+    /* 文字（避免被背景圖影響） */
+    --text-primary: rgba(21, 43, 54, 0.96);
+    --text-secondary: rgba(21, 43, 54, 0.88);
+    --text-tertiary: rgba(21, 43, 54, 0.78);
+    --text-strong: rgba(12, 26, 34, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(74, 144, 164, 0.62);
+    --border-light: rgba(74, 144, 164, 0.22);
+    --border-medium: rgba(74, 144, 164, 0.36);
+    --card-border-color: rgba(74, 144, 164, 0.40);
+    --control-border-color: rgba(74, 144, 164, 0.28);
+    --table-border-color: rgba(74, 144, 164, 0.20);
+
+    --shadow-primary: 0 16px 44px rgba(21, 43, 54, 0.18);
+    --shadow-primary-lg: 0 22px 60px rgba(21, 43, 54, 0.22);
+
+    --color-primary-rgba-08: rgba(74, 144, 164, 0.08);
+    --color-primary-rgba-10: rgba(74, 144, 164, 0.10);
+    --color-primary-rgba-15: rgba(74, 144, 164, 0.15);
+    --color-primary-rgba-20: rgba(74, 144, 164, 0.20);
+    --color-primary-rgba-25: rgba(74, 144, 164, 0.25);
+    --color-primary-rgba-30: rgba(74, 144, 164, 0.30);
+    --color-primary-rgba-40: rgba(74, 144, 164, 0.40);
+
+    --color-primary-light-rgba-08: rgba(127, 184, 199, 0.08);
+    --color-primary-light-rgba-10: rgba(127, 184, 199, 0.10);
+    --color-primary-light-rgba-15: rgba(127, 184, 199, 0.15);
+    --color-primary-light-rgba-20: rgba(127, 184, 199, 0.20);
+    --color-primary-light-rgba-25: rgba(127, 184, 199, 0.25);
+    --color-primary-light-rgba-30: rgba(127, 184, 199, 0.30);
+    --color-primary-light-rgba-40: rgba(127, 184, 199, 0.40);
+
+    /* 買入 / 定期定額按鈕：用主題變數驅動 */
+    --action-buy-bg: linear-gradient(135deg, rgba(74, 144, 164, 0.95) 0%, rgba(47, 102, 117, 0.95) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg, rgba(47, 102, 117, 0.98) 0%, rgba(59, 111, 134, 0.98) 100%);
+    --action-buy-text: var(--text-white);
+
+    --action-dca-bg: linear-gradient(135deg, rgba(127, 184, 199, 0.96) 0%, rgba(74, 144, 164, 0.96) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg, rgba(74, 144, 164, 0.98) 0%, rgba(47, 102, 117, 0.98) 100%);
+    --action-dca-text: var(--text-white);
+    --action-dca-shadow: 0 4px 15px rgba(47, 102, 117, 0.28);
+    --action-dca-shadow-hover: 0 8px 25px rgba(47, 102, 117, 0.36);
+    --action-dca-focus-ring: 0 0 0 3px rgba(74, 144, 164, 0.28);
+}
+
+:root[data-theme="hardworkMoney"] body {
+    background: url("https://i.pinimg.com/736x/c6/a0/ee/c6a0eef9398825b678bf0e2b229ab14f.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+}
+
+:root[data-theme="hardworkMoney"] body::before {
+    display: none;
+}
+
+:root[data-theme="hardworkMoney"] .page-input,
+
+:root[data-theme="hardworkMoney"] .page-ledger,
+
+:root[data-theme="hardworkMoney"] .page-chart,
+
+:root[data-theme="hardworkMoney"] .page-budget,
+
+:root[data-theme="hardworkMoney"] .page-monthly-planner,
+
+:root[data-theme="hardworkMoney"] .page-daily-budget,
+
+:root[data-theme="hardworkMoney"] .page-settings,
+
+:root[data-theme="hardworkMoney"] .page-category-manage,
+
+:root[data-theme="hardworkMoney"] .page-investment,
+
+:root[data-theme="hardworkMoney"] .page-wallet,
+
+:root[data-theme="hardworkMoney"] .page-history,
+
+:root[data-theme="hardworkMoney"] .page-planner,
+
+:root[data-theme="hardworkMoney"] .dividend-page,
+
+:root[data-theme="hardworkMoney"] .dca-management-page,
+
+:root[data-theme="hardworkMoney"] .dca-setup-page,
+
+:root[data-theme="hardworkMoney"] .investment-input-page {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="hardworkMoney"] .card,
+
+:root[data-theme="hardworkMoney"] .record-card,
+
+:root[data-theme="hardworkMoney"] .ledger-card,
+
+:root[data-theme="hardworkMoney"] .summary-card,
+
+:root[data-theme="hardworkMoney"] .budget-card,
+
+:root[data-theme="hardworkMoney"] .wallet-card,
+
+:root[data-theme="hardworkMoney"] .chart-card,
+
+:root[data-theme="hardworkMoney"] .investment-card,
+
+:root[data-theme="hardworkMoney"] .stock-item-card,
+
+:root[data-theme="hardworkMoney"] .dca-item-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: 0 10px 28px rgba(21, 43, 54, 0.14);
+}
+
+:root[data-theme="hardworkMoney"] .modal-content,
+
+:root[data-theme="hardworkMoney"] .modal-content-standard,
+
+:root[data-theme="hardworkMoney"] .budget-category-modal-content,
+
+:root[data-theme="hardworkMoney"] .budget-setting-modal-content,
+
+:root[data-theme="hardworkMoney"] .category-modal-content,
+
+:root[data-theme="hardworkMoney"] .dca-execute-modal .modal-content,
+
+:root[data-theme="hardworkMoney"] .account-modal-content,
+
+:root[data-theme="hardworkMoney"] .emoji-modal-content,
+
+:root[data-theme="hardworkMoney"] .history-modal-content {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(74, 144, 164, 0.35);
+    box-shadow: 0 16px 40px rgba(21, 43, 54, 0.18);
+}
+
+:root[data-theme="hardworkMoney"] .input-section {
+    background: rgba(255, 255, 255, 0.92);
+    border: 2px solid rgba(74, 144, 164, 0.25);
+    box-shadow: 0 -6px 26px rgba(21, 43, 54, 0.12);
+}
+
+:root[data-theme="hardworkMoney"] .bottom-nav {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border-top: 1px solid rgba(74, 144, 164, 0.28) !important;
+    backdrop-filter: blur(14px);
+}
+
+:root[data-theme="hardworkMoney"] .stock-count,
+
+:root[data-theme="hardworkMoney"] .empty-state,
+
+:root[data-theme="hardworkMoney"] .empty-hint,
+
+:root[data-theme="hardworkMoney"] .summary-line {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="hardworkMoney"] .entry-detail-content {
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(74, 144, 164, 0.35);
+}
+
+:root[data-theme="hardworkMoney"] .entry-detail-date {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="hardworkMoney"] .entry-detail-edit-btn {
+    background: var(--action-buy-bg);
+    color: var(--text-white);
+    box-shadow: var(--shadow-primary);
+}
+
+:root[data-theme="hardworkMoney"] .entry-detail-edit-btn:hover {
+    background: var(--action-buy-bg-hover);
+    box-shadow: var(--shadow-primary-lg);
+}
+
+:root[data-theme="hardworkMoney"] .keyboard {
+    background: rgba(255, 255, 255, 0.94);
+    border: 2px solid rgba(74, 144, 164, 0.20);
+    box-shadow: 0 18px 44px rgba(21, 43, 54, 0.14);
+}
+
+:root[data-theme="hardworkMoney"] .key-btn {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(74, 144, 164, 0.22);
+    color: var(--text-primary);
+}
+
+:root[data-theme="hardworkMoney"] .key-btn.operator {
+    background: linear-gradient(135deg, rgba(74, 144, 164, 0.95) 0%, rgba(47, 102, 117, 0.95) 100%);
+    border-color: rgba(47, 102, 117, 0.35);
+    color: var(--text-white);
+}
+
+:root[data-theme="hardworkMoney"] .key-btn.operator:hover {
+    background: linear-gradient(135deg, rgba(47, 102, 117, 0.98) 0%, rgba(59, 111, 134, 0.98) 100%);
+}
+

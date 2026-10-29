@@ -1,0 +1,33 @@
+﻿:root[data-theme="auroraflow"].dark,
+
+:root[data-theme="auroraflow"] {
+    --color-primary: #34d399;
+    --color-primary-light: #60f5d7;
+    --color-primary-lighter: #a5f3fc;
+    --color-primary-dark: #0ea5e9;
+    --bg-primary: linear-gradient(135deg, #0f172a 0%, #2563eb 35%, #34d399 70%, #a855f7 100%);
+    --bg-gradient: linear-gradient(135deg, #2563eb 0%, #34d399 50%, #a855f7 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(37, 99, 235, 0.18) 0%, rgba(52, 211, 153, 0.15) 50%, rgba(168, 85, 247, 0.18) 100%);
+    --border-primary: #34d399;
+    --shadow-primary: 0 2px 12px rgba(52, 211, 153, 0.35);
+    --shadow-primary-lg: 0 6px 20px rgba(37, 99, 235, 0.35);
+    --bg-white: rgba(8, 11, 27, 0.85);
+    --bg-light: rgba(37, 50, 89, 0.6);
+    --bg-lighter: rgba(59, 74, 124, 0.45);
+    --text-primary: #f0f9ff;
+    --text-secondary: rgba(240, 249, 255, 0.82);
+    --text-tertiary: rgba(240, 249, 255, 0.68);
+    --border-light: rgba(240, 249, 255, 0.2);
+    --border-medium: rgba(240, 249, 255, 0.35);
+}
+
+:root[data-theme="auroraflow"] body::before {
+    opacity: 0.65;
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.55), transparent 55%),
+        radial-gradient(circle at 80% 30%, rgba(34, 211, 238, 0.45), transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(52, 211, 153, 0.4), transparent 45%);
+    mix-blend-mode: screen;
+    animation: auroraSweep 16s ease-in-out infinite alternate;
+}
+

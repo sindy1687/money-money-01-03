@@ -1,0 +1,42 @@
+﻿:root[data-theme="star"].dark,
+
+:root[data-theme="star"] {
+    --color-primary: #8b7cf6;
+    --color-primary-light: #a594f8;
+    --color-primary-lighter: #9b8af7;
+    --color-primary-dark: #6b5dd9;
+    --bg-primary: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    --bg-gradient: linear-gradient(135deg, #a594f8 0%, #9b8af7 100%);
+    --bg-gradient-light: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+    --border-primary: #8b7cf6;
+    --shadow-primary: 0 2px 8px rgba(139, 124, 246, 0.4);
+    --shadow-primary-lg: 0 4px 12px rgba(139, 124, 246, 0.5);
+    --color-primary-rgba-08: rgba(139, 124, 246, 0.08);
+    --color-primary-rgba-10: rgba(139, 124, 246, 0.1);
+    --color-primary-rgba-15: rgba(139, 124, 246, 0.15);
+    --color-primary-rgba-20: rgba(139, 124, 246, 0.2);
+    --color-primary-rgba-25: rgba(139, 124, 246, 0.25);
+    --color-primary-rgba-30: rgba(139, 124, 246, 0.3);
+    --color-primary-rgba-12: rgba(139, 124, 246, 0.12);
+    --color-primary-rgba-18: rgba(139, 124, 246, 0.18);
+    --color-primary-light-rgba-08: rgba(165, 148, 248, 0.08);
+    --color-primary-light-rgba-10: rgba(165, 148, 248, 0.1);
+    --color-primary-light-rgba-15: rgba(165, 148, 248, 0.15);
+    --color-primary-light-rgba-20: rgba(165, 148, 248, 0.2);
+    --color-primary-light-rgba-25: rgba(165, 148, 248, 0.25);
+    --color-primary-light-rgba-30: rgba(165, 148, 248, 0.3);
+    --color-primary-light-rgba-40: rgba(165, 148, 248, 0.4);
+    --bg-light-gradient: linear-gradient(135deg, #1a1f3a 0%, #2a2f4a 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, #2a2f4a 0%, #1a1f3a 100%);
+    --bg-white: #1a1f3a;
+    --bg-light: #2a2f4a;
+    --bg-lighter: #3a3f5a;
+    --text-primary: var(--bg-white);
+    --text-secondary: var(--bg-white);
+    --text-tertiary: var(--bg-white);
+    --border-light: rgba(139, 124, 246, 0.2);
+    --border-medium: rgba(139, 124, 246, 0.3);
+}
+
+/* ========== 新增主題：茶色主題 ========== */
+

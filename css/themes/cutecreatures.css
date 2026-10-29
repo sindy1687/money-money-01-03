@@ -1,0 +1,709 @@
+﻿/* ========== 可愛生物主題 ========== */
+:root[data-theme="cutecreatures"] {
+    --color-primary: #90EE90;
+    --color-primary-light: #98FB98;
+    --color-primary-lighter: #B0FFB0;
+    --color-primary-dark: #7FDD7F;
+    --color-secondary: #FFB6C1;
+    --color-secondary-light: #FFC0CB;
+    --color-secondary-dark: #FF91A4;
+    --color-accent: #DEB887;
+    --color-accent-light: #F5DEB3;
+    --color-accent-dark: #D2691E;
+    --bg-primary: transparent;
+    --bg-gradient: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(144, 238, 144, 0.15) 0%, rgba(152, 251, 152, 0.12) 100%);
+    --bg-card: rgba(144, 238, 144, 0.85);
+    --bg-white: rgba(144, 238, 144, 0.9);
+    --bg-light: rgba(144, 238, 144, 0.8);
+    --bg-lighter: rgba(144, 238, 144, 0.7);
+    --bg-soft: rgba(144, 238, 144, 0.6);
+    --text-primary: #2F4F2F;
+    --text-secondary: rgba(47, 79, 47, 0.8);
+    --text-tertiary: rgba(47, 79, 47, 0.6);
+    --text-strong: #1F3F1F;
+    --text-white: var(--color-primary-light);
+    --border-light: rgba(144, 238, 144, 0.3);
+    --border-medium: rgba(144, 238, 144, 0.5);
+    --border-strong: rgba(144, 238, 144, 0.7);
+    --card-border-color: rgba(144, 238, 144, 0.4);
+    --card-border-color-strong: rgba(144, 238, 144, 0.6);
+    --shadow-primary: 0 4px 12px rgba(144, 238, 144, 0.2);
+    --shadow-primary-lg: 0 8px 24px rgba(144, 238, 144, 0.3);
+    --color-primary-rgba-08: rgba(144, 238, 144, 0.08);
+    --color-primary-rgba-10: rgba(144, 238, 144, 0.1);
+    --color-primary-rgba-12: rgba(144, 238, 144, 0.12);
+    --color-primary-rgba-15: rgba(144, 238, 144, 0.15);
+    --color-primary-rgba-18: rgba(144, 238, 144, 0.18);
+    --color-primary-rgba-20: rgba(144, 238, 144, 0.2);
+    --color-primary-rgba-25: rgba(144, 238, 144, 0.25);
+    --color-primary-rgba-30: rgba(144, 238, 144, 0.3);
+    --color-primary-rgba-40: rgba(144, 238, 144, 0.4);
+    --color-primary-light-rgba-08: rgba(152, 251, 152, 0.08);
+    --color-primary-light-rgba-10: rgba(152, 251, 152, 0.1);
+    --color-primary-light-rgba-15: rgba(152, 251, 152, 0.15);
+    --color-primary-light-rgba-20: rgba(152, 251, 152, 0.2);
+    --color-primary-light-rgba-25: rgba(152, 251, 152, 0.25);
+    --color-primary-light-rgba-30: rgba(152, 251, 152, 0.3);
+    --color-primary-light-rgba-40: rgba(152, 251, 152, 0.4);
+    --color-secondary-rgba-08: rgba(255, 182, 193, 0.08);
+    --color-secondary-rgba-10: rgba(255, 182, 193, 0.1);
+    --color-secondary-rgba-15: rgba(255, 182, 193, 0.15);
+    --color-secondary-rgba-20: rgba(255, 182, 193, 0.2);
+    --color-secondary-rgba-25: rgba(255, 182, 193, 0.25);
+    --color-secondary-rgba-30: rgba(255, 182, 193, 0.3);
+    --color-secondary-rgba-40: rgba(255, 182, 193, 0.4);
+    --bg-light-gradient: linear-gradient(135deg, var(--bg-white) 0%, #f0fff0 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, #f0fff0 0%, var(--bg-white) 100%);
+    --text-shadow-soft: 0 1px 2px rgba(47, 79, 47, 0.1);
+    --text-shadow-strong: 0 2px 6px rgba(47, 79, 47, 0.15);
+    /* 字體美化變數 */
+    --font-family-primary: 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+    --font-family-heading: 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+}
+
+:root[data-theme="cutecreatures"] body {
+    background: url("https://i.pinimg.com/736x/9d/4a/a3/9d4aa350394b78ca7071e58ddda9d0ac.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme="cutecreatures"] body::before {
+    display: none;
+}
+
+:root[data-theme="cutecreatures"] .page-input,
+:root[data-theme="cutecreatures"] .page-ledger,
+:root[data-theme="cutecreatures"] .page-chart,
+:root[data-theme="cutecreatures"] .page-budget,
+:root[data-theme="cutecreatures"] .page-monthly-planner,
+:root[data-theme="cutecreatures"] .page-daily-budget,
+:root[data-theme="cutecreatures"] .page-settings,
+:root[data-theme="cutecreatures"] .page-category-manage,
+:root[data-theme="cutecreatures"] .page-investment,
+:root[data-theme="cutecreatures"] .page-wallet,
+:root[data-theme="cutecreatures"] .page-history,
+:root[data-theme="cutecreatures"] .page-planner,
+:root[data-theme="cutecreatures"] .dividend-page,
+:root[data-theme="cutecreatures"] .dca-management-page,
+:root[data-theme="cutecreatures"] .dca-setup-page,
+:root[data-theme="cutecreatures"] .investment-input-page,
+:root[data-theme="cutecreatures"] .wishlist-content,
+:root[data-theme="cutecreatures"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="cutecreatures"] .card,
+:root[data-theme="cutecreatures"] .record-card,
+:root[data-theme="cutecreatures"] .ledger-card,
+:root[data-theme="cutecreatures"] .summary-card,
+:root[data-theme="cutecreatures"] .budget-card,
+:root[data-theme="cutecreatures"] .wallet-card,
+:root[data-theme="cutecreatures"] .chart-card,
+:root[data-theme="cutecreatures"] .investment-card,
+:root[data-theme="cutecreatures"] .stock-item-card,
+:root[data-theme="cutecreatures"] .monthly-planner-card,
+:root[data-theme="cutecreatures"] .dividend-stat-card,
+:root[data-theme="cutecreatures"] .dca-card,
+:root[data-theme="cutecreatures"] .installment-card {
+    background: var(--bg-white);
+    border: 2px solid rgba(144, 238, 144, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(144, 238, 144, 0.15);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="cutecreatures"] .card::before,
+:root[data-theme="cutecreatures"] .record-card::before,
+:root[data-theme="cutecreatures"] .ledger-card::before,
+:root[data-theme="cutecreatures"] .summary-card::before,
+:root[data-theme="cutecreatures"] .budget-card::before,
+:root[data-theme="cutecreatures"] .wallet-card::before,
+:root[data-theme="cutecreatures"] .chart-card::before,
+:root[data-theme="cutecreatures"] .investment-card::before,
+:root[data-theme="cutecreatures"] .stock-item-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+:root[data-theme="cutecreatures"] .card:hover,
+:root[data-theme="cutecreatures"] .record-card:hover,
+:root[data-theme="cutecreatures"] .ledger-card:hover,
+:root[data-theme="cutecreatures"] .summary-card:hover,
+:root[data-theme="cutecreatures"] .budget-card:hover,
+:root[data-theme="cutecreatures"] .wallet-card:hover,
+:root[data-theme="cutecreatures"] .chart-card:hover,
+:root[data-theme="cutecreatures"] .investment-card:hover,
+:root[data-theme="cutecreatures"] .stock-item-card:hover {
+    background: var(--bg-white);
+    border-color: rgba(144, 238, 144, 0.6);
+    box-shadow: 0 12px 32px rgba(144, 238, 144, 0.25);
+    transform: translateY(-2px);
+}
+
+:root[data-theme="cutecreatures"] .card .value,
+:root[data-theme="cutecreatures"] .summary-value,
+:root[data-theme="cutecreatures"] .summary-label,
+:root[data-theme="cutecreatures"] .stock-card-value,
+:root[data-theme="cutecreatures"] .stock-card-label,
+:root[data-theme="cutecreatures"] .stock-card-name,
+:root[data-theme="cutecreatures"] .stat-label,
+:root[data-theme="cutecreatures"] .stat-value,
+:root[data-theme="cutecreatures"] .budget-summary-value,
+:root[data-theme="cutecreatures"] .budget-summary-label,
+:root[data-theme="cutecreatures"] .budget-amount,
+:root[data-theme="cutecreatures"] .budget-total,
+:root[data-theme="cutecreatures"] .total-budget,
+:root[data-theme="cutecreatures"] .budget-used,
+:root[data-theme="cutecreatures"] .used-budget,
+:root[data-theme="cutecreatures"] .budget-remaining,
+:root[data-theme="cutecreatures"] .remaining-budget,
+:root[data-theme="cutecreatures"] .transaction-amount,
+:root[data-theme="cutecreatures"] .transaction-category,
+:root[data-theme="cutecreatures"] .transaction-note,
+:root[data-theme="cutecreatures"] .investment-metric-value,
+:root[data-theme="cutecreatures"] .investment-metric-label {
+    color: var(--text-primary) !important;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
+    text-shadow: var(--text-shadow-soft);
+}
+
+:root[data-theme="cutecreatures"] .card .value,
+:root[data-theme="cutecreatures"] .summary-value,
+:root[data-theme="cutecreatures"] .stock-card-value,
+:root[data-theme="cutecreatures"] .stat-value,
+:root[data-theme="cutecreatures"] .budget-summary-value,
+:root[data-theme="cutecreatures"] .budget-amount,
+:root[data-theme="cutecreatures"] .total-budget,
+:root[data-theme="cutecreatures"] .budget-used,
+:root[data-theme="cutecreatures"] .used-budget,
+:root[data-theme="cutecreatures"] .budget-remaining,
+:root[data-theme="cutecreatures"] .remaining-budget,
+:root[data-theme="cutecreatures"] .transaction-amount,
+:root[data-theme="cutecreatures"] .investment-metric-value {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+}
+
+:root[data-theme="cutecreatures"] .card .label,
+:root[data-theme="cutecreatures"] .summary-label,
+:root[data-theme="cutecreatures"] .stock-card-label,
+:root[data-theme="cutecreatures"] .stock-card-name,
+:root[data-theme="cutecreatures"] .stat-label,
+:root[data-theme="cutecreatures"] .budget-summary-label,
+:root[data-theme="cutecreatures"] .transaction-category,
+:root[data-theme="cutecreatures"] .investment-metric-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+:root[data-theme="cutecreatures"] .investment-card::before,
+:root[data-theme="cutecreatures"] .stock-item-card::before {
+    background: linear-gradient(135deg, rgba(144, 238, 144, 0.15) 0%, rgba(152, 251, 152, 0.12) 55%, rgba(255, 182, 193, 0.08) 100%);
+}
+
+:root[data-theme="cutecreatures"] .nav-item.active {
+    background: rgba(144, 238, 144, 0.25);
+    box-shadow: 0 6px 16px rgba(144, 238, 144, 0.2);
+}
+
+:root[data-theme="cutecreatures"] .modal-content,
+:root[data-theme="cutecreatures"] .modal-content-standard,
+:root[data-theme="cutecreatures"] .budget-category-modal-content,
+:root[data-theme="cutecreatures"] .budget-setting-modal-content,
+:root[data-theme="cutecreatures"] .category-modal-content,
+:root[data-theme="cutecreatures"] .dca-execute-modal .modal-content,
+:root[data-theme="cutecreatures"] .account-modal-content,
+:root[data-theme="cutecreatures"] .emoji-modal-content,
+:root[data-theme="cutecreatures"] .history-modal-content {
+    background: var(--bg-white);
+    border: 2px solid rgba(144, 238, 144, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(144, 238, 144, 0.2);
+    backdrop-filter: blur(16px);
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: var(--letter-spacing-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="cutecreatures"] .modal-content::before,
+:root[data-theme="cutecreatures"] .modal-content-standard::before,
+:root[data-theme="cutecreatures"] .budget-category-modal-content::before,
+:root[data-theme="cutecreatures"] .budget-setting-modal-content::before,
+:root[data-theme="cutecreatures"] .category-modal-content::before,
+:root[data-theme="cutecreatures"] .dca-execute-modal .modal-content::before,
+:root[data-theme="cutecreatures"] .account-modal-content::before,
+:root[data-theme="cutecreatures"] .emoji-modal-content::before,
+:root[data-theme="cutecreatures"] .history-modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+:root[data-theme="cutecreatures"] .form-input,
+:root[data-theme="cutecreatures"] .form-select,
+:root[data-theme="cutecreatures"] .form-textarea,
+:root[data-theme="cutecreatures"] .note-input {
+    background: rgba(240, 255, 240, 0.8) !important;
+    border: 2px solid rgba(144, 238, 144, 0.3) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
+    letter-spacing: var(--letter-spacing-normal);
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="cutecreatures"] .input-section {
+    background: var(--bg-white);
+    border-top: 2px solid rgba(144, 238, 144, 0.4);
+    box-shadow: 0 -4px 20px rgba(144, 238, 144, 0.15);
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="cutecreatures"] .bottom-nav {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-top: 2px solid rgba(144, 238, 144, 0.4) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="cutecreatures"] .form-input,
+:root[data-theme="cutecreatures"] .form-select,
+:root[data-theme="cutecreatures"] .form-textarea,
+:root[data-theme="cutecreatures"] .note-input {
+    background: rgba(240, 255, 240, 0.8) !important;
+    border: 2px solid rgba(144, 238, 144, 0.3) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+}
+
+:root[data-theme="cutecreatures"] .form-input:focus,
+:root[data-theme="cutecreatures"] .form-select:focus,
+:root[data-theme="cutecreatures"] .form-textarea:focus,
+:root[data-theme="cutecreatures"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(144, 238, 144, 0.15) !important;
+    background: var(--bg-white) !important;
+}
+
+:root[data-theme="cutecreatures"] .header-section {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-bottom: 2px solid rgba(144, 238, 144, 0.3) !important;
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="cutecreatures"] .tab-btn {
+    background: rgba(240, 255, 240, 0.7) !important;
+    border: 2px solid rgba(144, 238, 144, 0.3) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="cutecreatures"] .tab-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(144, 238, 144, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+:root[data-theme="cutecreatures"] .tab-btn:hover::before {
+    left: 100%;
+}
+
+:root[data-theme="cutecreatures"] .tab-btn.active {
+    background: rgba(144, 238, 144, 0.3) !important;
+    border: 2px solid #90EE90 !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 4px 12px rgba(144, 238, 144, 0.2) !important;
+    font-weight: var(--font-weight-bold);
+}
+
+:root[data-theme="cutecreatures"] .key-btn {
+    background: rgba(240, 255, 240, 0.8) !important;
+    border: 2px solid rgba(144, 238, 144, 0.3) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 4px 12px rgba(144, 238, 144, 0.1) !important;
+    border-radius: 12px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-lg);
+    letter-spacing: var(--letter-spacing-normal);
+    padding: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="cutecreatures"] .key-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(144, 238, 144, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="cutecreatures"] .key-btn:active::after {
+    width: 100%;
+    height: 100%;
+}
+
+:root[data-theme="cutecreatures"] .fab-btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 90%, var(--color-primary-dark)) 100%) !important;
+    color: var(--text-white) !important;
+    box-shadow: 0 8px 24px rgba(144, 238, 144, 0.3) !important;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
+    letter-spacing: var(--letter-spacing-normal);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="cutecreatures"] .fab-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+:root[data-theme="cutecreatures"] .fab-btn:hover::before {
+    animation: shimmer 0.6s ease;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+:root[data-theme="cutecreatures"] .mori-dialog {
+    background: var(--bg-white) !important;
+    border: 2px solid rgba(144, 238, 144, 0.4) !important;
+    box-shadow: 0 12px 32px rgba(144, 238, 144, 0.2) !important;
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: var(--letter-spacing-normal);
+    position: relative;
+    overflow: hidden;
+    max-width: 90vw;
+    width: auto;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+:root[data-theme="cutecreatures"] .mori-dialog::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+:root[data-theme="cutecreatures"] .mori-dialog .mori-content {
+    color: var(--text-primary) !important;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+:root[data-theme="cutecreatures"] .mori-dialog .mori-title {
+    color: var(--text-primary) !important;
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    text-shadow: var(--text-shadow-soft);
+}
+
+:root[data-theme="cutecreatures"] .return-btn {
+    background: rgba(144, 238, 144, 0.3) !important;
+    border: 2px solid rgba(144, 238, 144, 0.4) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="cutecreatures"] .return-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(144, 238, 144, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+:root[data-theme="cutecreatures"] .return-btn:hover::before {
+    left: 100%;
+}
+
+:root[data-theme="cutecreatures"] .return-btn:hover {
+    background: rgba(144, 238, 144, 0.5) !important;
+    border-color: rgba(144, 238, 144, 0.6) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(144, 238, 144, 0.3);
+}
+
+/* 標題和導航增強樣式 */
+:root[data-theme="cutecreatures"] h1,
+:root[data-theme="cutecreatures"] h2,
+:root[data-theme="cutecreatures"] h3,
+:root[data-theme="cutecreatures"] h4,
+:root[data-theme="cutecreatures"] h5,
+:root[data-theme="cutecreatures"] h6 {
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--text-primary);
+    text-shadow: var(--text-shadow-soft);
+}
+
+:root[data-theme="cutecreatures"] h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: 1rem;
+}
+
+:root[data-theme="cutecreatures"] h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 0.875rem;
+}
+
+:root[data-theme="cutecreatures"] h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: 0.75rem;
+}
+
+:root[data-theme="cutecreatures"] .nav-item {
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="cutecreatures"] .nav-item.active {
+    background: rgba(144, 238, 144, 0.25);
+    box-shadow: 0 6px 16px rgba(144, 238, 144, 0.2);
+    font-weight: var(--font-weight-semibold);
+}
+
+:root[data-theme="cutecreatures"] .nav-item:hover {
+    background: rgba(144, 238, 144, 0.15);
+    transform: translateY(-1px);
+}
+
+/* 標籤和徽章增強樣式 */
+:root[data-theme="cutecreatures"] .badge,
+:root[data-theme="cutecreatures"] .status-pill,
+:root[data-theme="cutecreatures"] .metric-pill,
+:root[data-theme="cutecreatures"] .stock-chip {
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-xs);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    background: rgba(144, 238, 144, 0.15) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(144, 238, 144, 0.3) !important;
+    border-radius: 20px;
+    padding: 4px 12px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="cutecreatures"] .badge:hover,
+:root[data-theme="cutecreatures"] .status-pill:hover,
+:root[data-theme="cutecreatures"] .metric-pill:hover,
+:root[data-theme="cutecreatures"] .stock-chip:hover {
+    background: rgba(144, 238, 144, 0.25) !important;
+    border-color: rgba(144, 238, 144, 0.4) !important;
+    transform: translateY(-1px);
+}
+
+/* 自定義滾動條樣式 */
+:root[data-theme="cutecreatures"] ::-webkit-scrollbar {
+    width: 8px;
+}
+
+:root[data-theme="cutecreatures"] ::-webkit-scrollbar-track {
+    background: rgba(144, 238, 144, 0.1);
+    border-radius: 4px;
+}
+
+:root[data-theme="cutecreatures"] ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="cutecreatures"] ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
+}
+
+:root[data-theme="cutecreatures"] .investment-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+:root[data-theme="cutecreatures"] .record-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+:root[data-theme="cutecreatures"] .budget-card,
+:root[data-theme="cutecreatures"] .wallet-budget-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+:root[data-theme="cutecreatures"] .monthly-planner-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+:root[data-theme="cutecreatures"] .investment-settings-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+:root[data-theme="cutecreatures"] .holding-card,
+:root[data-theme="cutecreatures"] .buying-card,
+:root[data-theme="cutecreatures"] .selling-card,
+:root[data-theme="cutecreatures"] .dividend-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+

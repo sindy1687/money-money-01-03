@@ -1,0 +1,431 @@
+:root[data-theme="ganeshaGoldOm"] {
+    --color-primary: #24150f;
+    --color-primary-light: #4a2d1d;
+    --color-primary-lighter: #ecd7b3;
+    --color-primary-dark: #0b0705;
+
+    --color-secondary: #6a5a4a;
+    --color-secondary-light: #cdbb9d;
+    --color-secondary-dark: #2a2119;
+
+    --color-accent: #d6b25e;
+    --color-accent-light: #f3e2b4;
+    --color-accent-dark: #8b6a20;
+
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #f59e0b;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(11, 7, 5, 0.94) 0%,
+        rgba(36, 21, 15, 0.88) 52%,
+        rgba(214, 178, 94, 0.18) 100%);
+
+    --bg-body: rgba(11, 7, 5, 0.90);
+    --bg-body-strong: rgba(11, 7, 5, 0.96);
+    --bg-dark: rgba(11, 7, 5, 0.86);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(11, 7, 5, 0.92) 0%,
+        rgba(36, 21, 15, 0.88) 55%,
+        rgba(214, 178, 94, 0.14) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(214, 178, 94, 0.10) 0%,
+        rgba(106, 90, 74, 0.14) 100%);
+
+    --bg-white: rgba(17, 11, 8, 0.76);
+    --bg-card: rgba(17, 11, 8, 0.84);
+    --bg-light: rgba(36, 21, 15, 0.72);
+    --bg-lighter: rgba(74, 45, 29, 0.58);
+    --bg-soft: rgba(214, 178, 94, 0.12);
+    --bg-soft-strong: rgba(214, 178, 94, 0.18);
+
+    --text-primary: rgba(255, 248, 240, 0.96);
+    --text-secondary: rgba(236, 215, 179, 0.84);
+    --text-tertiary: rgba(205, 187, 157, 0.72);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(214, 178, 94, 0.58);
+    --border-light: rgba(214, 178, 94, 0.18);
+    --border-medium: rgba(214, 178, 94, 0.30);
+    --card-border-color: rgba(214, 178, 94, 0.30);
+    --control-border-color: rgba(214, 178, 94, 0.22);
+    --table-border-color: rgba(214, 178, 94, 0.16);
+
+    --shadow-primary: 0 18px 52px rgba(0, 0, 0, 0.45);
+    --shadow-primary-lg: 0 26px 70px rgba(0, 0, 0, 0.52);
+
+    --color-primary-rgba-08: rgba(36, 21, 15, 0.08);
+    --color-primary-rgba-10: rgba(36, 21, 15, 0.10);
+    --color-primary-rgba-12: rgba(36, 21, 15, 0.12);
+    --color-primary-rgba-15: rgba(36, 21, 15, 0.15);
+    --color-primary-rgba-18: rgba(36, 21, 15, 0.18);
+    --color-primary-rgba-20: rgba(36, 21, 15, 0.20);
+    --color-primary-rgba-25: rgba(36, 21, 15, 0.25);
+    --color-primary-rgba-30: rgba(36, 21, 15, 0.30);
+    --color-primary-rgba-40: rgba(36, 21, 15, 0.40);
+
+    --color-primary-light-rgba-08: rgba(74, 45, 29, 0.08);
+    --color-primary-light-rgba-10: rgba(74, 45, 29, 0.10);
+    --color-primary-light-rgba-12: rgba(74, 45, 29, 0.12);
+    --color-primary-light-rgba-15: rgba(74, 45, 29, 0.15);
+    --color-primary-light-rgba-20: rgba(74, 45, 29, 0.20);
+    --color-primary-light-rgba-25: rgba(74, 45, 29, 0.25);
+    --color-primary-light-rgba-30: rgba(74, 45, 29, 0.30);
+    --color-primary-light-rgba-40: rgba(74, 45, 29, 0.40);
+
+    --color-secondary-rgba-20: rgba(106, 90, 74, 0.20);
+    --color-accent-rgba-30: rgba(214, 178, 94, 0.30);
+    --color-accent-rgba-40: rgba(214, 178, 94, 0.40);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        color-mix(in srgb, var(--bg-card) 92%, rgba(255, 255, 255, 0.06)) 0%,
+        color-mix(in srgb, var(--bg-light) 88%, rgba(255, 255, 255, 0.04)) 100%);
+
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        color-mix(in srgb, var(--bg-body-strong) 92%, rgba(255, 255, 255, 0.04)) 0%,
+        color-mix(in srgb, var(--bg-card) 86%, rgba(255, 255, 255, 0.03)) 100%);
+
+    --action-side-bg: color-mix(in srgb, rgba(17, 11, 8, 0.92) 78%, rgba(214, 178, 94, 0.10));
+    --action-side-bg-hover: color-mix(in srgb, rgba(17, 11, 8, 0.92) 68%, rgba(214, 178, 94, 0.22));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        rgba(243, 226, 180, 0.98) 0%,
+        rgba(214, 178, 94, 0.96) 55%,
+        rgba(106, 90, 74, 0.92) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        rgba(255, 248, 240, 1) 0%,
+        rgba(243, 226, 180, 1) 55%,
+        rgba(214, 178, 94, 1) 100%);
+
+    --action-buy-text: rgba(11, 7, 5, 0.96);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 78%, rgba(255, 255, 255, 0.18)) 0%,
+        color-mix(in srgb, var(--color-secondary) 55%, var(--color-primary-dark)) 55%,
+        color-mix(in srgb, var(--color-accent) 82%, rgba(255, 255, 255, 0.16)) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary) 62%, rgba(255, 255, 255, 0.22)) 0%,
+        color-mix(in srgb, var(--color-primary) 78%, var(--color-primary-dark)) 55%,
+        color-mix(in srgb, var(--color-accent-light) 86%, rgba(255, 255, 255, 0.18)) 100%);
+
+    --action-dca-text: rgba(255, 248, 240, 0.96);
+}
+
+:root[data-theme="ganeshaGoldOm"] body {
+    background:
+        linear-gradient(135deg, rgba(11, 7, 5, 0.82) 0%, rgba(36, 21, 15, 0.58) 55%, rgba(214, 178, 94, 0.14) 100%),
+        url("https://i.pinimg.com/1200x/d4/ed/3b/d4ed3ba9170e4f38f19dc1d3868eb986.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="ganeshaGoldOm"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 18%, rgba(214, 178, 94, 0.20), transparent 58%),
+        radial-gradient(circle at 78% 28%, rgba(205, 187, 157, 0.14), transparent 62%),
+        radial-gradient(circle at 58% 82%, rgba(74, 45, 29, 0.18), transparent 66%),
+        linear-gradient(135deg, rgba(11, 7, 5, 0.70) 0%, rgba(11, 7, 5, 0.48) 55%, rgba(11, 7, 5, 0.66) 100%);
+}
+
+:root[data-theme="ganeshaGoldOm"] .page-ledger,
+:root[data-theme="ganeshaGoldOm"] .page-input,
+:root[data-theme="ganeshaGoldOm"] .page-chart,
+:root[data-theme="ganeshaGoldOm"] .page-budget,
+:root[data-theme="ganeshaGoldOm"] .page-monthly-planner,
+:root[data-theme="ganeshaGoldOm"] .page-daily-budget,
+:root[data-theme="ganeshaGoldOm"] .page-settings,
+:root[data-theme="ganeshaGoldOm"] .page-category-manage,
+:root[data-theme="ganeshaGoldOm"] .page-investment,
+:root[data-theme="ganeshaGoldOm"] .page-wallet,
+:root[data-theme="ganeshaGoldOm"] .page-history,
+:root[data-theme="ganeshaGoldOm"] .page-planner,
+:root[data-theme="ganeshaGoldOm"] .page-manage-investment,
+:root[data-theme="ganeshaGoldOm"] .page-annual-report,
+:root[data-theme="ganeshaGoldOm"] .page-diary,
+:root[data-theme="ganeshaGoldOm"] .page-installment,
+:root[data-theme="ganeshaGoldOm"] .installment-page,
+:root[data-theme="ganeshaGoldOm"] .dca-page,
+:root[data-theme="ganeshaGoldOm"] .fixed-deposit-page,
+:root[data-theme="ganeshaGoldOm"] .dividend-page,
+:root[data-theme="ganeshaGoldOm"] .dca-management-page,
+:root[data-theme="ganeshaGoldOm"] .dca-setup-page,
+:root[data-theme="ganeshaGoldOm"] .auto-transfer-management-page,
+:root[data-theme="ganeshaGoldOm"] .auto-transfer-setup-page,
+:root[data-theme="ganeshaGoldOm"] .investment-input-page,
+:root[data-theme="ganeshaGoldOm"] .wishlist-content,
+:root[data-theme="ganeshaGoldOm"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="ganeshaGoldOm"] .card,
+:root[data-theme="ganeshaGoldOm"] .record-card,
+:root[data-theme="ganeshaGoldOm"] .ledger-card,
+:root[data-theme="ganeshaGoldOm"] .summary-card,
+:root[data-theme="ganeshaGoldOm"] .budget-card,
+:root[data-theme="ganeshaGoldOm"] .wallet-card,
+:root[data-theme="ganeshaGoldOm"] .chart-card,
+:root[data-theme="ganeshaGoldOm"] .investment-card,
+:root[data-theme="ganeshaGoldOm"] .accounting-card,
+:root[data-theme="ganeshaGoldOm"] .holding-card,
+:root[data-theme="ganeshaGoldOm"] .buying-card,
+:root[data-theme="ganeshaGoldOm"] .selling-card,
+:root[data-theme="ganeshaGoldOm"] .dividend-card,
+:root[data-theme="ganeshaGoldOm"] .regular-investment-card,
+:root[data-theme="ganeshaGoldOm"] .investment-management-card,
+:root[data-theme="ganeshaGoldOm"] .stock-item-card,
+:root[data-theme="ganeshaGoldOm"] .monthly-planner-card,
+:root[data-theme="ganeshaGoldOm"] .dividend-stat-card,
+:root[data-theme="ganeshaGoldOm"] .manage-investment-card,
+:root[data-theme="ganeshaGoldOm"] .annual-report-card,
+:root[data-theme="ganeshaGoldOm"] .diary-card,
+:root[data-theme="ganeshaGoldOm"] .monthly-planning-card,
+:root[data-theme="ganeshaGoldOm"] .investment-settings-card,
+:root[data-theme="ganeshaGoldOm"] .wallet-budget-card,
+:root[data-theme="ganeshaGoldOm"] .dca-card,
+:root[data-theme="ganeshaGoldOm"] .installment-card,
+:root[data-theme="ganeshaGoldOm"] .fixed-deposit-card,
+:root[data-theme="ganeshaGoldOm"] .dca-item-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--shadow-primary);
+    color: var(--text-primary);
+    backdrop-filter: blur(14px) saturate(140%);
+}
+
+:root[data-theme="ganeshaGoldOm"] .theme-modal-overlay,
+:root[data-theme="ganeshaGoldOm"] .modal-overlay,
+:root[data-theme="ganeshaGoldOm"] .dialog-overlay {
+    background: color-mix(in srgb, rgba(0, 0, 0, 0.62) 75%, transparent) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="ganeshaGoldOm"] .modal-content,
+:root[data-theme="ganeshaGoldOm"] .modal-content-standard,
+:root[data-theme="ganeshaGoldOm"] .budget-category-modal-content,
+:root[data-theme="ganeshaGoldOm"] .budget-setting-modal-content,
+:root[data-theme="ganeshaGoldOm"] .category-modal-content,
+:root[data-theme="ganeshaGoldOm"] .dca-execute-modal .modal-content,
+:root[data-theme="ganeshaGoldOm"] .account-modal-content,
+:root[data-theme="ganeshaGoldOm"] .emoji-modal-content,
+:root[data-theme="ganeshaGoldOm"] .history-modal-content,
+:root[data-theme="ganeshaGoldOm"] .entry-detail-content,
+:root[data-theme="ganeshaGoldOm"] .crop-modal-content,
+:root[data-theme="ganeshaGoldOm"] .dialog-container,
+:root[data-theme="ganeshaGoldOm"] .xiaosen-dialog,
+:root[data-theme="ganeshaGoldOm"] .komori-dialog,
+:root[data-theme="ganeshaGoldOm"] .mori-dialog-box,
+:root[data-theme="ganeshaGoldOm"] .theme-modal-content,
+:root[data-theme="ganeshaGoldOm"] .theme-modal-container,
+:root[data-theme="ganeshaGoldOm"] .dialog-content {
+    background: color-mix(in srgb, var(--bg-card) 94%, rgba(36, 21, 15, 0.65)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+    max-width: min(94vw, 520px);
+}
+
+:root[data-theme="ganeshaGoldOm"] .spending-analysis-panel,
+:root[data-theme="ganeshaGoldOm"] .reminder-panel,
+:root[data-theme="ganeshaGoldOm"] .quick-settings,
+:root[data-theme="ganeshaGoldOm"] .smart-notification {
+    background: color-mix(in srgb, var(--bg-card) 94%, rgba(36, 21, 15, 0.65)) !important;
+    border-color: var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="ganeshaGoldOm"] .input-section {
+    background: color-mix(in srgb, var(--bg-body-strong) 92%, rgba(36, 21, 15, 0.55)) !important;
+    border-top: 2px solid rgba(214, 178, 94, 0.22) !important;
+    box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="ganeshaGoldOm"] .bottom-nav {
+    background: color-mix(in srgb, var(--bg-body-strong) 92%, rgba(214, 178, 94, 0.12)) !important;
+    border-top: 1px solid rgba(214, 178, 94, 0.14) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="ganeshaGoldOm"] .form-input,
+:root[data-theme="ganeshaGoldOm"] .form-select,
+:root[data-theme="ganeshaGoldOm"] .form-textarea,
+:root[data-theme="ganeshaGoldOm"] .note-input,
+:root[data-theme="ganeshaGoldOm"] .theme-search-input {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(255, 255, 255, 0.06)) !important;
+    border: 1px solid rgba(214, 178, 94, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .form-input:focus,
+:root[data-theme="ganeshaGoldOm"] .form-select:focus,
+:root[data-theme="ganeshaGoldOm"] .form-textarea:focus,
+:root[data-theme="ganeshaGoldOm"] .note-input:focus,
+:root[data-theme="ganeshaGoldOm"] .theme-search-input:focus {
+    border-color: rgba(214, 178, 94, 0.58) !important;
+    box-shadow: 0 0 0 3px rgba(214, 178, 94, 0.18) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .header-section,
+:root[data-theme="ganeshaGoldOm"] .ledger-header,
+:root[data-theme="ganeshaGoldOm"] .chart-header,
+:root[data-theme="ganeshaGoldOm"] .budget-header,
+:root[data-theme="ganeshaGoldOm"] .monthly-planner-header,
+:root[data-theme="ganeshaGoldOm"] .theme-modal-header {
+    background: color-mix(in srgb, var(--bg-body-strong) 92%, rgba(214, 178, 94, 0.10)) !important;
+    border-bottom: 1px solid rgba(214, 178, 94, 0.16) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="ganeshaGoldOm"] .tab-btn,
+:root[data-theme="ganeshaGoldOm"] .chart-tab-btn,
+:root[data-theme="ganeshaGoldOm"] .ledger-type-tab,
+:root[data-theme="ganeshaGoldOm"] .record-type-tab,
+:root[data-theme="ganeshaGoldOm"] .category-tab {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(255, 255, 255, 0.04)) !important;
+    border: 1px solid rgba(214, 178, 94, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .tab-btn.active,
+:root[data-theme="ganeshaGoldOm"] .chart-tab-btn.active,
+:root[data-theme="ganeshaGoldOm"] .ledger-type-tab.active,
+:root[data-theme="ganeshaGoldOm"] .record-type-tab.active,
+:root[data-theme="ganeshaGoldOm"] .category-tab.active {
+    background: rgba(214, 178, 94, 0.14) !important;
+    border: 2px solid rgba(214, 178, 94, 0.30) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.30) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .key-btn {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(255, 255, 255, 0.06)) !important;
+    border: 2px solid rgba(214, 178, 94, 0.16) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .key-btn.operator {
+    background: rgba(214, 178, 94, 0.12) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .btn,
+:root[data-theme="ganeshaGoldOm"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid rgba(214, 178, 94, 0.40) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .btn:hover,
+:root[data-theme="ganeshaGoldOm"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid rgba(214, 178, 94, 0.26) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .dca-add-btn,
+:root[data-theme="ganeshaGoldOm"] .form-submit-btn,
+:root[data-theme="ganeshaGoldOm"] .entry-detail-edit-btn,
+:root[data-theme="ganeshaGoldOm"] .entry-edit-save,
+:root[data-theme="ganeshaGoldOm"] .investment-form-submit-btn,
+:root[data-theme="ganeshaGoldOm"] .buy-btn,
+:root[data-theme="ganeshaGoldOm"] .dca-execute-btn,
+:root[data-theme="ganeshaGoldOm"] .buy-action-btn-large,
+:root[data-theme="ganeshaGoldOm"] .allocation-btn.primary,
+:root[data-theme="ganeshaGoldOm"] .modal-btn.confirm-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .allocation-btn,
+:root[data-theme="ganeshaGoldOm"] .modal-btn.cancel-btn {
+    background: var(--action-side-bg) !important;
+    color: var(--action-side-text) !important;
+    border: 1px solid rgba(214, 178, 94, 0.22) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .back-btn,
+:root[data-theme="ganeshaGoldOm"] .modal-back-btn,
+:root[data-theme="ganeshaGoldOm"] .return-btn,
+:root[data-theme="ganeshaGoldOm"] .input-back-btn,
+:root[data-theme="ganeshaGoldOm"] .dca-back-btn,
+:root[data-theme="ganeshaGoldOm"] .dca-setup-back-btn {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(255, 255, 255, 0.06)) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(214, 178, 94, 0.18) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .back-btn:hover,
+:root[data-theme="ganeshaGoldOm"] .modal-back-btn:hover,
+:root[data-theme="ganeshaGoldOm"] .return-btn:hover,
+:root[data-theme="ganeshaGoldOm"] .input-back-btn:hover,
+:root[data-theme="ganeshaGoldOm"] .dca-back-btn:hover,
+:root[data-theme="ganeshaGoldOm"] .dca-setup-back-btn:hover {
+    background: rgba(214, 178, 94, 0.12) !important;
+    border-color: rgba(214, 178, 94, 0.30) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid rgba(214, 178, 94, 0.35) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(37, 99, 235, 0.14)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(245, 158, 11, 0.14)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(220, 38, 38, 0.12)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="ganeshaGoldOm"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(22, 163, 74, 0.12)) !important;
+    border-left-color: var(--color-success) !important;
+}
+
+@media (max-width: 768px) {
+    :root[data-theme="ganeshaGoldOm"] .modal-content,
+    :root[data-theme="ganeshaGoldOm"] .dialog-content,
+    :root[data-theme="ganeshaGoldOm"] .theme-modal-container {
+        width: 95vw;
+        max-height: 90vh;
+    }
+}

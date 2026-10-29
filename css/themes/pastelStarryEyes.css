@@ -1,0 +1,425 @@
+:root[data-theme="pastelStarryEyes"] {
+    --color-primary: #b58cff;
+    --color-primary-light: #d9c7ff;
+    --color-primary-lighter: #f2ecff;
+    --color-primary-dark: #5b2bd6;
+
+    --color-secondary: #68d8ff;
+    --color-secondary-light: #c9f3ff;
+    --color-secondary-dark: #1d84b8;
+
+    --color-accent: #ff79b7;
+    --color-accent-light: #ffd0e6;
+    --color-accent-dark: #c2357d;
+
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #f59e0b;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    --bg-primary: transparent;
+    --bg-body: rgba(255, 255, 255, 0.38);
+    --bg-body-strong: rgba(255, 255, 255, 0.60);
+    --bg-dark: rgba(22, 16, 36, 0.70);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(181, 140, 255, 0.22) 0%,
+        rgba(255, 121, 183, 0.14) 28%,
+        rgba(104, 216, 255, 0.14) 62%,
+        rgba(255, 226, 122, 0.10) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.58) 0%,
+        rgba(242, 236, 255, 0.28) 42%,
+        rgba(201, 243, 255, 0.20) 100%);
+
+    --bg-white: rgba(255, 255, 255, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.88);
+    --bg-light: rgba(255, 255, 255, 0.82);
+    --bg-lighter: rgba(255, 255, 255, 0.74);
+    --bg-soft: rgba(181, 140, 255, 0.08);
+    --bg-soft-strong: rgba(104, 216, 255, 0.12);
+
+    --text-primary: rgba(28, 16, 46, 0.96);
+    --text-secondary: rgba(28, 16, 46, 0.78);
+    --text-tertiary: rgba(28, 16, 46, 0.62);
+    --text-strong: rgba(14, 8, 24, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(181, 140, 255, 0.56);
+    --border-light: rgba(28, 16, 46, 0.14);
+    --border-medium: rgba(104, 216, 255, 0.26);
+    --card-border-color: rgba(255, 121, 183, 0.18);
+    --control-border-color: rgba(28, 16, 46, 0.16);
+    --table-border-color: rgba(28, 16, 46, 0.14);
+
+    --shadow-primary: 0 18px 54px rgba(28, 16, 46, 0.20);
+    --shadow-primary-lg: 0 28px 78px rgba(28, 16, 46, 0.20);
+
+    --color-primary-rgba-08: rgba(181, 140, 255, 0.08);
+    --color-primary-rgba-10: rgba(181, 140, 255, 0.10);
+    --color-primary-rgba-12: rgba(181, 140, 255, 0.12);
+    --color-primary-rgba-15: rgba(181, 140, 255, 0.15);
+    --color-primary-rgba-18: rgba(181, 140, 255, 0.18);
+    --color-primary-rgba-20: rgba(181, 140, 255, 0.20);
+    --color-primary-rgba-25: rgba(181, 140, 255, 0.25);
+    --color-primary-rgba-30: rgba(181, 140, 255, 0.30);
+    --color-primary-rgba-40: rgba(181, 140, 255, 0.40);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.88) 82%, rgba(181, 140, 255, 0.10));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.88) 72%, rgba(255, 121, 183, 0.16));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent) 78%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 72%, var(--color-primary-dark)) 55%,
+        color-mix(in srgb, var(--color-primary-dark) 70%, var(--color-accent-dark)) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 72%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 82%, var(--color-accent-dark)) 100%);
+
+    --action-buy-text: rgba(255, 255, 255, 0.98);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary-light) 76%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 72%, var(--color-primary-light)) 52%,
+        color-mix(in srgb, var(--color-primary) 66%, var(--color-secondary-dark)) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary-light) 84%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 78%, var(--color-secondary-dark)) 100%);
+
+    --action-dca-text: rgba(28, 16, 46, 0.96);
+}
+
+:root[data-theme="pastelStarryEyes"] body {
+    background:
+        linear-gradient(135deg,
+            rgba(181, 140, 255, 0.16) 0%,
+            rgba(255, 121, 183, 0.10) 28%,
+            rgba(104, 216, 255, 0.10) 62%,
+            rgba(255, 226, 122, 0.08) 100%),
+        url("https://i.pinimg.com/1200x/c2/c2/95/c2c29589e119b36a664e3f541ae5aeaa.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="pastelStarryEyes"] body::before {
+    display: none;
+}
+
+:root[data-theme="pastelStarryEyes"] .page-ledger,
+:root[data-theme="pastelStarryEyes"] .page-input,
+:root[data-theme="pastelStarryEyes"] .page-chart,
+:root[data-theme="pastelStarryEyes"] .page-budget,
+:root[data-theme="pastelStarryEyes"] .page-monthly-planner,
+:root[data-theme="pastelStarryEyes"] .page-daily-budget,
+:root[data-theme="pastelStarryEyes"] .page-settings,
+:root[data-theme="pastelStarryEyes"] .page-category-manage,
+:root[data-theme="pastelStarryEyes"] .page-investment,
+:root[data-theme="pastelStarryEyes"] .page-wallet,
+:root[data-theme="pastelStarryEyes"] .page-history,
+:root[data-theme="pastelStarryEyes"] .page-planner,
+:root[data-theme="pastelStarryEyes"] .page-manage-investment,
+:root[data-theme="pastelStarryEyes"] .page-annual-report,
+:root[data-theme="pastelStarryEyes"] .page-diary,
+:root[data-theme="pastelStarryEyes"] .page-installment,
+:root[data-theme="pastelStarryEyes"] .installment-page,
+:root[data-theme="pastelStarryEyes"] .dca-page,
+:root[data-theme="pastelStarryEyes"] .fixed-deposit-page,
+:root[data-theme="pastelStarryEyes"] .dividend-page,
+:root[data-theme="pastelStarryEyes"] .dca-management-page,
+:root[data-theme="pastelStarryEyes"] .dca-setup-page,
+:root[data-theme="pastelStarryEyes"] .auto-transfer-management-page,
+:root[data-theme="pastelStarryEyes"] .auto-transfer-setup-page,
+:root[data-theme="pastelStarryEyes"] .investment-input-page,
+:root[data-theme="pastelStarryEyes"] .installment-management-page,
+:root[data-theme="pastelStarryEyes"] .installment-setup-page,
+:root[data-theme="pastelStarryEyes"] .wishlist-content,
+:root[data-theme="pastelStarryEyes"] .savings-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .card,
+:root[data-theme="pastelStarryEyes"] .record-card,
+:root[data-theme="pastelStarryEyes"] .ledger-card,
+:root[data-theme="pastelStarryEyes"] .summary-card,
+:root[data-theme="pastelStarryEyes"] .budget-card,
+:root[data-theme="pastelStarryEyes"] .wallet-card,
+:root[data-theme="pastelStarryEyes"] .chart-card,
+:root[data-theme="pastelStarryEyes"] .investment-card,
+:root[data-theme="pastelStarryEyes"] .holding-card,
+:root[data-theme="pastelStarryEyes"] .buying-card,
+:root[data-theme="pastelStarryEyes"] .selling-card,
+:root[data-theme="pastelStarryEyes"] .dividend-card,
+:root[data-theme="pastelStarryEyes"] .regular-investment-card,
+:root[data-theme="pastelStarryEyes"] .investment-management-card,
+:root[data-theme="pastelStarryEyes"] .stock-item-card,
+:root[data-theme="pastelStarryEyes"] .monthly-planner-card,
+:root[data-theme="pastelStarryEyes"] .dividend-stat-card,
+:root[data-theme="pastelStarryEyes"] .manage-investment-card,
+:root[data-theme="pastelStarryEyes"] .annual-report-card,
+:root[data-theme="pastelStarryEyes"] .diary-card,
+:root[data-theme="pastelStarryEyes"] .monthly-planning-card,
+:root[data-theme="pastelStarryEyes"] .investment-settings-card,
+:root[data-theme="pastelStarryEyes"] .wallet-budget-card,
+:root[data-theme="pastelStarryEyes"] .dca-card,
+:root[data-theme="pastelStarryEyes"] .installment-card,
+:root[data-theme="pastelStarryEyes"] .fixed-deposit-card,
+:root[data-theme="pastelStarryEyes"] .dca-item-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--card-border-color) !important;
+    box-shadow: var(--shadow-primary) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="pastelStarryEyes"] .investment-card::before,
+:root[data-theme="pastelStarryEyes"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.62) 0%,
+        rgba(242, 236, 255, 0.34) 42%,
+        rgba(201, 243, 255, 0.20) 78%,
+        rgba(255, 226, 122, 0.16) 100%);
+}
+
+:root[data-theme="pastelStarryEyes"] .nav-item.active {
+    background: rgba(181, 140, 255, 0.14);
+    box-shadow: 0 10px 26px rgba(28, 16, 46, 0.16);
+}
+
+:root[data-theme="pastelStarryEyes"] .modal-content,
+:root[data-theme="pastelStarryEyes"] .modal-content-standard,
+:root[data-theme="pastelStarryEyes"] .budget-category-modal-content,
+:root[data-theme="pastelStarryEyes"] .budget-setting-modal-content,
+:root[data-theme="pastelStarryEyes"] .category-modal-content,
+:root[data-theme="pastelStarryEyes"] .dca-execute-modal .modal-content,
+:root[data-theme="pastelStarryEyes"] .account-modal-content,
+:root[data-theme="pastelStarryEyes"] .emoji-modal-content,
+:root[data-theme="pastelStarryEyes"] .history-modal-content,
+:root[data-theme="pastelStarryEyes"] .entry-detail-content,
+:root[data-theme="pastelStarryEyes"] .crop-modal-content,
+:root[data-theme="pastelStarryEyes"] .dialog-container,
+:root[data-theme="pastelStarryEyes"] .xiaosen-dialog,
+:root[data-theme="pastelStarryEyes"] .komori-dialog,
+:root[data-theme="pastelStarryEyes"] .mori-dialog-box,
+:root[data-theme="pastelStarryEyes"] .theme-modal-content,
+:root[data-theme="pastelStarryEyes"] .theme-modal-container,
+:root[data-theme="pastelStarryEyes"] .dialog-content,
+:root[data-theme="pastelStarryEyes"] .popup-content {
+    background: color-mix(in srgb, var(--bg-card) 94%, rgba(242, 236, 255, 0.60)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(18px);
+    max-width: min(92vw, 720px);
+}
+
+:root[data-theme="pastelStarryEyes"] .modal-overlay,
+:root[data-theme="pastelStarryEyes"] .theme-modal-overlay,
+:root[data-theme="pastelStarryEyes"] .portfolio-analysis-modal,
+:root[data-theme="pastelStarryEyes"] .dialog-overlay {
+    background: color-mix(in srgb, rgba(28, 16, 46, 0.56) 75%, transparent) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="pastelStarryEyes"] .portfolio-analysis-content {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(201, 243, 255, 0.50)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="pastelStarryEyes"] .spending-analysis-panel,
+:root[data-theme="pastelStarryEyes"] .reminder-panel,
+:root[data-theme="pastelStarryEyes"] .smart-notification,
+:root[data-theme="pastelStarryEyes"] .quick-settings {
+    background: color-mix(in srgb, var(--bg-card) 94%, rgba(242, 236, 255, 0.55)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="pastelStarryEyes"] .input-section {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(255, 208, 230, 0.42)) !important;
+    border-top: 2px solid rgba(181, 140, 255, 0.18) !important;
+    box-shadow: 0 -10px 28px rgba(28, 16, 46, 0.14);
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="pastelStarryEyes"] .bottom-nav {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.84) 90%, rgba(242, 236, 255, 0.42)) !important;
+    border-top: 1px solid rgba(181, 140, 255, 0.14) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="pastelStarryEyes"] .form-input,
+:root[data-theme="pastelStarryEyes"] .form-select,
+:root[data-theme="pastelStarryEyes"] .form-textarea,
+:root[data-theme="pastelStarryEyes"] .note-input,
+:root[data-theme="pastelStarryEyes"] .theme-search-input,
+:root[data-theme="pastelStarryEyes"] .advisor-chat-input {
+    background: rgba(255, 255, 255, 0.90) !important;
+    border: 2px solid rgba(181, 140, 255, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .form-input:focus,
+:root[data-theme="pastelStarryEyes"] .form-select:focus,
+:root[data-theme="pastelStarryEyes"] .form-textarea:focus,
+:root[data-theme="pastelStarryEyes"] .note-input:focus,
+:root[data-theme="pastelStarryEyes"] .theme-search-input:focus,
+:root[data-theme="pastelStarryEyes"] .advisor-chat-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(181, 140, 255, 0.16) !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .header-section,
+:root[data-theme="pastelStarryEyes"] .ledger-header,
+:root[data-theme="pastelStarryEyes"] .chart-header,
+:root[data-theme="pastelStarryEyes"] .budget-header,
+:root[data-theme="pastelStarryEyes"] .monthly-planner-header,
+:root[data-theme="pastelStarryEyes"] .theme-modal-header {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.78) 88%, rgba(201, 243, 255, 0.35)) !important;
+    border-bottom: 1px solid rgba(181, 140, 255, 0.12) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="pastelStarryEyes"] .tab-btn,
+:root[data-theme="pastelStarryEyes"] .chart-tab-btn,
+:root[data-theme="pastelStarryEyes"] .ledger-type-tab,
+:root[data-theme="pastelStarryEyes"] .record-type-tab,
+:root[data-theme="pastelStarryEyes"] .category-tab {
+    background: rgba(255, 255, 255, 0.84) !important;
+    border: 1px solid rgba(181, 140, 255, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .tab-btn.active,
+:root[data-theme="pastelStarryEyes"] .chart-tab-btn.active,
+:root[data-theme="pastelStarryEyes"] .ledger-type-tab.active,
+:root[data-theme="pastelStarryEyes"] .record-type-tab.active,
+:root[data-theme="pastelStarryEyes"] .category-tab.active {
+    background: rgba(181, 140, 255, 0.14) !important;
+    border: 2px solid rgba(181, 140, 255, 0.28) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 12px 28px rgba(28, 16, 46, 0.14) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .tab-btn:hover,
+:root[data-theme="pastelStarryEyes"] .chart-tab-btn:hover,
+:root[data-theme="pastelStarryEyes"] .ledger-type-tab:hover,
+:root[data-theme="pastelStarryEyes"] .record-type-tab:hover,
+:root[data-theme="pastelStarryEyes"] .category-tab:hover {
+    background: rgba(181, 140, 255, 0.08) !important;
+    border-color: rgba(181, 140, 255, 0.18) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .key-btn {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border: 2px solid rgba(181, 140, 255, 0.16) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 26px rgba(28, 16, 46, 0.12) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .key-btn:hover {
+    background: rgba(181, 140, 255, 0.08) !important;
+    border-color: rgba(181, 140, 255, 0.20) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .key-btn.operator {
+    background: rgba(181, 140, 255, 0.14) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .btn,
+:root[data-theme="pastelStarryEyes"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 62%, white) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .btn:hover,
+:root[data-theme="pastelStarryEyes"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-secondary) 52%, white) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .dca-add-btn,
+:root[data-theme="pastelStarryEyes"] .form-submit-btn,
+:root[data-theme="pastelStarryEyes"] .entry-detail-edit-btn,
+:root[data-theme="pastelStarryEyes"] .entry-edit-save,
+:root[data-theme="pastelStarryEyes"] .investment-form-submit-btn,
+:root[data-theme="pastelStarryEyes"] .buy-btn,
+:root[data-theme="pastelStarryEyes"] .dca-execute-btn,
+:root[data-theme="pastelStarryEyes"] .allocation-btn.primary,
+:root[data-theme="pastelStarryEyes"] .modal-btn.confirm-btn,
+:root[data-theme="pastelStarryEyes"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .allocation-btn,
+:root[data-theme="pastelStarryEyes"] .modal-btn.cancel-btn {
+    background: var(--action-side-bg) !important;
+    color: var(--action-side-text) !important;
+    border: 1px solid rgba(181, 140, 255, 0.20) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .back-btn,
+:root[data-theme="pastelStarryEyes"] .modal-back-btn,
+:root[data-theme="pastelStarryEyes"] .return-btn,
+:root[data-theme="pastelStarryEyes"] .input-back-btn,
+:root[data-theme="pastelStarryEyes"] .dca-back-btn,
+:root[data-theme="pastelStarryEyes"] .dca-setup-back-btn {
+    background: rgba(255, 255, 255, 0.84) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(181, 140, 255, 0.18) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .back-btn:hover,
+:root[data-theme="pastelStarryEyes"] .modal-back-btn:hover,
+:root[data-theme="pastelStarryEyes"] .return-btn:hover,
+:root[data-theme="pastelStarryEyes"] .input-back-btn:hover,
+:root[data-theme="pastelStarryEyes"] .dca-back-btn:hover,
+:root[data-theme="pastelStarryEyes"] .dca-setup-back-btn:hover {
+    background: rgba(181, 140, 255, 0.08) !important;
+    border-color: rgba(181, 140, 255, 0.28) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(37, 99, 235, 0.10)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(245, 158, 11, 0.10)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(220, 38, 38, 0.10)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="pastelStarryEyes"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(22, 163, 74, 0.10)) !important;
+    border-left-color: var(--color-success) !important;
+}

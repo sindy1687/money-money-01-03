@@ -1,0 +1,53 @@
+﻿:root[data-theme="midnight"].dark,
+
+:root[data-theme="midnight"] {
+    --color-primary: #6366f1;
+    --color-primary-light: #818cf8;
+    --color-primary-lighter: #a5b4fc;
+    --color-primary-dark: #4f46e5;
+    --bg-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --bg-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(99, 102, 241, 0.16) 0%, rgba(79, 70, 229, 0.12) 100%);
+    --bg-light-gradient: linear-gradient(135deg, #101828 0%, #1f2937 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, #1f2937 0%, #0f172a 100%);
+    --bg-card: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(31, 45, 68, 0.95) 55%, rgba(79, 70, 229, 0.15) 100%);
+    --card-border-color: rgba(99, 102, 241, 0.35);
+    --card-border-color-strong: rgba(79, 70, 229, 0.55);
+    --border-primary: #6366f1;
+    --shadow-primary: 0 2px 8px rgba(99, 102, 241, 0.24);
+    --shadow-primary-lg: 0 4px 14px rgba(79, 70, 229, 0.2);
+
+    --bg-white: rgba(15, 23, 42, 0.85);
+    --bg-light: rgba(30, 41, 59, 0.75);
+    --bg-lighter: rgba(51, 65, 85, 0.65);
+    --text-primary: rgba(248, 250, 252, 0.95);
+    --text-secondary: rgba(248, 250, 252, 0.85);
+    --text-tertiary: rgba(248, 250, 252, 0.70);
+    --border-light: rgba(248, 250, 252, 0.12);
+    --border-medium: rgba(148, 163, 184, 0.25);
+
+    --color-primary-rgba-08: rgba(99, 102, 241, 0.08);
+    --color-primary-rgba-10: rgba(99, 102, 241, 0.10);
+    --color-primary-rgba-12: rgba(99, 102, 241, 0.12);
+    --color-primary-rgba-15: rgba(99, 102, 241, 0.15);
+    --color-primary-rgba-18: rgba(99, 102, 241, 0.18);
+    --color-primary-rgba-20: rgba(99, 102, 241, 0.20);
+    --color-primary-rgba-25: rgba(99, 102, 241, 0.25);
+    --color-primary-rgba-30: rgba(99, 102, 241, 0.30);
+    --color-primary-rgba-40: rgba(99, 102, 241, 0.40);
+
+    --color-primary-light-rgba-08: rgba(129, 140, 248, 0.08);
+    --color-primary-light-rgba-10: rgba(129, 140, 248, 0.10);
+    --color-primary-light-rgba-12: rgba(129, 140, 248, 0.12);
+    --color-primary-light-rgba-15: rgba(129, 140, 248, 0.15);
+    --color-primary-light-rgba-20: rgba(129, 140, 248, 0.20);
+    --color-primary-light-rgba-25: rgba(129, 140, 248, 0.25);
+    --color-primary-light-rgba-30: rgba(129, 140, 248, 0.30);
+    --color-primary-light-rgba-40: rgba(129, 140, 248, 0.40);
+}
+
+:root[data-theme="midnight"] .record-card-amount {
+    color: color-mix(in srgb, var(--color-primary-lighter, var(--color-primary-light)) 92%, var(--text-primary) 8%);
+    text-shadow: 0 2px 10px color-mix(in srgb, rgba(0, 0, 0, 0.85) 70%, transparent);
+}
+

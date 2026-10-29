@@ -1,0 +1,426 @@
+:root[data-theme="peonyAzureMask"] {
+    --color-primary: #2aa9a4;
+    --color-primary-light: #76ddd8;
+    --color-primary-lighter: #e7fffe;
+    --color-primary-dark: #0f5f62;
+
+    --color-secondary: #2b5ea8;
+    --color-secondary-light: #9bc6ff;
+    --color-secondary-dark: #0c2a55;
+
+    --color-accent: #f2b233;
+    --color-accent-light: #ffe2a3;
+    --color-accent-dark: #c47c1e;
+
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #f59e0b;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(12, 42, 85, 0.86) 0%,
+        rgba(15, 95, 98, 0.52) 48%,
+        rgba(242, 178, 51, 0.18) 100%);
+
+    --bg-body: rgba(255, 255, 255, 0.40);
+    --bg-body-strong: rgba(255, 255, 255, 0.62);
+    --bg-dark: rgba(8, 18, 26, 0.72);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(43, 94, 168, 0.22) 0%,
+        rgba(42, 169, 164, 0.16) 52%,
+        rgba(242, 178, 51, 0.12) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.64) 0%,
+        rgba(231, 255, 254, 0.32) 58%,
+        rgba(255, 226, 163, 0.20) 100%);
+
+    --bg-white: rgba(255, 255, 255, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.88);
+    --bg-light: rgba(255, 255, 255, 0.84);
+    --bg-lighter: rgba(255, 255, 255, 0.76);
+    --bg-soft: rgba(42, 169, 164, 0.10);
+    --bg-soft-strong: rgba(43, 94, 168, 0.12);
+
+    --text-primary: rgba(10, 16, 24, 0.96);
+    --text-secondary: rgba(10, 16, 24, 0.78);
+    --text-tertiary: rgba(10, 16, 24, 0.62);
+    --text-strong: rgba(0, 0, 0, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(42, 169, 164, 0.46);
+    --border-light: rgba(10, 16, 24, 0.14);
+    --border-medium: rgba(43, 94, 168, 0.22);
+    --card-border-color: rgba(242, 178, 51, 0.16);
+    --control-border-color: rgba(42, 169, 164, 0.22);
+    --table-border-color: rgba(10, 16, 24, 0.14);
+
+    --shadow-primary: 0 18px 54px rgba(8, 18, 26, 0.22);
+    --shadow-primary-lg: 0 28px 78px rgba(8, 18, 26, 0.22);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.88) 82%, rgba(42, 169, 164, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.88) 72%, rgba(242, 178, 51, 0.16));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent) 78%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 62%, var(--color-secondary-dark)) 55%,
+        color-mix(in srgb, var(--color-secondary-dark) 68%, var(--color-primary-dark)) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 72%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 82%, var(--color-accent-dark)) 100%);
+
+    --action-buy-text: rgba(255, 255, 255, 0.98);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 76%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 70%, var(--color-secondary)) 52%,
+        color-mix(in srgb, var(--color-secondary) 62%, var(--color-secondary-dark)) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-lighter) 84%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 78%, var(--color-primary-dark)) 100%);
+
+    --action-dca-text: rgba(255, 255, 255, 0.98);
+}
+
+:root[data-theme="peonyAzureMask"] body {
+    background:
+        linear-gradient(135deg,
+            rgba(12, 42, 85, 0.64) 0%,
+            rgba(42, 169, 164, 0.26) 52%,
+            rgba(242, 178, 51, 0.18) 100%),
+        url("https://i.pinimg.com/736x/01/fa/42/01fa420519e6ce78785135c0e7a7072d.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="peonyAzureMask"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 68% 42%, rgba(242, 178, 51, 0.22), transparent 56%),
+        radial-gradient(circle at 22% 18%, rgba(42, 169, 164, 0.22), transparent 58%),
+        radial-gradient(circle at 30% 85%, rgba(255, 121, 183, 0.18), transparent 58%),
+        linear-gradient(135deg, rgba(8, 18, 26, 0.64) 0%, rgba(8, 18, 26, 0.40) 55%, rgba(8, 18, 26, 0.62) 100%);
+}
+
+:root[data-theme="peonyAzureMask"] .page-ledger,
+:root[data-theme="peonyAzureMask"] .page-input,
+:root[data-theme="peonyAzureMask"] .page-chart,
+:root[data-theme="peonyAzureMask"] .page-budget,
+:root[data-theme="peonyAzureMask"] .page-monthly-planner,
+:root[data-theme="peonyAzureMask"] .page-daily-budget,
+:root[data-theme="peonyAzureMask"] .page-settings,
+:root[data-theme="peonyAzureMask"] .page-category-manage,
+:root[data-theme="peonyAzureMask"] .page-investment,
+:root[data-theme="peonyAzureMask"] .page-wallet,
+:root[data-theme="peonyAzureMask"] .page-history,
+:root[data-theme="peonyAzureMask"] .page-planner,
+:root[data-theme="peonyAzureMask"] .page-manage-investment,
+:root[data-theme="peonyAzureMask"] .page-annual-report,
+:root[data-theme="peonyAzureMask"] .page-diary,
+:root[data-theme="peonyAzureMask"] .page-installment,
+:root[data-theme="peonyAzureMask"] .installment-page,
+:root[data-theme="peonyAzureMask"] .dca-page,
+:root[data-theme="peonyAzureMask"] .fixed-deposit-page,
+:root[data-theme="peonyAzureMask"] .dividend-page,
+:root[data-theme="peonyAzureMask"] .dca-management-page,
+:root[data-theme="peonyAzureMask"] .dca-setup-page,
+:root[data-theme="peonyAzureMask"] .auto-transfer-management-page,
+:root[data-theme="peonyAzureMask"] .auto-transfer-setup-page,
+:root[data-theme="peonyAzureMask"] .investment-input-page,
+:root[data-theme="peonyAzureMask"] .installment-management-page,
+:root[data-theme="peonyAzureMask"] .installment-setup-page,
+:root[data-theme="peonyAzureMask"] .wishlist-content,
+:root[data-theme="peonyAzureMask"] .savings-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="peonyAzureMask"] .card,
+:root[data-theme="peonyAzureMask"] .record-card,
+:root[data-theme="peonyAzureMask"] .ledger-card,
+:root[data-theme="peonyAzureMask"] .summary-card,
+:root[data-theme="peonyAzureMask"] .budget-card,
+:root[data-theme="peonyAzureMask"] .wallet-card,
+:root[data-theme="peonyAzureMask"] .chart-card,
+:root[data-theme="peonyAzureMask"] .investment-card,
+:root[data-theme="peonyAzureMask"] .holding-card,
+:root[data-theme="peonyAzureMask"] .buying-card,
+:root[data-theme="peonyAzureMask"] .selling-card,
+:root[data-theme="peonyAzureMask"] .dividend-card,
+:root[data-theme="peonyAzureMask"] .regular-investment-card,
+:root[data-theme="peonyAzureMask"] .investment-management-card,
+:root[data-theme="peonyAzureMask"] .stock-item-card,
+:root[data-theme="peonyAzureMask"] .monthly-planner-card,
+:root[data-theme="peonyAzureMask"] .dividend-stat-card,
+:root[data-theme="peonyAzureMask"] .manage-investment-card,
+:root[data-theme="peonyAzureMask"] .annual-report-card,
+:root[data-theme="peonyAzureMask"] .diary-card,
+:root[data-theme="peonyAzureMask"] .monthly-planning-card,
+:root[data-theme="peonyAzureMask"] .investment-settings-card,
+:root[data-theme="peonyAzureMask"] .wallet-budget-card,
+:root[data-theme="peonyAzureMask"] .dca-card,
+:root[data-theme="peonyAzureMask"] .installment-card,
+:root[data-theme="peonyAzureMask"] .fixed-deposit-card,
+:root[data-theme="peonyAzureMask"] .dca-item-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--card-border-color) !important;
+    box-shadow: var(--shadow-primary) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="peonyAzureMask"] .investment-card::before,
+:root[data-theme="peonyAzureMask"] .holding-card::before,
+:root[data-theme="peonyAzureMask"] .buying-card::before,
+:root[data-theme="peonyAzureMask"] .selling-card::before,
+:root[data-theme="peonyAzureMask"] .dividend-card::before,
+:root[data-theme="peonyAzureMask"] .regular-investment-card::before,
+:root[data-theme="peonyAzureMask"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.62) 0%,
+        rgba(231, 255, 254, 0.32) 46%,
+        rgba(255, 226, 163, 0.18) 100%);
+}
+
+:root[data-theme="peonyAzureMask"] .modal-content,
+:root[data-theme="peonyAzureMask"] .modal-content-standard,
+:root[data-theme="peonyAzureMask"] .budget-category-modal-content,
+:root[data-theme="peonyAzureMask"] .budget-setting-modal-content,
+:root[data-theme="peonyAzureMask"] .category-modal-content,
+:root[data-theme="peonyAzureMask"] .dca-execute-modal .modal-content,
+:root[data-theme="peonyAzureMask"] .account-modal-content,
+:root[data-theme="peonyAzureMask"] .emoji-modal-content,
+:root[data-theme="peonyAzureMask"] .history-modal-content,
+:root[data-theme="peonyAzureMask"] .entry-detail-content,
+:root[data-theme="peonyAzureMask"] .crop-modal-content,
+:root[data-theme="peonyAzureMask"] .dialog-container,
+:root[data-theme="peonyAzureMask"] .xiaosen-dialog,
+:root[data-theme="peonyAzureMask"] .komori-dialog,
+:root[data-theme="peonyAzureMask"] .mori-dialog-box,
+:root[data-theme="peonyAzureMask"] .theme-modal-content,
+:root[data-theme="peonyAzureMask"] .theme-modal-container,
+:root[data-theme="peonyAzureMask"] .dialog-content,
+:root[data-theme="peonyAzureMask"] .popup-content {
+    background: color-mix(in srgb, var(--bg-card) 94%, rgba(231, 255, 254, 0.55)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(18px);
+    max-width: min(92vw, 720px);
+}
+
+:root[data-theme="peonyAzureMask"] .modal-overlay,
+:root[data-theme="peonyAzureMask"] .theme-modal-overlay,
+:root[data-theme="peonyAzureMask"] .portfolio-analysis-modal,
+:root[data-theme="peonyAzureMask"] .dialog-overlay {
+    background: color-mix(in srgb, rgba(8, 18, 26, 0.62) 76%, transparent) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="peonyAzureMask"] .spending-analysis-panel,
+:root[data-theme="peonyAzureMask"] .reminder-panel,
+:root[data-theme="peonyAzureMask"] .smart-notification,
+:root[data-theme="peonyAzureMask"] .quick-settings {
+    background: color-mix(in srgb, var(--bg-card) 94%, rgba(231, 255, 254, 0.50)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="peonyAzureMask"] .portfolio-analysis-content {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(231, 255, 254, 0.50)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(18px);
+    max-width: min(92vw, 720px);
+}
+
+:root[data-theme="peonyAzureMask"] .input-section {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(255, 226, 163, 0.22)) !important;
+    border-top: 2px solid rgba(42, 169, 164, 0.18) !important;
+    box-shadow: 0 -10px 28px rgba(8, 18, 26, 0.16);
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="peonyAzureMask"] .bottom-nav {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.86) 90%, rgba(231, 255, 254, 0.34)) !important;
+    border-top: 1px solid rgba(42, 169, 164, 0.16) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="peonyAzureMask"] .form-input,
+:root[data-theme="peonyAzureMask"] .form-select,
+:root[data-theme="peonyAzureMask"] .form-textarea,
+:root[data-theme="peonyAzureMask"] .note-input,
+:root[data-theme="peonyAzureMask"] .theme-search-input,
+:root[data-theme="peonyAzureMask"] .advisor-chat-input {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 2px solid rgba(42, 169, 164, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .form-input:focus,
+:root[data-theme="peonyAzureMask"] .form-select:focus,
+:root[data-theme="peonyAzureMask"] .form-textarea:focus,
+:root[data-theme="peonyAzureMask"] .note-input:focus,
+:root[data-theme="peonyAzureMask"] .theme-search-input:focus,
+:root[data-theme="peonyAzureMask"] .advisor-chat-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(42, 169, 164, 0.16) !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .header-section,
+:root[data-theme="peonyAzureMask"] .ledger-header,
+:root[data-theme="peonyAzureMask"] .chart-header,
+:root[data-theme="peonyAzureMask"] .budget-header,
+:root[data-theme="peonyAzureMask"] .monthly-planner-header,
+:root[data-theme="peonyAzureMask"] .theme-modal-header {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.82) 88%, rgba(231, 255, 254, 0.32)) !important;
+    border-bottom: 1px solid rgba(42, 169, 164, 0.12) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="peonyAzureMask"] .tab-btn,
+:root[data-theme="peonyAzureMask"] .chart-tab-btn,
+:root[data-theme="peonyAzureMask"] .ledger-type-tab,
+:root[data-theme="peonyAzureMask"] .record-type-tab,
+:root[data-theme="peonyAzureMask"] .category-tab {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 1px solid rgba(42, 169, 164, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .tab-btn.active,
+:root[data-theme="peonyAzureMask"] .chart-tab-btn.active,
+:root[data-theme="peonyAzureMask"] .ledger-type-tab.active,
+:root[data-theme="peonyAzureMask"] .record-type-tab.active,
+:root[data-theme="peonyAzureMask"] .category-tab.active {
+    background: rgba(42, 169, 164, 0.16) !important;
+    border: 2px solid rgba(42, 169, 164, 0.28) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 12px 28px rgba(8, 18, 26, 0.14) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .tab-btn:hover,
+:root[data-theme="peonyAzureMask"] .chart-tab-btn:hover,
+:root[data-theme="peonyAzureMask"] .ledger-type-tab:hover,
+:root[data-theme="peonyAzureMask"] .record-type-tab:hover,
+:root[data-theme="peonyAzureMask"] .category-tab:hover {
+    background: rgba(42, 169, 164, 0.10) !important;
+    border-color: rgba(42, 169, 164, 0.20) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .key-btn {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border: 2px solid rgba(42, 169, 164, 0.16) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 26px rgba(8, 18, 26, 0.12) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .key-btn:hover {
+    background: rgba(42, 169, 164, 0.10) !important;
+    border-color: rgba(42, 169, 164, 0.22) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .key-btn.operator {
+    background: rgba(42, 169, 164, 0.16) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .btn,
+:root[data-theme="peonyAzureMask"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 62%, white) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .btn:hover,
+:root[data-theme="peonyAzureMask"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 52%, white) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .dca-add-btn,
+:root[data-theme="peonyAzureMask"] .form-submit-btn,
+:root[data-theme="peonyAzureMask"] .entry-detail-edit-btn,
+:root[data-theme="peonyAzureMask"] .entry-edit-save,
+:root[data-theme="peonyAzureMask"] .investment-form-submit-btn,
+:root[data-theme="peonyAzureMask"] .buy-btn,
+:root[data-theme="peonyAzureMask"] .dca-execute-btn,
+:root[data-theme="peonyAzureMask"] .allocation-btn.primary,
+:root[data-theme="peonyAzureMask"] .modal-btn.confirm-btn,
+:root[data-theme="peonyAzureMask"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .allocation-btn,
+:root[data-theme="peonyAzureMask"] .modal-btn.cancel-btn {
+    background: var(--action-side-bg) !important;
+    color: var(--action-side-text) !important;
+    border: 1px solid rgba(42, 169, 164, 0.20) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .back-btn,
+:root[data-theme="peonyAzureMask"] .modal-back-btn,
+:root[data-theme="peonyAzureMask"] .return-btn,
+:root[data-theme="peonyAzureMask"] .input-back-btn,
+:root[data-theme="peonyAzureMask"] .dca-back-btn,
+:root[data-theme="peonyAzureMask"] .dca-setup-back-btn {
+    background: rgba(255, 255, 255, 0.86) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(42, 169, 164, 0.18) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .back-btn:hover,
+:root[data-theme="peonyAzureMask"] .modal-back-btn:hover,
+:root[data-theme="peonyAzureMask"] .return-btn:hover,
+:root[data-theme="peonyAzureMask"] .input-back-btn:hover,
+:root[data-theme="peonyAzureMask"] .dca-back-btn:hover,
+:root[data-theme="peonyAzureMask"] .dca-setup-back-btn:hover {
+    background: rgba(42, 169, 164, 0.10) !important;
+    border-color: rgba(42, 169, 164, 0.28) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(37, 99, 235, 0.12)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(245, 158, 11, 0.12)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(220, 38, 38, 0.12)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="peonyAzureMask"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(22, 163, 74, 0.12)) !important;
+    border-left-color: var(--color-success) !important;
+}

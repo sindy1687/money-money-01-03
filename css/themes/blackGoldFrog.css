@@ -1,0 +1,322 @@
+﻿:root[data-theme="blackGoldFrog"] {
+    --color-primary: #D4AF37;
+    --color-primary-light: #FFE08A;
+    --color-primary-lighter: #FFF4C8;
+    --color-primary-dark: #8E6E1E;
+    --color-secondary: #FF8A2A;
+    --color-secondary-light: #FFC08A;
+    --color-secondary-dark: #CC5E00;
+    --color-accent: #B87333;
+
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg, rgba(0, 0, 0, 0.78) 0%, rgba(18, 18, 18, 0.62) 55%, rgba(212, 175, 55, 0.18) 100%);
+    --bg-body: rgba(10, 12, 14, 0.86);
+    --bg-body-strong: rgba(10, 12, 14, 0.92);
+    --bg-gradient: linear-gradient(135deg, rgba(10, 12, 14, 0.92) 0%, rgba(34, 30, 24, 0.86) 60%, rgba(212, 175, 55, 0.22) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(212, 175, 55, 0.10) 0%, rgba(184, 115, 51, 0.08) 100%);
+    --bg-white: rgba(12, 14, 18, 0.72);
+    --bg-card: rgba(12, 14, 18, 0.74);
+    --bg-light: rgba(22, 24, 28, 0.72);
+    --bg-lighter: rgba(22, 24, 28, 0.62);
+    --bg-soft: rgba(212, 175, 55, 0.10);
+    --bg-soft-strong: rgba(212, 175, 55, 0.16);
+
+    --text-primary: rgba(248, 250, 252, 0.96);
+    --text-secondary: rgba(248, 250, 252, 0.82);
+    --text-tertiary: rgba(248, 250, 252, 0.66);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(212, 175, 55, 0.62);
+    --border-light: rgba(248, 250, 252, 0.14);
+    --border-medium: rgba(212, 175, 55, 0.32);
+    --card-border-color: rgba(212, 175, 55, 0.28);
+    --control-border-color: rgba(248, 250, 252, 0.18);
+    --table-border-color: rgba(248, 250, 252, 0.12);
+
+    --shadow-primary: 0 22px 70px rgba(0, 0, 0, 0.55);
+    --shadow-primary-lg: 0 30px 90px rgba(0, 0, 0, 0.6);
+
+    --color-primary-rgba-08: rgba(212, 175, 55, 0.08);
+    --color-primary-rgba-10: rgba(212, 175, 55, 0.1);
+    --color-primary-rgba-12: rgba(212, 175, 55, 0.12);
+    --color-primary-rgba-15: rgba(212, 175, 55, 0.15);
+    --color-primary-rgba-20: rgba(212, 175, 55, 0.2);
+    --color-primary-rgba-25: rgba(212, 175, 55, 0.25);
+    --color-primary-rgba-30: rgba(212, 175, 55, 0.3);
+    --color-primary-rgba-40: rgba(212, 175, 55, 0.4);
+
+    --action-buy-bg: linear-gradient(135deg, rgba(212, 175, 55, 0.98) 0%, rgba(255, 138, 42, 0.98) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg, rgba(212, 175, 55, 1) 0%, rgba(255, 138, 42, 1) 100%);
+    --action-buy-text: rgba(10, 12, 14, 0.96);
+
+    --action-dca-bg: linear-gradient(135deg, rgba(184, 115, 51, 0.98) 0%, rgba(212, 175, 55, 0.98) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg, rgba(184, 115, 51, 1) 0%, rgba(212, 175, 55, 1) 100%);
+    --action-dca-text: rgba(10, 12, 14, 0.96);
+
+    --action-side-bg: color-mix(in srgb, rgba(12, 14, 18, 0.86) 78%, rgba(212, 175, 55, 0.1));
+    --action-side-bg-hover: color-mix(in srgb, rgba(12, 14, 18, 0.86) 68%, rgba(212, 175, 55, 0.22));
+    --action-side-text: var(--text-primary);
+}
+
+:root[data-theme="blackGoldFrog"] body {
+    background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.78) 0%, rgba(10, 12, 14, 0.62) 55%, rgba(212, 175, 55, 0.20) 100%),
+        url("https://i.pinimg.com/736x/2f/45/4f/2f454fc2eeb4f4df1989181167f3ee53.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+:root[data-theme="blackGoldFrog"] body::before {
+    display: none;
+}
+
+:root[data-theme="blackGoldFrog"] .page-input,
+
+:root[data-theme="blackGoldFrog"] .page-ledger,
+
+:root[data-theme="blackGoldFrog"] .page-chart,
+
+:root[data-theme="blackGoldFrog"] .page-budget,
+
+:root[data-theme="blackGoldFrog"] .page-monthly-planner,
+
+:root[data-theme="blackGoldFrog"] .page-daily-budget,
+
+:root[data-theme="blackGoldFrog"] .page-settings,
+
+:root[data-theme="blackGoldFrog"] .page-category-manage,
+
+:root[data-theme="blackGoldFrog"] .page-investment,
+
+:root[data-theme="blackGoldFrog"] .page-wallet,
+
+:root[data-theme="blackGoldFrog"] .page-history,
+
+:root[data-theme="blackGoldFrog"] .page-planner,
+
+:root[data-theme="blackGoldFrog"] .page-manage-investment,
+
+:root[data-theme="blackGoldFrog"] .page-annual-report,
+
+:root[data-theme="blackGoldFrog"] .page-diary,
+
+:root[data-theme="blackGoldFrog"] .page-installment,
+
+:root[data-theme="blackGoldFrog"] .installment-page,
+
+:root[data-theme="blackGoldFrog"] .dca-page,
+
+:root[data-theme="blackGoldFrog"] .fixed-deposit-page,
+
+:root[data-theme="blackGoldFrog"] .dividend-page,
+
+:root[data-theme="blackGoldFrog"] .dca-management-page,
+
+:root[data-theme="blackGoldFrog"] .dca-setup-page,
+
+:root[data-theme="blackGoldFrog"] .investment-input-page,
+
+:root[data-theme="blackGoldFrog"] .wishlist-content,
+
+:root[data-theme="blackGoldFrog"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="blackGoldFrog"] .card,
+
+:root[data-theme="blackGoldFrog"] .record-card,
+
+:root[data-theme="blackGoldFrog"] .ledger-card,
+
+:root[data-theme="blackGoldFrog"] .summary-card,
+
+:root[data-theme="blackGoldFrog"] .budget-card,
+
+:root[data-theme="blackGoldFrog"] .wallet-card,
+
+:root[data-theme="blackGoldFrog"] .chart-card,
+
+:root[data-theme="blackGoldFrog"] .investment-card,
+
+:root[data-theme="blackGoldFrog"] .stock-item-card,
+
+:root[data-theme="blackGoldFrog"] .monthly-planner-card,
+
+:root[data-theme="blackGoldFrog"] .dividend-stat-card,
+
+:root[data-theme="blackGoldFrog"] .manage-investment-card,
+
+:root[data-theme="blackGoldFrog"] .annual-report-card,
+
+:root[data-theme="blackGoldFrog"] .diary-card,
+
+:root[data-theme="blackGoldFrog"] .monthly-planning-card,
+
+:root[data-theme="blackGoldFrog"] .investment-settings-card,
+
+:root[data-theme="blackGoldFrog"] .wallet-budget-card,
+
+:root[data-theme="blackGoldFrog"] .holding-card,
+
+:root[data-theme="blackGoldFrog"] .buying-card,
+
+:root[data-theme="blackGoldFrog"] .selling-card,
+
+:root[data-theme="blackGoldFrog"] .dividend-card,
+
+:root[data-theme="blackGoldFrog"] .regular-investment-card,
+
+:root[data-theme="blackGoldFrog"] .investment-management-card,
+
+:root[data-theme="blackGoldFrog"] .dca-card,
+
+:root[data-theme="blackGoldFrog"] .installment-card,
+
+:root[data-theme="blackGoldFrog"] .fixed-deposit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    border-radius: 20px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(14px);
+}
+
+:root[data-theme="blackGoldFrog"] .investment-card::before,
+
+:root[data-theme="blackGoldFrog"] .stock-item-card::before {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(184, 115, 51, 0.12) 55%, rgba(255, 138, 42, 0.10) 100%);
+}
+
+:root[data-theme="blackGoldFrog"] .nav-item.active {
+    background: rgba(212, 175, 55, 0.16);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme="blackGoldFrog"] .theme-modal-overlay,
+
+:root[data-theme="blackGoldFrog"] .modal-overlay {
+    background: color-mix(in srgb, rgba(0, 0, 0, 0.74) 78%, transparent) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="blackGoldFrog"] .modal-content,
+
+:root[data-theme="blackGoldFrog"] .modal-content-standard,
+
+:root[data-theme="blackGoldFrog"] .budget-category-modal-content,
+
+:root[data-theme="blackGoldFrog"] .budget-setting-modal-content,
+
+:root[data-theme="blackGoldFrog"] .category-modal-content,
+
+:root[data-theme="blackGoldFrog"] .dca-execute-modal .modal-content,
+
+:root[data-theme="blackGoldFrog"] .account-modal-content,
+
+:root[data-theme="blackGoldFrog"] .emoji-modal-content,
+
+:root[data-theme="blackGoldFrog"] .history-modal-content,
+
+:root[data-theme="blackGoldFrog"] .crop-modal-content,
+
+:root[data-theme="blackGoldFrog"] .dialog-container,
+
+:root[data-theme="blackGoldFrog"] .xiaosen-dialog,
+
+:root[data-theme="blackGoldFrog"] .komori-dialog,
+
+:root[data-theme="blackGoldFrog"] .mori-dialog-box,
+
+:root[data-theme="blackGoldFrog"] .theme-modal-content,
+
+:root[data-theme="blackGoldFrog"] .theme-modal-container {
+    background: rgba(12, 14, 18, 0.92) !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.6) !important;
+}
+
+:root[data-theme="blackGoldFrog"] .form-input,
+
+:root[data-theme="blackGoldFrog"] .form-select,
+
+:root[data-theme="blackGoldFrog"] .form-textarea,
+
+:root[data-theme="blackGoldFrog"] .note-input {
+    background: rgba(12, 14, 18, 0.76) !important;
+    border: 1px solid rgba(248, 250, 252, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="blackGoldFrog"] .form-input:focus,
+
+:root[data-theme="blackGoldFrog"] .form-select:focus,
+
+:root[data-theme="blackGoldFrog"] .form-textarea:focus,
+
+:root[data-theme="blackGoldFrog"] .note-input:focus {
+    border-color: rgba(212, 175, 55, 0.6) !important;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18) !important;
+}
+
+:root[data-theme="blackGoldFrog"] .input-section {
+    background: rgba(12, 14, 18, 0.9) !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 -4px 22px rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="blackGoldFrog"] .bottom-nav {
+    background: rgba(12, 14, 18, 0.88) !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.28) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="blackGoldFrog"] .btn,
+
+:root[data-theme="blackGoldFrog"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(212, 175, 55, 0.55) !important;
+}
+
+:root[data-theme="blackGoldFrog"] .btn:hover,
+
+:root[data-theme="blackGoldFrog"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="blackGoldFrog"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 1px solid rgba(184, 115, 51, 0.55) !important;
+}
+
+:root[data-theme="blackGoldFrog"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="blackGoldFrog"] .back-btn {
+    background: rgba(12, 14, 18, 0.62) !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="blackGoldFrog"] .return-btn {
+    background: rgba(212, 175, 55, 0.14) !important;
+    border: 1px solid rgba(212, 175, 55, 0.32) !important;
+    color: var(--text-primary) !important;
+}
+
+
+
+:root[data-theme="blackGoldFrog"] .fab-btn {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 1) 0%, rgba(255, 138, 42, 1) 100%) !important;
+    color: rgba(10, 12, 14, 0.96) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+

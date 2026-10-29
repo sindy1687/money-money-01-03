@@ -1,0 +1,349 @@
+:root[data-theme="amberRonin"] {
+    --color-primary: #f4b24a;
+    --color-primary-light: #ffd08a;
+    --color-primary-lighter: #ffe6bd;
+    --color-primary-dark: #3b2417;
+
+    --color-secondary: #a85a2a;
+    --color-secondary-light: #f0a062;
+    --color-secondary-dark: #2b160d;
+
+    --color-accent: #f7e6c7;
+    --color-accent-light: #fff2da;
+    --color-accent-dark: #caa67c;
+
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(27, 18, 13, 0.96) 0%,
+        rgba(59, 36, 23, 0.92) 46%,
+        rgba(244, 178, 74, 0.40) 100%);
+    --bg-body: rgba(27, 18, 13, 0.92);
+    --bg-body-strong: rgba(27, 18, 13, 0.96);
+    --bg-gradient: linear-gradient(135deg,
+        rgba(27, 18, 13, 0.96) 0%,
+        rgba(168, 90, 42, 0.34) 55%,
+        rgba(244, 178, 74, 0.30) 100%);
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(244, 178, 74, 0.10) 0%,
+        rgba(247, 230, 199, 0.10) 100%);
+
+    --bg-white: rgba(20, 14, 10, 0.84);
+    --bg-card: rgba(16, 12, 10, 0.88);
+    --bg-light: rgba(34, 22, 16, 0.82);
+    --bg-lighter: rgba(52, 32, 22, 0.64);
+    --bg-soft: rgba(244, 178, 74, 0.10);
+    --bg-soft-strong: rgba(168, 90, 42, 0.22);
+
+    --text-primary: rgba(255, 246, 232, 0.96);
+    --text-secondary: rgba(255, 246, 232, 0.78);
+    --text-tertiary: rgba(255, 246, 232, 0.62);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(244, 178, 74, 0.62);
+    --border-light: rgba(244, 178, 74, 0.18);
+    --border-medium: rgba(168, 90, 42, 0.30);
+    --card-border-color: rgba(255, 208, 138, 0.30);
+    --control-border-color: rgba(255, 208, 138, 0.22);
+    --table-border-color: rgba(255, 208, 138, 0.16);
+
+    --shadow-primary: 0 18px 54px rgba(0, 0, 0, 0.58);
+    --shadow-primary-lg: 0 28px 78px rgba(0, 0, 0, 0.50);
+
+    --color-primary-rgba-08: rgba(244, 178, 74, 0.08);
+    --color-primary-rgba-10: rgba(244, 178, 74, 0.10);
+    --color-primary-rgba-12: rgba(244, 178, 74, 0.12);
+    --color-primary-rgba-15: rgba(244, 178, 74, 0.15);
+    --color-primary-rgba-18: rgba(244, 178, 74, 0.18);
+    --color-primary-rgba-20: rgba(244, 178, 74, 0.20);
+    --color-primary-rgba-25: rgba(244, 178, 74, 0.25);
+    --color-primary-rgba-30: rgba(244, 178, 74, 0.30);
+    --color-primary-rgba-40: rgba(244, 178, 74, 0.40);
+
+    --color-primary-light-rgba-08: rgba(255, 208, 138, 0.08);
+    --color-primary-light-rgba-10: rgba(255, 208, 138, 0.10);
+    --color-primary-light-rgba-12: rgba(255, 208, 138, 0.12);
+    --color-primary-light-rgba-15: rgba(255, 208, 138, 0.15);
+    --color-primary-light-rgba-20: rgba(255, 208, 138, 0.20);
+    --color-primary-light-rgba-25: rgba(255, 208, 138, 0.25);
+    --color-primary-light-rgba-30: rgba(255, 208, 138, 0.30);
+    --color-primary-light-rgba-40: rgba(255, 208, 138, 0.40);
+
+    --color-secondary-rgba-20: rgba(168, 90, 42, 0.20);
+    --color-accent-rgba-30: rgba(247, 230, 199, 0.30);
+    --color-accent-rgba-40: rgba(247, 230, 199, 0.40);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(27, 18, 13, 0.90) 0%,
+        rgba(59, 36, 23, 0.70) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(27, 18, 13, 0.90) 0%,
+        rgba(59, 36, 23, 0.70) 100%);
+
+    --action-side-bg: color-mix(in srgb, rgba(16, 12, 10, 0.92) 78%, rgba(244, 178, 74, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(16, 12, 10, 0.92) 66%, rgba(244, 178, 74, 0.22));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 86%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 78%, var(--color-secondary-dark)) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 82%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 86%, var(--color-secondary-dark)) 100%);
+    --action-buy-text: rgba(10, 6, 4, 0.96);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent) 78%, white) 0%,
+        color-mix(in srgb, var(--color-secondary-light) 62%, var(--color-secondary-dark)) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 78%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 84%, var(--color-accent-dark)) 100%);
+    --action-dca-text: rgba(10, 6, 4, 0.96);
+}
+
+:root[data-theme="amberRonin"] body {
+    background: url("https://i.pinimg.com/736x/10/21/7b/10217b8f99106e8ff921040354429197.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="amberRonin"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 25% 20%, rgba(255, 214, 160, 0.28), transparent 58%),
+        radial-gradient(circle at 70% 35%, rgba(244, 178, 74, 0.22), transparent 60%),
+        linear-gradient(135deg, rgba(27, 18, 13, 0.82) 0%, rgba(27, 18, 13, 0.62) 55%, rgba(27, 18, 13, 0.84) 100%);
+}
+
+:root[data-theme="amberRonin"] .page-ledger,
+:root[data-theme="amberRonin"] .page-input,
+:root[data-theme="amberRonin"] .page-chart,
+:root[data-theme="amberRonin"] .page-budget,
+:root[data-theme="amberRonin"] .page-monthly-planner,
+:root[data-theme="amberRonin"] .page-daily-budget,
+:root[data-theme="amberRonin"] .page-settings,
+:root[data-theme="amberRonin"] .page-category-manage,
+:root[data-theme="amberRonin"] .page-investment,
+:root[data-theme="amberRonin"] .page-wallet,
+:root[data-theme="amberRonin"] .page-history,
+:root[data-theme="amberRonin"] .page-planner,
+:root[data-theme="amberRonin"] .page-installment,
+:root[data-theme="amberRonin"] .installment-page,
+:root[data-theme="amberRonin"] .dca-page,
+:root[data-theme="amberRonin"] .fixed-deposit-page,
+:root[data-theme="amberRonin"] .dividend-page,
+:root[data-theme="amberRonin"] .dca-management-page,
+:root[data-theme="amberRonin"] .dca-setup-page,
+:root[data-theme="amberRonin"] .investment-input-page,
+:root[data-theme="amberRonin"] .wishlist-content,
+:root[data-theme="amberRonin"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="amberRonin"] .card,
+:root[data-theme="amberRonin"] .record-card,
+:root[data-theme="amberRonin"] .ledger-card,
+:root[data-theme="amberRonin"] .summary-card,
+:root[data-theme="amberRonin"] .budget-card,
+:root[data-theme="amberRonin"] .wallet-card,
+:root[data-theme="amberRonin"] .chart-card,
+:root[data-theme="amberRonin"] .investment-card,
+:root[data-theme="amberRonin"] .stock-item-card,
+:root[data-theme="amberRonin"] .monthly-planner-card,
+:root[data-theme="amberRonin"] .dividend-stat-card,
+:root[data-theme="amberRonin"] .dca-card,
+:root[data-theme="amberRonin"] .installment-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--shadow-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="amberRonin"] .investment-card::before,
+:root[data-theme="amberRonin"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(255, 208, 138, 0.18) 0%,
+        rgba(27, 18, 13, 0.50) 65%,
+        rgba(247, 230, 199, 0.16) 100%);
+}
+
+:root[data-theme="amberRonin"] .modal-content,
+:root[data-theme="amberRonin"] .modal-content-standard,
+:root[data-theme="amberRonin"] .budget-category-modal-content,
+:root[data-theme="amberRonin"] .budget-setting-modal-content,
+:root[data-theme="amberRonin"] .category-modal-content,
+:root[data-theme="amberRonin"] .dca-execute-modal .modal-content,
+:root[data-theme="amberRonin"] .account-modal-content,
+:root[data-theme="amberRonin"] .emoji-modal-content,
+:root[data-theme="amberRonin"] .history-modal-content,
+:root[data-theme="amberRonin"] .entry-detail-content {
+    background: color-mix(in srgb, var(--bg-card) 88%, black) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="amberRonin"] .input-section {
+    background: color-mix(in srgb, var(--bg-card) 88%, black) !important;
+    border-top: 2px solid rgba(255, 208, 138, 0.35) !important;
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.58);
+}
+
+:root[data-theme="amberRonin"] .bottom-nav {
+    background: color-mix(in srgb, var(--bg-card) 90%, black) !important;
+    border-top: 1px solid rgba(255, 208, 138, 0.26) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="amberRonin"] .form-input,
+:root[data-theme="amberRonin"] .form-select,
+:root[data-theme="amberRonin"] .form-textarea,
+:root[data-theme="amberRonin"] .note-input {
+    background: rgba(34, 22, 16, 0.86) !important;
+    border: 2px solid rgba(255, 208, 138, 0.30) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="amberRonin"] .form-input:focus,
+:root[data-theme="amberRonin"] .form-select:focus,
+:root[data-theme="amberRonin"] .form-textarea:focus,
+:root[data-theme="amberRonin"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(244, 178, 74, 0.24) !important;
+    background: rgba(27, 18, 13, 0.96) !important;
+}
+
+:root[data-theme="amberRonin"] .header-section,
+:root[data-theme="amberRonin"] .ledger-header,
+:root[data-theme="amberRonin"] .chart-header,
+:root[data-theme="amberRonin"] .budget-header,
+:root[data-theme="amberRonin"] .monthly-planner-header {
+    background: rgba(27, 18, 13, 0.90) !important;
+    border-bottom: 1px solid rgba(255, 208, 138, 0.20) !important;
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="amberRonin"] .tab-btn,
+:root[data-theme="amberRonin"] .chart-tab-btn,
+:root[data-theme="amberRonin"] .ledger-type-tab,
+:root[data-theme="amberRonin"] .record-type-tab {
+    background: rgba(34, 22, 16, 0.86) !important;
+    border: 1px solid rgba(255, 208, 138, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="amberRonin"] .tab-btn.active,
+:root[data-theme="amberRonin"] .chart-tab-btn.active,
+:root[data-theme="amberRonin"] .ledger-type-tab.active,
+:root[data-theme="amberRonin"] .record-type-tab.active {
+    background: rgba(244, 178, 74, 0.22) !important;
+    border: 2px solid rgba(255, 208, 138, 0.52) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.48) !important;
+}
+
+:root[data-theme="amberRonin"] .tab-btn:hover,
+:root[data-theme="amberRonin"] .chart-tab-btn:hover,
+:root[data-theme="amberRonin"] .ledger-type-tab:hover,
+:root[data-theme="amberRonin"] .record-type-tab:hover {
+    background: rgba(244, 178, 74, 0.16) !important;
+    border-color: rgba(255, 208, 138, 0.30) !important;
+}
+
+:root[data-theme="amberRonin"] .key-btn {
+    background: rgba(34, 22, 16, 0.86) !important;
+    border: 2px solid rgba(255, 208, 138, 0.30) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.54) !important;
+}
+
+:root[data-theme="amberRonin"] .key-btn:hover {
+    background: rgba(244, 178, 74, 0.14) !important;
+    border-color: rgba(255, 208, 138, 0.38) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.64) !important;
+}
+
+:root[data-theme="amberRonin"] .key-btn.operator {
+    background: rgba(244, 178, 74, 0.30) !important;
+    color: rgba(10, 6, 4, 0.96) !important;
+}
+
+:root[data-theme="amberRonin"] .nav-item.active {
+    background: rgba(244, 178, 74, 0.14);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.48);
+}
+
+:root[data-theme="amberRonin"] .btn,
+:root[data-theme="amberRonin"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 55%, white) !important;
+}
+
+:root[data-theme="amberRonin"] .btn:hover,
+:root[data-theme="amberRonin"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="amberRonin"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 45%, white) !important;
+}
+
+:root[data-theme="amberRonin"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="amberRonin"] .back-btn,
+:root[data-theme="amberRonin"] .modal-back-btn {
+    background: color-mix(in srgb, var(--bg-card) 85%, transparent) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+:root[data-theme="amberRonin"] .back-btn:hover,
+:root[data-theme="amberRonin"] .modal-back-btn:hover {
+    background: color-mix(in srgb, var(--bg-card) 92%, transparent) !important;
+    border-color: var(--border-primary) !important;
+}
+
+:root[data-theme="amberRonin"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 55%, white) !important;
+}
+
+:root[data-theme="amberRonin"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="amberRonin"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(59, 130, 246, 0.18)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="amberRonin"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(245, 158, 11, 0.18)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="amberRonin"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(239, 68, 68, 0.18)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="amberRonin"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(34, 197, 94, 0.14)) !important;
+    border-left-color: var(--color-success) !important;
+}

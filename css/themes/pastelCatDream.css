@@ -1,0 +1,492 @@
+:root[data-theme="pastelCatDream"] {
+    --color-primary: #ff78ad;
+    --color-primary-light: #ffb0d3;
+    --color-primary-lighter: #ffe2f0;
+    --color-primary-dark: #d64f87;
+
+    --color-secondary: #6fb7ff;
+    --color-secondary-light: #bfe3ff;
+    --color-secondary-dark: #2f79c6;
+
+    --color-accent: #ffd66a;
+    --color-accent-light: #ffefb5;
+    --color-accent-dark: #c99a1d;
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(255, 231, 242, 0.94) 0%,
+        rgba(223, 245, 255, 0.88) 36%,
+        rgba(231, 230, 255, 0.82) 68%,
+        rgba(255, 246, 210, 0.76) 100%);
+    --bg-body: rgba(255, 248, 252, 0.92);
+    --bg-body-strong: rgba(255, 248, 252, 0.96);
+    --bg-gradient: linear-gradient(135deg,
+        rgba(255, 176, 211, 0.42) 0%,
+        rgba(111, 183, 255, 0.30) 52%,
+        rgba(255, 214, 106, 0.22) 100%);
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.94) 0%,
+        rgba(255, 226, 240, 0.62) 55%,
+        rgba(191, 227, 255, 0.52) 100%);
+
+    --bg-white: rgba(255, 255, 255, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-light: rgba(255, 226, 240, 0.52);
+    --bg-lighter: rgba(191, 227, 255, 0.42);
+    --bg-soft: rgba(255, 120, 173, 0.12);
+    --bg-soft-strong: rgba(255, 120, 173, 0.18);
+
+    --text-primary: rgba(28, 22, 32, 0.96);
+    --text-secondary: rgba(28, 22, 32, 0.74);
+    --text-tertiary: rgba(28, 22, 32, 0.58);
+    --text-strong: rgba(15, 12, 18, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(255, 120, 173, 0.55);
+    --border-light: rgba(47, 121, 198, 0.14);
+    --border-medium: rgba(111, 183, 255, 0.26);
+    --card-border-color: rgba(255, 120, 173, 0.24);
+    --control-border-color: rgba(47, 121, 198, 0.18);
+
+    --shadow-primary: 0 18px 54px rgba(26, 18, 30, 0.14);
+    --shadow-primary-lg: 0 28px 78px rgba(26, 18, 30, 0.16);
+
+    --color-primary-rgba-08: rgba(255, 120, 173, 0.08);
+    --color-primary-rgba-10: rgba(255, 120, 173, 0.10);
+    --color-primary-rgba-12: rgba(255, 120, 173, 0.12);
+    --color-primary-rgba-15: rgba(255, 120, 173, 0.15);
+    --color-primary-rgba-20: rgba(255, 120, 173, 0.20);
+    --color-primary-rgba-25: rgba(255, 120, 173, 0.25);
+    --color-primary-rgba-30: rgba(255, 120, 173, 0.30);
+    --color-primary-rgba-40: rgba(255, 120, 173, 0.40);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 84%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 82%, black) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 90%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 88%, black) 100%);
+    --action-buy-text: var(--text-white);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary-light) 76%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 68%, var(--color-secondary-dark)) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary) 78%, white) 0%,
+        color-mix(in srgb, var(--color-accent-dark) 70%, var(--color-secondary-dark)) 100%);
+    --action-dca-text: rgba(28, 22, 32, 0.96);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.92) 74%, rgba(111, 183, 255, 0.14));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.92) 60%, rgba(255, 120, 173, 0.22));
+    --action-side-text: rgba(28, 22, 32, 0.96);
+
+    --card-background-image: url("https://i.pinimg.com/736x/40/99/02/409902a71ec99131d76a2c585ffc9e3f.jpg");
+}
+
+:root[data-theme="pastelCatDream"] body {
+    background: url("https://i.pinimg.com/736x/a5/a3/08/a5a308f2df47d464b7f4b270dc0afff8.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="pastelCatDream"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.65), transparent 56%),
+        radial-gradient(circle at 82% 20%, rgba(191, 227, 255, 0.40), transparent 62%),
+        radial-gradient(circle at 70% 78%, rgba(255, 239, 181, 0.26), transparent 62%),
+        linear-gradient(135deg, rgba(255, 231, 242, 0.62) 0%, rgba(223, 245, 255, 0.44) 55%, rgba(231, 230, 255, 0.36) 100%);
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: -1;
+}
+
+:root[data-theme="pastelCatDream"] .page-input,
+:root[data-theme="pastelCatDream"] .page-ledger,
+:root[data-theme="pastelCatDream"] .page-chart,
+:root[data-theme="pastelCatDream"] .page-budget,
+:root[data-theme="pastelCatDream"] .page-monthly-planner,
+:root[data-theme="pastelCatDream"] .page-daily-budget,
+:root[data-theme="pastelCatDream"] .page-settings,
+:root[data-theme="pastelCatDream"] .page-category-manage,
+:root[data-theme="pastelCatDream"] .page-investment,
+:root[data-theme="pastelCatDream"] .page-wallet,
+:root[data-theme="pastelCatDream"] .page-history,
+:root[data-theme="pastelCatDream"] .page-planner,
+:root[data-theme="pastelCatDream"] .page-manage-investment,
+:root[data-theme="pastelCatDream"] .page-annual-report,
+:root[data-theme="pastelCatDream"] .page-diary,
+:root[data-theme="pastelCatDream"] .page-installment,
+:root[data-theme="pastelCatDream"] .installment-page,
+:root[data-theme="pastelCatDream"] .dca-page,
+:root[data-theme="pastelCatDream"] .fixed-deposit-page,
+:root[data-theme="pastelCatDream"] .dividend-page,
+:root[data-theme="pastelCatDream"] .dca-management-page,
+:root[data-theme="pastelCatDream"] .dca-setup-page,
+:root[data-theme="pastelCatDream"] .investment-input-page,
+:root[data-theme="pastelCatDream"] .installment-management-page,
+:root[data-theme="pastelCatDream"] .installment-setup-page,
+:root[data-theme="pastelCatDream"] .wishlist-content,
+:root[data-theme="pastelCatDream"] .savings-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="pastelCatDream"] .card,
+:root[data-theme="pastelCatDream"] .record-card,
+:root[data-theme="pastelCatDream"] .ledger-card,
+:root[data-theme="pastelCatDream"] .summary-card,
+:root[data-theme="pastelCatDream"] .budget-card,
+:root[data-theme="pastelCatDream"] .wallet-card,
+:root[data-theme="pastelCatDream"] .chart-card,
+:root[data-theme="pastelCatDream"] .investment-card,
+:root[data-theme="pastelCatDream"] .manage-investment-card,
+:root[data-theme="pastelCatDream"] .annual-report-card,
+:root[data-theme="pastelCatDream"] .diary-card,
+:root[data-theme="pastelCatDream"] .monthly-planning-card,
+:root[data-theme="pastelCatDream"] .investment-settings-card,
+:root[data-theme="pastelCatDream"] .wallet-budget-card,
+:root[data-theme="pastelCatDream"] .holding-card,
+:root[data-theme="pastelCatDream"] .buying-card,
+:root[data-theme="pastelCatDream"] .selling-card,
+:root[data-theme="pastelCatDream"] .dividend-card,
+:root[data-theme="pastelCatDream"] .regular-investment-card,
+:root[data-theme="pastelCatDream"] .investment-management-card,
+:root[data-theme="pastelCatDream"] .dca-card,
+:root[data-theme="pastelCatDream"] .installment-card,
+:root[data-theme="pastelCatDream"] .fixed-deposit-card,
+:root[data-theme="pastelCatDream"] .stock-item-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--card-border-color) !important;
+    border-radius: 20px !important;
+    color: var(--text-primary) !important;
+    box-shadow: var(--shadow-primary) !important;
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="pastelCatDream"] .stock-item-card {
+    background: url("https://i.pinimg.com/736x/40/99/02/409902a71ec99131d76a2c585ffc9e3f.jpg") center/cover no-repeat !important;
+    background-blend-mode: overlay !important;
+    background-color: rgba(255, 255, 255, 0.86) !important;
+}
+
+:root[data-theme="pastelCatDream"] .card::after,
+:root[data-theme="pastelCatDream"] .record-card::after,
+:root[data-theme="pastelCatDream"] .ledger-card::after,
+:root[data-theme="pastelCatDream"] .summary-card::after,
+:root[data-theme="pastelCatDream"] .budget-card::after,
+:root[data-theme="pastelCatDream"] .wallet-card::after,
+:root[data-theme="pastelCatDream"] .chart-card::after,
+:root[data-theme="pastelCatDream"] .investment-card::after,
+:root[data-theme="pastelCatDream"] .manage-investment-card::after,
+:root[data-theme="pastelCatDream"] .annual-report-card::after,
+:root[data-theme="pastelCatDream"] .diary-card::after,
+:root[data-theme="pastelCatDream"] .monthly-planning-card::after,
+:root[data-theme="pastelCatDream"] .investment-settings-card::after,
+:root[data-theme="pastelCatDream"] .wallet-budget-card::after,
+:root[data-theme="pastelCatDream"] .holding-card::after,
+:root[data-theme="pastelCatDream"] .buying-card::after,
+:root[data-theme="pastelCatDream"] .selling-card::after,
+:root[data-theme="pastelCatDream"] .dividend-card::after,
+:root[data-theme="pastelCatDream"] .regular-investment-card::after,
+:root[data-theme="pastelCatDream"] .investment-management-card::after,
+:root[data-theme="pastelCatDream"] .dca-card::after,
+:root[data-theme="pastelCatDream"] .installment-card::after,
+:root[data-theme="pastelCatDream"] .fixed-deposit-card::after,
+:root[data-theme="pastelCatDream"] .stock-item-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--card-background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    filter: saturate(0.95) contrast(0.95);
+    pointer-events: none;
+    z-index: 0;
+}
+
+:root[data-theme="pastelCatDream"] .holding-card::after {
+    background-image: url("https://i.pinimg.com/736x/40/99/02/409902a71ec99131d76a2c585ffc9e3f.jpg");
+}
+
+:root[data-theme="pastelCatDream"] .card > *,
+:root[data-theme="pastelCatDream"] .record-card > *,
+:root[data-theme="pastelCatDream"] .ledger-card > *,
+:root[data-theme="pastelCatDream"] .summary-card > *,
+:root[data-theme="pastelCatDream"] .budget-card > *,
+:root[data-theme="pastelCatDream"] .wallet-card > *,
+:root[data-theme="pastelCatDream"] .chart-card > *,
+:root[data-theme="pastelCatDream"] .investment-card > *,
+:root[data-theme="pastelCatDream"] .manage-investment-card > *,
+:root[data-theme="pastelCatDream"] .annual-report-card > *,
+:root[data-theme="pastelCatDream"] .diary-card > *,
+:root[data-theme="pastelCatDream"] .monthly-planning-card > *,
+:root[data-theme="pastelCatDream"] .investment-settings-card > *,
+:root[data-theme="pastelCatDream"] .wallet-budget-card > *,
+:root[data-theme="pastelCatDream"] .holding-card > *,
+:root[data-theme="pastelCatDream"] .buying-card > *,
+:root[data-theme="pastelCatDream"] .selling-card > *,
+:root[data-theme="pastelCatDream"] .dividend-card > *,
+:root[data-theme="pastelCatDream"] .regular-investment-card > *,
+:root[data-theme="pastelCatDream"] .investment-management-card > *,
+:root[data-theme="pastelCatDream"] .dca-card > *,
+:root[data-theme="pastelCatDream"] .installment-card > *,
+:root[data-theme="pastelCatDream"] .fixed-deposit-card > *,
+:root[data-theme="pastelCatDream"] .stock-item-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+:root[data-theme="pastelCatDream"] .nav-item.active {
+    background: rgba(255, 120, 173, 0.12);
+    box-shadow: 0 12px 28px rgba(26, 18, 30, 0.16);
+}
+
+:root[data-theme="pastelCatDream"] .modal-content,
+:root[data-theme="pastelCatDream"] .modal-content-standard,
+:root[data-theme="pastelCatDream"] .budget-category-modal-content,
+:root[data-theme="pastelCatDream"] .budget-setting-modal-content,
+:root[data-theme="pastelCatDream"] .category-modal-content,
+:root[data-theme="pastelCatDream"] .dca-execute-modal .modal-content,
+:root[data-theme="pastelCatDream"] .account-modal-content,
+:root[data-theme="pastelCatDream"] .emoji-modal-content,
+:root[data-theme="pastelCatDream"] .history-modal-content,
+:root[data-theme="pastelCatDream"] .crop-modal-content,
+:root[data-theme="pastelCatDream"] .dialog-container,
+:root[data-theme="pastelCatDream"] .xiaosen-dialog,
+:root[data-theme="pastelCatDream"] .komori-dialog,
+:root[data-theme="pastelCatDream"] .mori-dialog-box,
+:root[data-theme="pastelCatDream"] .theme-modal-content,
+:root[data-theme="pastelCatDream"] .theme-modal-container,
+:root[data-theme="pastelCatDream"] .dialog-content,
+:root[data-theme="pastelCatDream"] .popup-content {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 22px 60px rgba(26, 18, 30, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelCatDream"] .budget-setting-modal-content,
+:root[data-theme="pastelCatDream"] .next-month-budget-card,
+:root[data-theme="pastelCatDream"] .daily-budget-summary-card {
+    background: url("https://i.pinimg.com/736x/40/99/02/409902a71ec99131d76a2c585ffc9e3f.jpg") center/cover no-repeat !important;
+    background-blend-mode: overlay !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="pastelCatDream"] .budget-item {
+    background: url("https://i.pinimg.com/736x/40/99/02/409902a71ec99131d76a2c585ffc9e3f.jpg") center/cover no-repeat !important;
+    background-blend-mode: overlay !important;
+    background-color: rgba(255, 255, 255, 0.88) !important;
+    border: 2px solid var(--card-border-color) !important;
+    box-shadow: var(--shadow-primary) !important;
+    border-radius: 20px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="pastelCatDream"] .budget-item-info,
+:root[data-theme="pastelCatDream"] .budget-item-header,
+:root[data-theme="pastelCatDream"] .budget-item-details {
+    background: transparent !important;
+}
+
+:root[data-theme="pastelCatDream"] .form-input,
+:root[data-theme="pastelCatDream"] .form-select,
+:root[data-theme="pastelCatDream"] .form-textarea,
+:root[data-theme="pastelCatDream"] .note-input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid rgba(111, 183, 255, 0.2) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelCatDream"] .form-input:focus,
+:root[data-theme="pastelCatDream"] .form-select:focus,
+:root[data-theme="pastelCatDream"] .form-textarea:focus,
+:root[data-theme="pastelCatDream"] .note-input:focus {
+    border-color: rgba(255, 120, 173, 0.68) !important;
+    box-shadow: 0 0 0 3px rgba(255, 120, 173, 0.16) !important;
+}
+
+:root[data-theme="pastelCatDream"] .tab-btn.active,
+:root[data-theme="pastelCatDream"] .ledger-type-tab.active,
+:root[data-theme="pastelCatDream"] .record-type-tab.active,
+:root[data-theme="pastelCatDream"] .chart-tab-btn.active {
+    background: linear-gradient(135deg, rgba(255, 120, 173, 0.14) 0%, rgba(111, 183, 255, 0.12) 100%) !important;
+    border: 2px solid rgba(255, 120, 173, 0.32) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelCatDream"] .theme-modal-overlay,
+:root[data-theme="pastelCatDream"] .modal-overlay {
+    background: color-mix(in srgb, rgba(20, 14, 30, 0.55) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="pastelCatDream"] .btn,
+:root[data-theme="pastelCatDream"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 52%, white) !important;
+}
+
+:root[data-theme="pastelCatDream"] .btn:hover,
+:root[data-theme="pastelCatDream"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="pastelCatDream"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-secondary) 42%, white) !important;
+}
+
+:root[data-theme="pastelCatDream"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="pastelCatDream"] .dca-add-btn,
+:root[data-theme="pastelCatDream"] .form-submit-btn,
+:root[data-theme="pastelCatDream"] .entry-detail-edit-btn,
+:root[data-theme="pastelCatDream"] .entry-edit-save,
+:root[data-theme="pastelCatDream"] .investment-form-submit-btn,
+:root[data-theme="pastelCatDream"] .buy-btn,
+:root[data-theme="pastelCatDream"] .dca-execute-btn,
+:root[data-theme="pastelCatDream"] .buy-action-btn-large,
+:root[data-theme="pastelCatDream"] .allocation-btn.primary,
+:root[data-theme="pastelCatDream"] .modal-btn.confirm-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+:root[data-theme="pastelCatDream"] .dca-add-btn:hover,
+:root[data-theme="pastelCatDream"] .form-submit-btn:hover,
+:root[data-theme="pastelCatDream"] .entry-detail-edit-btn:hover,
+:root[data-theme="pastelCatDream"] .entry-edit-save:hover,
+:root[data-theme="pastelCatDream"] .investment-form-submit-btn:hover,
+:root[data-theme="pastelCatDream"] .buy-btn:hover,
+:root[data-theme="pastelCatDream"] .dca-execute-btn:hover,
+:root[data-theme="pastelCatDream"] .allocation-btn.primary:hover,
+:root[data-theme="pastelCatDream"] .modal-btn.confirm-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="pastelCatDream"] .allocation-btn,
+:root[data-theme="pastelCatDream"] .modal-btn.cancel-btn {
+    background: var(--action-side-bg) !important;
+    color: var(--action-side-text) !important;
+    border: 1px solid rgba(111, 183, 255, 0.22) !important;
+}
+
+:root[data-theme="pastelCatDream"] .back-btn,
+:root[data-theme="pastelCatDream"] .return-btn,
+:root[data-theme="pastelCatDream"] .input-back-btn,
+:root[data-theme="pastelCatDream"] .modal-back-btn,
+:root[data-theme="pastelCatDream"] .dca-back-btn,
+:root[data-theme="pastelCatDream"] .dca-setup-back-btn,
+:root[data-theme="pastelCatDream"] .investment-form-back-btn,
+:root[data-theme="pastelCatDream"] .dividend-back-btn {
+    background: var(--action-side-bg) !important;
+    border: 2px solid rgba(111, 183, 255, 0.24) !important;
+    color: var(--action-side-text) !important;
+}
+
+:root[data-theme="pastelCatDream"] .back-btn:hover,
+:root[data-theme="pastelCatDream"] .return-btn:hover,
+:root[data-theme="pastelCatDream"] .input-back-btn:hover,
+:root[data-theme="pastelCatDream"] .modal-back-btn:hover,
+:root[data-theme="pastelCatDream"] .dca-back-btn:hover,
+:root[data-theme="pastelCatDream"] .dca-setup-back-btn:hover,
+:root[data-theme="pastelCatDream"] .investment-form-back-btn:hover,
+:root[data-theme="pastelCatDream"] .dividend-back-btn:hover {
+    background: var(--action-side-bg-hover) !important;
+    border-color: rgba(255, 120, 173, 0.28) !important;
+}
+
+:root[data-theme="pastelCatDream"] .spending-analysis-panel,
+:root[data-theme="pastelCatDream"] .reminder-panel,
+:root[data-theme="pastelCatDream"] .smart-notification,
+:root[data-theme="pastelCatDream"] .quick-settings {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 22px 60px rgba(26, 18, 30, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelCatDream"] .panel-header,
+:root[data-theme="pastelCatDream"] .smart-suggestion-banner {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+    color: var(--text-white) !important;
+}
+
+:root[data-theme="pastelCatDream"] .insight-item.info,
+:root[data-theme="pastelCatDream"] .insight-item.warning,
+:root[data-theme="pastelCatDream"] .insight-item.error,
+:root[data-theme="pastelCatDream"] .recommendation-item,
+:root[data-theme="pastelCatDream"] .error-message,
+:root[data-theme="pastelCatDream"] .error-suggestion {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid rgba(111, 183, 255, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelCatDream"] .insight-item.info {
+    border-left-color: rgba(47, 121, 198, 0.75) !important;
+}
+
+:root[data-theme="pastelCatDream"] .insight-item.warning {
+    border-left-color: rgba(255, 120, 173, 0.75) !important;
+}
+
+:root[data-theme="pastelCatDream"] .insight-item.error,
+:root[data-theme="pastelCatDream"] .error-message {
+    border-left-color: rgba(210, 65, 112, 0.86) !important;
+}
+
+:root[data-theme="pastelCatDream"] .recommendation-item {
+    border-left-color: rgba(47, 121, 198, 0.72) !important;
+}
+
+:root[data-theme="pastelCatDream"] .advisor-quick-btn {
+    background: rgba(255, 120, 173, 0.10) !important;
+    border: 1px solid rgba(255, 120, 173, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelCatDream"] .advisor-quick-btn:hover {
+    background: rgba(111, 183, 255, 0.14) !important;
+    border-color: rgba(111, 183, 255, 0.22) !important;
+}
+
+:root[data-theme="pastelCatDream"] .advisor-chat-input-container {
+    background: rgba(255, 255, 255, 0.92) !important;
+}
+
+:root[data-theme="pastelCatDream"] .advisor-chat-input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(111, 183, 255, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pastelCatDream"] .advisor-send-btn {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%) !important;
+    color: var(--text-white) !important;
+}
+
+@media (max-width: 480px) {
+    :root[data-theme="pastelCatDream"] .history-advisor-chat {
+        width: 100% !important;
+        height: 70vh !important;
+        border-radius: 16px 16px 0 0 !important;
+    }
+}

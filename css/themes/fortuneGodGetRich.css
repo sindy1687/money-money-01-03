@@ -1,0 +1,315 @@
+:root[data-theme="fortuneGodGetRich"] {
+    --color-primary: #b11f2a;
+    --color-primary-light: #d34a52;
+    --color-primary-lighter: #ffe5e6;
+    --color-primary-dark: #5f0f16;
+
+    --color-secondary: #2f8f6a;
+    --color-secondary-light: #6ac7a6;
+    --color-secondary-dark: #1d5b43;
+
+    --color-accent: #f2b84b;
+    --color-accent-light: #ffe0a3;
+    --color-accent-dark: #c27a12;
+
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #f59e0b;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.88) 0%,
+        rgba(255, 246, 232, 0.72) 36%,
+        rgba(255, 228, 225, 0.66) 70%,
+        rgba(242, 184, 75, 0.22) 100%);
+
+    --bg-body: rgba(255, 255, 255, 0.78);
+    --bg-body-strong: rgba(255, 255, 255, 0.92);
+    --bg-dark: rgba(95, 15, 22, 0.82);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(255, 240, 235, 0.40) 55%,
+        rgba(177, 31, 42, 0.14) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.86) 0%,
+        rgba(255, 228, 225, 0.22) 100%);
+
+    --bg-white: rgba(255, 255, 255, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.90);
+    --bg-light: rgba(255, 255, 255, 0.84);
+    --bg-lighter: rgba(255, 246, 232, 0.70);
+    --bg-soft: rgba(177, 31, 42, 0.07);
+    --bg-soft-strong: rgba(177, 31, 42, 0.12);
+
+    --text-primary: rgba(32, 18, 18, 0.96);
+    --text-secondary: rgba(32, 18, 18, 0.78);
+    --text-tertiary: rgba(32, 18, 18, 0.62);
+    --text-strong: rgba(0, 0, 0, 0.96);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(177, 31, 42, 0.42);
+    --border-light: rgba(32, 18, 18, 0.12);
+    --border-medium: rgba(177, 31, 42, 0.22);
+    --card-border-color: rgba(242, 184, 75, 0.20);
+    --control-border-color: rgba(177, 31, 42, 0.22);
+    --table-border-color: rgba(32, 18, 18, 0.12);
+
+    --shadow-primary: 0 18px 54px rgba(95, 15, 22, 0.16);
+    --shadow-primary-lg: 0 28px 78px rgba(95, 15, 22, 0.14);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.90) 84%, rgba(177, 31, 42, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.90) 74%, rgba(177, 31, 42, 0.18));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 90%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 78%, var(--color-accent)) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 86%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 82%, var(--color-accent-dark)) 100%);
+
+    --action-buy-text: rgba(255, 255, 255, 0.98);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 86%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 74%, var(--color-secondary-light)) 55%,
+        color-mix(in srgb, var(--color-secondary) 68%, var(--color-primary-dark)) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 90%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 80%, var(--color-accent-dark)) 100%);
+
+    --action-dca-text: rgba(32, 18, 18, 0.96);
+}
+
+:root[data-theme="fortuneGodGetRich"] body {
+    background: url("https://i.pinimg.com/1200x/14/34/74/1434744422d640eb5d8d955a2a86247b.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="fortuneGodGetRich"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.92;
+    background-image:
+        radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.70), transparent 58%),
+        radial-gradient(circle at 78% 18%, rgba(242, 184, 75, 0.30), transparent 62%),
+        radial-gradient(circle at 64% 78%, rgba(47, 143, 106, 0.20), transparent 62%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.62) 55%, rgba(255, 255, 255, 0.76) 100%),
+        linear-gradient(180deg, rgba(177, 31, 42, 0.10) 0%, rgba(242, 184, 75, 0.10) 100%);
+}
+
+:root[data-theme="fortuneGodGetRich"] .page-ledger,
+:root[data-theme="fortuneGodGetRich"] .page-input,
+:root[data-theme="fortuneGodGetRich"] .page-chart,
+:root[data-theme="fortuneGodGetRich"] .page-budget,
+:root[data-theme="fortuneGodGetRich"] .page-monthly-planner,
+:root[data-theme="fortuneGodGetRich"] .page-daily-budget,
+:root[data-theme="fortuneGodGetRich"] .page-settings,
+:root[data-theme="fortuneGodGetRich"] .page-category-manage,
+:root[data-theme="fortuneGodGetRich"] .page-investment,
+:root[data-theme="fortuneGodGetRich"] .page-wallet,
+:root[data-theme="fortuneGodGetRich"] .page-history,
+:root[data-theme="fortuneGodGetRich"] .page-planner,
+:root[data-theme="fortuneGodGetRich"] .page-manage-investment,
+:root[data-theme="fortuneGodGetRich"] .page-annual-report,
+:root[data-theme="fortuneGodGetRich"] .page-diary,
+:root[data-theme="fortuneGodGetRich"] .page-installment,
+:root[data-theme="fortuneGodGetRich"] .installment-page,
+:root[data-theme="fortuneGodGetRich"] .dca-page,
+:root[data-theme="fortuneGodGetRich"] .fixed-deposit-page,
+:root[data-theme="fortuneGodGetRich"] .dividend-page,
+:root[data-theme="fortuneGodGetRich"] .dca-management-page,
+:root[data-theme="fortuneGodGetRich"] .dca-setup-page,
+:root[data-theme="fortuneGodGetRich"] .auto-transfer-management-page,
+:root[data-theme="fortuneGodGetRich"] .auto-transfer-setup-page,
+:root[data-theme="fortuneGodGetRich"] .investment-input-page,
+:root[data-theme="fortuneGodGetRich"] .wishlist-content,
+:root[data-theme="fortuneGodGetRich"] .savings-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .card,
+:root[data-theme="fortuneGodGetRich"] .record-card,
+:root[data-theme="fortuneGodGetRich"] .ledger-card,
+:root[data-theme="fortuneGodGetRich"] .summary-card,
+:root[data-theme="fortuneGodGetRich"] .budget-card,
+:root[data-theme="fortuneGodGetRich"] .wallet-card,
+:root[data-theme="fortuneGodGetRich"] .chart-card,
+:root[data-theme="fortuneGodGetRich"] .investment-card,
+:root[data-theme="fortuneGodGetRich"] .manage-investment-card,
+:root[data-theme="fortuneGodGetRich"] .annual-report-card,
+:root[data-theme="fortuneGodGetRich"] .diary-card,
+:root[data-theme="fortuneGodGetRich"] .monthly-planning-card,
+:root[data-theme="fortuneGodGetRich"] .investment-settings-card,
+:root[data-theme="fortuneGodGetRich"] .wallet-budget-card,
+:root[data-theme="fortuneGodGetRich"] .holding-card,
+:root[data-theme="fortuneGodGetRich"] .buying-card,
+:root[data-theme="fortuneGodGetRich"] .selling-card,
+:root[data-theme="fortuneGodGetRich"] .dividend-card,
+:root[data-theme="fortuneGodGetRich"] .regular-investment-card,
+:root[data-theme="fortuneGodGetRich"] .investment-management-card,
+:root[data-theme="fortuneGodGetRich"] .dca-card,
+:root[data-theme="fortuneGodGetRich"] .installment-card,
+:root[data-theme="fortuneGodGetRich"] .fixed-deposit-card {
+    background: var(--bg-card) !important;
+    border: 2px solid var(--card-border-color) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 14px 34px rgba(95, 15, 22, 0.12) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .theme-modal-overlay,
+:root[data-theme="fortuneGodGetRich"] .modal-overlay,
+:root[data-theme="fortuneGodGetRich"] .dialog-overlay {
+    background: color-mix(in srgb, rgba(95, 15, 22, 0.50) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="fortuneGodGetRich"] .modal-content,
+:root[data-theme="fortuneGodGetRich"] .modal-content-standard,
+:root[data-theme="fortuneGodGetRich"] .budget-category-modal-content,
+:root[data-theme="fortuneGodGetRich"] .budget-setting-modal-content,
+:root[data-theme="fortuneGodGetRich"] .category-modal-content,
+:root[data-theme="fortuneGodGetRich"] .dca-execute-modal .modal-content,
+:root[data-theme="fortuneGodGetRich"] .account-modal-content,
+:root[data-theme="fortuneGodGetRich"] .emoji-modal-content,
+:root[data-theme="fortuneGodGetRich"] .history-modal-content,
+:root[data-theme="fortuneGodGetRich"] .entry-detail-content,
+:root[data-theme="fortuneGodGetRich"] .theme-modal-content,
+:root[data-theme="fortuneGodGetRich"] .dialog-content,
+:root[data-theme="fortuneGodGetRich"] .dialog-container,
+:root[data-theme="fortuneGodGetRich"] .xiaosen-dialog,
+:root[data-theme="fortuneGodGetRich"] .komori-dialog,
+:root[data-theme="fortuneGodGetRich"] .mori-dialog-box,
+:root[data-theme="fortuneGodGetRich"] .theme-modal-container {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(255, 246, 232, 0.70)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="fortuneGodGetRich"] .spending-analysis-panel,
+:root[data-theme="fortuneGodGetRich"] .reminder-panel,
+:root[data-theme="fortuneGodGetRich"] .quick-settings,
+:root[data-theme="fortuneGodGetRich"] .smart-notification {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(255, 246, 232, 0.70)) !important;
+    border-color: var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="fortuneGodGetRich"] .btn,
+:root[data-theme="fortuneGodGetRich"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 60%, white) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .btn:hover,
+:root[data-theme="fortuneGodGetRich"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 55%, white) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .back-btn,
+:root[data-theme="fortuneGodGetRich"] .modal-back-btn,
+:root[data-theme="fortuneGodGetRich"] .return-btn,
+:root[data-theme="fortuneGodGetRich"] .input-back-btn,
+:root[data-theme="fortuneGodGetRich"] .dca-back-btn,
+:root[data-theme="fortuneGodGetRich"] .dca-setup-back-btn {
+    background: rgba(255, 255, 255, 0.86) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(177, 31, 42, 0.18) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .back-btn:hover,
+:root[data-theme="fortuneGodGetRich"] .modal-back-btn:hover,
+:root[data-theme="fortuneGodGetRich"] .return-btn:hover,
+:root[data-theme="fortuneGodGetRich"] .input-back-btn:hover,
+:root[data-theme="fortuneGodGetRich"] .dca-back-btn:hover,
+:root[data-theme="fortuneGodGetRich"] .dca-setup-back-btn:hover {
+    background: rgba(177, 31, 42, 0.08) !important;
+    border-color: rgba(177, 31, 42, 0.30) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 60%, white) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .form-input,
+:root[data-theme="fortuneGodGetRich"] .form-select,
+:root[data-theme="fortuneGodGetRich"] .form-textarea,
+:root[data-theme="fortuneGodGetRich"] .note-input,
+:root[data-theme="fortuneGodGetRich"] .theme-search-input {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 2px solid rgba(177, 31, 42, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .form-input:focus,
+:root[data-theme="fortuneGodGetRich"] .form-select:focus,
+:root[data-theme="fortuneGodGetRich"] .form-textarea:focus,
+:root[data-theme="fortuneGodGetRich"] .note-input:focus,
+:root[data-theme="fortuneGodGetRich"] .theme-search-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(177, 31, 42, 0.14) !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .key-btn.operator,
+:root[data-theme="fortuneGodGetRich"] .key-btn.clear,
+:root[data-theme="fortuneGodGetRich"] .key-btn.delete {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.92) 72%, rgba(177, 31, 42, 0.18)) !important;
+    border-color: rgba(177, 31, 42, 0.30) !important;
+    color: rgba(95, 15, 22, 0.96) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .key-btn.operator:hover,
+:root[data-theme="fortuneGodGetRich"] .key-btn.clear:hover,
+:root[data-theme="fortuneGodGetRich"] .key-btn.delete:hover {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.96) 66%, rgba(177, 31, 42, 0.26)) !important;
+    border-color: rgba(177, 31, 42, 0.44) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .key-btn.equal {
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 88%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 82%, var(--color-accent)) 100%) !important;
+    border-color: rgba(255, 255, 255, 0.65) !important;
+    color: rgba(255, 255, 255, 0.98) !important;
+}
+
+:root[data-theme="fortuneGodGetRich"] .key-btn.equal:hover {
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 86%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 86%, var(--color-accent-dark)) 100%) !important;
+}

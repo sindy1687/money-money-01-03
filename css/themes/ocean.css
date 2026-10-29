@@ -1,0 +1,23 @@
+﻿:root[data-theme="ocean"].dark,
+
+:root[data-theme="ocean"] {
+    --color-primary: #0ea5e9;
+    --color-primary-light: #22c55e;
+    --color-primary-lighter: #67e8f9;
+    --color-primary-dark: #0369a1;
+    --bg-primary: linear-gradient(135deg, #0ea5e9 0%, #22c55e 50%, #06b6d4 100%);
+    --bg-gradient: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(14, 165, 233, 0.10) 0%, rgba(6, 182, 212, 0.10) 100%);
+    --border-primary: #0ea5e9;
+    --shadow-primary: 0 2px 8px rgba(14, 165, 233, 0.20);
+    --shadow-primary-lg: 0 4px 12px rgba(6, 182, 212, 0.18);
+
+     --bg-white: rgba(17, 24, 39, 0.72);
+     --bg-light: rgba(17, 24, 39, 0.58);
+     --bg-lighter: rgba(17, 24, 39, 0.46);
+     --text-primary: rgba(255, 255, 255, 0.96);
+     --text-secondary: rgba(255, 255, 255, 0.86);
+     --text-tertiary: rgba(255, 255, 255, 0.72);
+     --border-light: rgba(255, 255, 255, 0.14);
+     --border-medium: rgba(255, 255, 255, 0.20);
+}

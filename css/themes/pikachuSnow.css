@@ -1,0 +1,384 @@
+:root[data-theme="pikachuSnow"] {
+    --color-primary: #1e5bff;
+    --color-primary-light: #5fa8ff;
+    --color-primary-lighter: #d7f1ff;
+    --color-primary-dark: #0a2a6a;
+
+    --color-secondary: #2aa9ff;
+    --color-secondary-light: #9fe5ff;
+    --color-secondary-dark: #0b4aa6;
+
+    --color-accent: #ffd24a;
+    --color-accent-light: #ffe8a3;
+    --color-accent-dark: #c78a00;
+
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #f59e0b;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(10, 42, 106, 0.88) 0%,
+        rgba(30, 91, 255, 0.46) 45%,
+        rgba(42, 169, 255, 0.28) 100%);
+
+    --bg-body: rgba(240, 250, 255, 0.78);
+    --bg-body-strong: rgba(240, 250, 255, 0.90);
+    --bg-dark: rgba(10, 42, 106, 0.78);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(30, 91, 255, 0.28) 0%,
+        rgba(42, 169, 255, 0.18) 55%,
+        rgba(255, 210, 74, 0.16) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(215, 241, 255, 0.66) 0%,
+        rgba(95, 168, 255, 0.22) 100%);
+
+    --bg-white: rgba(245, 252, 255, 0.86);
+    --bg-card: rgba(255, 255, 255, 0.86);
+    --bg-light: rgba(235, 248, 255, 0.78);
+    --bg-lighter: rgba(215, 241, 255, 0.66);
+    --bg-soft: rgba(30, 91, 255, 0.08);
+    --bg-soft-strong: rgba(30, 91, 255, 0.14);
+
+    --text-primary: rgba(6, 26, 64, 0.96);
+    --text-secondary: rgba(6, 26, 64, 0.78);
+    --text-tertiary: rgba(6, 26, 64, 0.62);
+    --text-strong: rgba(0, 0, 0, 0.96);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(30, 91, 255, 0.46);
+    --border-light: rgba(6, 26, 64, 0.12);
+    --border-medium: rgba(30, 91, 255, 0.22);
+    --card-border-color: rgba(30, 91, 255, 0.18);
+    --control-border-color: rgba(30, 91, 255, 0.22);
+    --table-border-color: rgba(6, 26, 64, 0.12);
+
+    --shadow-primary: 0 18px 54px rgba(10, 42, 106, 0.22);
+    --shadow-primary-lg: 0 28px 78px rgba(10, 42, 106, 0.20);
+
+    --color-primary-rgba-08: rgba(30, 91, 255, 0.08);
+    --color-primary-rgba-10: rgba(30, 91, 255, 0.10);
+    --color-primary-rgba-12: rgba(30, 91, 255, 0.12);
+    --color-primary-rgba-15: rgba(30, 91, 255, 0.15);
+    --color-primary-rgba-18: rgba(30, 91, 255, 0.18);
+    --color-primary-rgba-20: rgba(30, 91, 255, 0.20);
+    --color-primary-rgba-25: rgba(30, 91, 255, 0.25);
+    --color-primary-rgba-30: rgba(30, 91, 255, 0.30);
+    --color-primary-rgba-40: rgba(30, 91, 255, 0.40);
+
+    --color-primary-light-rgba-08: rgba(95, 168, 255, 0.08);
+    --color-primary-light-rgba-10: rgba(95, 168, 255, 0.10);
+    --color-primary-light-rgba-12: rgba(95, 168, 255, 0.12);
+    --color-primary-light-rgba-15: rgba(95, 168, 255, 0.15);
+    --color-primary-light-rgba-20: rgba(95, 168, 255, 0.20);
+    --color-primary-light-rgba-25: rgba(95, 168, 255, 0.25);
+    --color-primary-light-rgba-30: rgba(95, 168, 255, 0.30);
+    --color-primary-light-rgba-40: rgba(95, 168, 255, 0.40);
+
+    --color-secondary-rgba-20: rgba(42, 169, 255, 0.20);
+    --color-accent-rgba-30: rgba(255, 210, 74, 0.30);
+    --color-accent-rgba-40: rgba(255, 210, 74, 0.40);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.78) 0%,
+        rgba(215, 241, 255, 0.62) 100%);
+
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.78) 0%,
+        rgba(215, 241, 255, 0.62) 100%);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.86) 84%, rgba(30, 91, 255, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.86) 74%, rgba(30, 91, 255, 0.18));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 80%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 65%, var(--color-primary-dark)) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 78%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 82%, var(--color-primary-dark)) 100%);
+
+    --action-buy-text: rgba(255, 255, 255, 0.98);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent) 78%, white) 0%,
+        color-mix(in srgb, var(--color-accent-light) 72%, var(--color-primary-light)) 60%,
+        color-mix(in srgb, var(--color-secondary) 52%, var(--color-primary-dark)) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 82%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 78%, var(--color-accent-dark)) 100%);
+
+    --action-dca-text: rgba(6, 26, 64, 0.96);
+}
+
+:root[data-theme="pikachuSnow"] body {
+    background: url("https://i.pinimg.com/736x/09/47/3b/09473b4845e1a576e384d8185f0b0adc.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="pikachuSnow"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.62), transparent 55%),
+        radial-gradient(circle at 70% 22%, rgba(42, 169, 255, 0.22), transparent 60%),
+        radial-gradient(circle at 60% 70%, rgba(255, 210, 74, 0.14), transparent 62%),
+        linear-gradient(135deg, rgba(10, 42, 106, 0.72) 0%, rgba(10, 42, 106, 0.46) 55%, rgba(10, 42, 106, 0.68) 100%);
+}
+
+:root[data-theme="pikachuSnow"] .page-ledger,
+:root[data-theme="pikachuSnow"] .page-input,
+:root[data-theme="pikachuSnow"] .page-chart,
+:root[data-theme="pikachuSnow"] .page-budget,
+:root[data-theme="pikachuSnow"] .page-monthly-planner,
+:root[data-theme="pikachuSnow"] .page-daily-budget,
+:root[data-theme="pikachuSnow"] .page-settings,
+:root[data-theme="pikachuSnow"] .page-category-manage,
+:root[data-theme="pikachuSnow"] .page-investment,
+:root[data-theme="pikachuSnow"] .page-wallet,
+:root[data-theme="pikachuSnow"] .page-history,
+:root[data-theme="pikachuSnow"] .page-planner,
+:root[data-theme="pikachuSnow"] .page-installment,
+:root[data-theme="pikachuSnow"] .installment-page,
+:root[data-theme="pikachuSnow"] .dca-page,
+:root[data-theme="pikachuSnow"] .fixed-deposit-page,
+:root[data-theme="pikachuSnow"] .dividend-page,
+:root[data-theme="pikachuSnow"] .dca-management-page,
+:root[data-theme="pikachuSnow"] .dca-setup-page,
+:root[data-theme="pikachuSnow"] .investment-input-page,
+:root[data-theme="pikachuSnow"] .wishlist-content,
+:root[data-theme="pikachuSnow"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="pikachuSnow"] .card,
+:root[data-theme="pikachuSnow"] .record-card,
+:root[data-theme="pikachuSnow"] .ledger-card,
+:root[data-theme="pikachuSnow"] .summary-card,
+:root[data-theme="pikachuSnow"] .budget-card,
+:root[data-theme="pikachuSnow"] .wallet-card,
+:root[data-theme="pikachuSnow"] .chart-card,
+:root[data-theme="pikachuSnow"] .investment-card,
+:root[data-theme="pikachuSnow"] .holding-card,
+:root[data-theme="pikachuSnow"] .buying-card,
+:root[data-theme="pikachuSnow"] .selling-card,
+:root[data-theme="pikachuSnow"] .dividend-card,
+:root[data-theme="pikachuSnow"] .regular-investment-card,
+:root[data-theme="pikachuSnow"] .investment-management-card,
+:root[data-theme="pikachuSnow"] .stock-item-card,
+:root[data-theme="pikachuSnow"] .monthly-planner-card,
+:root[data-theme="pikachuSnow"] .dividend-stat-card,
+:root[data-theme="pikachuSnow"] .dca-card,
+:root[data-theme="pikachuSnow"] .installment-card,
+:root[data-theme="pikachuSnow"] .fixed-deposit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--shadow-primary);
+    color: var(--text-primary);
+    backdrop-filter: blur(14px);
+}
+
+:root[data-theme="pikachuSnow"] .investment-card::before,
+:root[data-theme="pikachuSnow"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.62) 0%,
+        rgba(215, 241, 255, 0.38) 55%,
+        rgba(255, 210, 74, 0.18) 100%);
+}
+
+:root[data-theme="pikachuSnow"] .modal-content,
+:root[data-theme="pikachuSnow"] .modal-content-standard,
+:root[data-theme="pikachuSnow"] .budget-category-modal-content,
+:root[data-theme="pikachuSnow"] .budget-setting-modal-content,
+:root[data-theme="pikachuSnow"] .category-modal-content,
+:root[data-theme="pikachuSnow"] .dca-execute-modal .modal-content,
+:root[data-theme="pikachuSnow"] .account-modal-content,
+:root[data-theme="pikachuSnow"] .emoji-modal-content,
+:root[data-theme="pikachuSnow"] .history-modal-content,
+:root[data-theme="pikachuSnow"] .entry-detail-content,
+:root[data-theme="pikachuSnow"] .theme-modal-content {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(215, 241, 255, 0.70)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="pikachuSnow"] .input-section {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(215, 241, 255, 0.60)) !important;
+    border-top: 2px solid rgba(30, 91, 255, 0.22) !important;
+    box-shadow: 0 -10px 28px rgba(10, 42, 106, 0.20);
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="pikachuSnow"] .bottom-nav {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.82) 90%, rgba(215, 241, 255, 0.65)) !important;
+    border-top: 1px solid rgba(30, 91, 255, 0.16) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="pikachuSnow"] .form-input,
+:root[data-theme="pikachuSnow"] .form-select,
+:root[data-theme="pikachuSnow"] .form-textarea,
+:root[data-theme="pikachuSnow"] .note-input,
+:root[data-theme="pikachuSnow"] .theme-search-input {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 2px solid rgba(30, 91, 255, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pikachuSnow"] .form-input:focus,
+:root[data-theme="pikachuSnow"] .form-select:focus,
+:root[data-theme="pikachuSnow"] .form-textarea:focus,
+:root[data-theme="pikachuSnow"] .note-input:focus,
+:root[data-theme="pikachuSnow"] .theme-search-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(30, 91, 255, 0.18) !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+}
+
+:root[data-theme="pikachuSnow"] .header-section,
+:root[data-theme="pikachuSnow"] .ledger-header,
+:root[data-theme="pikachuSnow"] .chart-header,
+:root[data-theme="pikachuSnow"] .budget-header,
+:root[data-theme="pikachuSnow"] .monthly-planner-header,
+:root[data-theme="pikachuSnow"] .theme-modal-header {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.78) 88%, rgba(215, 241, 255, 0.75)) !important;
+    border-bottom: 1px solid rgba(30, 91, 255, 0.14) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="pikachuSnow"] .tab-btn,
+:root[data-theme="pikachuSnow"] .chart-tab-btn,
+:root[data-theme="pikachuSnow"] .ledger-type-tab,
+:root[data-theme="pikachuSnow"] .record-type-tab,
+:root[data-theme="pikachuSnow"] .category-tab {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid rgba(30, 91, 255, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pikachuSnow"] .tab-btn.active,
+:root[data-theme="pikachuSnow"] .chart-tab-btn.active,
+:root[data-theme="pikachuSnow"] .ledger-type-tab.active,
+:root[data-theme="pikachuSnow"] .record-type-tab.active,
+:root[data-theme="pikachuSnow"] .category-tab.active {
+    background: rgba(30, 91, 255, 0.14) !important;
+    border: 2px solid rgba(30, 91, 255, 0.32) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 12px 28px rgba(10, 42, 106, 0.18) !important;
+}
+
+:root[data-theme="pikachuSnow"] .tab-btn:hover,
+:root[data-theme="pikachuSnow"] .chart-tab-btn:hover,
+:root[data-theme="pikachuSnow"] .ledger-type-tab:hover,
+:root[data-theme="pikachuSnow"] .record-type-tab:hover,
+:root[data-theme="pikachuSnow"] .category-tab:hover {
+    background: rgba(30, 91, 255, 0.10) !important;
+    border-color: rgba(30, 91, 255, 0.22) !important;
+}
+
+:root[data-theme="pikachuSnow"] .key-btn {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 2px solid rgba(30, 91, 255, 0.18) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 26px rgba(10, 42, 106, 0.12) !important;
+}
+
+:root[data-theme="pikachuSnow"] .key-btn:hover {
+    background: rgba(30, 91, 255, 0.10) !important;
+    border-color: rgba(30, 91, 255, 0.26) !important;
+}
+
+:root[data-theme="pikachuSnow"] .key-btn.operator {
+    background: rgba(30, 91, 255, 0.14) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="pikachuSnow"] .nav-item.active {
+    background: rgba(30, 91, 255, 0.12);
+    box-shadow: 0 10px 26px rgba(10, 42, 106, 0.16);
+}
+
+:root[data-theme="pikachuSnow"] .btn,
+:root[data-theme="pikachuSnow"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 62%, white) !important;
+}
+
+:root[data-theme="pikachuSnow"] .btn:hover,
+:root[data-theme="pikachuSnow"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="pikachuSnow"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 55%, white) !important;
+}
+
+:root[data-theme="pikachuSnow"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="pikachuSnow"] .back-btn,
+:root[data-theme="pikachuSnow"] .modal-back-btn,
+:root[data-theme="pikachuSnow"] .return-btn,
+:root[data-theme="pikachuSnow"] .input-back-btn,
+:root[data-theme="pikachuSnow"] .dca-back-btn,
+:root[data-theme="pikachuSnow"] .dca-setup-back-btn {
+    background: rgba(255, 255, 255, 0.82) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(30, 91, 255, 0.18) !important;
+}
+
+:root[data-theme="pikachuSnow"] .back-btn:hover,
+:root[data-theme="pikachuSnow"] .modal-back-btn:hover,
+:root[data-theme="pikachuSnow"] .return-btn:hover,
+:root[data-theme="pikachuSnow"] .input-back-btn:hover,
+:root[data-theme="pikachuSnow"] .dca-back-btn:hover,
+:root[data-theme="pikachuSnow"] .dca-setup-back-btn:hover {
+    background: rgba(30, 91, 255, 0.10) !important;
+    border-color: rgba(30, 91, 255, 0.28) !important;
+}
+
+:root[data-theme="pikachuSnow"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 62%, white) !important;
+}
+
+:root[data-theme="pikachuSnow"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="pikachuSnow"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(37, 99, 235, 0.12)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="pikachuSnow"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(245, 158, 11, 0.12)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="pikachuSnow"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(220, 38, 38, 0.10)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="pikachuSnow"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(22, 163, 74, 0.10)) !important;
+    border-left-color: var(--color-success) !important;
+}

@@ -1,0 +1,31 @@
+﻿:root[data-theme="purple"].dark,
+
+:root[data-theme="purple"] {
+    --color-primary: #9c27b0;
+    --color-primary-light: #ba68c8;
+    --color-primary-lighter: #ab47bc;
+    --color-primary-dark: #7b1fa2;
+    --bg-primary: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%);
+    --bg-gradient: linear-gradient(135deg, #ba68c8 0%, #ab47bc 100%);
+    --bg-gradient-light: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%);
+    --border-primary: #9c27b0;
+    --shadow-primary: 0 2px 8px rgba(156, 39, 176, 0.25);
+    --shadow-primary-lg: 0 4px 12px rgba(156, 39, 176, 0.3);
+    --color-primary-rgba-08: rgba(156, 39, 176, 0.08);
+    --color-primary-rgba-10: rgba(156, 39, 176, 0.1);
+    --color-primary-rgba-15: rgba(156, 39, 176, 0.15);
+    --color-primary-rgba-20: rgba(156, 39, 176, 0.2);
+    --color-primary-rgba-25: rgba(156, 39, 176, 0.25);
+    --color-primary-rgba-30: rgba(156, 39, 176, 0.3);
+    --color-primary-rgba-12: rgba(156, 39, 176, 0.12);
+    --color-primary-rgba-18: rgba(156, 39, 176, 0.18);
+    --color-primary-light-rgba-08: rgba(186, 104, 200, 0.08);
+    --color-primary-light-rgba-10: rgba(186, 104, 200, 0.1);
+    --color-primary-light-rgba-15: rgba(186, 104, 200, 0.15);
+    --color-primary-light-rgba-20: rgba(186, 104, 200, 0.2);
+    --color-primary-light-rgba-25: rgba(186, 104, 200, 0.25);
+    --color-primary-light-rgba-30: rgba(186, 104, 200, 0.3);
+    --color-primary-light-rgba-40: rgba(186, 104, 200, 0.4);
+    --bg-light-gradient: linear-gradient(135deg, var(--bg-white) 0%, #fce4ec 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, #fce4ec 0%, var(--bg-white) 100%);
+}

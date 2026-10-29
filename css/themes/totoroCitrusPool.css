@@ -1,0 +1,416 @@
+:root[data-theme="totoroCitrusPool"] {
+    --color-primary: #2bb6b1;
+    --color-primary-light: #6ad3ce;
+    --color-primary-lighter: #d8fbf7;
+    --color-primary-dark: #0b4e56;
+
+    --color-secondary: #1f7b86;
+    --color-secondary-light: #5ab4bd;
+    --color-secondary-dark: #0a3138;
+
+    --color-accent: #b7e24a;
+    --color-accent-light: #e3f9a6;
+    --color-accent-dark: #5f8f1b;
+
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #f59e0b;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(11, 49, 56, 0.90) 0%,
+        rgba(31, 123, 134, 0.46) 52%,
+        rgba(183, 226, 74, 0.22) 100%);
+
+    --bg-body: rgba(240, 253, 250, 0.76);
+    --bg-body-strong: rgba(240, 253, 250, 0.90);
+    --bg-dark: rgba(10, 49, 56, 0.78);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(240, 253, 250, 0.58) 0%,
+        rgba(216, 251, 247, 0.34) 55%,
+        rgba(31, 123, 134, 0.16) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.80) 0%,
+        rgba(216, 251, 247, 0.22) 100%);
+
+    --bg-white: rgba(249, 255, 253, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.88);
+    --bg-light: rgba(240, 253, 250, 0.82);
+    --bg-lighter: rgba(216, 251, 247, 0.70);
+    --bg-soft: rgba(43, 182, 177, 0.08);
+    --bg-soft-strong: rgba(43, 182, 177, 0.14);
+
+    --text-primary: rgba(7, 25, 28, 0.96);
+    --text-secondary: rgba(7, 25, 28, 0.78);
+    --text-tertiary: rgba(7, 25, 28, 0.62);
+    --text-strong: rgba(0, 0, 0, 0.96);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(43, 182, 177, 0.44);
+    --border-light: rgba(7, 25, 28, 0.12);
+    --border-medium: rgba(43, 182, 177, 0.22);
+    --card-border-color: rgba(31, 123, 134, 0.18);
+    --control-border-color: rgba(43, 182, 177, 0.22);
+    --table-border-color: rgba(7, 25, 28, 0.12);
+
+    --shadow-primary: 0 18px 54px rgba(10, 49, 56, 0.20);
+    --shadow-primary-lg: 0 28px 78px rgba(10, 49, 56, 0.18);
+
+    --color-primary-rgba-08: rgba(43, 182, 177, 0.08);
+    --color-primary-rgba-10: rgba(43, 182, 177, 0.10);
+    --color-primary-rgba-12: rgba(43, 182, 177, 0.12);
+    --color-primary-rgba-15: rgba(43, 182, 177, 0.15);
+    --color-primary-rgba-18: rgba(43, 182, 177, 0.18);
+    --color-primary-rgba-20: rgba(43, 182, 177, 0.20);
+    --color-primary-rgba-25: rgba(43, 182, 177, 0.25);
+    --color-primary-rgba-30: rgba(43, 182, 177, 0.30);
+    --color-primary-rgba-40: rgba(43, 182, 177, 0.40);
+
+    --color-primary-light-rgba-08: rgba(106, 211, 206, 0.08);
+    --color-primary-light-rgba-10: rgba(106, 211, 206, 0.10);
+    --color-primary-light-rgba-12: rgba(106, 211, 206, 0.12);
+    --color-primary-light-rgba-15: rgba(106, 211, 206, 0.15);
+    --color-primary-light-rgba-20: rgba(106, 211, 206, 0.20);
+    --color-primary-light-rgba-25: rgba(106, 211, 206, 0.25);
+    --color-primary-light-rgba-30: rgba(106, 211, 206, 0.30);
+    --color-primary-light-rgba-40: rgba(106, 211, 206, 0.40);
+
+    --color-secondary-rgba-20: rgba(31, 123, 134, 0.20);
+    --color-accent-rgba-30: rgba(183, 226, 74, 0.30);
+    --color-accent-rgba-40: rgba(183, 226, 74, 0.40);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.80) 0%,
+        rgba(240, 253, 250, 0.62) 100%);
+
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.80) 0%,
+        rgba(240, 253, 250, 0.62) 100%);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.88) 84%, rgba(43, 182, 177, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.88) 74%, rgba(43, 182, 177, 0.18));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 88%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 72%, var(--color-secondary)) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 86%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 80%, var(--color-secondary-dark)) 100%);
+
+    --action-buy-text: rgba(255, 255, 255, 0.98);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 84%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 72%, var(--color-primary)) 55%,
+        color-mix(in srgb, var(--color-secondary) 70%, var(--color-secondary-dark)) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 88%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 78%, var(--color-accent-dark)) 100%);
+
+    --action-dca-text: rgba(7, 25, 28, 0.96);
+}
+
+:root[data-theme="totoroCitrusPool"] body {
+    background: url("https://i.pinimg.com/736x/93/90/fc/9390fceb4e3f56bcbf59ff6e12698228.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="totoroCitrusPool"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.54), transparent 58%),
+        radial-gradient(circle at 74% 26%, rgba(183, 226, 74, 0.20), transparent 62%),
+        radial-gradient(circle at 60% 82%, rgba(43, 182, 177, 0.18), transparent 64%),
+        linear-gradient(135deg, rgba(10, 49, 56, 0.74) 0%, rgba(10, 49, 56, 0.46) 55%, rgba(10, 49, 56, 0.70) 100%);
+}
+
+:root[data-theme="totoroCitrusPool"] .page-ledger,
+:root[data-theme="totoroCitrusPool"] .page-input,
+:root[data-theme="totoroCitrusPool"] .page-chart,
+:root[data-theme="totoroCitrusPool"] .page-budget,
+:root[data-theme="totoroCitrusPool"] .page-monthly-planner,
+:root[data-theme="totoroCitrusPool"] .page-daily-budget,
+:root[data-theme="totoroCitrusPool"] .page-settings,
+:root[data-theme="totoroCitrusPool"] .page-category-manage,
+:root[data-theme="totoroCitrusPool"] .page-investment,
+:root[data-theme="totoroCitrusPool"] .page-wallet,
+:root[data-theme="totoroCitrusPool"] .page-history,
+:root[data-theme="totoroCitrusPool"] .page-planner,
+:root[data-theme="totoroCitrusPool"] .page-installment,
+:root[data-theme="totoroCitrusPool"] .installment-page,
+:root[data-theme="totoroCitrusPool"] .dca-page,
+:root[data-theme="totoroCitrusPool"] .fixed-deposit-page,
+:root[data-theme="totoroCitrusPool"] .dividend-page,
+:root[data-theme="totoroCitrusPool"] .dca-management-page,
+:root[data-theme="totoroCitrusPool"] .dca-setup-page,
+:root[data-theme="totoroCitrusPool"] .auto-transfer-management-page,
+:root[data-theme="totoroCitrusPool"] .auto-transfer-setup-page,
+:root[data-theme="totoroCitrusPool"] .investment-input-page,
+:root[data-theme="totoroCitrusPool"] .wishlist-content,
+:root[data-theme="totoroCitrusPool"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="totoroCitrusPool"] .card,
+:root[data-theme="totoroCitrusPool"] .record-card,
+:root[data-theme="totoroCitrusPool"] .ledger-card,
+:root[data-theme="totoroCitrusPool"] .summary-card,
+:root[data-theme="totoroCitrusPool"] .budget-card,
+:root[data-theme="totoroCitrusPool"] .wallet-card,
+:root[data-theme="totoroCitrusPool"] .chart-card,
+:root[data-theme="totoroCitrusPool"] .investment-card,
+:root[data-theme="totoroCitrusPool"] .holding-card,
+:root[data-theme="totoroCitrusPool"] .buying-card,
+:root[data-theme="totoroCitrusPool"] .selling-card,
+:root[data-theme="totoroCitrusPool"] .dividend-card,
+:root[data-theme="totoroCitrusPool"] .regular-investment-card,
+:root[data-theme="totoroCitrusPool"] .investment-management-card,
+:root[data-theme="totoroCitrusPool"] .stock-item-card,
+:root[data-theme="totoroCitrusPool"] .monthly-planner-card,
+:root[data-theme="totoroCitrusPool"] .dividend-stat-card,
+:root[data-theme="totoroCitrusPool"] .dca-card,
+:root[data-theme="totoroCitrusPool"] .installment-card,
+:root[data-theme="totoroCitrusPool"] .fixed-deposit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--shadow-primary);
+    color: var(--text-primary);
+    backdrop-filter: blur(14px);
+}
+
+:root[data-theme="totoroCitrusPool"] .investment-card::before,
+:root[data-theme="totoroCitrusPool"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.60) 0%,
+        rgba(216, 251, 247, 0.34) 55%,
+        rgba(31, 123, 134, 0.16) 100%);
+}
+
+:root[data-theme="totoroCitrusPool"] .theme-modal-overlay,
+:root[data-theme="totoroCitrusPool"] .modal-overlay {
+    background: color-mix(in srgb, rgba(10, 49, 56, 0.58) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="totoroCitrusPool"] .dialog-overlay {
+    background: color-mix(in srgb, rgba(10, 49, 56, 0.58) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="totoroCitrusPool"] .modal-content,
+:root[data-theme="totoroCitrusPool"] .modal-content-standard,
+:root[data-theme="totoroCitrusPool"] .budget-category-modal-content,
+:root[data-theme="totoroCitrusPool"] .budget-setting-modal-content,
+:root[data-theme="totoroCitrusPool"] .category-modal-content,
+:root[data-theme="totoroCitrusPool"] .dca-execute-modal .modal-content,
+:root[data-theme="totoroCitrusPool"] .account-modal-content,
+:root[data-theme="totoroCitrusPool"] .emoji-modal-content,
+:root[data-theme="totoroCitrusPool"] .history-modal-content,
+:root[data-theme="totoroCitrusPool"] .entry-detail-content,
+:root[data-theme="totoroCitrusPool"] .theme-modal-content {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(216, 251, 247, 0.72)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="totoroCitrusPool"] .dialog-content {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(216, 251, 247, 0.72)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="totoroCitrusPool"] .spending-analysis-panel,
+:root[data-theme="totoroCitrusPool"] .reminder-panel,
+:root[data-theme="totoroCitrusPool"] .quick-settings,
+:root[data-theme="totoroCitrusPool"] .smart-notification {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(216, 251, 247, 0.72)) !important;
+    border-color: var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="totoroCitrusPool"] .input-section {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(216, 251, 247, 0.58)) !important;
+    border-top: 2px solid rgba(43, 182, 177, 0.22) !important;
+    box-shadow: 0 -10px 28px rgba(10, 49, 56, 0.16);
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="totoroCitrusPool"] .bottom-nav {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.82) 90%, rgba(216, 251, 247, 0.62)) !important;
+    border-top: 1px solid rgba(43, 182, 177, 0.14) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="totoroCitrusPool"] .form-input,
+:root[data-theme="totoroCitrusPool"] .form-select,
+:root[data-theme="totoroCitrusPool"] .form-textarea,
+:root[data-theme="totoroCitrusPool"] .note-input,
+:root[data-theme="totoroCitrusPool"] .theme-search-input {
+    background: rgba(255, 255, 255, 0.90) !important;
+    border: 2px solid rgba(43, 182, 177, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .form-input:focus,
+:root[data-theme="totoroCitrusPool"] .form-select:focus,
+:root[data-theme="totoroCitrusPool"] .form-textarea:focus,
+:root[data-theme="totoroCitrusPool"] .note-input:focus,
+:root[data-theme="totoroCitrusPool"] .theme-search-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(43, 182, 177, 0.16) !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .header-section,
+:root[data-theme="totoroCitrusPool"] .ledger-header,
+:root[data-theme="totoroCitrusPool"] .chart-header,
+:root[data-theme="totoroCitrusPool"] .budget-header,
+:root[data-theme="totoroCitrusPool"] .monthly-planner-header,
+:root[data-theme="totoroCitrusPool"] .theme-modal-header {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.78) 88%, rgba(216, 251, 247, 0.72)) !important;
+    border-bottom: 1px solid rgba(43, 182, 177, 0.14) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="totoroCitrusPool"] .tab-btn,
+:root[data-theme="totoroCitrusPool"] .chart-tab-btn,
+:root[data-theme="totoroCitrusPool"] .ledger-type-tab,
+:root[data-theme="totoroCitrusPool"] .record-type-tab,
+:root[data-theme="totoroCitrusPool"] .category-tab {
+    background: rgba(255, 255, 255, 0.84) !important;
+    border: 1px solid rgba(43, 182, 177, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .tab-btn.active,
+:root[data-theme="totoroCitrusPool"] .chart-tab-btn.active,
+:root[data-theme="totoroCitrusPool"] .ledger-type-tab.active,
+:root[data-theme="totoroCitrusPool"] .record-type-tab.active,
+:root[data-theme="totoroCitrusPool"] .category-tab.active {
+    background: rgba(43, 182, 177, 0.12) !important;
+    border: 2px solid rgba(43, 182, 177, 0.30) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 12px 28px rgba(10, 49, 56, 0.12) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .tab-btn:hover,
+:root[data-theme="totoroCitrusPool"] .chart-tab-btn:hover,
+:root[data-theme="totoroCitrusPool"] .ledger-type-tab:hover,
+:root[data-theme="totoroCitrusPool"] .record-type-tab:hover,
+:root[data-theme="totoroCitrusPool"] .category-tab:hover {
+    background: rgba(43, 182, 177, 0.08) !important;
+    border-color: rgba(43, 182, 177, 0.22) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .key-btn {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border: 2px solid rgba(43, 182, 177, 0.18) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 26px rgba(10, 49, 56, 0.10) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .key-btn:hover {
+    background: rgba(43, 182, 177, 0.08) !important;
+    border-color: rgba(43, 182, 177, 0.26) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .key-btn.operator {
+    background: rgba(43, 182, 177, 0.12) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .nav-item.active {
+    background: rgba(43, 182, 177, 0.10);
+    box-shadow: 0 10px 26px rgba(10, 49, 56, 0.12);
+}
+
+:root[data-theme="totoroCitrusPool"] .btn,
+:root[data-theme="totoroCitrusPool"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 60%, white) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .btn:hover,
+:root[data-theme="totoroCitrusPool"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 55%, white) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .back-btn,
+:root[data-theme="totoroCitrusPool"] .modal-back-btn,
+:root[data-theme="totoroCitrusPool"] .return-btn,
+:root[data-theme="totoroCitrusPool"] .input-back-btn,
+:root[data-theme="totoroCitrusPool"] .dca-back-btn,
+:root[data-theme="totoroCitrusPool"] .dca-setup-back-btn {
+    background: rgba(255, 255, 255, 0.84) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(43, 182, 177, 0.18) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .back-btn:hover,
+:root[data-theme="totoroCitrusPool"] .modal-back-btn:hover,
+:root[data-theme="totoroCitrusPool"] .return-btn:hover,
+:root[data-theme="totoroCitrusPool"] .input-back-btn:hover,
+:root[data-theme="totoroCitrusPool"] .dca-back-btn:hover,
+:root[data-theme="totoroCitrusPool"] .dca-setup-back-btn:hover {
+    background: rgba(43, 182, 177, 0.08) !important;
+    border-color: rgba(43, 182, 177, 0.28) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 60%, white) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(37, 99, 235, 0.12)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(245, 158, 11, 0.12)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(220, 38, 38, 0.10)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="totoroCitrusPool"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(22, 163, 74, 0.10)) !important;
+    border-left-color: var(--color-success) !important;
+}

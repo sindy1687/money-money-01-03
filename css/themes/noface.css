@@ -1,0 +1,316 @@
+﻿:root[data-theme="noface"] {
+    --color-primary: #f6c343;
+    --color-primary-light: #ffe08a;
+    --color-primary-lighter: #ffe3a6;
+    --color-primary-dark: #1f1b24;
+    --bg-primary: linear-gradient(135deg, #0f0c12 0%, #1f1b24 55%, #f6c343 100%);
+    --bg-gradient: linear-gradient(135deg, rgba(246, 195, 67, 0.35) 0%, rgba(38, 32, 44, 0.85) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(31, 27, 36, 0.85) 0%, rgba(20, 17, 24, 0.9) 60%, rgba(246, 195, 67, 0.2) 100%);
+    --bg-light-gradient: linear-gradient(135deg, rgba(31, 27, 36, 0.92) 0%, rgba(17, 15, 21, 0.94) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(20, 17, 24, 0.96) 0%, rgba(31, 27, 36, 0.92) 100%);
+    --bg-card: rgba(24, 20, 27, 0.9);
+    --bg-white: rgba(20, 17, 24, 0.92);
+    --bg-light: rgba(31, 27, 36, 0.85);
+    --bg-lighter: rgba(38, 32, 44, 0.78);
+    --text-primary: #f9f6ef;
+    --text-secondary: rgba(249, 246, 239, 0.78);
+    --text-tertiary: rgba(249, 246, 239, 0.6);
+    --border-light: rgba(246, 195, 67, 0.35);
+    --border-medium: rgba(255, 232, 141, 0.4);
+    --card-border-color: rgba(246, 195, 67, 0.45);
+    --card-border-color-strong: rgba(255, 224, 138, 0.55);
+    --border-primary: #f6c343;
+    --shadow-primary: 0 12px 30px rgba(0, 0, 0, 0.55);
+    --shadow-primary-lg: 0 18px 40px rgba(0, 0, 0, 0.65);
+    --color-primary-rgba-08: rgba(246, 195, 67, 0.08);
+    --color-primary-rgba-10: rgba(246, 195, 67, 0.10);
+    --color-primary-rgba-12: rgba(246, 195, 67, 0.12);
+    --color-primary-rgba-15: rgba(246, 195, 67, 0.15);
+    --color-primary-rgba-20: rgba(246, 195, 67, 0.2);
+    --color-primary-rgba-25: rgba(246, 195, 67, 0.25);
+    --color-primary-rgba-30: rgba(246, 195, 67, 0.3);
+    --color-primary-rgba-40: rgba(246, 195, 67, 0.4);
+    --color-primary-light-rgba-08: rgba(255, 224, 138, 0.08);
+    --color-primary-light-rgba-10: rgba(255, 224, 138, 0.10);
+    --color-primary-light-rgba-12: rgba(255, 224, 138, 0.12);
+    --color-primary-light-rgba-15: rgba(255, 224, 138, 0.15);
+    --color-primary-light-rgba-20: rgba(255, 224, 138, 0.2);
+    --color-primary-light-rgba-25: rgba(255, 224, 138, 0.25);
+    --color-primary-light-rgba-30: rgba(255, 224, 138, 0.3);
+    --color-primary-light-rgba-40: rgba(255, 224, 138, 0.4);
+}
+
+:root[data-theme="noface"] body {
+    background: url("https://i.pinimg.com/1200x/fe/b3/f9/feb3f9990f903e1b7b0f4a2066a97722.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+}
+
+:root[data-theme="noface"] body::before {
+    display: none;
+}
+
+:root[data-theme="noface"] .page-input,
+
+:root[data-theme="noface"] .page-ledger,
+
+:root[data-theme="noface"] .page-chart,
+
+:root[data-theme="noface"] .page-budget,
+
+:root[data-theme="noface"] .page-monthly-planner,
+
+:root[data-theme="noface"] .page-daily-budget,
+
+:root[data-theme="noface"] .page-settings,
+
+:root[data-theme="noface"] .page-category-manage,
+
+:root[data-theme="noface"] .page-investment,
+
+:root[data-theme="noface"] .page-wallet,
+
+:root[data-theme="noface"] .page-history,
+
+:root[data-theme="noface"] .page-planner,
+
+:root[data-theme="noface"] .dividend-page,
+
+:root[data-theme="noface"] .dca-management-page,
+
+:root[data-theme="noface"] .dca-setup-page,
+
+:root[data-theme="noface"] .investment-input-page,
+
+:root[data-theme="noface"] .wishlist-content,
+
+:root[data-theme="noface"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="noface"] .card,
+
+:root[data-theme="noface"] .record-card,
+
+:root[data-theme="noface"] .ledger-card,
+
+:root[data-theme="noface"] .summary-card,
+
+:root[data-theme="noface"] .budget-card,
+
+:root[data-theme="noface"] .wallet-card,
+
+:root[data-theme="noface"] .chart-card,
+
+:root[data-theme="noface"] .investment-card,
+
+:root[data-theme="noface"] .stock-item-card,
+
+:root[data-theme="noface"] .monthly-planner-card,
+
+:root[data-theme="noface"] .dividend-stat-card,
+
+:root[data-theme="noface"] .dca-card,
+
+:root[data-theme="noface"] .installment-card {
+    background: rgba(14, 12, 18, 0.98);
+    border: 1px solid rgba(246, 195, 67, 0.35);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+    color: var(--text-primary);
+}
+
+:root[data-theme="noface"] .card .value,
+
+:root[data-theme="noface"] .summary-value,
+
+:root[data-theme="noface"] .summary-label,
+
+:root[data-theme="noface"] .stock-card-value,
+
+:root[data-theme="noface"] .stock-card-label,
+
+:root[data-theme="noface"] .stock-card-name,
+
+:root[data-theme="noface"] .stat-label,
+
+:root[data-theme="noface"] .stat-value,
+
+:root[data-theme="noface"] .budget-summary-value,
+
+:root[data-theme="noface"] .budget-summary-label,
+
+:root[data-theme="noface"] .transaction-amount,
+
+:root[data-theme="noface"] .transaction-category,
+
+:root[data-theme="noface"] .transaction-note,
+
+:root[data-theme="noface"] .investment-metric-value,
+
+:root[data-theme="noface"] .investment-metric-label {
+    color: var(--text-primary-light) !important;
+}
+
+:root[data-theme="noface"] .stock-card-name {
+    color: var(--text-primary-lighter) !important;
+    text-shadow: 0 0 10px rgba(246, 195, 67, 0.3);
+}
+
+:root[data-theme="noface"] .stock-grid-card-price-number,
+
+:root[data-theme="noface"] .stock-grid-card-price-unit,
+
+:root[data-theme="noface"] .stock-grid-card-price-arrow {
+    color: var(--text-primary) !important;
+    text-shadow: 0 0 14px rgba(246, 195, 67, 0.35);
+}
+
+:root[data-theme="noface"] .metric-pill,
+
+:root[data-theme="noface"] .stock-chip,
+
+:root[data-theme="noface"] .badge,
+
+:root[data-theme="noface"] .status-pill {
+    background: rgba(246, 195, 67, 0.15) !important;
+    color: var(--color-primary-light) !important;
+    border-color: rgba(246, 195, 67, 0.35) !important;
+}
+
+:root[data-theme="noface"] .investment-card::before,
+
+:root[data-theme="noface"] .stock-item-card::before {
+    background: linear-gradient(135deg, rgba(246, 195, 67, 0.18) 0%, rgba(31, 27, 36, 0.4) 60%, rgba(255, 224, 138, 0.25) 100%);
+}
+
+:root[data-theme="noface"] .nav-item.active {
+    background: rgba(246, 195, 67, 0.15);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="noface"] .modal-content,
+
+:root[data-theme="noface"] .modal-content-standard,
+
+:root[data-theme="noface"] .budget-category-modal-content,
+
+:root[data-theme="noface"] .budget-setting-modal-content,
+
+:root[data-theme="noface"] .category-modal-content,
+
+:root[data-theme="noface"] .dca-execute-modal .modal-content,
+
+:root[data-theme="noface"] .account-modal-content,
+
+:root[data-theme="noface"] .emoji-modal-content,
+
+:root[data-theme="noface"] .history-modal-content {
+    background: rgba(13, 11, 16, 0.95);
+    border: 1px solid rgba(246, 195, 67, 0.4);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.65);
+}
+
+:root[data-theme="noface"] .input-section {
+    background: rgba(13, 11, 16, 0.92);
+    border-top: 2px solid rgba(246, 195, 67, 0.35);
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.55);
+}
+
+:root[data-theme="noface"] .bottom-nav {
+    background: rgba(13, 11, 16, 0.95) !important;
+    border-top: 1px solid rgba(246, 195, 67, 0.35) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="noface"] .form-input,
+
+:root[data-theme="noface"] .form-select,
+
+:root[data-theme="noface"] .form-textarea,
+
+:root[data-theme="noface"] .note-input {
+    background: rgba(24, 20, 27, 0.85) !important;
+    border: 2px solid rgba(246, 195, 67, 0.35) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="noface"] .form-input:focus,
+
+:root[data-theme="noface"] .form-select:focus,
+
+:root[data-theme="noface"] .form-textarea:focus,
+
+:root[data-theme="noface"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(246, 195, 67, 0.25) !important;
+    background: rgba(20, 17, 24, 0.95) !important;
+}
+
+:root[data-theme="noface"] .header-section {
+    background: rgba(13, 11, 16, 0.9) !important;
+    border-bottom: 1px solid rgba(246, 195, 67, 0.25) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="noface"] .tab-btn {
+    background: rgba(20, 17, 24, 0.85) !important;
+    border: 1px solid rgba(246, 195, 67, 0.25) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="noface"] .tab-btn.active {
+    background: rgba(246, 195, 67, 0.2) !important;
+    border: 2px solid #f6c343 !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45) !important;
+}
+
+:root[data-theme="noface"] .tab-btn:hover {
+    background: rgba(246, 195, 67, 0.15) !important;
+    border-color: rgba(246, 195, 67, 0.35) !important;
+}
+
+:root[data-theme="noface"] .key-btn {
+    background: rgba(24, 20, 27, 0.85) !important;
+    border: 2px solid rgba(246, 195, 67, 0.35) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5) !important;
+}
+
+:root[data-theme="noface"] .key-btn:hover {
+    background: rgba(246, 195, 67, 0.2) !important;
+    border-color: rgba(246, 195, 67, 0.4) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+:root[data-theme="noface"] .key-btn:active {
+    background: rgba(18, 15, 23, 0.95) !important;
+    transform: scale(0.95);
+}
+
+:root[data-theme="noface"] .key-btn.operator {
+    background: rgba(246, 195, 67, 0.35) !important;
+    color: var(--color-primary-dark) !important;
+}
+
+:root[data-theme="noface"] .key-btn.equal {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+    color: var(--color-primary-dark) !important;
+}
+
+:root[data-theme="noface"] .key-btn.delete {
+    background: rgba(220, 72, 84, 0.85) !important;
+    border-color: rgba(220, 72, 84, 0.9) !important;
+}
+
+:root[data-theme="noface"] .fab-btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 70%, black) 100%) !important;
+    color: var(--color-primary-dark) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
+}
+
+:root[data-theme="noface"] .fab-btn:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65) !important;
+}
+

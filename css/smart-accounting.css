@@ -1,0 +1,572 @@
+/* 智慧記帳功能樣式 */
+
+/* 智慧分析按鈕 */
+.smart-analysis-btn {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--text-white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.smart-analysis-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+/* 智慧建議橫幅 */
+.smart-suggestion-banner {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--text-white);
+    padding: 12px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideDown 0.3s ease-out;
+}
+
+.suggestion-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.suggestion-icon {
+    font-size: 20px;
+}
+
+.suggestion-text {
+    font-weight: 500;
+    flex: 1;
+}
+
+.suggestion-accept,
+.suggestion-dismiss {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.suggestion-accept:hover,
+.suggestion-dismiss:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 分類建議提示 */
+.category-suggestion-tooltip {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-dark);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-content::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--bg-dark);
+}
+
+.tooltip-title {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.tooltip-suggestion {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.tooltip-alternatives {
+    font-size: 10px;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+/* 智慧建議按鈕 */
+.smart-suggestion-btn {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--text-white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 10px 0;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.smart-suggestion-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+/* 智慧建議對話框 */
+.smart-suggestion-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-content {
+    background: var(--bg-white);
+    border-radius: 12px;
+    max-width: 90%;
+    width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: scaleIn 0.3s ease-out;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.dialog-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.dialog-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-tertiary);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.dialog-close:hover {
+    background: var(--bg-light);
+    color: var(--text-primary);
+}
+
+.dialog-body {
+    padding: 20px;
+}
+
+.suggestion-main {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.suggestion-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.suggestion-confidence {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.suggestion-factors {
+    font-size: 12px;
+    color: var(--text-tertiary);
+}
+
+.factor {
+    margin: 4px 0;
+    padding: 4px 8px;
+    background: var(--bg-soft);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.suggestion-alternatives h4 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.alt-category-btn {
+    background: var(--bg-light);
+    border: 1px solid var(--border-medium);
+    color: var(--text-primary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 4px;
+    transition: all 0.2s;
+}
+
+.alt-category-btn:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.dialog-actions {
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+    border-top: 1px solid var(--border-light);
+}
+
+.btn-accept,
+.btn-dismiss {
+    flex: 1;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-accept {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+}
+
+.btn-accept:hover {
+    background: var(--color-primary-dark);
+}
+
+.btn-dismiss {
+    background: var(--bg-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border-medium);
+}
+
+.btn-dismiss:hover {
+    background: var(--border-medium);
+}
+
+/* 確認訊息 */
+.smart-confirmation {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--color-success);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10001;
+    animation: slideInRight 0.3s ease-out;
+}
+
+/* 支出分析面板 */
+.spending-analysis-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: var(--bg-white);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    overflow-y: auto;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.spending-analysis-panel.error {
+    border-left: 4px solid #ef4444;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-light);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.panel-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.panel-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.panel-content {
+    padding: 20px;
+}
+
+.analysis-summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+}
+
+.summary-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.summary-value {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.top-categories,
+.insights,
+.recommendations {
+    margin-bottom: 30px;
+}
+
+.top-categories h4,
+.insights h4,
+.recommendations h4 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: var(--bg-card);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border: 1px solid var(--border-light);
+}
+
+.category-name {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.category-amount {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.category-percent {
+    background: var(--color-primary);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.insight-item,
+.recommendation-item {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 4px solid;
+}
+
+.insight-item.info {
+    background: #f0f9ff;
+    border-left-color: #3b82f6;
+}
+
+.insight-item.warning {
+    background: #fef3c7;
+    border-left-color: #f59e0b;
+}
+
+.insight-item.error {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+}
+
+.recommendation-item {
+    background: #f0fdf4;
+    border-left-color: #22c55e;
+}
+
+.insight-title,
+.recommendation-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.insight-content,
+.recommendation-content {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.no-data {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-secondary);
+    font-style: italic;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px dashed var(--border-light);
+}
+
+.error-message {
+    color: #ef4444;
+    font-weight: 500;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #fef2f2;
+    border-radius: 8px;
+    border: 1px solid #fecaca;
+}
+
+.error-suggestion {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.error-suggestion p {
+    margin: 0 0 10px 0;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.error-suggestion ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.error-suggestion li {
+    margin-bottom: 5px;
+    color: var(--text-secondary);
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .dialog-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .spending-analysis-panel {
+        width: 100%;
+    }
+    
+    .smart-suggestion-banner {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .suggestion-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .dialog-actions {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,1282 @@
+﻿/* ========== 蝴蝶忍 (Koch? Shinobu) 主題 - 全新重寫版本 ========== */
+
+:root[data-theme="shinobu"] {
+    /* 主要顏色系統 - 基於蝴蝶忍的紫色和粉色系 */
+    --color-primary: #9B59B6;
+    --color-primary-light: #B873D3;
+    --color-primary-lighter: #D8BFD8;
+    --color-primary-dark: #7D3C98;
+    
+    /* 次要顏色 - 蝴蝶粉色 */
+    --color-secondary: #FFB6C1;
+    --color-secondary-light: #FFC0CB;
+    --color-secondary-dark: #FF91A4;
+    
+    /* 強調色 - 蝴蝶藍綠色 */
+    --color-accent: #87CEEB;
+    --color-accent-light: #ADD8E6;
+    --color-accent-dark: #5F9EA0;
+    
+    /* 狀態顏色 */
+    --color-success: #32CD32;
+    --color-danger: #FF6B6B;
+    --color-warning: #FFD700;
+    --color-info: #87CEEB;
+    --color-error: var(--color-danger);
+    
+    /* 背景顏色系統 */
+    --bg-primary: linear-gradient(135deg, rgba(155, 89, 182, 0.95) 0%, rgba(184, 115, 211, 0.85) 65%, rgba(255, 182, 193, 0.75) 100%);
+    --bg-body: rgba(155, 89, 182, 0.92);
+    --bg-body-strong: rgba(155, 89, 182, 0.96);
+    --bg-gradient: linear-gradient(135deg, #7D3C98 0%, #9B59B6 60%, #FFB6C1 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(155, 89, 182, 0.08) 0%, rgba(255, 182, 193, 0.25) 100%);
+    --bg-white: rgba(255, 255, 255, 0.85);
+    --bg-card: rgba(155, 89, 182, 0.88);
+    --bg-light: rgba(184, 115, 211, 0.75);
+    --bg-lighter: rgba(216, 191, 216, 0.65);
+    --bg-soft: rgba(255, 182, 193, 0.55);
+    --bg-soft-strong: rgba(184, 115, 211, 0.78);
+    
+    /* 文字顏色系統 */
+    --text-primary: rgba(255, 255, 255, 0.95);
+    --text-secondary: rgba(255, 255, 255, 0.78);
+    --text-tertiary: rgba(255, 255, 255, 0.62);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.96);
+    
+    /* 邊框顏色系統 */
+    --border-primary: rgba(255, 182, 193, 0.65);
+    --border-light: rgba(155, 89, 182, 0.24);
+    --border-medium: rgba(255, 182, 193, 0.4);
+    --card-border-color: rgba(255, 182, 193, 0.45);
+    --control-border-color: rgba(155, 89, 182, 0.32);
+    --table-border-color: rgba(155, 89, 182, 0.22);
+    
+    /* 陰影系統 */
+    --shadow-primary: 0 20px 60px rgba(155, 89, 182, 0.4);
+    --shadow-primary-lg: 0 30px 80px rgba(155, 89, 182, 0.35);
+    
+    /* 透明度變數系統 */
+    --color-primary-rgba-08: rgba(155, 89, 182, 0.08);
+    --color-primary-rgba-10: rgba(155, 89, 182, 0.1);
+    --color-primary-rgba-15: rgba(155, 89, 182, 0.15);
+    --color-primary-rgba-20: rgba(155, 89, 182, 0.2);
+    --color-primary-rgba-25: rgba(155, 89, 182, 0.25);
+    --color-primary-rgba-30: rgba(155, 89, 182, 0.3);
+    --color-primary-rgba-40: rgba(155, 89, 182, 0.4);
+    
+    --color-primary-light-rgba-08: rgba(184, 115, 211, 0.08);
+    --color-primary-light-rgba-10: rgba(184, 115, 211, 0.1);
+    --color-primary-light-rgba-15: rgba(184, 115, 211, 0.15);
+    --color-primary-light-rgba-20: rgba(184, 115, 211, 0.2);
+    --color-primary-light-rgba-25: rgba(184, 115, 211, 0.25);
+    --color-primary-light-rgba-30: rgba(184, 115, 211, 0.3);
+    --color-primary-light-rgba-40: rgba(184, 115, 211, 0.4);
+    
+    --color-secondary-rgba-08: rgba(255, 182, 193, 0.08);
+    --color-secondary-rgba-10: rgba(255, 182, 193, 0.1);
+    --color-secondary-rgba-15: rgba(255, 182, 193, 0.15);
+    --color-secondary-rgba-20: rgba(255, 182, 193, 0.2);
+    --color-secondary-rgba-25: rgba(255, 182, 193, 0.25);
+    --color-secondary-rgba-30: rgba(255, 182, 193, 0.3);
+    --color-secondary-rgba-40: rgba(255, 182, 193, 0.4);
+    
+    --color-accent-rgba-08: rgba(135, 206, 235, 0.08);
+    --color-accent-rgba-10: rgba(135, 206, 235, 0.1);
+    --color-accent-rgba-15: rgba(135, 206, 235, 0.15);
+    --color-accent-rgba-20: rgba(135, 206, 235, 0.2);
+    --color-accent-rgba-25: rgba(135, 206, 235, 0.25);
+    --color-accent-rgba-30: rgba(135, 206, 235, 0.3);
+    --color-accent-rgba-40: rgba(135, 206, 235, 0.4);
+    
+    /* 漸層背景 */
+    --bg-light-gradient: linear-gradient(135deg, rgba(155, 89, 182, 0.85) 0%, rgba(155, 89, 182, 0.65) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(155, 89, 182, 0.85) 0%, rgba(155, 89, 182, 0.65) 100%);
+    
+    /* 操作區域 */
+    --action-side-bg: color-mix(in srgb, rgba(155, 89, 182, 0.92) 75%, rgba(255, 182, 193, 0.08));
+    --action-side-bg-hover: color-mix(in srgb, rgba(155, 89, 182, 0.92) 65%, rgba(255, 182, 193, 0.2));
+    --action-side-text: var(--text-primary);
+}
+
+:root[data-theme="shinobu"] body {
+    background: url("https://i.pinimg.com/736x/26/c9/c0/26c9c0297b0cad3dfa8d6d5c41ccfc18.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* ========== 主體背景設定 ========== */
+:root[data-theme="shinobu"] body {
+    background: url("https://i.pinimg.com/736x/26/c9/c0/26c9c0297b0cad3dfa8d6d5c41ccfc18.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="shinobu"] body::before {
+    display: none;
+}
+
+/* ========== 頁面背景透明化 ========== */
+:root[data-theme="shinobu"] .page-input,
+:root[data-theme="shinobu"] .page-ledger,
+:root[data-theme="shinobu"] .page-chart,
+:root[data-theme="shinobu"] .page-budget,
+:root[data-theme="shinobu"] .page-monthly-planner,
+:root[data-theme="shinobu"] .page-daily-budget,
+:root[data-theme="shinobu"] .page-settings,
+:root[data-theme="shinobu"] .page-category-manage,
+:root[data-theme="shinobu"] .page-investment,
+:root[data-theme="shinobu"] .page-wallet,
+:root[data-theme="shinobu"] .page-history,
+:root[data-theme="shinobu"] .page-planner,
+:root[data-theme="shinobu"] .dividend-page,
+:root[data-theme="shinobu"] .dca-management-page,
+:root[data-theme="shinobu"] .dca-setup-page,
+:root[data-theme="shinobu"] .investment-input-page,
+:root[data-theme="shinobu"] .wishlist-content,
+:root[data-theme="shinobu"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+/* ========== 卡片系統 ========== */
+:root[data-theme="shinobu"] .card,
+:root[data-theme="shinobu"] .record-card,
+:root[data-theme="shinobu"] .ledger-card,
+:root[data-theme="shinobu"] .summary-card,
+:root[data-theme="shinobu"] .budget-card,
+:root[data-theme="shinobu"] .wallet-card,
+:root[data-theme="shinobu"] .chart-card,
+:root[data-theme="shinobu"] .investment-card,
+:root[data-theme="shinobu"] .stock-item-card,
+:root[data-theme="shinobu"] .monthly-planner-card,
+:root[data-theme="shinobu"] .dividend-stat-card,
+:root[data-theme="shinobu"] .dca-card,
+:root[data-theme="shinobu"] .installment-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .card:hover,
+:root[data-theme="shinobu"] .record-card:hover,
+:root[data-theme="shinobu"] .investment-card:hover,
+:root[data-theme="shinobu"] .stock-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    border-color: var(--color-secondary);
+}
+
+:root[data-theme="shinobu"] .card .value,
+:root[data-theme="shinobu"] .summary-value,
+:root[data-theme="shinobu"] .summary-label,
+:root[data-theme="shinobu"] .stock-card-value,
+:root[data-theme="shinobu"] .stock-card-label,
+:root[data-theme="shinobu"] .stock-card-name,
+:root[data-theme="shinobu"] .stat-label,
+:root[data-theme="shinobu"] .stat-value,
+:root[data-theme="shinobu"] .budget-summary-value,
+:root[data-theme="shinobu"] .budget-summary-label,
+:root[data-theme="shinobu"] .budget-amount,
+:root[data-theme="shinobu"] .budget-total,
+:root[data-theme="shinobu"] .total-budget,
+:root[data-theme="shinobu"] .budget-used,
+:root[data-theme="shinobu"] .used-budget,
+:root[data-theme="shinobu"] .budget-remaining,
+:root[data-theme="shinobu"] .remaining-budget,
+:root[data-theme="shinobu"] .transaction-amount,
+:root[data-theme="shinobu"] .transaction-category,
+:root[data-theme="shinobu"] .transaction-note,
+:root[data-theme="shinobu"] .investment-metric-value,
+:root[data-theme="shinobu"] .investment-metric-label {
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="shinobu"] .metric-pill,
+:root[data-theme="shinobu"] .stock-chip,
+:root[data-theme="shinobu"] .badge,
+:root[data-theme="shinobu"] .status-pill {
+    background: rgba(155, 89, 182, 0.15) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(255, 182, 193, 0.35) !important;
+}
+
+:root[data-theme="shinobu"] .investment-card::before,
+:root[data-theme="shinobu"] .stock-item-card::before {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.22) 0%, rgba(184, 115, 211, 0.45) 65%, rgba(255, 182, 193, 0.25) 100%);
+}
+
+:root[data-theme="shinobu"] .nav-item.active {
+    background: rgba(155, 89, 182, 0.16);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="shinobu"] .modal-content,
+:root[data-theme="shinobu"] .modal-content-standard,
+:root[data-theme="shinobu"] .budget-category-modal-content,
+:root[data-theme="shinobu"] .budget-setting-modal-content,
+:root[data-theme="shinobu"] .category-modal-content,
+:root[data-theme="shinobu"] .dca-execute-modal .modal-content,
+:root[data-theme="shinobu"] .account-modal-content,
+:root[data-theme="shinobu"] .emoji-modal-content,
+:root[data-theme="shinobu"] .history-modal-content {
+    background: rgba(155, 89, 182, 0.95);
+    border: 1px solid rgba(255, 182, 193, 0.4);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="shinobu"] .input-section {
+    background: rgba(155, 89, 182, 0.92);
+    border-top: 2px solid rgba(255, 182, 193, 0.35);
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="shinobu"] .bottom-nav {
+    background: rgba(155, 89, 182, 0.95) !important;
+    border-top: 1px solid rgba(255, 182, 193, 0.35) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="shinobu"] .form-input,
+:root[data-theme="shinobu"] .form-select,
+:root[data-theme="shinobu"] .form-textarea,
+:root[data-theme="shinobu"] .note-input {
+    background: rgba(184, 115, 211, 0.85) !important;
+    border: 2px solid rgba(255, 182, 193, 0.35) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="shinobu"] .form-input:focus,
+:root[data-theme="shinobu"] .form-select:focus,
+:root[data-theme="shinobu"] .form-textarea:focus,
+:root[data-theme="shinobu"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.25) !important;
+    background: rgba(216, 191, 216, 0.96) !important;
+}
+
+:root[data-theme="shinobu"] .header-section {
+    background: rgba(155, 89, 182, 0.92) !important;
+    border-bottom: 1px solid rgba(255, 182, 193, 0.3) !important;
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="shinobu"] .tab-btn {
+    background: rgba(184, 115, 211, 0.85) !important;
+    border: 1px solid rgba(255, 182, 193, 0.25) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ========== 文字顏色系統 ========== */
+:root[data-theme="shinobu"] .card .value,
+:root[data-theme="shinobu"] .summary-value,
+:root[data-theme="shinobu"] .summary-label,
+:root[data-theme="shinobu"] .stock-card-value,
+:root[data-theme="shinobu"] .stock-card-label,
+:root[data-theme="shinobu"] .stock-card-name,
+:root[data-theme="shinobu"] .stat-label,
+:root[data-theme="shinobu"] .stat-value,
+:root[data-theme="shinobu"] .budget-summary-value,
+:root[data-theme="shinobu"] .budget-summary-label,
+:root[data-theme="shinobu"] .budget-amount,
+:root[data-theme="shinobu"] .budget-total,
+:root[data-theme="shinobu"] .total-budget,
+:root[data-theme="shinobu"] .budget-used,
+:root[data-theme="shinobu"] .used-budget,
+:root[data-theme="shinobu"] .budget-remaining,
+:root[data-theme="shinobu"] .remaining-budget,
+:root[data-theme="shinobu"] .transaction-amount,
+:root[data-theme="shinobu"] .transaction-category,
+:root[data-theme="shinobu"] .transaction-note,
+:root[data-theme="shinobu"] .investment-metric-value,
+:root[data-theme="shinobu"] .investment-metric-label {
+    color: var(--text-primary) !important;
+}
+
+/* ========== 標籤和徽章系統 ========== */
+:root[data-theme="shinobu"] .metric-pill,
+:root[data-theme="shinobu"] .stock-chip,
+:root[data-theme="shinobu"] .badge,
+:root[data-theme="shinobu"] .status-pill {
+    background: var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-primary) !important;
+    backdrop-filter: blur(8px);
+}
+
+/* ========== 卡片偽元素裝飾 ========== */
+:root[data-theme="shinobu"] .investment-card::before,
+:root[data-theme="shinobu"] .stock-item-card::before {
+    background: linear-gradient(135deg, var(--color-primary-rgba-22) 0%, var(--color-primary-light-rgba-45) 65%, var(--color-secondary-rgba-25) 100%);
+}
+
+/* ========== 導航系統 ========== */
+:root[data-theme="shinobu"] .nav-item.active {
+    background: var(--color-primary-rgba-16);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+}
+
+:root[data-theme="shinobu"] .bottom-nav {
+    background: var(--bg-card) !important;
+    border-top: 1px solid var(--border-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+/* ========== 模態框系統 ========== */
+:root[data-theme="shinobu"] .modal-content,
+:root[data-theme="shinobu"] .modal-content-standard,
+:root[data-theme="shinobu"] .budget-category-modal-content,
+:root[data-theme="shinobu"] .budget-setting-modal-content,
+:root[data-theme="shinobu"] .category-modal-content,
+:root[data-theme="shinobu"] .dca-execute-modal .modal-content,
+:root[data-theme="shinobu"] .account-modal-content,
+:root[data-theme="shinobu"] .emoji-modal-content,
+:root[data-theme="shinobu"] .history-modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(16px);
+}
+
+/* ========== 輸入區域 ========== */
+:root[data-theme="shinobu"] .input-section {
+    background: var(--bg-body-strong);
+    border-top: 2px solid var(--border-primary);
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+}
+
+/* ========== 表單元素 ========== */
+:root[data-theme="shinobu"] .form-input,
+:root[data-theme="shinobu"] .form-select,
+:root[data-theme="shinobu"] .form-textarea,
+:root[data-theme="shinobu"] .note-input {
+    background: var(--bg-light) !important;
+    border: 2px solid var(--border-medium) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .form-input:focus,
+:root[data-theme="shinobu"] .form-select:focus,
+:root[data-theme="shinobu"] .form-textarea:focus,
+:root[data-theme="shinobu"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px var(--color-primary-rgba-25) !important;
+    background: var(--bg-lighter) !important;
+}
+
+/* ========== 標題區域 ========== */
+:root[data-theme="shinobu"] .header-section {
+    background: var(--bg-body-strong) !important;
+    border-bottom: 1px solid var(--border-primary) !important;
+    backdrop-filter: blur(12px);
+}
+
+/* ========== 標籤按鈕系統 ========== */
+:root[data-theme="shinobu"] .tab-btn {
+    background: var(--bg-light) !important;
+    border: 1px solid var(--border-medium) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .tab-btn.active {
+    background: var(--color-primary-rgba-20) !important;
+    border: 2px solid var(--color-primary) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+:root[data-theme="shinobu"] .tab-btn:hover {
+    background: var(--color-primary-rgba-15) !important;
+    border-color: var(--border-primary) !important;
+}
+
+/* ========== 數字鍵盤系統 ========== */
+:root[data-theme="shinobu"] .key-btn {
+    background: var(--bg-light) !important;
+    border: 2px solid var(--border-medium) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .key-btn:hover {
+    background: var(--color-primary-rgba-18) !important;
+    border-color: var(--border-primary) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-1px);
+}
+
+:root[data-theme="shinobu"] .key-btn:active {
+    background: var(--color-primary-rgba-25) !important;
+    transform: translateY(0);
+}
+
+:root[data-theme="shinobu"] .key-btn.operator {
+    background: var(--color-secondary-rgba-85) !important;
+    border-color: var(--color-secondary) !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.operator:hover {
+    background: var(--color-secondary-rgba-75) !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.delete {
+    background: var(--color-danger) !important;
+    border-color: var(--color-danger) !important;
+    color: white !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.delete:hover {
+    background: #FF5252 !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.equal {
+    background: var(--color-success) !important;
+    border-color: var(--color-success) !important;
+    color: white !important;
+}
+
+:root[data-theme="shinobu"] .key-btn.equal:hover {
+    background: #28A745 !important;
+}
+
+/* ========== 按鈕系統 ========== */
+:root[data-theme="shinobu"] .btn,
+:root[data-theme="shinobu"] button {
+    background: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .btn:hover,
+:root[data-theme="shinobu"] button:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
+}
+
+/* ========== FAB按鈕 ========== */
+:root[data-theme="shinobu"] .fab-btn {
+    background: var(--color-primary);
+    border: none;
+    box-shadow: 0 12px 30px rgba(155, 89, 182, 0.4);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .fab-btn:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(155, 89, 182, 0.5);
+}
+
+/* ========== 滾動條樣式 ========== */
+:root[data-theme="shinobu"] ::-webkit-scrollbar {
+    width: 8px;
+}
+
+:root[data-theme="shinobu"] ::-webkit-scrollbar-track {
+    background: var(--color-primary-rgba-10);
+    border-radius: 4px;
+}
+
+:root[data-theme="shinobu"] ::-webkit-scrollbar-thumb {
+    background: var(--color-primary-rgba-40);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+:root[data-theme="shinobu"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-rgba-60);
+}
+
+/* ========== 特殊元素樣式 ========== */
+:root[data-theme="shinobu"] .toggle-slider {
+    background: var(--color-primary-rgba-30);
+}
+
+:root[data-theme="shinobu"] .toggle-slider.active {
+    background: var(--color-primary);
+}
+
+:root[data-theme="shinobu"] .dca-item-status.active {
+    background: var(--color-primary-rgba-20);
+    color: var(--text-primary);
+}
+
+:root[data-theme="shinobu"] .emoji-upload-btn:hover {
+    background: var(--color-primary-rgba-15);
+}
+
+:root[data-theme="shinobu"] .record-menu-item.delete:hover {
+    background: var(--color-danger);
+    color: white;
+}
+
+:root[data-theme="shinobu"] .thumbnail-remove {
+    background: var(--color-danger);
+    color: white;
+}
+
+/* ========== 深色模式適配 ========== */
+:root[data-theme="shinobu"] .dark .dividend-reinvest-label {
+    background: var(--color-primary-rgba-20);
+    color: var(--text-primary);
+}
+
+:root[data-theme="shinobu"] :root.dark .entry-detail-content {
+    background: var(--bg-card);
+}
+
+/* ========== 響應式設計 ========== */
+@media (max-width: 768px) {
+    :root[data-theme="shinobu"] .card,
+    :root[data-theme="shinobu"] .record-card,
+    :root[data-theme="shinobu"] .investment-card {
+        border-radius: 16px;
+        margin: 8px;
+    }
+    
+    :root[data-theme="shinobu"] .key-btn {
+        border-radius: 12px;
+        font-size: 18px;
+    }
+}
+
+/* ========== 動畫效果 ========== */
+@keyframes shinobuGlow {
+    0% { box-shadow: 0 0 20px rgba(155, 89, 182, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(155, 89, 182, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(155, 89, 182, 0.3); }
+}
+
+:root[data-theme="shinobu"] .card.glow {
+    animation: shinobuGlow 2s ease-in-out infinite;
+}
+
+/* ========== 特殊效果 ========== */
+:root[data-theme="shinobu"] .stock-grid-card-tag--shares {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-secondary-rgba-20) 100%);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="shinobu"] .portfolio-shares {
+    background: linear-gradient(135deg, var(--color-primary-rgba-20) 0%, var(--color-accent-rgba-15) 100%);
+    border: 2px solid var(--border-primary);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.2);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="shinobu"] .portfolio-shares:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(155, 89, 182, 0.3);
+}
+
+/* ========== 統計項目樣式 ========== */
+:root[data-theme="shinobu"] .stat-item {
+    background: linear-gradient(135deg, var(--color-primary-rgba-10) 0%, var(--color-primary-rgba-15) 50%, var(--color-primary-rgba-08) 100%) !important;
+    border: 1px solid var(--color-primary-rgba-20) !important;
+    box-shadow: 0 4px 12px var(--color-primary-rgba-15) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="shinobu"] .stat-item:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-primary-rgba-20) 50%, var(--color-primary-rgba-12) 100%) !important;
+    box-shadow: 0 6px 16px var(--color-primary-rgba-20) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ========== 每日支出樣式 ========== */
+:root[data-theme="shinobu"] .daily-expense-display,
+:root[data-theme="shinobu"] .daily-expense-in-history {
+    background: linear-gradient(135deg, var(--color-primary-rgba-10) 0%, var(--color-primary-rgba-15) 50%, var(--color-primary-rgba-10) 100%) !important;
+    border: 1px solid var(--color-primary-rgba-20) !important;
+    box-shadow: 0 4px 12px var(--color-primary-rgba-15) !important;
+    border-radius: 12px !important;
+    padding: 8px 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="shinobu"] .daily-expense-display:hover,
+:root[data-theme="shinobu"] .daily-expense-in-history:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-primary-rgba-20) 50%, var(--color-primary-rgba-15) 100%) !important;
+    box-shadow: 0 6px 16px var(--color-primary-rgba-20) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ========== 記帳卡片樣式 ========== */
+:root[data-theme="shinobu"] .record-card {
+    background: linear-gradient(135deg, var(--color-primary-rgba-10) 0%, var(--color-primary-rgba-15) 50%, var(--color-primary-rgba-08) 100%) !important;
+    border: 2px solid var(--border-primary) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 12px var(--color-primary-rgba-15) !important;
+    transition: all 0.3s ease !important;
+}
+
+:root[data-theme="shinobu"] .record-card:hover {
+    background: linear-gradient(135deg, var(--color-primary-rgba-15) 0%, var(--color-primary-rgba-20) 50%, var(--color-primary-rgba-12) 100%) !important;
+    box-shadow: 0 6px 16px var(--color-primary-rgba-20) !important;
+    transform: translateY(-2px) !important;
+}
+
+:root[data-theme="shinobu"] .record-card::before {
+    background-image: none !important;
+    background: transparent !important;
+    opacity: 0 !important;
+}
+
+/* ========== 主題特色效果 ========== */
+:root[data-theme="shinobu"] .shinobu-special {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+    background-size: 200% 200%;
+    animation: shinobuGradient 3s ease infinite;
+}
+
+@keyframes shinobuGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========== 太空金彩主題 ========== */
+:root[data-theme="spacegold"] {
+    --color-primary: #FFD700;
+    --color-primary-light: #FFED4E;
+    --color-primary-lighter: #FFF8DC;
+    --color-primary-dark: #DAA520;
+    --color-secondary: #8B7355;
+    --color-secondary-light: #A0826D;
+    --color-secondary-dark: #704214;
+    --color-accent: #ADD8E6;
+    
+    /* 狀態顏色 */
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+    
+    /* 背景顏色 */
+    --bg-primary: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(139, 115, 85, 0.25) 50%, rgba(173, 216, 230, 0.15) 100%);
+    --bg-body: rgba(255, 248, 220, 0.95);
+    --bg-body-strong: rgba(255, 237, 78, 0.9);
+    --bg-gradient: linear-gradient(135deg, #8B7355 0%, #FFD700 50%, #ADD8E6 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(139, 115, 85, 0.15) 100%);
+    --bg-white: rgba(255, 248, 220, 0.9);
+    --bg-card: rgba(255, 248, 220, 0.85);
+    --bg-light: rgba(255, 237, 78, 0.3);
+    --bg-lighter: rgba(173, 216, 230, 0.4);
+    --bg-soft: rgba(255, 215, 0, 0.25);
+    --bg-soft-strong: rgba(218, 165, 32, 0.35);
+    
+    /* 文字顏色 */
+    --text-primary: #362D28;
+    --text-secondary: #5C524F;
+    --text-tertiary: #8B7355;
+    --text-strong: #2E2A24;
+    --text-white: var(--color-primary-light);
+    
+    /* 邊框顏色 */
+    --border-primary: rgba(255, 215, 0, 0.6);
+    --border-light: rgba(139, 115, 85, 0.3);
+    --border-medium: rgba(218, 165, 32, 0.5);
+    --card-border-color: rgba(255, 215, 0, 0.4);
+    --control-border-color: rgba(139, 115, 85, 0.4);
+    --table-border-color: rgba(139, 115, 85, 0.25);
+    
+    /* 陰影顏色 */
+    --shadow-primary: 0 20px 60px rgba(255, 215, 0, 0.25);
+    --shadow-primary-lg: 0 30px 80px rgba(218, 165, 32, 0.3);
+    
+    /* RGBA 透明度變數 */
+    --color-primary-rgba-08: rgba(255, 215, 0, 0.08);
+    --color-primary-rgba-10: rgba(255, 215, 0, 0.1);
+    --color-primary-rgba-15: rgba(255, 215, 0, 0.15);
+    --color-primary-rgba-20: rgba(255, 215, 0, 0.2);
+    --color-primary-rgba-25: rgba(255, 215, 0, 0.25);
+    --color-primary-rgba-30: rgba(255, 215, 0, 0.3);
+    --color-primary-rgba-40: rgba(255, 215, 0, 0.4);
+    --color-primary-light-rgba-08: rgba(255, 237, 78, 0.08);
+    --color-primary-light-rgba-10: rgba(255, 237, 78, 0.1);
+    --color-primary-light-rgba-15: rgba(255, 237, 78, 0.15);
+    --color-primary-light-rgba-20: rgba(255, 237, 78, 0.2);
+    --color-primary-light-rgba-25: rgba(255, 237, 78, 0.25);
+    --color-primary-light-rgba-30: rgba(255, 237, 78, 0.3);
+    --color-primary-light-rgba-40: rgba(255, 237, 78, 0.4);
+    --color-secondary-rgba-08: rgba(139, 115, 85, 0.08);
+    --color-secondary-rgba-10: rgba(139, 115, 85, 0.1);
+    --color-secondary-rgba-15: rgba(139, 115, 85, 0.15);
+    --color-secondary-rgba-20: rgba(139, 115, 85, 0.2);
+    --color-secondary-rgba-25: rgba(139, 115, 85, 0.25);
+    --color-secondary-rgba-30: rgba(139, 115, 85, 0.3);
+    --color-secondary-rgba-40: rgba(139, 115, 85, 0.4);
+    --color-accent-rgba-08: rgba(173, 216, 230, 0.08);
+    --color-accent-rgba-10: rgba(173, 216, 230, 0.1);
+    --color-accent-rgba-15: rgba(173, 216, 230, 0.15);
+    --color-accent-rgba-20: rgba(173, 216, 230, 0.2);
+    --color-accent-rgba-25: rgba(173, 216, 230, 0.25);
+    --color-accent-rgba-30: rgba(173, 216, 230, 0.3);
+    --color-accent-rgba-40: rgba(173, 216, 230, 0.4);
+    
+    /* 字體變數 */
+    --font-family-primary: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-secondary: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0em;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
+}
+
+:root[data-theme="spacegold"] body {
+    background: url("https://i.pinimg.com/736x/eb/33/27/eb3327b7caa47a87c1f4cee99344892e.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme="spacegold"] body::before {
+    display: none;
+}
+
+/* 透明頁面背景 */
+:root[data-theme="spacegold"] .page-input,
+:root[data-theme="spacegold"] .page-ledger,
+:root[data-theme="spacegold"] .page-chart,
+:root[data-theme="spacegold"] .page-budget,
+:root[data-theme="spacegold"] .page-monthly-planner,
+:root[data-theme="spacegold"] .page-daily-budget,
+:root[data-theme="spacegold"] .page-settings,
+:root[data-theme="spacegold"] .page-category-manage,
+:root[data-theme="spacegold"] .page-investment,
+:root[data-theme="spacegold"] .page-wallet,
+:root[data-theme="spacegold"] .page-history,
+:root[data-theme="spacegold"] .page-planner,
+:root[data-theme="spacegold"] .dividend-page,
+:root[data-theme="spacegold"] .dca-management-page,
+:root[data-theme="spacegold"] .dca-setup-page,
+:root[data-theme="spacegold"] .investment-input-page,
+:root[data-theme="spacegold"] .wishlist-content,
+:root[data-theme="spacegold"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+/* 卡片樣式 */
+:root[data-theme="spacegold"] .card,
+:root[data-theme="spacegold"] .record-card,
+:root[data-theme="spacegold"] .ledger-card,
+:root[data-theme="spacegold"] .summary-card,
+:root[data-theme="spacegold"] .budget-card,
+:root[data-theme="spacegold"] .wallet-card,
+:root[data-theme="spacegold"] .chart-card,
+:root[data-theme="spacegold"] .investment-card,
+:root[data-theme="spacegold"] .stock-item-card,
+:root[data-theme="spacegold"] .monthly-planner-card,
+:root[data-theme="spacegold"] .dividend-stat-card,
+:root[data-theme="spacegold"] .dca-card,
+:root[data-theme="spacegold"] .installment-card {
+    background: rgba(255, 248, 220, 0.85);
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="spacegold"] .card::before,
+:root[data-theme="spacegold"] .record-card::before,
+:root[data-theme="spacegold"] .ledger-card::before,
+:root[data-theme="spacegold"] .summary-card::before,
+:root[data-theme="spacegold"] .budget-card::before,
+:root[data-theme="spacegold"] .wallet-card::before,
+:root[data-theme="spacegold"] .chart-card::before,
+:root[data-theme="spacegold"] .investment-card::before,
+:root[data-theme="spacegold"] .stock-item-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(173, 216, 230, 0.08) 100%);
+    z-index: 1;
+}
+
+:root[data-theme="spacegold"] .card:hover,
+:root[data-theme="spacegold"] .record-card:hover,
+:root[data-theme="spacegold"] .ledger-card:hover,
+:root[data-theme="spacegold"] .summary-card:hover,
+:root[data-theme="spacegold"] .budget-card:hover,
+:root[data-theme="spacegold"] .wallet-card:hover,
+:root[data-theme="spacegold"] .chart-card:hover,
+:root[data-theme="spacegold"] .investment-card:hover,
+:root[data-theme="spacegold"] .stock-item-card:hover {
+    background: rgba(255, 248, 220, 0.95);
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 0 12px 32px rgba(255, 215, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* 文字顏色 */
+:root[data-theme="spacegold"] .card .value,
+:root[data-theme="spacegold"] .summary-value,
+:root[data-theme="spacegold"] .stock-card-value,
+:root[data-theme="spacegold"] .stock-card-label,
+:root[data-theme="spacegold"] .stock-card-name,
+:root[data-theme="spacegold"] .stat-label,
+:root[data-theme="spacegold"] .stat-value,
+:root[data-theme="spacegold"] .budget-summary-value,
+:root[data-theme="spacegold"] .budget-summary-label,
+:root[data-theme="spacegold"] .budget-amount,
+:root[data-theme="spacegold"] .budget-total,
+:root[data-theme="spacegold"] .total-budget,
+:root[data-theme="spacegold"] .budget-used,
+:root[data-theme="spacegold"] .used-budget,
+:root[data-theme="spacegold"] .budget-remaining,
+:root[data-theme="spacegold"] .remaining-budget,
+:root[data-theme="spacegold"] .transaction-amount,
+:root[data-theme="spacegold"] .transaction-category,
+:root[data-theme="spacegold"] .transaction-note,
+:root[data-theme="spacegold"] .investment-metric-value,
+:root[data-theme="spacegold"] .investment-metric-label {
+    color: var(--text-primary) !important;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-normal);
+    text-shadow: var(--text-shadow-soft);
+}
+
+:root[data-theme="spacegold"] .card .value,
+:root[data-theme="spacegold"] .summary-value,
+:root[data-theme="spacegold"] .stock-card-value,
+:root[data-theme="spacegold"] .stat-value,
+:root[data-theme="spacegold"] .budget-summary-value,
+:root[data-theme="spacegold"] .budget-amount,
+:root[data-theme="spacegold"] .total-budget,
+:root[data-theme="spacegold"] .budget-used,
+:root[data-theme="spacegold"] .used-budget,
+:root[data-theme="spacegold"] .budget-remaining,
+:root[data-theme="spacegold"] .remaining-budget,
+:root[data-theme="spacegold"] .transaction-amount,
+:root[data-theme="spacegold"] .investment-metric-value {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+}
+
+:root[data-theme="spacegold"] .card .label,
+:root[data-theme="spacegold"] .summary-label,
+:root[data-theme="spacegold"] .stock-card-label,
+:root[data-theme="spacegold"] .stock-card-name,
+:root[data-theme="spacegold"] .stat-label,
+:root[data-theme="spacegold"] .budget-summary-label,
+:root[data-theme="spacegold"] .transaction-category,
+:root[data-theme="spacegold"] .investment-metric-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    opacity: 0.85;
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+/* 投資卡片背景 */
+:root[data-theme="spacegold"] .investment-card::before,
+:root[data-theme="spacegold"] .stock-item-card::before {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(173, 216, 230, 0.12) 55%, rgba(139, 115, 85, 0.08) 100%);
+}
+
+/* 導航樣式 */
+:root[data-theme="spacegold"] .nav-item.active {
+    background: rgba(255, 215, 0, 0.25);
+    box-shadow: 0 6px 16px rgba(255, 215, 0, 0.2);
+}
+
+/* 模態框樣式 */
+:root[data-theme="spacegold"] .modal-content,
+:root[data-theme="spacegold"] .modal-content-standard,
+:root[data-theme="spacegold"] .budget-category-modal-content,
+:root[data-theme="spacegold"] .budget-setting-modal-content,
+:root[data-theme="spacegold"] .category-modal-content,
+:root[data-theme="spacegold"] .dca-execute-modal .modal-content,
+:root[data-theme="spacegold"] .account-modal-content,
+:root[data-theme="spacegold"] .emoji-modal-content,
+:root[data-theme="spacegold"] .history-modal-content {
+    background: rgba(255, 248, 220, 0.95);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.25);
+}
+
+/* 表單樣式 */
+:root[data-theme="spacegold"] .form-input,
+:root[data-theme="spacegold"] .form-select,
+:root[data-theme="spacegold"] .form-textarea,
+:root[data-theme="spacegold"] .note-input {
+    background: rgba(255, 248, 220, 0.8) !important;
+    border: 2px solid rgba(255, 215, 0, 0.3) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
+    letter-spacing: var(--letter-spacing-normal);
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="spacegold"] .input-section {
+    background: rgba(255, 248, 220, 0.92);
+    border-top: 2px solid rgba(255, 215, 0, 0.4);
+    box-shadow: 0 -4px 20px rgba(255, 215, 0, 0.15);
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="spacegold"] .bottom-nav {
+    background: rgba(255, 248, 220, 0.9) !important;
+    border-top: 2px solid rgba(255, 215, 0, 0.4) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="spacegold"] .form-input:focus,
+:root[data-theme="spacegold"] .form-select:focus,
+:root[data-theme="spacegold"] .form-textarea:focus,
+:root[data-theme="spacegold"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15) !important;
+    background: rgba(255, 248, 220, 0.95) !important;
+}
+
+:root[data-theme="spacegold"] .header-section {
+    background: rgba(255, 248, 220, 0.9) !important;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    backdrop-filter: blur(16px);
+}
+
+/* 按鈕樣式 */
+:root[data-theme="spacegold"] .key-btn {
+    background: rgba(255, 215, 0, 0.15) !important;
+    border: 2px solid rgba(255, 215, 0, 0.3) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-lg);
+    letter-spacing: var(--letter-spacing-normal);
+    padding: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="spacegold"] .key-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="spacegold"] .key-btn:active::after {
+    width: 100%;
+    height: 100%;
+}
+
+:root[data-theme="spacegold"] .fab-btn {
+    position: fixed;
+    bottom: 180px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 90%, var(--color-primary-dark)) 100%) !important;
+    color: var(--text-white) !important;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3) !important;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
+    letter-spacing: var(--letter-spacing-normal);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 99;
+}
+
+/* spacegold 主題小螢幕適配 */
+@media (max-width: 575px) {
+    :root[data-theme="spacegold"] .fab-btn {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 20px !important;
+        bottom: 230px !important;
+        right: 16px !important;
+    }
+}
+
+:root[data-theme="spacegold"] .fab-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+/* spacegold 主題響應式 FAB 按鈕位置 */
+@media (min-width: 576px) {
+    :root[data-theme="spacegold"] .fab-btn {
+        right: 24px;
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root[data-theme="spacegold"] .fab-btn {
+        right: 40px;
+        width: 64px;
+        height: 64px;
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 992px) {
+    :root[data-theme="spacegold"] .fab-btn {
+        right: 60px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root[data-theme="spacegold"] .fab-btn {
+        right: 80px;
+    }
+}
+
+:root[data-theme="spacegold"] .fab-btn:hover::before {
+    animation: shimmer 0.5s ease;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* 小森對話框樣式 */
+:root[data-theme="spacegold"] .mori-dialog {
+    background: rgba(255, 248, 220, 0.95) !important;
+    border: 2px solid rgba(255, 215, 0, 0.4) !important;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.25);
+}
+
+:root[data-theme="spacegold"] .mori-dialog .mori-content {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+:root[data-theme="spacegold"] .mori-dialog .mori-title {
+    color: var(--text-primary) !important;
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    text-shadow: var(--text-shadow-soft);
+}
+
+/* 返回按鈕樣式 */
+:root[data-theme="spacegold"] .return-btn {
+    background: rgba(255, 215, 0, 0.3) !important;
+    border: 2px solid rgba(255, 215, 0, 0.4) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="spacegold"] .return-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+:root[data-theme="spacegold"] .return-btn:hover::before {
+    left: 100%;
+}
+
+:root[data-theme="spacegold"] .return-btn:hover {
+    background: rgba(255, 215, 0, 0.5) !important;
+    border-color: rgba(255, 215, 0, 0.6) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+/* 狀態藥丸樣式 */
+:root[data-theme="spacegold"] .badge,
+:root[data-theme="spacegold"] .status-pill,
+:root[data-theme="spacegold"] .metric-pill,
+:root[data-theme="spacegold"] .stock-chip {
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-xs);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    background: rgba(255, 215, 0, 0.15) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(255, 215, 0, 0.3) !important;
+    border-radius: 20px;
+    padding: 4px 12px;
+    transition: all 0.3s ease;
+}
+
+:root[data-theme="spacegold"] .badge:hover,
+:root[data-theme="spacegold"] .status-pill:hover,
+:root[data-theme="spacegold"] .metric-pill:hover,
+:root[data-theme="spacegold"] .stock-chip:hover {
+    background: rgba(255, 215, 0, 0.25) !important;
+    border-color: rgba(255, 215, 0, 0.4) !important;
+    transform: translateY(-1px);
+}
+
+/* 自定義滾動條樣式 */
+:root[data-theme="spacegold"] ::-webkit-scrollbar {
+    width: 8px;
+}
+
+:root[data-theme="spacegold"] ::-webkit-scrollbar-track {
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 4px;
+}
+
+:root[data-theme="spacegold"] ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="spacegold"] ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
+}
+
+/* 卡片背景使用主題變數 */
+:root[data-theme="spacegold"] .investment-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+:root[data-theme="spacegold"] .accounting-card,
+:root[data-theme="spacegold"] .wallet-budget-card,
+:root[data-theme="spacegold"] .investment-settings-card,
+:root[data-theme="spacegold"] .holding-card,
+:root[data-theme="spacegold"] .buying-card,
+:root[data-theme="spacegold"] .selling-card,
+:root[data-theme="spacegold"] .dividend-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+:root[data-theme="spacegold"] .monthly-planning-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--border-medium) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 38px var(--color-primary-rgba-20) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(12px) !important;
+    position: relative !important;
+}
+
+

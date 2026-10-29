@@ -1,0 +1,286 @@
+:root[data-theme="starWhaleButterfly"] {
+    --color-primary: #1f7fb3;
+    --color-primary-light: #58b6e0;
+    --color-primary-lighter: #d8f2ff;
+    --color-primary-dark: #0b2a44;
+
+    --color-secondary: #14a6a2;
+    --color-secondary-light: #64d6d2;
+    --color-secondary-dark: #0b5b63;
+
+    --color-accent: #f2b84b;
+    --color-accent-light: #ffe0a3;
+    --color-accent-dark: #c27a12;
+
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #f59e0b;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(7, 16, 34, 0.92) 0%,
+        rgba(14, 78, 116, 0.58) 48%,
+        rgba(20, 166, 162, 0.28) 78%,
+        rgba(242, 184, 75, 0.18) 100%);
+
+    --bg-body: rgba(236, 250, 255, 0.76);
+    --bg-body-strong: rgba(236, 250, 255, 0.90);
+    --bg-dark: rgba(7, 16, 34, 0.78);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(236, 250, 255, 0.58) 0%,
+        rgba(216, 242, 255, 0.34) 55%,
+        rgba(31, 127, 179, 0.16) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.80) 0%,
+        rgba(216, 242, 255, 0.22) 100%);
+
+    --bg-white: rgba(251, 254, 255, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.88);
+    --bg-light: rgba(236, 250, 255, 0.82);
+    --bg-lighter: rgba(216, 242, 255, 0.70);
+    --bg-soft: rgba(31, 127, 179, 0.08);
+    --bg-soft-strong: rgba(31, 127, 179, 0.14);
+
+    --text-primary: rgba(7, 18, 28, 0.96);
+    --text-secondary: rgba(7, 18, 28, 0.78);
+    --text-tertiary: rgba(7, 18, 28, 0.62);
+    --text-strong: rgba(0, 0, 0, 0.96);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(31, 127, 179, 0.44);
+    --border-light: rgba(7, 18, 28, 0.12);
+    --border-medium: rgba(31, 127, 179, 0.22);
+    --card-border-color: rgba(20, 166, 162, 0.18);
+    --control-border-color: rgba(31, 127, 179, 0.22);
+    --table-border-color: rgba(7, 18, 28, 0.12);
+
+    --shadow-primary: 0 18px 54px rgba(7, 16, 34, 0.20);
+    --shadow-primary-lg: 0 28px 78px rgba(7, 16, 34, 0.18);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.88) 84%, rgba(31, 127, 179, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.88) 74%, rgba(31, 127, 179, 0.18));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 88%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 78%, var(--color-secondary)) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 86%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 82%, var(--color-secondary-dark)) 100%);
+
+    --action-buy-text: rgba(255, 255, 255, 0.98);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 84%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 72%, var(--color-secondary-light)) 55%,
+        color-mix(in srgb, var(--color-secondary) 68%, var(--color-primary-dark)) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 88%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 78%, var(--color-accent-dark)) 100%);
+
+    --action-dca-text: rgba(7, 18, 28, 0.96);
+}
+
+:root[data-theme="starWhaleButterfly"] body {
+    background: url("https://i.pinimg.com/1200x/51/f6/de/51f6de37c93075f19577d0b01ac13af6.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="starWhaleButterfly"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.9;
+    background-image:
+        radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.46), transparent 58%),
+        radial-gradient(circle at 82% 22%, rgba(88, 182, 224, 0.40), transparent 60%),
+        radial-gradient(circle at 64% 76%, rgba(242, 184, 75, 0.30), transparent 62%),
+        radial-gradient(circle at 34% 84%, rgba(20, 166, 162, 0.30), transparent 60%),
+        linear-gradient(135deg, rgba(7, 16, 34, 0.72) 0%, rgba(7, 16, 34, 0.50) 55%, rgba(7, 16, 34, 0.70) 100%);
+}
+
+:root[data-theme="starWhaleButterfly"] .page-ledger,
+:root[data-theme="starWhaleButterfly"] .page-input,
+:root[data-theme="starWhaleButterfly"] .page-chart,
+:root[data-theme="starWhaleButterfly"] .page-budget,
+:root[data-theme="starWhaleButterfly"] .page-monthly-planner,
+:root[data-theme="starWhaleButterfly"] .page-daily-budget,
+:root[data-theme="starWhaleButterfly"] .page-settings,
+:root[data-theme="starWhaleButterfly"] .page-category-manage,
+:root[data-theme="starWhaleButterfly"] .page-investment,
+:root[data-theme="starWhaleButterfly"] .page-wallet,
+:root[data-theme="starWhaleButterfly"] .page-history,
+:root[data-theme="starWhaleButterfly"] .page-planner,
+:root[data-theme="starWhaleButterfly"] .page-manage-investment,
+:root[data-theme="starWhaleButterfly"] .page-annual-report,
+:root[data-theme="starWhaleButterfly"] .page-diary,
+:root[data-theme="starWhaleButterfly"] .page-installment,
+:root[data-theme="starWhaleButterfly"] .installment-page,
+:root[data-theme="starWhaleButterfly"] .dca-page,
+:root[data-theme="starWhaleButterfly"] .fixed-deposit-page,
+:root[data-theme="starWhaleButterfly"] .dividend-page,
+:root[data-theme="starWhaleButterfly"] .dca-management-page,
+:root[data-theme="starWhaleButterfly"] .dca-setup-page,
+:root[data-theme="starWhaleButterfly"] .auto-transfer-management-page,
+:root[data-theme="starWhaleButterfly"] .auto-transfer-setup-page,
+:root[data-theme="starWhaleButterfly"] .investment-input-page,
+:root[data-theme="starWhaleButterfly"] .wishlist-content,
+:root[data-theme="starWhaleButterfly"] .savings-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .card,
+:root[data-theme="starWhaleButterfly"] .record-card,
+:root[data-theme="starWhaleButterfly"] .ledger-card,
+:root[data-theme="starWhaleButterfly"] .summary-card,
+:root[data-theme="starWhaleButterfly"] .budget-card,
+:root[data-theme="starWhaleButterfly"] .wallet-card,
+:root[data-theme="starWhaleButterfly"] .chart-card,
+:root[data-theme="starWhaleButterfly"] .investment-card,
+:root[data-theme="starWhaleButterfly"] .manage-investment-card,
+:root[data-theme="starWhaleButterfly"] .annual-report-card,
+:root[data-theme="starWhaleButterfly"] .diary-card,
+:root[data-theme="starWhaleButterfly"] .monthly-planning-card,
+:root[data-theme="starWhaleButterfly"] .investment-settings-card,
+:root[data-theme="starWhaleButterfly"] .wallet-budget-card,
+:root[data-theme="starWhaleButterfly"] .holding-card,
+:root[data-theme="starWhaleButterfly"] .buying-card,
+:root[data-theme="starWhaleButterfly"] .selling-card,
+:root[data-theme="starWhaleButterfly"] .dividend-card,
+:root[data-theme="starWhaleButterfly"] .regular-investment-card,
+:root[data-theme="starWhaleButterfly"] .investment-management-card,
+:root[data-theme="starWhaleButterfly"] .dca-card,
+:root[data-theme="starWhaleButterfly"] .installment-card,
+:root[data-theme="starWhaleButterfly"] .fixed-deposit-card {
+    background: var(--bg-card) !important;
+    border: 2px solid var(--card-border-color) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 14px 34px rgba(7, 16, 34, 0.14) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .theme-modal-overlay,
+:root[data-theme="starWhaleButterfly"] .modal-overlay,
+:root[data-theme="starWhaleButterfly"] .dialog-overlay {
+    background: color-mix(in srgb, rgba(7, 16, 34, 0.60) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="starWhaleButterfly"] .modal-content,
+:root[data-theme="starWhaleButterfly"] .modal-content-standard,
+:root[data-theme="starWhaleButterfly"] .budget-category-modal-content,
+:root[data-theme="starWhaleButterfly"] .budget-setting-modal-content,
+:root[data-theme="starWhaleButterfly"] .category-modal-content,
+:root[data-theme="starWhaleButterfly"] .dca-execute-modal .modal-content,
+:root[data-theme="starWhaleButterfly"] .account-modal-content,
+:root[data-theme="starWhaleButterfly"] .emoji-modal-content,
+:root[data-theme="starWhaleButterfly"] .history-modal-content,
+:root[data-theme="starWhaleButterfly"] .entry-detail-content,
+:root[data-theme="starWhaleButterfly"] .theme-modal-content,
+:root[data-theme="starWhaleButterfly"] .dialog-content,
+:root[data-theme="starWhaleButterfly"] .dialog-container,
+:root[data-theme="starWhaleButterfly"] .xiaosen-dialog,
+:root[data-theme="starWhaleButterfly"] .komori-dialog,
+:root[data-theme="starWhaleButterfly"] .mori-dialog-box,
+:root[data-theme="starWhaleButterfly"] .theme-modal-container {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(236, 250, 255, 0.70)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="starWhaleButterfly"] .spending-analysis-panel,
+:root[data-theme="starWhaleButterfly"] .reminder-panel,
+:root[data-theme="starWhaleButterfly"] .quick-settings,
+:root[data-theme="starWhaleButterfly"] .smart-notification {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(236, 250, 255, 0.70)) !important;
+    border-color: var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="starWhaleButterfly"] .btn,
+:root[data-theme="starWhaleButterfly"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 60%, white) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .btn:hover,
+:root[data-theme="starWhaleButterfly"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 55%, white) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .back-btn,
+:root[data-theme="starWhaleButterfly"] .modal-back-btn,
+:root[data-theme="starWhaleButterfly"] .return-btn,
+:root[data-theme="starWhaleButterfly"] .input-back-btn,
+:root[data-theme="starWhaleButterfly"] .dca-back-btn,
+:root[data-theme="starWhaleButterfly"] .dca-setup-back-btn {
+    background: rgba(255, 255, 255, 0.84) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(31, 127, 179, 0.22) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .back-btn:hover,
+:root[data-theme="starWhaleButterfly"] .modal-back-btn:hover,
+:root[data-theme="starWhaleButterfly"] .return-btn:hover,
+:root[data-theme="starWhaleButterfly"] .input-back-btn:hover,
+:root[data-theme="starWhaleButterfly"] .dca-back-btn:hover,
+:root[data-theme="starWhaleButterfly"] .dca-setup-back-btn:hover {
+    background: rgba(31, 127, 179, 0.08) !important;
+    border-color: rgba(31, 127, 179, 0.34) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 60%, white) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .form-input,
+:root[data-theme="starWhaleButterfly"] .form-select,
+:root[data-theme="starWhaleButterfly"] .form-textarea,
+:root[data-theme="starWhaleButterfly"] .note-input,
+:root[data-theme="starWhaleButterfly"] .theme-search-input {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border: 2px solid rgba(31, 127, 179, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="starWhaleButterfly"] .form-input:focus,
+:root[data-theme="starWhaleButterfly"] .form-select:focus,
+:root[data-theme="starWhaleButterfly"] .form-textarea:focus,
+:root[data-theme="starWhaleButterfly"] .note-input:focus,
+:root[data-theme="starWhaleButterfly"] .theme-search-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(31, 127, 179, 0.16) !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+}

@@ -1,0 +1,272 @@
+﻿:root[data-theme="obsidian"].dark {
+    --text-primary: rgba(248, 250, 252, 0.96);
+    --text-secondary: rgba(248, 250, 252, 0.82);
+    --text-tertiary: rgba(248, 250, 252, 0.66);
+    --text-strong: rgba(248, 250, 252, 0.98);
+    --action-buy-text: rgba(15, 23, 42, 0.95);
+    --action-dca-text: rgba(15, 23, 42, 0.9);
+    --action-side-bg: color-mix(in srgb, rgba(15, 23, 42, 0.9) 80%, rgba(255, 255, 255, 0.08));
+    --action-side-bg-hover: color-mix(in srgb, rgba(15, 23, 42, 0.92) 85%, rgba(255, 255, 255, 0.15));
+    --action-side-text: rgba(248, 250, 252, 0.95);
+}
+
+:root.dark {
+    --text-primary: rgba(255, 255, 255, 0.96);
+    --text-secondary: rgba(255, 255, 255, 0.86);
+    --text-tertiary: rgba(255, 255, 255, 0.7);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --card-border-color: color-mix(in srgb, var(--border-light) 72%, transparent);
+    --control-border-color: color-mix(in srgb, var(--border-light) 68%, transparent);
+    --table-border-color: color-mix(in srgb, var(--border-light) 66%, transparent);
+    --bg-card: #1f2133;
+}
+
+/* ========== CSS 變數定義（統一顏色和格式） ========== */
+:root {
+    /* 主色 */
+    --color-primary: var(--color-primary, #4a90e2);
+    --color-primary-light: var(--color-primary-light, #7bb3f0);
+    --color-primary-lighter: var(--color-primary-lighter, #5da3ed);
+    --color-primary-rgba-20: var(--color-primary-rgba-20, rgba(74, 144, 226, 0.2));
+    --color-primary-rgba-12: var(--color-primary-rgba-12, rgba(74, 144, 226, 0.12));
+    --color-primary-rgba-08: var(--color-primary-rgba-08, rgba(74, 144, 226, 0.08));
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-error: var(--color-danger);
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+
+    /* 背景顏色（預設淺色） */
+    --bg-body: #f7f7f8;
+    --bg-body-strong: #f0f1f5;
+    --bg-white: #ffffff;
+    --bg-light: #f6f7fb;
+    --bg-lighter: var(--bg-white);
+    --bg-card: var(--bg-white);
+    --bg-soft: #f8fafc;
+    --bg-soft-strong: #eef2ff;
+    --bg-light-gradient: linear-gradient(135deg, var(--bg-white) 0%, #e8f4fd 100%);
+    --bg-warning: #fff3cd;
+    --bg-danger: #fee2e2;
+    --bg-input-focus: #f8f9ff;
+    --bg-hover: #f0f0f0;
+    --bg-dark: #000000;
+    --bg-toggle: #e0e0e0;
+    --overlay-backdrop: color-mix(in srgb, var(--bg-dark) 70%, transparent);
+    --overlay-backdrop-strong: color-mix(in srgb, var(--bg-dark) 80%, transparent);
+    
+    /* 文字顏色（預設淺色背景用深色字） */
+    --text-primary: #0f172a;
+    --text-secondary: rgba(15, 23, 42, 0.74);
+    --text-tertiary: rgba(15, 23, 42, 0.58);
+    --text-strong: var(--text-primary);
+    --text-white: var(--bg-white);
+    --text-primary-color: var(--color-primary, #4a90e2);
+    --text-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.14);
+    --text-shadow-strong: 0 2px 6px rgba(0, 0, 0, 0.24);
+    --text-warning: #856404;
+    --text-primary-light: #fdf8e9;
+    --text-primary-lighter: #fff8d2;
+    --text-primary-lightest: #fff9dc;
+
+    /* 邊框與陰影 */
+    --border-light: #e5e7eb;
+    --border-strong: #d1d5db;
+    --border-medium: rgba(0, 0, 0, 0.08);
+    --card-border-color: color-mix(in srgb, var(--border-light) 78%, transparent);
+    --control-border-color: color-mix(in srgb, var(--border-light) 72%, transparent);
+    --table-border-color: color-mix(in srgb, var(--border-light) 70%, transparent);
+    --shadow-xs: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 8px 16px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.16);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.2);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.08);
+    --shadow-focus: 0 0 0 3px color-mix(in srgb, var(--color-primary) 20%, transparent);
+
+    /* 圓角 */
+    --radius-xs: 8px;
+    --radius-sm: 10px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --radius-full: 999px;
+
+    /* 間距 */
+    --spacing-xxs: 4px;
+    --spacing-xs: 6px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 28px;
+    --spacing-3xl: 36px;
+
+    /* 字體階層 */
+    --font-xs: 11px;
+    --font-sm: 13px;
+    --font-base: 15px;
+    --font-lg: 17px;
+    --font-xl: 20px;
+    --font-2xl: 24px;
+    --font-3xl: 28px;
+    --font-4xl: 32px;
+    --font-5xl: 40px;
+    --font-thin: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* 其他 */
+    --blur-sm: 12px;
+    --blur-md: 18px;
+    --blur-lg: 28px;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* 馬卡龍配色 - 柔和甜美色調 */
+    --macaron-primary: #ffb3d9;
+    --macaron-primary-light: #ffcce6;
+    --macaron-primary-dark: #ff99cc;
+    --macaron-accent: #b3d9ff;
+    --macaron-accent-light: #cce6ff;
+    --macaron-accent-dark: #99ccff;
+    --macaron-shadow: rgba(255, 179, 217, 0.35);
+    --macaron-shadow-lg: rgba(255, 179, 217, 0.45);
+
+    /* 動作按鈕（會依主題動態混色） */
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light, #7bb3f0) 80%, white) 0%,
+        color-mix(in srgb, var(--color-primary, #4a90e2) 85%, var(--color-primary-dark, #2e7bd6)) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary, #4a90e2) 85%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark, #2e7bd6) 90%, black) 100%);
+    --action-buy-text: var(--bg-white);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light, #7bb3f0) 25%, #5eead4) 0%,
+        color-mix(in srgb, var(--color-primary, #4a90e2) 45%, #6366f1) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary, #4a90e2) 30%, #5eead4) 0%,
+        color-mix(in srgb, var(--color-primary-dark, #2e7bd6) 55%, #4338ca) 100%);
+    --action-dca-text: var(--bg-white);
+
+    --action-side-bg: color-mix(in srgb, var(--bg-white) 75%, rgba(15, 23, 42, 0.08));
+    --action-side-bg-hover: color-mix(in srgb, var(--bg-white) 65%, rgba(15, 23, 42, 0.2));
+    --action-side-text: var(--text-primary);
+}
+
+/* 主題切換時，強調文字與主文字同步（解決深色主題文字過暗） */
+:root[data-theme]:not(.dark) {
+    --text-strong: var(--text-primary);
+    --bg-card: var(--bg-light);
+}
+
+@media (max-width: 768px) {
+    .page-chart {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .chart-section {
+        margin-bottom: 18px;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+
+    .chart-container--compare {
+        height: 360px;
+    }
+
+    .chart-insight {
+        padding: 0 16px 16px;
+    }
+
+    .dca-item-card {
+        padding: 14px;
+    }
+}
+
+/* ========== 主題顏色定義 ========== */
+
+:root[data-theme="obsidian"] {
+    --color-primary: #71717a;
+    --color-primary-light: #a1a1aa;
+    --color-primary-lighter: #d4d4d8;
+    --color-primary-dark: #52525b;
+    --bg-card: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.94) 50%, rgba(45, 45, 45, 0.9) 100%);
+    --card-border-color: rgba(161, 161, 170, 0.38);
+    --card-border-color-strong: rgba(113, 113, 122, 0.6);
+    --bg-primary: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+    --bg-gradient: linear-gradient(135deg, #71717a 0%, #52525b 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(113, 113, 122, 0.12) 0%, rgba(82, 82, 91, 0.10) 100%);
+    --border-primary: #71717a;
+    --shadow-primary: 0 2px 8px rgba(113, 113, 122, 0.22);
+    --shadow-primary-lg: 0 4px 12px rgba(82, 82, 91, 0.18);
+
+     --bg-white: rgba(0, 0, 0, 0.78);
+     --bg-light: rgba(0, 0, 0, 0.62);
+     --bg-lighter: rgba(0, 0, 0, 0.48);
+     --text-primary: rgba(255, 255, 255, 0.96);
+     --text-secondary: rgba(255, 255, 255, 0.86);
+     --text-tertiary: rgba(255, 255, 255, 0.72);
+     --border-light: rgba(255, 255, 255, 0.14);
+     --border-medium: rgba(255, 255, 255, 0.20);
+     
+     --color-primary-rgba-08: rgba(113, 113, 122, 0.08);
+     --color-primary-rgba-10: rgba(113, 113, 122, 0.1);
+     --color-primary-rgba-12: rgba(113, 113, 122, 0.12);
+     --color-primary-rgba-15: rgba(113, 113, 122, 0.15);
+     --color-primary-rgba-20: rgba(113, 113, 122, 0.2);
+     --color-primary-rgba-25: rgba(113, 113, 122, 0.25);
+     --color-primary-rgba-30: rgba(113, 113, 122, 0.3);
+     --color-primary-rgba-40: rgba(113, 113, 122, 0.4);
+     --color-primary-light-rgba-08: rgba(161, 161, 170, 0.08);
+     --color-primary-light-rgba-10: rgba(161, 161, 170, 0.1);
+     --color-primary-light-rgba-12: rgba(161, 161, 170, 0.12);
+     --color-primary-light-rgba-15: rgba(161, 161, 170, 0.15);
+     --color-primary-light-rgba-20: rgba(161, 161, 170, 0.2);
+     --color-primary-light-rgba-25: rgba(161, 161, 170, 0.25);
+     --color-primary-light-rgba-30: rgba(161, 161, 170, 0.3);
+     --color-primary-light-rgba-40: rgba(161, 161, 170, 0.4);
+}
+
+/* 主題色塊展示 */
+.theme-color-blocks {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-white);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    flex-wrap: wrap;
+}
+
+.theme-color-block {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid var(--border-medium);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-color-block:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-primary);
+}
+
+.theme-color-block.midnight {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+}
+
+.theme-color-block.obsidian {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+}
+

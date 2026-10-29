@@ -1,0 +1,307 @@
+:root[data-theme="littlePrinceWhaleNight"] {
+    --color-primary: #2a7fb9;
+    --color-primary-light: #4fb7e6;
+    --color-primary-lighter: #a9ecff;
+    --color-primary-dark: #0f3f74;
+
+    --color-secondary: #f0b44b;
+    --color-secondary-light: #ffd39a;
+    --color-secondary-dark: #b47422;
+
+    --color-accent: #e24a5a;
+    --color-accent-light: #ff93a0;
+    --color-accent-dark: #9f1f35;
+
+    --color-success: #4fb7e6;
+    --color-danger: #e24a5a;
+    --color-warning: #f0b44b;
+    --color-info: #2a7fb9;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(3, 10, 18, 0.92) 0%,
+        rgba(7, 24, 44, 0.88) 52%,
+        rgba(6, 34, 64, 0.78) 100%);
+
+    --bg-body: rgba(3, 10, 18, 0.92);
+    --bg-body-strong: rgba(3, 10, 18, 0.96);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(3, 10, 18, 0.92) 0%,
+        rgba(7, 24, 44, 0.88) 52%,
+        rgba(15, 63, 116, 0.35) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(79, 183, 230, 0.14) 0%,
+        rgba(240, 180, 75, 0.10) 55%,
+        rgba(226, 74, 90, 0.08) 100%);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(7, 24, 44, 0.82) 0%,
+        rgba(15, 63, 116, 0.28) 55%,
+        rgba(240, 180, 75, 0.14) 100%);
+
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(7, 24, 44, 0.88) 0%,
+        rgba(3, 10, 18, 0.94) 100%);
+
+    --bg-white: rgba(8, 18, 30, 0.78);
+    --bg-card: rgba(8, 18, 30, 0.84);
+    --bg-light: rgba(9, 28, 52, 0.72);
+    --bg-lighter: rgba(11, 38, 72, 0.58);
+    --bg-soft: rgba(79, 183, 230, 0.12);
+    --bg-soft-strong: rgba(79, 183, 230, 0.18);
+
+    --text-primary: rgba(246, 250, 255, 0.96);
+    --text-secondary: rgba(214, 232, 255, 0.82);
+    --text-tertiary: rgba(214, 232, 255, 0.66);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(240, 180, 75, 0.48);
+    --border-light: rgba(79, 183, 230, 0.16);
+    --border-medium: rgba(240, 180, 75, 0.24);
+    --card-border-color: rgba(240, 180, 75, 0.28);
+    --control-border-color: rgba(79, 183, 230, 0.22);
+    --table-border-color: rgba(79, 183, 230, 0.16);
+
+    --shadow-primary: 0 18px 56px rgba(0, 0, 0, 0.45);
+    --shadow-primary-lg: 0 30px 86px rgba(0, 0, 0, 0.55);
+
+    --action-buy-bg: linear-gradient(135deg,
+        rgba(240, 180, 75, 0.98) 0%,
+        rgba(79, 183, 230, 0.92) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        rgba(255, 211, 154, 1) 0%,
+        rgba(79, 183, 230, 1) 100%);
+    --action-buy-text: rgba(3, 10, 18, 0.94);
+
+    --action-dca-bg: linear-gradient(135deg,
+        rgba(79, 183, 230, 0.96) 0%,
+        rgba(240, 180, 75, 0.96) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        rgba(79, 183, 230, 1) 0%,
+        rgba(255, 211, 154, 1) 100%);
+    --action-dca-text: rgba(3, 10, 18, 0.94);
+    --action-dca-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    --action-dca-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.45);
+    --action-dca-focus-ring: 0 0 0 3px rgba(240, 180, 75, 0.22);
+
+    --action-side-bg: color-mix(in srgb, rgba(8, 18, 30, 0.92) 80%, rgba(79, 183, 230, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(8, 18, 30, 0.92) 70%, rgba(240, 180, 75, 0.18));
+    --action-side-text: var(--text-primary);
+}
+
+:root[data-theme="littlePrinceWhaleNight"] body {
+    background:
+        linear-gradient(135deg, rgba(3, 10, 18, 0.78) 0%, rgba(7, 24, 44, 0.68) 52%, rgba(15, 63, 116, 0.22) 100%),
+        url("https://i.pinimg.com/1200x/51/f6/de/51f6de37c93075f19577d0b01ac13af6.jpg") center/cover no-repeat fixed;
+    background-color: rgba(3, 10, 18, 0.92);
+    color: var(--text-primary);
+}
+
+:root[data-theme="littlePrinceWhaleNight"] body::before {
+    display: none;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .page-ledger,
+:root[data-theme="littlePrinceWhaleNight"] .page-input,
+:root[data-theme="littlePrinceWhaleNight"] .page-chart,
+:root[data-theme="littlePrinceWhaleNight"] .page-budget,
+:root[data-theme="littlePrinceWhaleNight"] .page-monthly-planner,
+:root[data-theme="littlePrinceWhaleNight"] .page-daily-budget,
+:root[data-theme="littlePrinceWhaleNight"] .page-settings,
+:root[data-theme="littlePrinceWhaleNight"] .page-category-manage,
+:root[data-theme="littlePrinceWhaleNight"] .page-investment,
+:root[data-theme="littlePrinceWhaleNight"] .page-wallet,
+:root[data-theme="littlePrinceWhaleNight"] .page-history,
+:root[data-theme="littlePrinceWhaleNight"] .page-planner,
+:root[data-theme="littlePrinceWhaleNight"] .page-manage-investment,
+:root[data-theme="littlePrinceWhaleNight"] .page-annual-report,
+:root[data-theme="littlePrinceWhaleNight"] .page-diary,
+:root[data-theme="littlePrinceWhaleNight"] .page-installment,
+:root[data-theme="littlePrinceWhaleNight"] .installment-page,
+:root[data-theme="littlePrinceWhaleNight"] .dca-page,
+:root[data-theme="littlePrinceWhaleNight"] .dividend-page,
+:root[data-theme="littlePrinceWhaleNight"] .dca-management-page,
+:root[data-theme="littlePrinceWhaleNight"] .dca-setup-page,
+:root[data-theme="littlePrinceWhaleNight"] .investment-input-page,
+:root[data-theme="littlePrinceWhaleNight"] .fixed-deposit-page,
+:root[data-theme="littlePrinceWhaleNight"] .wishlist-content,
+:root[data-theme="littlePrinceWhaleNight"] .savings-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .card,
+:root[data-theme="littlePrinceWhaleNight"] .record-card,
+:root[data-theme="littlePrinceWhaleNight"] .ledger-card,
+:root[data-theme="littlePrinceWhaleNight"] .summary-card,
+:root[data-theme="littlePrinceWhaleNight"] .budget-card,
+:root[data-theme="littlePrinceWhaleNight"] .wallet-card,
+:root[data-theme="littlePrinceWhaleNight"] .chart-card,
+:root[data-theme="littlePrinceWhaleNight"] .investment-card,
+:root[data-theme="littlePrinceWhaleNight"] .manage-investment-card,
+:root[data-theme="littlePrinceWhaleNight"] .annual-report-card,
+:root[data-theme="littlePrinceWhaleNight"] .diary-card,
+:root[data-theme="littlePrinceWhaleNight"] .monthly-planning-card,
+:root[data-theme="littlePrinceWhaleNight"] .investment-settings-card,
+:root[data-theme="littlePrinceWhaleNight"] .wallet-budget-card,
+:root[data-theme="littlePrinceWhaleNight"] .holding-card,
+:root[data-theme="littlePrinceWhaleNight"] .buying-card,
+:root[data-theme="littlePrinceWhaleNight"] .selling-card,
+:root[data-theme="littlePrinceWhaleNight"] .dividend-card,
+:root[data-theme="littlePrinceWhaleNight"] .regular-investment-card,
+:root[data-theme="littlePrinceWhaleNight"] .investment-management-card,
+:root[data-theme="littlePrinceWhaleNight"] .dca-card,
+:root[data-theme="littlePrinceWhaleNight"] .installment-card,
+:root[data-theme="littlePrinceWhaleNight"] .fixed-deposit-card {
+    background: var(--bg-card) !important;
+    border: 2px solid var(--card-border-color) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .modal-content-standard,
+:root[data-theme="littlePrinceWhaleNight"] .budget-category-modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .budget-setting-modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .category-modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .dca-execute-modal .modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .account-modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .emoji-modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .history-modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .crop-modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .dialog-container,
+:root[data-theme="littlePrinceWhaleNight"] .xiaosen-dialog,
+:root[data-theme="littlePrinceWhaleNight"] .komori-dialog,
+:root[data-theme="littlePrinceWhaleNight"] .mori-dialog-box,
+:root[data-theme="littlePrinceWhaleNight"] .theme-modal-content,
+:root[data-theme="littlePrinceWhaleNight"] .theme-modal-container {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(3, 10, 18, 0.55)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 26px 74px rgba(0, 0, 0, 0.55) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .theme-modal-overlay,
+:root[data-theme="littlePrinceWhaleNight"] .modal-overlay {
+    background: color-mix(in srgb, rgba(3, 10, 18, 0.74) 78%, transparent) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .btn,
+:root[data-theme="littlePrinceWhaleNight"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-secondary) 60%, white) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .btn:hover,
+:root[data-theme="littlePrinceWhaleNight"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary-light) 55%, white) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .side-action-btn {
+    background: var(--action-side-bg) !important;
+    color: var(--action-side-text) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .side-action-btn:hover {
+    background: var(--action-side-bg-hover) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .back-btn {
+    background: linear-gradient(135deg, rgba(79, 183, 230, 0.92) 0%, rgba(240, 180, 75, 0.92) 55%, rgba(226, 74, 90, 0.86) 100%) !important;
+    border: 2px solid rgba(240, 180, 75, 0.42) !important;
+    color: rgba(3, 10, 18, 0.94) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .input-section {
+    background: color-mix(in srgb, rgba(8, 18, 30, 0.92) 86%, rgba(79, 183, 230, 0.10)) !important;
+    border: 2px solid rgba(240, 180, 75, 0.24) !important;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .tab-btn,
+:root[data-theme="littlePrinceWhaleNight"] .record-type-tab,
+:root[data-theme="littlePrinceWhaleNight"] .category-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(7, 24, 44, 0.5)) !important;
+    border-color: color-mix(in srgb, var(--border-light) 75%, rgba(240, 180, 75, 0.18)) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .tab-btn.active,
+:root[data-theme="littlePrinceWhaleNight"] .record-type-tab.active {
+    background: linear-gradient(135deg, rgba(79, 183, 230, 0.18) 0%, rgba(240, 180, 75, 0.16) 70%, rgba(226, 74, 90, 0.12) 100%) !important;
+    border-color: rgba(240, 180, 75, 0.42) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .record-quick-buy-fab {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .dca-item-status.active {
+    background: color-mix(in srgb, var(--color-primary) 22%, transparent) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .detail-value.income {
+    color: var(--color-primary-light) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .smart-suggestion-btn {
+    background: linear-gradient(135deg, rgba(240, 180, 75, 0.96), rgba(79, 183, 230, 0.92)) !important;
+    color: rgba(3, 10, 18, 0.94) !important;
+    border: 2px solid rgba(255, 211, 154, 0.32) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .smart-suggestion-btn:hover {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35) !important;
+    filter: brightness(1.03);
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .price-up,
+:root[data-theme="littlePrinceWhaleNight"] .stock-change-positive {
+    background: color-mix(in srgb, var(--color-secondary) 78%, white) !important;
+    color: rgba(3, 10, 18, 0.94) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .price-down,
+:root[data-theme="littlePrinceWhaleNight"] .stock-change-negative {
+    background: color-mix(in srgb, var(--color-primary-light) 70%, var(--color-primary-dark)) !important;
+    color: rgba(3, 10, 18, 0.94) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .dividend-calendar-item.has-dividend .dividend-calendar-amount,
+:root[data-theme="littlePrinceWhaleNight"] .dividend-year-stat-amount {
+    color: var(--color-secondary-light) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .dividend-year-stat-bar-fill {
+    background: linear-gradient(90deg, rgba(255, 211, 154, 0.96) 0%, rgba(240, 180, 75, 0.96) 100%) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .fixed-deposit-page .form-submit-btn,
+:root[data-theme="littlePrinceWhaleNight"] .fixed-deposit-card .form-submit-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+}
+
+:root[data-theme="littlePrinceWhaleNight"] .fixed-deposit-page .form-submit-btn:hover,
+:root[data-theme="littlePrinceWhaleNight"] .fixed-deposit-card .form-submit-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}

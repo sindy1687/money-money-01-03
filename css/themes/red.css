@@ -1,0 +1,30 @@
+﻿/* ========== 新增主題：紅色主題 ========== */
+:root[data-theme="red"] {
+    --color-primary: #e53935;
+    --color-primary-light: #ef5350;
+    --color-primary-lighter: #f57373;
+    --color-primary-dark: #c62828;
+    --bg-primary: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
+    --bg-gradient: linear-gradient(135deg, #ef5350 0%, #e53935 100%);
+    --bg-gradient-light: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
+    --border-primary: #e53935;
+    --shadow-primary: 0 2px 8px rgba(229, 57, 53, 0.25);
+    --shadow-primary-lg: 0 4px 12px rgba(229, 57, 53, 0.3);
+    --color-primary-rgba-08: rgba(229, 57, 53, 0.08);
+    --color-primary-rgba-10: rgba(229, 57, 53, 0.1);
+    --color-primary-rgba-15: rgba(229, 57, 53, 0.15);
+    --color-primary-rgba-20: rgba(229, 57, 53, 0.2);
+    --color-primary-rgba-25: rgba(229, 57, 53, 0.25);
+    --color-primary-rgba-30: rgba(229, 57, 53, 0.3);
+    --color-primary-rgba-12: rgba(229, 57, 53, 0.12);
+    --color-primary-rgba-18: rgba(229, 57, 53, 0.18);
+    --color-primary-light-rgba-08: rgba(239, 83, 80, 0.08);
+    --color-primary-light-rgba-10: rgba(239, 83, 80, 0.1);
+    --color-primary-light-rgba-15: rgba(239, 83, 80, 0.15);
+    --color-primary-light-rgba-20: rgba(239, 83, 80, 0.2);
+    --color-primary-light-rgba-25: rgba(239, 83, 80, 0.25);
+    --color-primary-light-rgba-30: rgba(239, 83, 80, 0.3);
+    --color-primary-light-rgba-40: rgba(239, 83, 80, 0.4);
+    --bg-light-gradient: linear-gradient(135deg, var(--bg-white) 0%, #fce4ec 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, #fce4ec 0%, var(--bg-white) 100%);
+}

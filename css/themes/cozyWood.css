@@ -1,0 +1,252 @@
+﻿:root[data-theme="cozyWood"] {
+    --color-primary: #c58a5a;
+    --color-primary-light: #e3b99a;
+    --color-primary-lighter: #f0d7c6;
+    --color-primary-dark: #8a5a38;
+    --color-secondary: #7a8c6a;
+    --color-secondary-light: #a8b89a;
+    --color-secondary-dark: #4f5f45;
+    --color-accent: #d9a441;
+    --color-accent-light: #f0c36a;
+    --color-accent-dark: #b07c24;
+
+    --bg-primary: linear-gradient(135deg, #fff6ea 0%, #f2d8c3 45%, #e8c7a0 100%);
+    --bg-body: rgba(255, 246, 234, 0.92);
+    --bg-body-strong: rgba(255, 246, 234, 0.96);
+    --bg-gradient: linear-gradient(135deg, rgba(255, 246, 234, 0.75) 0%, rgba(242, 216, 195, 0.7) 50%, rgba(232, 199, 160, 0.65) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(255, 246, 234, 0.92) 0%, rgba(255, 255, 255, 0.82) 100%);
+    --bg-light-gradient: linear-gradient(135deg, rgba(255, 246, 234, 0.95) 0%, rgba(242, 216, 195, 0.84) 55%, rgba(232, 199, 160, 0.82) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(232, 199, 160, 0.82) 0%, rgba(255, 246, 234, 0.95) 100%);
+
+    --bg-white: rgba(255, 255, 255, 0.88);
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-light: rgba(255, 246, 234, 0.86);
+    --bg-lighter: rgba(242, 216, 195, 0.62);
+    --bg-soft: rgba(232, 199, 160, 0.36);
+    --bg-soft-strong: rgba(232, 199, 160, 0.52);
+
+    --text-primary: rgba(52, 32, 22, 0.96);
+    --text-secondary: rgba(52, 32, 22, 0.76);
+    --text-tertiary: rgba(52, 32, 22, 0.6);
+    --text-strong: rgba(52, 32, 22, 0.98);
+    --text-white: rgba(255, 255, 255, 0.96);
+
+    --border-primary: rgba(197, 138, 90, 0.6);
+    --border-light: rgba(138, 90, 56, 0.18);
+    --border-medium: rgba(197, 138, 90, 0.28);
+    --card-border-color: rgba(197, 138, 90, 0.34);
+    --control-border-color: rgba(138, 90, 56, 0.22);
+    --table-border-color: rgba(138, 90, 56, 0.16);
+
+    --shadow-primary: 0 18px 50px rgba(138, 90, 56, 0.18);
+    --shadow-primary-lg: 0 28px 70px rgba(138, 90, 56, 0.16);
+
+    --color-primary-rgba-08: rgba(197, 138, 90, 0.08);
+    --color-primary-rgba-10: rgba(197, 138, 90, 0.1);
+    --color-primary-rgba-12: rgba(197, 138, 90, 0.12);
+    --color-primary-rgba-15: rgba(197, 138, 90, 0.15);
+    --color-primary-rgba-20: rgba(197, 138, 90, 0.2);
+    --color-primary-rgba-25: rgba(197, 138, 90, 0.25);
+    --color-primary-rgba-30: rgba(197, 138, 90, 0.3);
+    --color-primary-rgba-40: rgba(197, 138, 90, 0.4);
+
+    --action-buy-bg: linear-gradient(135deg,
+        rgba(197, 138, 90, 0.96) 0%,
+        rgba(138, 90, 56, 0.96) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        rgba(138, 90, 56, 0.98) 0%,
+        rgba(167, 108, 70, 0.98) 100%);
+    --action-buy-text: var(--text-white);
+
+    --action-dca-bg: linear-gradient(135deg,
+        rgba(217, 164, 65, 0.92) 0%,
+        rgba(122, 140, 106, 0.92) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        rgba(191, 140, 50, 0.95) 0%,
+        rgba(79, 95, 69, 0.95) 100%);
+    --action-dca-text: rgba(30, 18, 12, 0.96);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.88) 72%, rgba(197, 138, 90, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.88) 62%, rgba(197, 138, 90, 0.24));
+    --action-side-text: rgba(52, 32, 22, 0.96);
+}
+
+:root[data-theme="cozyWood"] body {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+:root[data-theme="cozyWood"] body::before {
+    display: none;
+}
+
+:root[data-theme="cozyWood"] .page-ledger,
+
+:root[data-theme="cozyWood"] .page-input,
+
+:root[data-theme="cozyWood"] .page-chart,
+
+:root[data-theme="cozyWood"] .page-budget,
+
+:root[data-theme="cozyWood"] .page-monthly-planner,
+
+:root[data-theme="cozyWood"] .page-daily-budget,
+
+:root[data-theme="cozyWood"] .page-settings,
+
+:root[data-theme="cozyWood"] .page-category-manage,
+
+:root[data-theme="cozyWood"] .page-investment,
+
+:root[data-theme="cozyWood"] .page-wallet,
+
+:root[data-theme="cozyWood"] .page-history,
+
+:root[data-theme="cozyWood"] .page-planner,
+
+:root[data-theme="cozyWood"] .page-manage-investment,
+
+:root[data-theme="cozyWood"] .page-annual-report,
+
+:root[data-theme="cozyWood"] .page-diary,
+
+:root[data-theme="cozyWood"] .page-installment,
+
+:root[data-theme="cozyWood"] .installment-page,
+
+:root[data-theme="cozyWood"] .dca-page,
+
+:root[data-theme="cozyWood"] .fixed-deposit-page {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="cozyWood"] .card,
+
+:root[data-theme="cozyWood"] .record-card,
+
+:root[data-theme="cozyWood"] .ledger-card,
+
+:root[data-theme="cozyWood"] .summary-card,
+
+:root[data-theme="cozyWood"] .budget-card,
+
+:root[data-theme="cozyWood"] .wallet-card,
+
+:root[data-theme="cozyWood"] .chart-card,
+
+:root[data-theme="cozyWood"] .investment-card,
+
+:root[data-theme="cozyWood"] .manage-investment-card,
+
+:root[data-theme="cozyWood"] .annual-report-card,
+
+:root[data-theme="cozyWood"] .diary-card,
+
+:root[data-theme="cozyWood"] .monthly-planning-card,
+
+:root[data-theme="cozyWood"] .investment-settings-card,
+
+:root[data-theme="cozyWood"] .wallet-budget-card,
+
+:root[data-theme="cozyWood"] .holding-card,
+
+:root[data-theme="cozyWood"] .buying-card,
+
+:root[data-theme="cozyWood"] .selling-card,
+
+:root[data-theme="cozyWood"] .dividend-card,
+
+:root[data-theme="cozyWood"] .regular-investment-card,
+
+:root[data-theme="cozyWood"] .investment-management-card,
+
+:root[data-theme="cozyWood"] .dca-card,
+
+:root[data-theme="cozyWood"] .installment-card,
+
+:root[data-theme="cozyWood"] .fixed-deposit-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--card-border-color) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 14px 34px rgba(138, 90, 56, 0.14) !important;
+}
+
+:root[data-theme="cozyWood"] .modal-content,
+
+:root[data-theme="cozyWood"] .modal-content-standard,
+
+:root[data-theme="cozyWood"] .budget-category-modal-content,
+
+:root[data-theme="cozyWood"] .budget-setting-modal-content,
+
+:root[data-theme="cozyWood"] .category-modal-content,
+
+:root[data-theme="cozyWood"] .dca-execute-modal .modal-content,
+
+:root[data-theme="cozyWood"] .account-modal-content,
+
+:root[data-theme="cozyWood"] .emoji-modal-content,
+
+:root[data-theme="cozyWood"] .history-modal-content,
+
+:root[data-theme="cozyWood"] .crop-modal-content,
+
+:root[data-theme="cozyWood"] .dialog-container,
+
+:root[data-theme="cozyWood"] .xiaosen-dialog,
+
+:root[data-theme="cozyWood"] .komori-dialog,
+
+:root[data-theme="cozyWood"] .theme-modal-content,
+
+:root[data-theme="cozyWood"] .theme-modal-container {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 22px 60px rgba(138, 90, 56, 0.18) !important;
+}
+
+:root[data-theme="cozyWood"] .theme-modal-overlay,
+
+:root[data-theme="cozyWood"] .modal-overlay {
+    background: color-mix(in srgb, rgba(52, 32, 22, 0.55) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="cozyWood"] .btn,
+
+:root[data-theme="cozyWood"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 65%, white) !important;
+}
+
+:root[data-theme="cozyWood"] .btn:hover,
+
+:root[data-theme="cozyWood"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="cozyWood"] .back-btn {
+    background: linear-gradient(135deg, rgba(197, 138, 90, 0.96) 0%, rgba(217, 164, 65, 0.92) 100%) !important;
+    border: 2px solid rgba(197, 138, 90, 0.5) !important;
+    color: var(--text-white) !important;
+}
+
+:root[data-theme="cozyWood"] .input-section {
+    background: rgba(255, 246, 234, 0.88) !important;
+    border: 2px solid rgba(197, 138, 90, 0.3) !important;
+    box-shadow: 0 -6px 24px rgba(138, 90, 56, 0.14) !important;
+}
+
+:root[data-theme="cozyWood"] .tab-btn,
+
+:root[data-theme="cozyWood"] .record-type-tab,
+
+:root[data-theme="cozyWood"] .category-item {
+    background: color-mix(in srgb, var(--bg-white) 82%, rgba(232, 199, 160, 0.3)) !important;
+    border-color: color-mix(in srgb, var(--border-light) 75%, rgba(197, 138, 90, 0.25)) !important;
+}
+

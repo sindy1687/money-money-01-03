@@ -1,0 +1,307 @@
+﻿:root[data-theme="demonslayer"] {
+    --color-primary: #00c2d1;
+    --color-primary-light: #7af5ff;
+    --color-primary-lighter: #b0fbff;
+    --color-primary-dark: #08131e;
+    --bg-primary: linear-gradient(135deg, #08131e 0%, #0f2434 45%, #00c2d1 100%);
+    --bg-gradient: linear-gradient(135deg, rgba(0, 194, 209, 0.25) 0%, rgba(8, 19, 30, 0.9) 70%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(8, 19, 30, 0.92) 0%, rgba(10, 36, 52, 0.9) 60%, rgba(0, 194, 209, 0.25) 100%);
+    --bg-light-gradient: linear-gradient(135deg, rgba(11, 28, 42, 0.95) 0%, rgba(8, 19, 30, 0.94) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(11, 28, 42, 0.96) 0%, rgba(8, 19, 30, 0.92) 100%);
+    --bg-card: rgba(6, 14, 22, 0.92);
+    --bg-white: rgba(10, 22, 33, 0.95);
+    --bg-light: rgba(13, 30, 45, 0.9);
+    --bg-lighter: rgba(15, 34, 52, 0.82);
+    --text-primary: #f0feff;
+    --text-secondary: rgba(240, 254, 255, 0.8);
+    --text-tertiary: rgba(240, 254, 255, 0.65);
+    --border-light: rgba(0, 194, 209, 0.35);
+    --border-medium: rgba(122, 245, 255, 0.4);
+    --card-border-color: rgba(0, 194, 209, 0.45);
+    --card-border-color-strong: rgba(122, 245, 255, 0.55);
+    --border-primary: #00c2d1;
+    --shadow-primary: 0 14px 34px rgba(0, 0, 0, 0.55);
+    --shadow-primary-lg: 0 20px 46px rgba(0, 0, 0, 0.65);
+    --color-primary-rgba-08: rgba(0, 194, 209, 0.08);
+    --color-primary-rgba-10: rgba(0, 194, 209, 0.10);
+    --color-primary-rgba-12: rgba(0, 194, 209, 0.12);
+    --color-primary-rgba-15: rgba(0, 194, 209, 0.15);
+    --color-primary-rgba-20: rgba(0, 194, 209, 0.2);
+    --color-primary-rgba-25: rgba(0, 194, 209, 0.25);
+    --color-primary-rgba-30: rgba(0, 194, 209, 0.3);
+    --color-primary-rgba-40: rgba(0, 194, 209, 0.4);
+    --color-primary-light-rgba-08: rgba(122, 245, 255, 0.08);
+    --color-primary-light-rgba-10: rgba(122, 245, 255, 0.10);
+    --color-primary-light-rgba-12: rgba(122, 245, 255, 0.12);
+    --color-primary-light-rgba-15: rgba(122, 245, 255, 0.15);
+    --color-primary-light-rgba-20: rgba(122, 245, 255, 0.2);
+    --color-primary-light-rgba-25: rgba(122, 245, 255, 0.25);
+    --color-primary-light-rgba-30: rgba(122, 245, 255, 0.3);
+    --color-primary-light-rgba-40: rgba(122, 245, 255, 0.4);
+}
+
+:root[data-theme="demonslayer"] body {
+    background: url("https://i.pinimg.com/736x/73/3c/b0/733cb0696372d66f16702dd385a5aa5b.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+}
+
+:root[data-theme="demonslayer"] body::before {
+    display: none;
+}
+
+:root[data-theme="demonslayer"] .page-input,
+
+:root[data-theme="demonslayer"] .page-ledger,
+
+:root[data-theme="demonslayer"] .page-chart,
+
+:root[data-theme="demonslayer"] .page-budget,
+
+:root[data-theme="demonslayer"] .page-monthly-planner,
+
+:root[data-theme="demonslayer"] .page-daily-budget,
+
+:root[data-theme="demonslayer"] .page-settings,
+
+:root[data-theme="demonslayer"] .page-category-manage,
+
+:root[data-theme="demonslayer"] .page-investment,
+
+:root[data-theme="demonslayer"] .page-wallet,
+
+:root[data-theme="demonslayer"] .page-history,
+
+:root[data-theme="demonslayer"] .page-planner,
+
+:root[data-theme="demonslayer"] .dividend-page,
+
+:root[data-theme="demonslayer"] .dca-management-page,
+
+:root[data-theme="demonslayer"] .dca-setup-page,
+
+:root[data-theme="demonslayer"] .investment-input-page,
+
+:root[data-theme="demonslayer"] .wishlist-content,
+
+:root[data-theme="demonslayer"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="demonslayer"] .card,
+
+:root[data-theme="demonslayer"] .record-card,
+
+:root[data-theme="demonslayer"] .ledger-card,
+
+:root[data-theme="demonslayer"] .summary-card,
+
+:root[data-theme="demonslayer"] .budget-card,
+
+:root[data-theme="demonslayer"] .wallet-card,
+
+:root[data-theme="demonslayer"] .chart-card,
+
+:root[data-theme="demonslayer"] .investment-card,
+
+:root[data-theme="demonslayer"] .stock-item-card,
+
+:root[data-theme="demonslayer"] .monthly-planner-card,
+
+:root[data-theme="demonslayer"] .dividend-stat-card,
+
+:root[data-theme="demonslayer"] .dca-card,
+
+:root[data-theme="demonslayer"] .installment-card {
+    background: rgba(5, 12, 20, 0.98);
+    border: 1px solid rgba(0, 194, 209, 0.4);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    color: var(--text-primary);
+}
+
+:root[data-theme="demonslayer"] .card .value,
+
+:root[data-theme="demonslayer"] .summary-value,
+
+:root[data-theme="demonslayer"] .summary-label,
+
+:root[data-theme="demonslayer"] .stock-card-value,
+
+:root[data-theme="demonslayer"] .stock-card-label,
+
+:root[data-theme="demonslayer"] .stock-card-name,
+
+:root[data-theme="demonslayer"] .stat-label,
+
+:root[data-theme="demonslayer"] .stat-value,
+
+:root[data-theme="demonslayer"] .budget-summary-value,
+
+:root[data-theme="demonslayer"] .budget-summary-label,
+
+:root[data-theme="demonslayer"] .transaction-amount,
+
+:root[data-theme="demonslayer"] .transaction-category,
+
+:root[data-theme="demonslayer"] .transaction-note,
+
+:root[data-theme="demonslayer"] .investment-metric-value,
+
+:root[data-theme="demonslayer"] .investment-metric-label {
+    color: var(--text-primary-light) !important;
+}
+
+:root[data-theme="demonslayer"] .metric-pill,
+
+:root[data-theme="demonslayer"] .stock-chip,
+
+:root[data-theme="demonslayer"] .badge,
+
+:root[data-theme="demonslayer"] .status-pill {
+    background: rgba(0, 194, 209, 0.15) !important;
+    color: var(--color-primary-light) !important;
+    border-color: rgba(0, 194, 209, 0.35) !important;
+}
+
+:root[data-theme="demonslayer"] .investment-card::before,
+
+:root[data-theme="demonslayer"] .stock-item-card::before {
+    background: linear-gradient(135deg, rgba(0, 194, 209, 0.22) 0%, rgba(8, 19, 30, 0.45) 65%, rgba(122, 245, 255, 0.25) 100%);
+}
+
+:root[data-theme="demonslayer"] .nav-item.active {
+    background: rgba(0, 194, 209, 0.16);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="demonslayer"] .modal-content,
+
+:root[data-theme="demonslayer"] .modal-content-standard,
+
+:root[data-theme="demonslayer"] .budget-category-modal-content,
+
+:root[data-theme="demonslayer"] .budget-setting-modal-content,
+
+:root[data-theme="demonslayer"] .category-modal-content,
+
+:root[data-theme="demonslayer"] .dca-execute-modal .modal-content,
+
+:root[data-theme="demonslayer"] .account-modal-content,
+
+:root[data-theme="demonslayer"] .emoji-modal-content,
+
+:root[data-theme="demonslayer"] .history-modal-content {
+    background: rgba(5, 13, 20, 0.95);
+    border: 1px solid rgba(0, 194, 209, 0.4);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.65);
+}
+
+:root[data-theme="demonslayer"] .input-section {
+    background: rgba(5, 13, 20, 0.92);
+    border-top: 2px solid rgba(0, 194, 209, 0.35);
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.55);
+}
+
+:root[data-theme="demonslayer"] .bottom-nav {
+    background: rgba(5, 13, 20, 0.95) !important;
+    border-top: 1px solid rgba(0, 194, 209, 0.35) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="demonslayer"] .form-input,
+
+:root[data-theme="demonslayer"] .form-select,
+
+:root[data-theme="demonslayer"] .form-textarea,
+
+:root[data-theme="demonslayer"] .note-input {
+    background: rgba(12, 27, 40, 0.85) !important;
+    border: 2px solid rgba(0, 194, 209, 0.35) !important;
+    color: var(--text-primary-light) !important;
+}
+
+:root[data-theme="demonslayer"] .form-input:focus,
+
+:root[data-theme="demonslayer"] .form-select:focus,
+
+:root[data-theme="demonslayer"] .form-textarea:focus,
+
+:root[data-theme="demonslayer"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(0, 194, 209, 0.25) !important;
+    background: rgba(8, 19, 30, 0.96) !important;
+}
+
+:root[data-theme="demonslayer"] .header-section {
+    background: rgba(5, 12, 20, 0.92) !important;
+    border-bottom: 1px solid rgba(0, 194, 209, 0.3) !important;
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="demonslayer"] .tab-btn {
+    background: rgba(10, 24, 36, 0.85) !important;
+    border: 1px solid rgba(0, 194, 209, 0.25) !important;
+    color: var(--text-primary-light) !important;
+}
+
+:root[data-theme="demonslayer"] .tab-btn.active {
+    background: rgba(0, 194, 209, 0.2) !important;
+    border: 2px solid #00c2d1 !important;
+    color: var(--text-primary-light) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45) !important;
+}
+
+:root[data-theme="demonslayer"] .tab-btn:hover {
+    background: rgba(0, 194, 209, 0.15) !important;
+    border-color: rgba(0, 194, 209, 0.35) !important;
+}
+
+:root[data-theme="demonslayer"] .key-btn {
+    background: rgba(12, 27, 40, 0.85) !important;
+    border: 2px solid rgba(0, 194, 209, 0.35) !important;
+    color: var(--text-primary-light) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+:root[data-theme="demonslayer"] .key-btn:hover {
+    background: rgba(0, 194, 209, 0.18) !important;
+    border-color: rgba(0, 194, 209, 0.4) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6) !important;
+}
+
+:root[data-theme="demonslayer"] .key-btn:active {
+    background: rgba(5, 12, 20, 0.95) !important;
+    transform: scale(0.95);
+}
+
+:root[data-theme="demonslayer"] .key-btn.operator {
+    background: rgba(0, 194, 209, 0.35) !important;
+    color: var(--color-primary-dark) !important;
+}
+
+:root[data-theme="demonslayer"] .key-btn.equal {
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 85%, var(--color-primary-dark)) 100%) !important;
+    color: var(--color-primary-dark) !important;
+}
+
+:root[data-theme="demonslayer"] .key-btn.delete {
+    background: rgba(255, 99, 132, 0.85) !important;
+    border-color: rgba(255, 99, 132, 0.9) !important;
+}
+
+:root[data-theme="demonslayer"] .fab-btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 90%, var(--color-primary-dark)) 100%) !important;
+    color: var(--color-primary-dark) !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6) !important;
+}
+
+:root[data-theme="demonslayer"] .fab-btn:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%) !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* ========== 完成標記 ========== */
+/* 蝴蝶忍主題重寫完成 - 包含完整的顏色系統、現代化設計和豐富的視覺效果 */
+
+/* ========== 果凍派對主題 ========== */
+

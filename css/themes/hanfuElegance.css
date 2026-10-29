@@ -1,0 +1,391 @@
+:root[data-theme="hanfuElegance"] {
+    --color-primary: #d14a3b;
+    --color-primary-light: #e46a5d;
+    --color-primary-lighter: #f1a39a;
+    --color-primary-dark: #7f231b;
+    --color-secondary: #2f6f88;
+    --color-secondary-light: #4e92ac;
+    --color-secondary-dark: #214e62;
+
+    --bg-primary: linear-gradient(135deg, rgba(248, 243, 236, 0.92) 0%, rgba(225, 235, 242, 0.86) 45%, rgba(47, 111, 136, 0.22) 100%);
+    --bg-body: rgba(248, 243, 236, 0.9);
+    --bg-body-strong: rgba(244, 238, 229, 0.96);
+    --bg-gradient: linear-gradient(135deg, rgba(209, 74, 59, 0.22) 0%, rgba(47, 111, 136, 0.18) 55%, rgba(255, 255, 255, 0.05) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(248, 243, 236, 0.9) 0%, rgba(227, 238, 245, 0.82) 100%);
+
+    --bg-white: rgba(252, 248, 242, 0.88);
+    --bg-card: rgba(255, 255, 255, 0.8);
+    --bg-light: rgba(245, 238, 229, 0.75);
+    --bg-lighter: rgba(236, 232, 226, 0.68);
+    --bg-soft: rgba(47, 111, 136, 0.08);
+    --bg-soft-strong: rgba(209, 74, 59, 0.1);
+
+    --text-primary: rgba(27, 35, 48, 0.96);
+    --text-secondary: rgba(27, 35, 48, 0.78);
+    --text-tertiary: rgba(27, 35, 48, 0.6);
+    --text-strong: rgba(10, 14, 22, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(209, 74, 59, 0.65);
+    --border-light: rgba(47, 111, 136, 0.18);
+    --border-medium: rgba(209, 74, 59, 0.32);
+    --card-border-color: rgba(47, 111, 136, 0.22);
+    --card-border-color-strong: rgba(209, 74, 59, 0.3);
+
+    --shadow-primary: 0 18px 48px rgba(10, 14, 22, 0.22);
+    --shadow-primary-lg: 0 24px 68px rgba(10, 14, 22, 0.26);
+
+    --color-primary-rgba-08: rgba(209, 74, 59, 0.08);
+    --color-primary-rgba-10: rgba(209, 74, 59, 0.1);
+    --color-primary-rgba-12: rgba(209, 74, 59, 0.12);
+    --color-primary-rgba-15: rgba(209, 74, 59, 0.15);
+    --color-primary-rgba-20: rgba(209, 74, 59, 0.2);
+    --color-primary-rgba-25: rgba(209, 74, 59, 0.25);
+    --color-primary-rgba-30: rgba(209, 74, 59, 0.3);
+    --color-primary-rgba-40: rgba(209, 74, 59, 0.4);
+
+    --color-primary-light-rgba-08: rgba(228, 106, 93, 0.08);
+    --color-primary-light-rgba-10: rgba(228, 106, 93, 0.1);
+    --color-primary-light-rgba-12: rgba(228, 106, 93, 0.12);
+    --color-primary-light-rgba-15: rgba(228, 106, 93, 0.15);
+    --color-primary-light-rgba-20: rgba(228, 106, 93, 0.2);
+    --color-primary-light-rgba-25: rgba(228, 106, 93, 0.25);
+    --color-primary-light-rgba-30: rgba(228, 106, 93, 0.3);
+    --color-primary-light-rgba-40: rgba(228, 106, 93, 0.4);
+
+    --color-secondary-rgba-08: rgba(47, 111, 136, 0.08);
+    --color-secondary-rgba-10: rgba(47, 111, 136, 0.1);
+    --color-secondary-rgba-15: rgba(47, 111, 136, 0.15);
+    --color-secondary-rgba-20: rgba(47, 111, 136, 0.2);
+    --color-secondary-rgba-25: rgba(47, 111, 136, 0.25);
+    --color-secondary-rgba-30: rgba(47, 111, 136, 0.3);
+    --color-secondary-rgba-40: rgba(47, 111, 136, 0.4);
+
+    --card-background-image: url("https://i.pinimg.com/736x/4e/c8/43/4ec8430175a5495bdb890656c6678624.jpg");
+}
+
+:root[data-theme="hanfuElegance"] body {
+    background: url("https://i.pinimg.com/1200x/5a/dc/60/5adc6000b0d25635619451b2d26da82f.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-body);
+}
+
+:root[data-theme="hanfuElegance"] body::before {
+    background: linear-gradient(135deg, rgba(252, 248, 242, 0.62) 0%, rgba(245, 238, 229, 0.58) 35%, rgba(47, 111, 136, 0.12) 100%);
+}
+
+:root[data-theme="hanfuElegance"] .page-input,
+:root[data-theme="hanfuElegance"] .page-ledger,
+:root[data-theme="hanfuElegance"] .page-chart,
+:root[data-theme="hanfuElegance"] .page-budget,
+:root[data-theme="hanfuElegance"] .page-monthly-planner,
+:root[data-theme="hanfuElegance"] .page-daily-budget,
+:root[data-theme="hanfuElegance"] .page-settings,
+:root[data-theme="hanfuElegance"] .page-category-manage,
+:root[data-theme="hanfuElegance"] .page-investment,
+:root[data-theme="hanfuElegance"] .page-wallet,
+:root[data-theme="hanfuElegance"] .page-history,
+:root[data-theme="hanfuElegance"] .page-planner,
+:root[data-theme="hanfuElegance"] .dividend-page,
+:root[data-theme="hanfuElegance"] .dca-management-page,
+:root[data-theme="hanfuElegance"] .dca-setup-page,
+:root[data-theme="hanfuElegance"] .investment-input-page,
+:root[data-theme="hanfuElegance"] .installment-management-page,
+:root[data-theme="hanfuElegance"] .installment-setup-page,
+:root[data-theme="hanfuElegance"] .wishlist-content,
+:root[data-theme="hanfuElegance"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="hanfuElegance"] .card,
+:root[data-theme="hanfuElegance"] .record-card,
+:root[data-theme="hanfuElegance"] .ledger-card,
+:root[data-theme="hanfuElegance"] .summary-card,
+:root[data-theme="hanfuElegance"] .budget-card,
+:root[data-theme="hanfuElegance"] .wallet-card,
+:root[data-theme="hanfuElegance"] .chart-card,
+:root[data-theme="hanfuElegance"] .investment-card,
+:root[data-theme="hanfuElegance"] .stock-item-card,
+:root[data-theme="hanfuElegance"] .monthly-planner-card,
+:root[data-theme="hanfuElegance"] .dividend-stat-card,
+:root[data-theme="hanfuElegance"] .dca-card,
+:root[data-theme="hanfuElegance"] .installment-card,
+:root[data-theme="hanfuElegance"] .buying-card,
+:root[data-theme="hanfuElegance"] .selling-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--card-border-color) !important;
+    box-shadow: var(--shadow-primary) !important;
+    color: var(--text-primary);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="hanfuElegance"] .card::after,
+:root[data-theme="hanfuElegance"] .record-card::after,
+:root[data-theme="hanfuElegance"] .ledger-card::after,
+:root[data-theme="hanfuElegance"] .summary-card::after,
+:root[data-theme="hanfuElegance"] .budget-card::after,
+:root[data-theme="hanfuElegance"] .wallet-card::after,
+:root[data-theme="hanfuElegance"] .chart-card::after,
+:root[data-theme="hanfuElegance"] .investment-card::after,
+:root[data-theme="hanfuElegance"] .stock-item-card::after,
+:root[data-theme="hanfuElegance"] .monthly-planner-card::after,
+:root[data-theme="hanfuElegance"] .dividend-stat-card::after,
+:root[data-theme="hanfuElegance"] .dca-card::after,
+:root[data-theme="hanfuElegance"] .installment-card::after,
+:root[data-theme="hanfuElegance"] .buying-card::after,
+:root[data-theme="hanfuElegance"] .selling-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--card-background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+    filter: saturate(0.95) contrast(0.95);
+    pointer-events: none;
+    z-index: 0;
+}
+
+:root[data-theme="hanfuElegance"] .card > *,
+:root[data-theme="hanfuElegance"] .record-card > *,
+:root[data-theme="hanfuElegance"] .ledger-card > *,
+:root[data-theme="hanfuElegance"] .summary-card > *,
+:root[data-theme="hanfuElegance"] .budget-card > *,
+:root[data-theme="hanfuElegance"] .wallet-card > *,
+:root[data-theme="hanfuElegance"] .chart-card > *,
+:root[data-theme="hanfuElegance"] .investment-card > *,
+:root[data-theme="hanfuElegance"] .stock-item-card > *,
+:root[data-theme="hanfuElegance"] .monthly-planner-card > *,
+:root[data-theme="hanfuElegance"] .dividend-stat-card > *,
+:root[data-theme="hanfuElegance"] .dca-card > *,
+:root[data-theme="hanfuElegance"] .installment-card > *,
+:root[data-theme="hanfuElegance"] .buying-card > *,
+:root[data-theme="hanfuElegance"] .selling-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+:root[data-theme="hanfuElegance"] .investment-card::before,
+:root[data-theme="hanfuElegance"] .stock-item-card::before {
+    background: linear-gradient(135deg, rgba(209, 74, 59, 0.18) 0%, rgba(47, 111, 136, 0.14) 60%, rgba(255, 255, 255, 0.2) 100%);
+}
+
+:root[data-theme="hanfuElegance"] .nav-item.active {
+    background: rgba(209, 74, 59, 0.12);
+    box-shadow: 0 12px 28px rgba(10, 14, 22, 0.18);
+}
+
+:root[data-theme="hanfuElegance"] .modal-content,
+:root[data-theme="hanfuElegance"] .modal-content-standard,
+:root[data-theme="hanfuElegance"] .budget-category-modal-content,
+:root[data-theme="hanfuElegance"] .budget-setting-modal-content,
+:root[data-theme="hanfuElegance"] .category-modal-content,
+:root[data-theme="hanfuElegance"] .dca-execute-modal .modal-content,
+:root[data-theme="hanfuElegance"] .account-modal-content,
+:root[data-theme="hanfuElegance"] .emoji-modal-content,
+:root[data-theme="hanfuElegance"] .history-modal-content {
+    background: rgba(252, 248, 242, 0.92);
+    border: 1px solid rgba(47, 111, 136, 0.22);
+    box-shadow: 0 22px 60px rgba(10, 14, 22, 0.28);
+    color: var(--text-primary);
+}
+
+:root[data-theme="hanfuElegance"] .input-section {
+    background: rgba(252, 248, 242, 0.92);
+    border-top: 2px solid rgba(209, 74, 59, 0.22);
+    box-shadow: 0 -10px 34px rgba(10, 14, 22, 0.22);
+}
+
+:root[data-theme="hanfuElegance"] .bottom-nav {
+    background: rgba(252, 248, 242, 0.92) !important;
+    border-top: 1px solid rgba(47, 111, 136, 0.18) !important;
+    backdrop-filter: blur(18px) saturate(140%);
+}
+
+:root[data-theme="hanfuElegance"] .form-input,
+:root[data-theme="hanfuElegance"] .form-select,
+:root[data-theme="hanfuElegance"] .form-textarea,
+:root[data-theme="hanfuElegance"] .note-input {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 2px solid rgba(47, 111, 136, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="hanfuElegance"] .form-input:focus,
+:root[data-theme="hanfuElegance"] .form-select:focus,
+:root[data-theme="hanfuElegance"] .form-textarea:focus,
+:root[data-theme="hanfuElegance"] .note-input:focus {
+    border-color: rgba(209, 74, 59, 0.7) !important;
+    box-shadow: 0 0 0 3px rgba(209, 74, 59, 0.18) !important;
+}
+
+:root[data-theme="hanfuElegance"] .tab-btn.active,
+:root[data-theme="hanfuElegance"] .ledger-type-tab.active,
+:root[data-theme="hanfuElegance"] .record-type-tab.active,
+:root[data-theme="hanfuElegance"] .chart-tab-btn.active {
+    background: linear-gradient(135deg, rgba(209, 74, 59, 0.18) 0%, rgba(47, 111, 136, 0.12) 100%) !important;
+    border: 2px solid rgba(209, 74, 59, 0.45) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="hanfuElegance"] .fab-btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 80%, black) 100%) !important;
+    color: var(--text-white) !important;
+    box-shadow: 0 16px 40px rgba(10, 14, 22, 0.32) !important;
+}
+
+:root[data-theme="hanfuElegance"] .fab-btn:hover {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%) !important;
+}
+
+:root[data-theme="hanfuElegance"] .dca-add-btn,
+:root[data-theme="hanfuElegance"] .dca-add-btn:hover,
+:root[data-theme="hanfuElegance"] .form-submit-btn,
+:root[data-theme="hanfuElegance"] .entry-detail-edit-btn,
+:root[data-theme="hanfuElegance"] .entry-edit-save,
+:root[data-theme="hanfuElegance"] .investment-form-submit-btn,
+:root[data-theme="hanfuElegance"] .buy-btn,
+:root[data-theme="hanfuElegance"] .dca-execute-btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+    color: var(--text-white) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+:root[data-theme="hanfuElegance"] .dca-back-btn,
+:root[data-theme="hanfuElegance"] .dca-setup-back-btn,
+:root[data-theme="hanfuElegance"] .investment-form-back-btn,
+:root[data-theme="hanfuElegance"] .dividend-back-btn,
+:root[data-theme="hanfuElegance"] .back-btn {
+    background: rgba(255, 255, 255, 0.78) !important;
+    border: 1px solid rgba(47, 111, 136, 0.22) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 26px rgba(10, 14, 22, 0.16) !important;
+}
+
+:root[data-theme="hanfuElegance"] .back-btn:hover,
+:root[data-theme="hanfuElegance"] .dca-back-btn:hover,
+:root[data-theme="hanfuElegance"] .dca-setup-back-btn:hover,
+:root[data-theme="hanfuElegance"] .investment-form-back-btn:hover,
+:root[data-theme="hanfuElegance"] .dividend-back-btn:hover {
+    border-color: rgba(209, 74, 59, 0.35) !important;
+    background: rgba(252, 248, 242, 0.9) !important;
+}
+
+:root[data-theme="hanfuElegance"] .buy-action-btn-large,
+:root[data-theme="hanfuElegance"] .dca-action-btn-large,
+:root[data-theme="hanfuElegance"] .allocation-btn.primary,
+:root[data-theme="hanfuElegance"] .modal-btn.confirm-btn {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+    color: var(--text-white) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 14px 34px rgba(10, 14, 22, 0.22) !important;
+}
+
+:root[data-theme="hanfuElegance"] .buy-action-btn-large:hover,
+:root[data-theme="hanfuElegance"] .dca-action-btn-large:hover,
+:root[data-theme="hanfuElegance"] .allocation-btn.primary:hover,
+:root[data-theme="hanfuElegance"] .modal-btn.confirm-btn:hover {
+    filter: brightness(1.03);
+}
+
+:root[data-theme="hanfuElegance"] .allocation-btn,
+:root[data-theme="hanfuElegance"] .modal-btn.cancel-btn {
+    background: rgba(255, 255, 255, 0.78) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(47, 111, 136, 0.22) !important;
+}
+
+:root[data-theme="hanfuElegance"] .spending-analysis-panel,
+:root[data-theme="hanfuElegance"] .reminder-panel,
+:root[data-theme="hanfuElegance"] .smart-notification,
+:root[data-theme="hanfuElegance"] .quick-settings,
+:root[data-theme="hanfuElegance"] .dialog-content {
+    background: rgba(252, 248, 242, 0.92) !important;
+    border: 1px solid rgba(47, 111, 136, 0.22) !important;
+    box-shadow: 0 22px 60px rgba(10, 14, 22, 0.28) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="hanfuElegance"] .panel-header,
+:root[data-theme="hanfuElegance"] .smart-suggestion-banner {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+    color: var(--text-white) !important;
+}
+
+:root[data-theme="hanfuElegance"] .insight-item.info,
+:root[data-theme="hanfuElegance"] .insight-item.warning,
+:root[data-theme="hanfuElegance"] .insight-item.error,
+:root[data-theme="hanfuElegance"] .recommendation-item,
+:root[data-theme="hanfuElegance"] .error-message,
+:root[data-theme="hanfuElegance"] .error-suggestion {
+    background: rgba(255, 255, 255, 0.78) !important;
+    border: 1px solid rgba(47, 111, 136, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="hanfuElegance"] .insight-item.info {
+    border-left-color: rgba(47, 111, 136, 0.8) !important;
+}
+
+:root[data-theme="hanfuElegance"] .insight-item.warning {
+    border-left-color: rgba(209, 74, 59, 0.75) !important;
+}
+
+:root[data-theme="hanfuElegance"] .insight-item.error,
+:root[data-theme="hanfuElegance"] .error-message {
+    border-left-color: rgba(180, 45, 35, 0.85) !important;
+}
+
+:root[data-theme="hanfuElegance"] .recommendation-item {
+    border-left-color: rgba(47, 111, 136, 0.8) !important;
+}
+
+:root[data-theme="hanfuElegance"] .history-advisor-chat,
+:root[data-theme="hanfuElegance"] .mori-dialog-box,
+:root[data-theme="hanfuElegance"] .komori-dialog,
+:root[data-theme="hanfuElegance"] .xiaosen-dialog {
+    background: rgba(252, 248, 242, 0.92) !important;
+    border: 1px solid rgba(47, 111, 136, 0.22) !important;
+    box-shadow: 0 18px 48px rgba(10, 14, 22, 0.22) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+:root[data-theme="hanfuElegance"] .advisor-quick-btn {
+    background: rgba(209, 74, 59, 0.08) !important;
+    border: 1px solid rgba(209, 74, 59, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="hanfuElegance"] .advisor-quick-btn:hover {
+    background: rgba(47, 111, 136, 0.12) !important;
+    border-color: rgba(47, 111, 136, 0.22) !important;
+}
+
+:root[data-theme="hanfuElegance"] .advisor-chat-input-container {
+    background: rgba(252, 248, 242, 0.92) !important;
+}
+
+:root[data-theme="hanfuElegance"] .advisor-chat-input {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 1px solid rgba(47, 111, 136, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="hanfuElegance"] .advisor-send-btn {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%) !important;
+    color: var(--text-white) !important;
+}
+
+@media (max-width: 480px) {
+    :root[data-theme="hanfuElegance"] .history-advisor-chat {
+        width: 100% !important;
+        height: 70vh !important;
+        border-radius: 16px 16px 0 0 !important;
+    }
+}

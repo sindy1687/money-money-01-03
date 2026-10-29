@@ -1,0 +1,233 @@
+:root[data-theme="piggyMelody"] {
+    --color-primary: #e86f9a;
+    --color-primary-light: #f4a9c3;
+    --color-primary-lighter: #ffe2ec;
+    --color-primary-dark: #a64569;
+
+    --color-secondary: #f0a3b8;
+    --color-secondary-light: #ffe5ee;
+    --color-secondary-dark: #c85f82;
+
+    --color-accent: #f2c2d1;
+    --color-accent-light: #ffeef5;
+    --color-accent-dark: #d58aa3;
+
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg, rgba(255, 240, 246, 0.94) 0%, rgba(255, 223, 236, 0.88) 45%, rgba(255, 248, 252, 0.86) 100%);
+    --bg-body: rgba(255, 240, 246, 0.92);
+    --bg-body-strong: rgba(255, 240, 246, 0.96);
+    --bg-gradient: linear-gradient(135deg, rgba(244, 169, 195, 0.72) 0%, rgba(232, 111, 154, 0.62) 55%, rgba(242, 194, 209, 0.58) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 223, 236, 0.70) 60%, rgba(255, 248, 252, 0.64) 100%);
+    --bg-light-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 226, 236, 0.74) 60%, rgba(255, 248, 252, 0.64) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(255, 226, 236, 0.68) 0%, rgba(255, 255, 255, 0.94) 100%);
+
+    --bg-white: rgba(255, 255, 255, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.92);
+    --bg-light: rgba(255, 226, 236, 0.52);
+    --bg-lighter: rgba(255, 240, 246, 0.66);
+    --bg-soft: rgba(232, 111, 154, 0.14);
+    --bg-soft-strong: rgba(232, 111, 154, 0.22);
+
+    --text-primary: rgba(54, 22, 34, 0.96);
+    --text-secondary: rgba(54, 22, 34, 0.76);
+    --text-tertiary: rgba(54, 22, 34, 0.60);
+    --text-strong: rgba(38, 12, 22, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(232, 111, 154, 0.56);
+    --border-light: rgba(166, 69, 105, 0.14);
+    --border-medium: rgba(200, 95, 130, 0.24);
+    --card-border-color: rgba(232, 111, 154, 0.28);
+    --control-border-color: rgba(166, 69, 105, 0.18);
+    --table-border-color: rgba(166, 69, 105, 0.14);
+
+    --shadow-primary: 0 18px 54px rgba(166, 69, 105, 0.16);
+    --shadow-primary-lg: 0 28px 78px rgba(166, 69, 105, 0.14);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 78%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 78%, var(--color-primary)) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 82%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 86%, black) 100%);
+    --action-buy-text: var(--text-white);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary-light) 74%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 70%, var(--color-secondary-dark)) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary) 76%, white) 0%,
+        color-mix(in srgb, var(--color-accent-dark) 80%, var(--color-secondary-dark)) 100%);
+    --action-dca-text: rgba(54, 22, 34, 0.96);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.92) 72%, rgba(232, 111, 154, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.92) 62%, rgba(232, 111, 154, 0.22));
+    --action-side-text: rgba(54, 22, 34, 0.96);
+}
+
+:root[data-theme="piggyMelody"] body {
+    background: url("https://i.pinimg.com/736x/41/d8/c5/41d8c595cfef850cb707ed8d4a008d7f.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+:root[data-theme="piggyMelody"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.62), transparent 56%),
+        radial-gradient(circle at 82% 24%, rgba(255, 226, 236, 0.50), transparent 62%),
+        radial-gradient(circle at 70% 82%, rgba(242, 194, 209, 0.42), transparent 62%),
+        linear-gradient(135deg, rgba(255, 240, 246, 0.62) 0%, rgba(255, 223, 236, 0.44) 55%, rgba(255, 248, 252, 0.32) 100%);
+    opacity: 0.86;
+    pointer-events: none;
+    z-index: -1;
+}
+
+:root[data-theme="piggyMelody"] .page-ledger,
+:root[data-theme="piggyMelody"] .page-input,
+:root[data-theme="piggyMelody"] .page-chart,
+:root[data-theme="piggyMelody"] .page-budget,
+:root[data-theme="piggyMelody"] .page-monthly-planner,
+:root[data-theme="piggyMelody"] .page-daily-budget,
+:root[data-theme="piggyMelody"] .page-settings,
+:root[data-theme="piggyMelody"] .page-category-manage,
+:root[data-theme="piggyMelody"] .page-investment,
+:root[data-theme="piggyMelody"] .page-wallet,
+:root[data-theme="piggyMelody"] .page-history,
+:root[data-theme="piggyMelody"] .page-planner,
+:root[data-theme="piggyMelody"] .page-manage-investment,
+:root[data-theme="piggyMelody"] .page-annual-report,
+:root[data-theme="piggyMelody"] .page-diary,
+:root[data-theme="piggyMelody"] .page-installment,
+:root[data-theme="piggyMelody"] .installment-page,
+:root[data-theme="piggyMelody"] .dca-page,
+:root[data-theme="piggyMelody"] .fixed-deposit-page {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="piggyMelody"] .card,
+:root[data-theme="piggyMelody"] .record-card,
+:root[data-theme="piggyMelody"] .ledger-card,
+:root[data-theme="piggyMelody"] .summary-card,
+:root[data-theme="piggyMelody"] .budget-card,
+:root[data-theme="piggyMelody"] .wallet-card,
+:root[data-theme="piggyMelody"] .chart-card,
+:root[data-theme="piggyMelody"] .investment-card,
+:root[data-theme="piggyMelody"] .manage-investment-card,
+:root[data-theme="piggyMelody"] .annual-report-card,
+:root[data-theme="piggyMelody"] .diary-card,
+:root[data-theme="piggyMelody"] .monthly-planning-card,
+:root[data-theme="piggyMelody"] .investment-settings-card,
+:root[data-theme="piggyMelody"] .wallet-budget-card,
+:root[data-theme="piggyMelody"] .holding-card,
+:root[data-theme="piggyMelody"] .buying-card,
+:root[data-theme="piggyMelody"] .selling-card,
+:root[data-theme="piggyMelody"] .dividend-card,
+:root[data-theme="piggyMelody"] .regular-investment-card,
+:root[data-theme="piggyMelody"] .investment-management-card,
+:root[data-theme="piggyMelody"] .dca-card,
+:root[data-theme="piggyMelody"] .installment-card,
+:root[data-theme="piggyMelody"] .fixed-deposit-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--card-border-color) !important;
+    border-radius: 20px !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(14px) saturate(140%) !important;
+    box-shadow: 0 14px 34px rgba(166, 69, 105, 0.12) !important;
+}
+
+:root[data-theme="piggyMelody"] .modal-content,
+:root[data-theme="piggyMelody"] .modal-content-standard,
+:root[data-theme="piggyMelody"] .budget-category-modal-content,
+:root[data-theme="piggyMelody"] .budget-setting-modal-content,
+:root[data-theme="piggyMelody"] .category-modal-content,
+:root[data-theme="piggyMelody"] .dca-execute-modal .modal-content,
+:root[data-theme="piggyMelody"] .account-modal-content,
+:root[data-theme="piggyMelody"] .emoji-modal-content,
+:root[data-theme="piggyMelody"] .history-modal-content,
+:root[data-theme="piggyMelody"] .crop-modal-content,
+:root[data-theme="piggyMelody"] .dialog-content,
+:root[data-theme="piggyMelody"] .dialog-container,
+:root[data-theme="piggyMelody"] .xiaosen-dialog,
+:root[data-theme="piggyMelody"] .komori-dialog,
+:root[data-theme="piggyMelody"] .mori-dialog,
+:root[data-theme="piggyMelody"] .mori-dialog-box,
+:root[data-theme="piggyMelody"] .theme-modal-content,
+:root[data-theme="piggyMelody"] .theme-modal-container {
+    background: rgba(255, 255, 255, 0.94) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 22px 60px rgba(166, 69, 105, 0.16) !important;
+    max-width: min(94vw, 520px);
+}
+
+:root[data-theme="piggyMelody"] .theme-modal-overlay,
+:root[data-theme="piggyMelody"] .modal-overlay,
+:root[data-theme="piggyMelody"] .dialog-overlay {
+    background: color-mix(in srgb, rgba(54, 22, 34, 0.54) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="piggyMelody"] .btn,
+:root[data-theme="piggyMelody"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 55%, white) !important;
+}
+
+:root[data-theme="piggyMelody"] .btn:hover,
+:root[data-theme="piggyMelody"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="piggyMelody"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-secondary) 50%, white) !important;
+}
+
+:root[data-theme="piggyMelody"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="piggyMelody"] .smart-suggestion-btn {
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 78%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 74%, var(--color-accent-light)) 100%) !important;
+    color: rgba(38, 12, 22, 0.98) !important;
+    border: 2px solid rgba(232, 111, 154, 0.22) !important;
+}
+
+:root[data-theme="piggyMelody"] .smart-suggestion-btn:hover {
+    box-shadow: 0 10px 26px rgba(166, 69, 105, 0.18) !important;
+}
+
+:root[data-theme="piggyMelody"] .back-btn,
+:root[data-theme="piggyMelody"] .return-btn,
+:root[data-theme="piggyMelody"] .input-back-btn,
+:root[data-theme="piggyMelody"] .modal-back-btn,
+:root[data-theme="piggyMelody"] .dca-back-btn,
+:root[data-theme="piggyMelody"] .dca-setup-back-btn {
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary) 74%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 78%, var(--color-secondary-dark)) 100%) !important;
+    border: 2px solid rgba(232, 111, 154, 0.28) !important;
+    color: rgba(38, 12, 22, 0.98) !important;
+}
+
+@media (max-width: 768px) {
+    :root[data-theme="piggyMelody"] .modal-content,
+    :root[data-theme="piggyMelody"] .dialog-content,
+    :root[data-theme="piggyMelody"] .theme-modal-container {
+        width: 95vw;
+        max-height: 90vh;
+    }
+}

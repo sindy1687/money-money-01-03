@@ -1,0 +1,349 @@
+:root[data-theme="serpentEyes"] {
+    --color-primary: #2aa9a4;
+    --color-primary-light: #73d6d1;
+    --color-primary-lighter: #c6f3f0;
+    --color-primary-dark: #0e1418;
+
+    --color-secondary: #1f5a66;
+    --color-secondary-light: #5eb6c7;
+    --color-secondary-dark: #0b1f25;
+
+    --color-accent: #f2b233;
+    --color-accent-light: #ffe0a1;
+    --color-accent-dark: #b97712;
+
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(14, 20, 24, 0.96) 0%,
+        rgba(11, 31, 37, 0.90) 45%,
+        rgba(42, 169, 164, 0.38) 100%);
+    --bg-body: rgba(14, 20, 24, 0.92);
+    --bg-body-strong: rgba(14, 20, 24, 0.96);
+    --bg-gradient: linear-gradient(135deg,
+        rgba(14, 20, 24, 0.94) 0%,
+        rgba(31, 90, 102, 0.44) 55%,
+        rgba(242, 178, 51, 0.24) 100%);
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(42, 169, 164, 0.10) 0%,
+        rgba(242, 178, 51, 0.10) 100%);
+
+    --bg-white: rgba(10, 14, 16, 0.84);
+    --bg-card: rgba(8, 12, 14, 0.90);
+    --bg-light: rgba(14, 22, 26, 0.84);
+    --bg-lighter: rgba(24, 36, 42, 0.66);
+    --bg-soft: rgba(42, 169, 164, 0.10);
+    --bg-soft-strong: rgba(31, 90, 102, 0.22);
+
+    --text-primary: rgba(250, 252, 255, 0.96);
+    --text-secondary: rgba(250, 252, 255, 0.78);
+    --text-tertiary: rgba(250, 252, 255, 0.62);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(115, 214, 209, 0.60);
+    --border-light: rgba(115, 214, 209, 0.18);
+    --border-medium: rgba(42, 169, 164, 0.30);
+    --card-border-color: rgba(115, 214, 209, 0.30);
+    --control-border-color: rgba(115, 214, 209, 0.22);
+    --table-border-color: rgba(115, 214, 209, 0.16);
+
+    --shadow-primary: 0 18px 54px rgba(0, 0, 0, 0.58);
+    --shadow-primary-lg: 0 28px 78px rgba(0, 0, 0, 0.50);
+
+    --color-primary-rgba-08: rgba(42, 169, 164, 0.08);
+    --color-primary-rgba-10: rgba(42, 169, 164, 0.10);
+    --color-primary-rgba-12: rgba(42, 169, 164, 0.12);
+    --color-primary-rgba-15: rgba(42, 169, 164, 0.15);
+    --color-primary-rgba-18: rgba(42, 169, 164, 0.18);
+    --color-primary-rgba-20: rgba(42, 169, 164, 0.20);
+    --color-primary-rgba-25: rgba(42, 169, 164, 0.25);
+    --color-primary-rgba-30: rgba(42, 169, 164, 0.30);
+    --color-primary-rgba-40: rgba(42, 169, 164, 0.40);
+
+    --color-primary-light-rgba-08: rgba(115, 214, 209, 0.08);
+    --color-primary-light-rgba-10: rgba(115, 214, 209, 0.10);
+    --color-primary-light-rgba-12: rgba(115, 214, 209, 0.12);
+    --color-primary-light-rgba-15: rgba(115, 214, 209, 0.15);
+    --color-primary-light-rgba-20: rgba(115, 214, 209, 0.20);
+    --color-primary-light-rgba-25: rgba(115, 214, 209, 0.25);
+    --color-primary-light-rgba-30: rgba(115, 214, 209, 0.30);
+    --color-primary-light-rgba-40: rgba(115, 214, 209, 0.40);
+
+    --color-secondary-rgba-20: rgba(31, 90, 102, 0.20);
+    --color-accent-rgba-30: rgba(242, 178, 51, 0.30);
+    --color-accent-rgba-40: rgba(242, 178, 51, 0.40);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(14, 20, 24, 0.90) 0%,
+        rgba(11, 31, 37, 0.72) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(14, 20, 24, 0.90) 0%,
+        rgba(11, 31, 37, 0.72) 100%);
+
+    --action-side-bg: color-mix(in srgb, rgba(8, 12, 14, 0.92) 78%, rgba(115, 214, 209, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(8, 12, 14, 0.92) 66%, rgba(115, 214, 209, 0.22));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 84%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 78%, var(--color-primary-dark)) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 82%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 86%, var(--color-primary-dark)) 100%);
+    --action-buy-text: rgba(10, 12, 14, 0.96);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent) 74%, white) 0%,
+        color-mix(in srgb, var(--color-secondary-light) 58%, var(--color-secondary-dark)) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 76%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 84%, var(--color-accent-dark)) 100%);
+    --action-dca-text: rgba(10, 12, 14, 0.96);
+}
+
+:root[data-theme="serpentEyes"] body {
+    background: url("https://i.pinimg.com/736x/2e/60/08/2e6008635951b66dcc9ad7b0943526f2.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="serpentEyes"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 28% 24%, rgba(115, 214, 209, 0.24), transparent 58%),
+        radial-gradient(circle at 72% 32%, rgba(242, 178, 51, 0.20), transparent 60%),
+        linear-gradient(135deg, rgba(14, 20, 24, 0.84) 0%, rgba(14, 20, 24, 0.64) 55%, rgba(14, 20, 24, 0.86) 100%);
+}
+
+:root[data-theme="serpentEyes"] .page-ledger,
+:root[data-theme="serpentEyes"] .page-input,
+:root[data-theme="serpentEyes"] .page-chart,
+:root[data-theme="serpentEyes"] .page-budget,
+:root[data-theme="serpentEyes"] .page-monthly-planner,
+:root[data-theme="serpentEyes"] .page-daily-budget,
+:root[data-theme="serpentEyes"] .page-settings,
+:root[data-theme="serpentEyes"] .page-category-manage,
+:root[data-theme="serpentEyes"] .page-investment,
+:root[data-theme="serpentEyes"] .page-wallet,
+:root[data-theme="serpentEyes"] .page-history,
+:root[data-theme="serpentEyes"] .page-planner,
+:root[data-theme="serpentEyes"] .page-installment,
+:root[data-theme="serpentEyes"] .installment-page,
+:root[data-theme="serpentEyes"] .dca-page,
+:root[data-theme="serpentEyes"] .fixed-deposit-page,
+:root[data-theme="serpentEyes"] .dividend-page,
+:root[data-theme="serpentEyes"] .dca-management-page,
+:root[data-theme="serpentEyes"] .dca-setup-page,
+:root[data-theme="serpentEyes"] .investment-input-page,
+:root[data-theme="serpentEyes"] .wishlist-content,
+:root[data-theme="serpentEyes"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="serpentEyes"] .card,
+:root[data-theme="serpentEyes"] .record-card,
+:root[data-theme="serpentEyes"] .ledger-card,
+:root[data-theme="serpentEyes"] .summary-card,
+:root[data-theme="serpentEyes"] .budget-card,
+:root[data-theme="serpentEyes"] .wallet-card,
+:root[data-theme="serpentEyes"] .chart-card,
+:root[data-theme="serpentEyes"] .investment-card,
+:root[data-theme="serpentEyes"] .stock-item-card,
+:root[data-theme="serpentEyes"] .monthly-planner-card,
+:root[data-theme="serpentEyes"] .dividend-stat-card,
+:root[data-theme="serpentEyes"] .dca-card,
+:root[data-theme="serpentEyes"] .installment-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--shadow-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="serpentEyes"] .investment-card::before,
+:root[data-theme="serpentEyes"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(115, 214, 209, 0.18) 0%,
+        rgba(14, 20, 24, 0.50) 65%,
+        rgba(242, 178, 51, 0.14) 100%);
+}
+
+:root[data-theme="serpentEyes"] .modal-content,
+:root[data-theme="serpentEyes"] .modal-content-standard,
+:root[data-theme="serpentEyes"] .budget-category-modal-content,
+:root[data-theme="serpentEyes"] .budget-setting-modal-content,
+:root[data-theme="serpentEyes"] .category-modal-content,
+:root[data-theme="serpentEyes"] .dca-execute-modal .modal-content,
+:root[data-theme="serpentEyes"] .account-modal-content,
+:root[data-theme="serpentEyes"] .emoji-modal-content,
+:root[data-theme="serpentEyes"] .history-modal-content,
+:root[data-theme="serpentEyes"] .entry-detail-content {
+    background: color-mix(in srgb, var(--bg-card) 88%, black) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="serpentEyes"] .input-section {
+    background: color-mix(in srgb, var(--bg-card) 88%, black) !important;
+    border-top: 2px solid rgba(115, 214, 209, 0.32) !important;
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.58);
+}
+
+:root[data-theme="serpentEyes"] .bottom-nav {
+    background: color-mix(in srgb, var(--bg-card) 90%, black) !important;
+    border-top: 1px solid rgba(115, 214, 209, 0.26) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="serpentEyes"] .form-input,
+:root[data-theme="serpentEyes"] .form-select,
+:root[data-theme="serpentEyes"] .form-textarea,
+:root[data-theme="serpentEyes"] .note-input {
+    background: rgba(14, 22, 26, 0.86) !important;
+    border: 2px solid rgba(115, 214, 209, 0.30) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="serpentEyes"] .form-input:focus,
+:root[data-theme="serpentEyes"] .form-select:focus,
+:root[data-theme="serpentEyes"] .form-textarea:focus,
+:root[data-theme="serpentEyes"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(115, 214, 209, 0.24) !important;
+    background: rgba(14, 20, 24, 0.96) !important;
+}
+
+:root[data-theme="serpentEyes"] .header-section,
+:root[data-theme="serpentEyes"] .ledger-header,
+:root[data-theme="serpentEyes"] .chart-header,
+:root[data-theme="serpentEyes"] .budget-header,
+:root[data-theme="serpentEyes"] .monthly-planner-header {
+    background: rgba(14, 20, 24, 0.90) !important;
+    border-bottom: 1px solid rgba(115, 214, 209, 0.20) !important;
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="serpentEyes"] .tab-btn,
+:root[data-theme="serpentEyes"] .chart-tab-btn,
+:root[data-theme="serpentEyes"] .ledger-type-tab,
+:root[data-theme="serpentEyes"] .record-type-tab {
+    background: rgba(14, 22, 26, 0.86) !important;
+    border: 1px solid rgba(115, 214, 209, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="serpentEyes"] .tab-btn.active,
+:root[data-theme="serpentEyes"] .chart-tab-btn.active,
+:root[data-theme="serpentEyes"] .ledger-type-tab.active,
+:root[data-theme="serpentEyes"] .record-type-tab.active {
+    background: rgba(42, 169, 164, 0.22) !important;
+    border: 2px solid rgba(115, 214, 209, 0.52) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.48) !important;
+}
+
+:root[data-theme="serpentEyes"] .tab-btn:hover,
+:root[data-theme="serpentEyes"] .chart-tab-btn:hover,
+:root[data-theme="serpentEyes"] .ledger-type-tab:hover,
+:root[data-theme="serpentEyes"] .record-type-tab:hover {
+    background: rgba(42, 169, 164, 0.16) !important;
+    border-color: rgba(115, 214, 209, 0.30) !important;
+}
+
+:root[data-theme="serpentEyes"] .key-btn {
+    background: rgba(14, 22, 26, 0.86) !important;
+    border: 2px solid rgba(115, 214, 209, 0.30) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.54) !important;
+}
+
+:root[data-theme="serpentEyes"] .key-btn:hover {
+    background: rgba(42, 169, 164, 0.14) !important;
+    border-color: rgba(115, 214, 209, 0.38) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.64) !important;
+}
+
+:root[data-theme="serpentEyes"] .key-btn.operator {
+    background: rgba(42, 169, 164, 0.30) !important;
+    color: rgba(10, 12, 14, 0.96) !important;
+}
+
+:root[data-theme="serpentEyes"] .nav-item.active {
+    background: rgba(42, 169, 164, 0.14);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.48);
+}
+
+:root[data-theme="serpentEyes"] .btn,
+:root[data-theme="serpentEyes"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 55%, white) !important;
+}
+
+:root[data-theme="serpentEyes"] .btn:hover,
+:root[data-theme="serpentEyes"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="serpentEyes"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 45%, white) !important;
+}
+
+:root[data-theme="serpentEyes"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="serpentEyes"] .back-btn,
+:root[data-theme="serpentEyes"] .modal-back-btn {
+    background: color-mix(in srgb, var(--bg-card) 85%, transparent) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+:root[data-theme="serpentEyes"] .back-btn:hover,
+:root[data-theme="serpentEyes"] .modal-back-btn:hover {
+    background: color-mix(in srgb, var(--bg-card) 92%, transparent) !important;
+    border-color: var(--border-primary) !important;
+}
+
+:root[data-theme="serpentEyes"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 55%, white) !important;
+}
+
+:root[data-theme="serpentEyes"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="serpentEyes"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(59, 130, 246, 0.18)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="serpentEyes"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(245, 158, 11, 0.18)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="serpentEyes"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(239, 68, 68, 0.18)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="serpentEyes"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(34, 197, 94, 0.14)) !important;
+    border-left-color: var(--color-success) !important;
+}

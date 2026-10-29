@@ -1,0 +1,36 @@
+﻿/* ========== 新增主題：黃色主題 ========== */
+:root[data-theme="yellow"] {
+    --color-primary: #fbc02d;
+    --color-primary-light: #fdd835;
+    --color-primary-lighter: #ffeb3b;
+    --color-primary-dark: #f9a825;
+    --bg-primary: linear-gradient(135deg, #fffde7 0%, #fffef5 100%);
+    --bg-gradient: linear-gradient(135deg, #fdd835 0%, #fbc02d 100%);
+    --bg-gradient-light: linear-gradient(135deg, #fffde7 0%, #fffef5 100%);
+    --border-primary: #fbc02d;
+    --shadow-primary: 0 2px 8px rgba(251, 192, 45, 0.25);
+    --shadow-primary-lg: 0 4px 12px rgba(251, 192, 45, 0.3);
+    --color-primary-rgba-08: rgba(251, 192, 45, 0.08);
+    --color-primary-rgba-10: rgba(251, 192, 45, 0.1);
+    --color-primary-rgba-15: rgba(251, 192, 45, 0.15);
+    --color-primary-rgba-20: rgba(251, 192, 45, 0.2);
+    --color-primary-rgba-25: rgba(251, 192, 45, 0.25);
+    --color-primary-rgba-30: rgba(251, 192, 45, 0.3);
+    --color-primary-rgba-12: rgba(251, 192, 45, 0.12);
+    --color-primary-rgba-18: rgba(251, 192, 45, 0.18);
+    --color-primary-light-rgba-08: rgba(253, 216, 53, 0.08);
+    --color-primary-light-rgba-10: rgba(253, 216, 53, 0.1);
+    --color-primary-light-rgba-15: rgba(253, 216, 53, 0.15);
+    --color-primary-light-rgba-20: rgba(253, 216, 53, 0.2);
+    --color-primary-light-rgba-25: rgba(253, 216, 53, 0.25);
+    --color-primary-light-rgba-30: rgba(253, 216, 53, 0.3);
+    --color-primary-light-rgba-40: rgba(253, 216, 53, 0.4);
+    --bg-light-gradient: linear-gradient(135deg, var(--bg-white) 0%, #fffef5 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, #fffef5 0%, var(--bg-white) 100%);
+
+     --text-primary: #1f2937;
+     --text-secondary: rgba(31, 41, 55, 0.78);
+     --text-tertiary: rgba(31, 41, 55, 0.58);
+     --text-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.10);
+     --text-shadow-strong: 0 2px 6px rgba(0, 0, 0, 0.18);
+}

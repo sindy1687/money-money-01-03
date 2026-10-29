@@ -1,0 +1,307 @@
+:root[data-theme="shinchanFlashlightNight"] {
+    --color-primary: #2f3c6f;
+    --color-primary-light: #5a6fc4;
+    --color-primary-lighter: #b8c6ff;
+    --color-primary-dark: #111a3a;
+
+    --color-secondary: #f2c14e;
+    --color-secondary-light: #ffd98a;
+    --color-secondary-dark: #b8871d;
+
+    --color-accent: #f29ab0;
+    --color-accent-light: #ffc1d0;
+    --color-accent-dark: #b95472;
+
+    --color-success: #5a6fc4;
+    --color-danger: #f29ab0;
+    --color-warning: #f2c14e;
+    --color-info: #5a6fc4;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(12, 18, 40, 0.94) 0%,
+        rgba(26, 34, 76, 0.90) 52%,
+        rgba(72, 40, 90, 0.55) 100%);
+
+    --bg-body: rgba(12, 18, 40, 0.94);
+    --bg-body-strong: rgba(10, 16, 36, 0.97);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(12, 18, 40, 0.94) 0%,
+        rgba(26, 34, 76, 0.90) 52%,
+        rgba(242, 154, 176, 0.18) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(90, 111, 196, 0.16) 0%,
+        rgba(242, 193, 78, 0.12) 58%,
+        rgba(242, 154, 176, 0.10) 100%);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(12, 18, 40, 0.82) 0%,
+        rgba(47, 60, 111, 0.40) 55%,
+        rgba(242, 193, 78, 0.16) 100%);
+
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(26, 34, 76, 0.86) 0%,
+        rgba(12, 18, 40, 0.96) 100%);
+
+    --bg-white: rgba(18, 22, 44, 0.78);
+    --bg-card: rgba(18, 22, 44, 0.84);
+    --bg-light: rgba(29, 36, 72, 0.72);
+    --bg-lighter: rgba(37, 46, 92, 0.60);
+    --bg-soft: rgba(90, 111, 196, 0.12);
+    --bg-soft-strong: rgba(242, 154, 176, 0.14);
+
+    --text-primary: rgba(246, 249, 255, 0.96);
+    --text-secondary: rgba(222, 232, 255, 0.82);
+    --text-tertiary: rgba(222, 232, 255, 0.66);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(242, 193, 78, 0.48);
+    --border-light: rgba(90, 111, 196, 0.18);
+    --border-medium: rgba(242, 154, 176, 0.22);
+    --card-border-color: rgba(242, 193, 78, 0.26);
+    --control-border-color: rgba(90, 111, 196, 0.24);
+    --table-border-color: rgba(90, 111, 196, 0.18);
+
+    --shadow-primary: 0 18px 56px rgba(0, 0, 0, 0.46);
+    --shadow-primary-lg: 0 30px 86px rgba(0, 0, 0, 0.56);
+
+    --action-buy-bg: linear-gradient(135deg,
+        rgba(242, 193, 78, 0.98) 0%,
+        rgba(242, 154, 176, 0.90) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        rgba(255, 217, 138, 1) 0%,
+        rgba(255, 193, 208, 1) 100%);
+    --action-buy-text: rgba(10, 16, 36, 0.94);
+
+    --action-dca-bg: linear-gradient(135deg,
+        rgba(90, 111, 196, 0.96) 0%,
+        rgba(242, 193, 78, 0.96) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        rgba(184, 198, 255, 1) 0%,
+        rgba(255, 217, 138, 1) 100%);
+    --action-dca-text: rgba(10, 16, 36, 0.94);
+    --action-dca-shadow: 0 6px 18px rgba(0, 0, 0, 0.34);
+    --action-dca-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.44);
+    --action-dca-focus-ring: 0 0 0 3px rgba(242, 154, 176, 0.22);
+
+    --action-side-bg: color-mix(in srgb, rgba(18, 22, 44, 0.92) 80%, rgba(90, 111, 196, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(18, 22, 44, 0.92) 70%, rgba(242, 193, 78, 0.18));
+    --action-side-text: var(--text-primary);
+}
+
+:root[data-theme="shinchanFlashlightNight"] body {
+    background:
+        linear-gradient(135deg, rgba(12, 18, 40, 0.72) 0%, rgba(26, 34, 76, 0.62) 52%, rgba(242, 154, 176, 0.18) 100%),
+        url("https://i.pinimg.com/1200x/5d/ea/1b/5dea1b06637f915b5ddcdfdad801983e.jpg") center/cover no-repeat fixed;
+    background-color: rgba(12, 18, 40, 0.94);
+    color: var(--text-primary);
+}
+
+:root[data-theme="shinchanFlashlightNight"] body::before {
+    display: none;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .page-ledger,
+:root[data-theme="shinchanFlashlightNight"] .page-input,
+:root[data-theme="shinchanFlashlightNight"] .page-chart,
+:root[data-theme="shinchanFlashlightNight"] .page-budget,
+:root[data-theme="shinchanFlashlightNight"] .page-monthly-planner,
+:root[data-theme="shinchanFlashlightNight"] .page-daily-budget,
+:root[data-theme="shinchanFlashlightNight"] .page-settings,
+:root[data-theme="shinchanFlashlightNight"] .page-category-manage,
+:root[data-theme="shinchanFlashlightNight"] .page-investment,
+:root[data-theme="shinchanFlashlightNight"] .page-wallet,
+:root[data-theme="shinchanFlashlightNight"] .page-history,
+:root[data-theme="shinchanFlashlightNight"] .page-planner,
+:root[data-theme="shinchanFlashlightNight"] .page-manage-investment,
+:root[data-theme="shinchanFlashlightNight"] .page-annual-report,
+:root[data-theme="shinchanFlashlightNight"] .page-diary,
+:root[data-theme="shinchanFlashlightNight"] .page-installment,
+:root[data-theme="shinchanFlashlightNight"] .installment-page,
+:root[data-theme="shinchanFlashlightNight"] .dca-page,
+:root[data-theme="shinchanFlashlightNight"] .dividend-page,
+:root[data-theme="shinchanFlashlightNight"] .dca-management-page,
+:root[data-theme="shinchanFlashlightNight"] .dca-setup-page,
+:root[data-theme="shinchanFlashlightNight"] .investment-input-page,
+:root[data-theme="shinchanFlashlightNight"] .fixed-deposit-page,
+:root[data-theme="shinchanFlashlightNight"] .wishlist-content,
+:root[data-theme="shinchanFlashlightNight"] .savings-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .card,
+:root[data-theme="shinchanFlashlightNight"] .record-card,
+:root[data-theme="shinchanFlashlightNight"] .ledger-card,
+:root[data-theme="shinchanFlashlightNight"] .summary-card,
+:root[data-theme="shinchanFlashlightNight"] .budget-card,
+:root[data-theme="shinchanFlashlightNight"] .wallet-card,
+:root[data-theme="shinchanFlashlightNight"] .chart-card,
+:root[data-theme="shinchanFlashlightNight"] .investment-card,
+:root[data-theme="shinchanFlashlightNight"] .manage-investment-card,
+:root[data-theme="shinchanFlashlightNight"] .annual-report-card,
+:root[data-theme="shinchanFlashlightNight"] .diary-card,
+:root[data-theme="shinchanFlashlightNight"] .monthly-planning-card,
+:root[data-theme="shinchanFlashlightNight"] .investment-settings-card,
+:root[data-theme="shinchanFlashlightNight"] .wallet-budget-card,
+:root[data-theme="shinchanFlashlightNight"] .holding-card,
+:root[data-theme="shinchanFlashlightNight"] .buying-card,
+:root[data-theme="shinchanFlashlightNight"] .selling-card,
+:root[data-theme="shinchanFlashlightNight"] .dividend-card,
+:root[data-theme="shinchanFlashlightNight"] .regular-investment-card,
+:root[data-theme="shinchanFlashlightNight"] .investment-management-card,
+:root[data-theme="shinchanFlashlightNight"] .dca-card,
+:root[data-theme="shinchanFlashlightNight"] .installment-card,
+:root[data-theme="shinchanFlashlightNight"] .fixed-deposit-card {
+    background: var(--bg-card) !important;
+    border: 2px solid var(--card-border-color) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.34) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .modal-content,
+:root[data-theme="shinchanFlashlightNight"] .modal-content-standard,
+:root[data-theme="shinchanFlashlightNight"] .budget-category-modal-content,
+:root[data-theme="shinchanFlashlightNight"] .budget-setting-modal-content,
+:root[data-theme="shinchanFlashlightNight"] .category-modal-content,
+:root[data-theme="shinchanFlashlightNight"] .dca-execute-modal .modal-content,
+:root[data-theme="shinchanFlashlightNight"] .account-modal-content,
+:root[data-theme="shinchanFlashlightNight"] .emoji-modal-content,
+:root[data-theme="shinchanFlashlightNight"] .history-modal-content,
+:root[data-theme="shinchanFlashlightNight"] .crop-modal-content,
+:root[data-theme="shinchanFlashlightNight"] .dialog-container,
+:root[data-theme="shinchanFlashlightNight"] .xiaosen-dialog,
+:root[data-theme="shinchanFlashlightNight"] .komori-dialog,
+:root[data-theme="shinchanFlashlightNight"] .mori-dialog-box,
+:root[data-theme="shinchanFlashlightNight"] .theme-modal-content,
+:root[data-theme="shinchanFlashlightNight"] .theme-modal-container {
+    background: color-mix(in srgb, var(--bg-card) 88%, rgba(12, 18, 40, 0.55)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 26px 74px rgba(0, 0, 0, 0.54) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .theme-modal-overlay,
+:root[data-theme="shinchanFlashlightNight"] .modal-overlay {
+    background: color-mix(in srgb, rgba(12, 18, 40, 0.78) 78%, transparent) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="shinchanFlashlightNight"] .btn,
+:root[data-theme="shinchanFlashlightNight"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-secondary) 60%, white) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .btn:hover,
+:root[data-theme="shinchanFlashlightNight"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary-light) 55%, white) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .side-action-btn {
+    background: var(--action-side-bg) !important;
+    color: var(--action-side-text) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .side-action-btn:hover {
+    background: var(--action-side-bg-hover) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .back-btn {
+    background: linear-gradient(135deg, rgba(90, 111, 196, 0.94) 0%, rgba(242, 193, 78, 0.92) 55%, rgba(242, 154, 176, 0.88) 100%) !important;
+    border: 2px solid rgba(242, 193, 78, 0.42) !important;
+    color: rgba(10, 16, 36, 0.94) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .input-section {
+    background: color-mix(in srgb, rgba(18, 22, 44, 0.92) 86%, rgba(90, 111, 196, 0.12)) !important;
+    border: 2px solid rgba(242, 193, 78, 0.22) !important;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .tab-btn,
+:root[data-theme="shinchanFlashlightNight"] .record-type-tab,
+:root[data-theme="shinchanFlashlightNight"] .category-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(26, 34, 76, 0.55)) !important;
+    border-color: color-mix(in srgb, var(--border-light) 75%, rgba(242, 193, 78, 0.18)) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .tab-btn.active,
+:root[data-theme="shinchanFlashlightNight"] .record-type-tab.active {
+    background: linear-gradient(135deg, rgba(90, 111, 196, 0.18) 0%, rgba(242, 193, 78, 0.16) 70%, rgba(242, 154, 176, 0.12) 100%) !important;
+    border-color: rgba(242, 193, 78, 0.42) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .record-quick-buy-fab {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .dca-item-status.active {
+    background: color-mix(in srgb, var(--color-primary) 22%, transparent) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .detail-value.income {
+    color: var(--color-primary-light) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .smart-suggestion-btn {
+    background: linear-gradient(135deg, rgba(242, 193, 78, 0.96), rgba(90, 111, 196, 0.92)) !important;
+    color: rgba(10, 16, 36, 0.94) !important;
+    border: 2px solid rgba(255, 217, 138, 0.30) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .smart-suggestion-btn:hover {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35) !important;
+    filter: brightness(1.03);
+}
+
+:root[data-theme="shinchanFlashlightNight"] .price-up,
+:root[data-theme="shinchanFlashlightNight"] .stock-change-positive {
+    background: color-mix(in srgb, var(--color-secondary) 78%, white) !important;
+    color: rgba(10, 16, 36, 0.94) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .price-down,
+:root[data-theme="shinchanFlashlightNight"] .stock-change-negative {
+    background: color-mix(in srgb, var(--color-primary-light) 70%, var(--color-primary-dark)) !important;
+    color: rgba(10, 16, 36, 0.94) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .dividend-calendar-item.has-dividend .dividend-calendar-amount,
+:root[data-theme="shinchanFlashlightNight"] .dividend-year-stat-amount {
+    color: var(--color-secondary-light) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .dividend-year-stat-bar-fill {
+    background: linear-gradient(90deg, rgba(255, 217, 138, 0.96) 0%, rgba(242, 193, 78, 0.96) 100%) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .fixed-deposit-page .form-submit-btn,
+:root[data-theme="shinchanFlashlightNight"] .fixed-deposit-card .form-submit-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+}
+
+:root[data-theme="shinchanFlashlightNight"] .fixed-deposit-page .form-submit-btn:hover,
+:root[data-theme="shinchanFlashlightNight"] .fixed-deposit-card .form-submit-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}

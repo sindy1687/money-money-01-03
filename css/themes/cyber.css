@@ -1,0 +1,31 @@
+﻿:root[data-theme="cyber"] {
+    --color-primary: #00f5ff;
+    --color-primary-light: #5ef3fe;
+    --color-primary-lighter: #a5f3fc;
+    --color-primary-dark: #0ea5e9;
+    --bg-primary: linear-gradient(135deg, #050816 0%, #0f172a 35%, #00f5ff 70%, #ff2d95 100%);
+    --bg-gradient: linear-gradient(135deg, #00f5ff 0%, #ff2d95 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(0, 245, 255, 0.22) 0%, rgba(255, 45, 149, 0.16) 100%);
+    --border-primary: #00f5ff;
+    --shadow-primary: 0 2px 12px rgba(0, 245, 255, 0.4);
+    --shadow-primary-lg: 0 6px 20px rgba(255, 45, 149, 0.35);
+    --bg-white: rgba(8, 10, 26, 0.92);
+    --bg-light: rgba(15, 23, 42, 0.78);
+    --bg-lighter: rgba(40, 51, 89, 0.52);
+    --text-primary: rgba(255, 255, 255, 0.96);
+    --text-secondary: rgba(244, 244, 255, 0.84);
+    --text-tertiary: rgba(244, 244, 255, 0.65);
+    --border-light: rgba(255, 255, 255, 0.2);
+    --border-medium: rgba(0, 245, 255, 0.35);
+}
+
+:root[data-theme="cyber"] body::before {
+    opacity: 0.45;
+    background-image:
+        linear-gradient(120deg, rgba(0, 245, 255, 0.4), rgba(255, 45, 149, 0.35)),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08), transparent 2px, transparent 50px);
+    backdrop-filter: blur(0px);
+    mix-blend-mode: screen;
+    animation: cyberPulse 10s ease-in-out infinite alternate, gridScroll 25s linear infinite;
+}
+

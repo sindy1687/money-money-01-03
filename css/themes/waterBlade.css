@@ -1,0 +1,195 @@
+:root[data-theme="waterBlade"] {
+    --color-primary: #49c7d3;
+    --color-primary-light: #86e6ef;
+    --color-primary-lighter: #c7f7fb;
+    --color-primary-dark: #0b2a33;
+
+    --color-secondary: #1f6aa5;
+    --color-secondary-light: #68b7ff;
+    --color-secondary-dark: #0d3b66;
+
+    --color-accent: #e45b4f;
+    --color-accent-light: #ff8a7e;
+    --color-accent-dark: #9e2b24;
+
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(7, 16, 22, 0.95) 0%,
+        rgba(10, 28, 38, 0.92) 45%,
+        rgba(31, 106, 165, 0.55) 100%);
+    --bg-body: rgba(7, 16, 22, 0.92);
+    --bg-body-strong: rgba(7, 16, 22, 0.96);
+    --bg-gradient: linear-gradient(135deg,
+        rgba(11, 42, 51, 0.96) 0%,
+        rgba(31, 106, 165, 0.82) 60%,
+        rgba(73, 199, 211, 0.58) 100%);
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(73, 199, 211, 0.12) 0%,
+        rgba(228, 91, 79, 0.10) 100%);
+
+    --bg-white: rgba(12, 22, 30, 0.84);
+    --bg-card: rgba(10, 20, 28, 0.88);
+    --bg-light: rgba(16, 35, 48, 0.78);
+    --bg-lighter: rgba(20, 50, 66, 0.62);
+    --bg-soft: rgba(73, 199, 211, 0.10);
+    --bg-soft-strong: rgba(31, 106, 165, 0.28);
+
+    --text-primary: rgba(240, 252, 255, 0.96);
+    --text-secondary: rgba(240, 252, 255, 0.78);
+    --text-tertiary: rgba(240, 252, 255, 0.62);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(73, 199, 211, 0.62);
+    --border-light: rgba(73, 199, 211, 0.18);
+    --border-medium: rgba(31, 106, 165, 0.30);
+    --card-border-color: rgba(73, 199, 211, 0.32);
+    --control-border-color: rgba(73, 199, 211, 0.22);
+    --table-border-color: rgba(73, 199, 211, 0.16);
+
+    --shadow-primary: 0 18px 54px rgba(0, 0, 0, 0.55);
+    --shadow-primary-lg: 0 28px 78px rgba(0, 0, 0, 0.48);
+
+    --color-primary-rgba-08: rgba(73, 199, 211, 0.08);
+    --color-primary-rgba-10: rgba(73, 199, 211, 0.10);
+    --color-primary-rgba-12: rgba(73, 199, 211, 0.12);
+    --color-primary-rgba-15: rgba(73, 199, 211, 0.15);
+    --color-primary-rgba-18: rgba(73, 199, 211, 0.18);
+    --color-primary-rgba-20: rgba(73, 199, 211, 0.20);
+    --color-primary-rgba-25: rgba(73, 199, 211, 0.25);
+    --color-primary-rgba-30: rgba(73, 199, 211, 0.30);
+    --color-primary-rgba-40: rgba(73, 199, 211, 0.40);
+
+    --color-primary-light-rgba-08: rgba(134, 230, 239, 0.08);
+    --color-primary-light-rgba-10: rgba(134, 230, 239, 0.10);
+    --color-primary-light-rgba-12: rgba(134, 230, 239, 0.12);
+    --color-primary-light-rgba-15: rgba(134, 230, 239, 0.15);
+    --color-primary-light-rgba-20: rgba(134, 230, 239, 0.20);
+    --color-primary-light-rgba-25: rgba(134, 230, 239, 0.25);
+    --color-primary-light-rgba-30: rgba(134, 230, 239, 0.30);
+    --color-primary-light-rgba-40: rgba(134, 230, 239, 0.40);
+
+    --color-secondary-rgba-20: rgba(31, 106, 165, 0.20);
+    --color-accent-rgba-30: rgba(228, 91, 79, 0.30);
+    --color-accent-rgba-40: rgba(228, 91, 79, 0.40);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(7, 16, 22, 0.88) 0%,
+        rgba(10, 28, 38, 0.72) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(7, 16, 22, 0.88) 0%,
+        rgba(10, 28, 38, 0.72) 100%);
+
+    --action-side-bg: color-mix(in srgb, rgba(10, 20, 28, 0.92) 78%, rgba(73, 199, 211, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(10, 20, 28, 0.92) 66%, rgba(73, 199, 211, 0.22));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 84%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 82%, var(--color-primary-dark)) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 80%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 84%, var(--color-primary-dark)) 100%);
+    --action-buy-text: rgba(6, 10, 18, 0.96);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary-light) 72%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 68%, var(--color-secondary-dark)) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 70%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 78%, var(--color-accent-dark)) 100%);
+    --action-dca-text: rgba(6, 10, 18, 0.96);
+}
+
+:root[data-theme="waterBlade"] body {
+    background: url("https://i.pinimg.com/736x/25/bc/b8/25bcb8505a3a276fcd8d978684ca797c.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="waterBlade"] body::before {
+    display: none;
+}
+
+:root[data-theme="waterBlade"] .page-ledger,
+:root[data-theme="waterBlade"] .page-input,
+:root[data-theme="waterBlade"] .page-chart,
+:root[data-theme="waterBlade"] .page-budget,
+:root[data-theme="waterBlade"] .page-monthly-planner,
+:root[data-theme="waterBlade"] .page-daily-budget,
+:root[data-theme="waterBlade"] .page-settings,
+:root[data-theme="waterBlade"] .page-category-manage,
+:root[data-theme="waterBlade"] .page-investment,
+:root[data-theme="waterBlade"] .page-wallet,
+:root[data-theme="waterBlade"] .page-history,
+:root[data-theme="waterBlade"] .page-planner,
+:root[data-theme="waterBlade"] .page-installment,
+:root[data-theme="waterBlade"] .installment-page,
+:root[data-theme="waterBlade"] .dca-page,
+:root[data-theme="waterBlade"] .fixed-deposit-page,
+:root[data-theme="waterBlade"] .dividend-page,
+:root[data-theme="waterBlade"] .dca-management-page,
+:root[data-theme="waterBlade"] .dca-setup-page,
+:root[data-theme="waterBlade"] .investment-input-page,
+:root[data-theme="waterBlade"] .wishlist-content,
+:root[data-theme="waterBlade"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="waterBlade"] .card,
+:root[data-theme="waterBlade"] .record-card,
+:root[data-theme="waterBlade"] .ledger-card,
+:root[data-theme="waterBlade"] .summary-card,
+:root[data-theme="waterBlade"] .budget-card,
+:root[data-theme="waterBlade"] .wallet-card,
+:root[data-theme="waterBlade"] .chart-card,
+:root[data-theme="waterBlade"] .investment-card,
+:root[data-theme="waterBlade"] .stock-item-card,
+:root[data-theme="waterBlade"] .monthly-planner-card,
+:root[data-theme="waterBlade"] .dividend-stat-card,
+:root[data-theme="waterBlade"] .dca-card,
+:root[data-theme="waterBlade"] .installment-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--shadow-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="waterBlade"] .btn,
+:root[data-theme="waterBlade"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 55%, white) !important;
+}
+
+:root[data-theme="waterBlade"] .btn:hover,
+:root[data-theme="waterBlade"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="waterBlade"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 45%, white) !important;
+}
+
+:root[data-theme="waterBlade"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="waterBlade"] .back-btn {
+    background: color-mix(in srgb, var(--bg-card) 85%, transparent) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+:root[data-theme="waterBlade"] .back-btn:hover {
+    background: color-mix(in srgb, var(--bg-card) 92%, transparent) !important;
+    border-color: var(--border-primary) !important;
+}

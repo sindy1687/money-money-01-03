@@ -1,0 +1,267 @@
+﻿:root[data-theme="oceanWhale"] {
+    --color-primary: #4aa6e8;
+    --color-primary-light: #8cd3ff;
+    --color-primary-lighter: #cfefff;
+    --color-primary-dark: #2e6fae;
+    --color-secondary: #bda7ff;
+    --color-secondary-light: #dbcfff;
+    --color-secondary-dark: #7f6fd6;
+    --color-accent: #f3b7d6;
+    --color-accent-light: #ffd4ea;
+    --color-accent-dark: #d96aa8;
+
+    --bg-primary: linear-gradient(135deg, rgba(223, 245, 255, 0.96) 0%, rgba(191, 230, 255, 0.92) 35%, rgba(191, 184, 255, 0.88) 70%, rgba(247, 193, 216, 0.86) 100%);
+    --bg-body: rgba(223, 245, 255, 0.9);
+    --bg-body-strong: rgba(223, 245, 255, 0.96);
+    --bg-gradient: linear-gradient(135deg, rgba(223, 245, 255, 0.82) 0%, rgba(191, 230, 255, 0.78) 45%, rgba(191, 184, 255, 0.72) 78%, rgba(247, 193, 216, 0.7) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(223, 245, 255, 0.76) 100%);
+    --bg-light-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(223, 245, 255, 0.82) 60%, rgba(255, 212, 234, 0.78) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(255, 212, 234, 0.78) 0%, rgba(255, 255, 255, 0.92) 100%);
+
+    --bg-white: rgba(255, 255, 255, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.92);
+    --bg-light: rgba(223, 245, 255, 0.84);
+    --bg-lighter: rgba(207, 239, 255, 0.7);
+    --bg-soft: rgba(189, 184, 255, 0.2);
+    --bg-soft-strong: rgba(189, 184, 255, 0.32);
+
+    --text-primary: rgba(16, 45, 68, 0.96);
+    --text-secondary: rgba(16, 45, 68, 0.74);
+    --text-tertiary: rgba(16, 45, 68, 0.58);
+    --text-strong: rgba(10, 30, 46, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(74, 166, 232, 0.55);
+    --border-light: rgba(46, 111, 174, 0.16);
+    --border-medium: rgba(189, 167, 255, 0.32);
+    --card-border-color: rgba(74, 166, 232, 0.3);
+    --control-border-color: rgba(46, 111, 174, 0.22);
+    --table-border-color: rgba(46, 111, 174, 0.16);
+
+    --shadow-primary: 0 18px 54px rgba(46, 111, 174, 0.18);
+    --shadow-primary-lg: 0 28px 78px rgba(46, 111, 174, 0.16);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 85%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 88%, var(--color-primary-dark)) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 88%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 90%, black) 100%);
+    --action-buy-text: var(--text-white);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary-light) 65%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 70%, var(--color-secondary-dark)) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary) 70%, white) 0%,
+        color-mix(in srgb, var(--color-accent-dark) 75%, var(--color-secondary-dark)) 100%);
+    --action-dca-text: var(--text-white);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.9) 72%, rgba(74, 166, 232, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.9) 62%, rgba(189, 167, 255, 0.22));
+    --action-side-text: rgba(16, 45, 68, 0.96);
+}
+
+:root[data-theme="oceanWhale"] body {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+:root[data-theme="oceanWhale"] body::before {
+    opacity: 0.7;
+    background-image:
+        radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.45), transparent 55%),
+        radial-gradient(circle at 82% 26%, rgba(189, 167, 255, 0.45), transparent 60%),
+        radial-gradient(circle at 70% 78%, rgba(247, 193, 216, 0.42), transparent 58%),
+        linear-gradient(135deg, rgba(223, 245, 255, 0.35), rgba(191, 184, 255, 0.22));
+}
+
+:root[data-theme="oceanWhale"] .page-ledger,
+
+:root[data-theme="oceanWhale"] .page-input,
+
+:root[data-theme="oceanWhale"] .page-chart,
+
+:root[data-theme="oceanWhale"] .page-budget,
+
+:root[data-theme="oceanWhale"] .page-monthly-planner,
+
+:root[data-theme="oceanWhale"] .page-daily-budget,
+
+:root[data-theme="oceanWhale"] .page-settings,
+
+:root[data-theme="oceanWhale"] .page-category-manage,
+
+:root[data-theme="oceanWhale"] .page-investment,
+
+:root[data-theme="oceanWhale"] .page-wallet,
+
+:root[data-theme="oceanWhale"] .page-history,
+
+:root[data-theme="oceanWhale"] .page-planner,
+
+:root[data-theme="oceanWhale"] .page-manage-investment,
+
+:root[data-theme="oceanWhale"] .page-annual-report,
+
+:root[data-theme="oceanWhale"] .page-diary,
+
+:root[data-theme="oceanWhale"] .page-installment,
+
+:root[data-theme="oceanWhale"] .installment-page,
+
+:root[data-theme="oceanWhale"] .dca-page,
+
+:root[data-theme="oceanWhale"] .fixed-deposit-page {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="oceanWhale"] .card,
+
+:root[data-theme="oceanWhale"] .record-card,
+
+:root[data-theme="oceanWhale"] .ledger-card,
+
+:root[data-theme="oceanWhale"] .summary-card,
+
+:root[data-theme="oceanWhale"] .budget-card,
+
+:root[data-theme="oceanWhale"] .wallet-card,
+
+:root[data-theme="oceanWhale"] .chart-card,
+
+:root[data-theme="oceanWhale"] .investment-card,
+
+:root[data-theme="oceanWhale"] .manage-investment-card,
+
+:root[data-theme="oceanWhale"] .annual-report-card,
+
+:root[data-theme="oceanWhale"] .diary-card,
+
+:root[data-theme="oceanWhale"] .monthly-planning-card,
+
+:root[data-theme="oceanWhale"] .investment-settings-card,
+
+:root[data-theme="oceanWhale"] .wallet-budget-card,
+
+:root[data-theme="oceanWhale"] .holding-card,
+
+:root[data-theme="oceanWhale"] .buying-card,
+
+:root[data-theme="oceanWhale"] .selling-card,
+
+:root[data-theme="oceanWhale"] .dividend-card,
+
+:root[data-theme="oceanWhale"] .regular-investment-card,
+
+:root[data-theme="oceanWhale"] .investment-management-card,
+
+:root[data-theme="oceanWhale"] .dca-card,
+
+:root[data-theme="oceanWhale"] .installment-card,
+
+:root[data-theme="oceanWhale"] .fixed-deposit-card {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 2px solid var(--card-border-color) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 14px 34px rgba(46, 111, 174, 0.14) !important;
+}
+
+:root[data-theme="oceanWhale"] .modal-content,
+
+:root[data-theme="oceanWhale"] .modal-content-standard,
+
+:root[data-theme="oceanWhale"] .budget-category-modal-content,
+
+:root[data-theme="oceanWhale"] .budget-setting-modal-content,
+
+:root[data-theme="oceanWhale"] .category-modal-content,
+
+:root[data-theme="oceanWhale"] .dca-execute-modal .modal-content,
+
+:root[data-theme="oceanWhale"] .account-modal-content,
+
+:root[data-theme="oceanWhale"] .emoji-modal-content,
+
+:root[data-theme="oceanWhale"] .history-modal-content,
+
+:root[data-theme="oceanWhale"] .crop-modal-content,
+
+:root[data-theme="oceanWhale"] .dialog-container,
+
+:root[data-theme="oceanWhale"] .xiaosen-dialog,
+
+:root[data-theme="oceanWhale"] .komori-dialog,
+
+:root[data-theme="oceanWhale"] .mori-dialog-box,
+
+:root[data-theme="oceanWhale"] .theme-modal-content,
+
+:root[data-theme="oceanWhale"] .theme-modal-container {
+    background: rgba(255, 255, 255, 0.94) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 22px 60px rgba(46, 111, 174, 0.18) !important;
+}
+
+:root[data-theme="oceanWhale"] .theme-modal-overlay,
+
+:root[data-theme="oceanWhale"] .modal-overlay {
+    background: color-mix(in srgb, rgba(16, 45, 68, 0.52) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="oceanWhale"] .btn,
+
+:root[data-theme="oceanWhale"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 65%, white) !important;
+}
+
+:root[data-theme="oceanWhale"] .btn:hover,
+
+:root[data-theme="oceanWhale"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="oceanWhale"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-secondary) 55%, white) !important;
+}
+
+:root[data-theme="oceanWhale"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="oceanWhale"] .back-btn {
+    background: linear-gradient(135deg, rgba(74, 166, 232, 0.96) 0%, rgba(189, 167, 255, 0.92) 55%, rgba(247, 193, 216, 0.9) 100%) !important;
+    border: 2px solid rgba(74, 166, 232, 0.45) !important;
+    color: var(--text-white) !important;
+}
+
+:root[data-theme="oceanWhale"] .input-section {
+    background: rgba(223, 245, 255, 0.82) !important;
+    border: 2px solid rgba(74, 166, 232, 0.24) !important;
+    box-shadow: 0 -6px 24px rgba(46, 111, 174, 0.12) !important;
+}
+
+:root[data-theme="oceanWhale"] .tab-btn,
+
+:root[data-theme="oceanWhale"] .record-type-tab,
+
+:root[data-theme="oceanWhale"] .category-item {
+    background: color-mix(in srgb, var(--bg-white) 84%, rgba(223, 245, 255, 0.5)) !important;
+    border-color: color-mix(in srgb, var(--border-light) 75%, rgba(74, 166, 232, 0.22)) !important;
+}
+
+:root[data-theme="oceanWhale"] .tab-btn.active,
+
+:root[data-theme="oceanWhale"] .record-type-tab.active {
+    background: linear-gradient(135deg, rgba(74, 166, 232, 0.18) 0%, rgba(189, 167, 255, 0.18) 70%, rgba(247, 193, 216, 0.14) 100%) !important;
+    border-color: rgba(74, 166, 232, 0.42) !important;
+}
+

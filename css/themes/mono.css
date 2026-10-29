@@ -1,0 +1,294 @@
+﻿:root[data-theme="mono"] {
+    --color-primary: #0f172a;
+    --color-primary-light: #334155;
+    --color-primary-lighter: #e2e8f0;
+    --color-primary-dark: #0b0f19;
+    --bg-primary: linear-gradient(135deg, #0b0f19 0%, #334155 50%, #e2e8f0 100%);
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(15, 23, 42, 0.10) 0%, rgba(51, 65, 85, 0.10) 100%);
+    --border-primary: #0f172a;
+    --shadow-primary: 0 2px 8px rgba(15, 23, 42, 0.18);
+    --shadow-primary-lg: 0 4px 12px rgba(51, 65, 85, 0.18);
+
+     --bg-white: rgba(17, 24, 39, 0.78);
+     --bg-light: rgba(17, 24, 39, 0.62);
+     --bg-lighter: rgba(17, 24, 39, 0.48);
+     --text-primary: rgba(255, 255, 255, 0.96);
+     --text-secondary: rgba(255, 255, 255, 0.86);
+     --text-tertiary: rgba(255, 255, 255, 0.72);
+     --border-light: rgba(255, 255, 255, 0.14);
+     --border-medium: rgba(255, 255, 255, 0.20);
+}
+
+:root[data-theme="mono"] body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+:root[data-theme="mono"] body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: var(--bg-primary);
+    background-size: 200% 200%;
+    animation: dynamicThemeFlow 14s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes dynamicThemeFlow {
+    0% { transform: translate(0, 0) rotate(0deg); background-position: 0% 50%; }
+    50% { transform: translate(-1.5%, 1.5%) rotate(6deg); background-position: 100% 50%; }
+    100% { transform: translate(0, 0) rotate(0deg); background-position: 0% 50%; }
+}
+
+/* ========== 字體美化設定 ========== */
+
+/* 標題字體美化 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 
+        'SF Pro Display', 'Helvetica Neue', 'Arial',
+        -apple-system, BlinkMacSystemFont,
+        'PingFang TC', 'PingFang SC', 'Microsoft JhengHei', 'Microsoft YaHei',
+        'Noto Sans TC', 'Noto Sans SC', 'Source Han Sans TC', 'Source Han Sans SC',
+        sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* 重要文字強調 */
+.important-text, .highlight-text, .emphasis-text {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+/* 卡片標題美化 */
+.card-title, .modal-title, .section-title {
+    font-family: 
+        'SF Pro Display', 'Helvetica Neue', 'Arial',
+        -apple-system, BlinkMacSystemFont,
+        'PingFang TC', 'PingFang SC', 'Microsoft JhengHei', 'Microsoft YaHei',
+        'Noto Sans TC', 'Noto Sans SC', 'Source Han Sans TC', 'Source Han Sans SC',
+        sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+/* 數字和金額字體美化 */
+.amount-text, .price-text, .number-text {
+    font-family: 
+        'SF Mono', 'Monaco', 'Menlo', 'Consolas',
+        'Courier New', monospace;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 小字體美化 */
+.small-text, .caption-text, .helper-text {
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+}
+
+/* 按鈕文字進一步美化 */
+.btn-text, .button-text {
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: none;
+}
+
+/* 輸入框佔位符美化 */
+::placeholder {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    opacity: 0.7;
+}
+
+/* 標籤文字美化 */
+.label-text, .tag-text, .badge-text {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 描述文字美化 */
+.description-text, .helper-text, .caption-text {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* 鏈接文字美化 */
+.link-text, .anchor-text {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* 狀態文字美化 */
+.status-text, .state-text {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+/* 時間日期文字美化 */
+.time-text, .date-text {
+    font-family: 
+        'SF Mono', 'Monaco', 'Menlo', 'Consolas',
+        'Courier New', monospace;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 表單和輸入文字美化 */
+.form-input, .form-select, .form-textarea, .note-input {
+    font-family: 
+        'SF Pro Text', 'Helvetica Neue', 'Arial',
+        -apple-system, BlinkMacSystemFont,
+        'PingFang TC', 'PingFang SC', 'Microsoft JhengHei', 'Microsoft YaHei',
+        'Noto Sans TC', 'Noto Sans SC', 'Source Han Sans TC', 'Source Han Sans SC',
+        sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.form-label, .input-label {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.form-hint, .input-hint, .form-error {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    font-size: 0.9em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.modal-title {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.modal-subtitle, .modal-description {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    opacity: 0.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 通用文字類別美化 */
+.title, .subtitle, .caption, .label, .value {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.title {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.caption {
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.label {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+}
+
+.value {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+}
+
+/* 特殊元素字體美化 */
+.empty-text, .no-data-text {
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    opacity: 0.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.loading-text, .processing-text {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.success-text, .confirmation-text {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.warning-text, .alert-text {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 搜索和過濾文字美化 */
+.search-input, .filter-input {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.search-result-text, .filter-label {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== 字體美化設定結束 ========== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+

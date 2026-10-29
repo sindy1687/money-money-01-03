@@ -1,0 +1,40 @@
+﻿:root[data-theme="pink"].dark,
+
+:root[data-theme="pink"] {
+    --color-primary: #ff69b4;
+    --color-primary-light: #ffb6d9;
+    --color-primary-lighter: #ff9ec7;
+    --color-primary-dark: #ff1493;
+    --bg-primary: linear-gradient(135deg, #ffeef5 0%, #fff5f9 100%);
+    --bg-gradient: linear-gradient(135deg, #ffb6d9 0%, #ff9ec7 100%);
+    --bg-gradient-light: linear-gradient(135deg, #ffeef5 0%, #fff5f9 100%);
+    --border-primary: #ff69b4;
+    --shadow-primary: 0 2px 8px rgba(255, 105, 180, 0.25);
+    --shadow-primary-lg: 0 4px 12px rgba(255, 105, 180, 0.3);
+    --color-primary-rgba-08: rgba(255, 105, 180, 0.08);
+    --color-primary-rgba-10: rgba(255, 105, 180, 0.1);
+    --color-primary-rgba-15: rgba(255, 105, 180, 0.15);
+    --color-primary-rgba-16: rgba(255, 105, 180, 0.16);
+    --color-primary-rgba-20: rgba(255, 105, 180, 0.2);
+    --color-primary-rgba-25: rgba(255, 105, 180, 0.25);
+    --color-primary-rgba-30: rgba(255, 105, 180, 0.3);
+    --color-primary-rgba-40: rgba(255, 105, 180, 0.4);
+    --color-primary-rgba-28: rgba(255, 105, 180, 0.28);
+    --color-primary-rgba-12: rgba(255, 105, 180, 0.12);
+    --color-primary-rgba-18: rgba(255, 105, 180, 0.18);
+    --color-primary-rgba-22: rgba(255, 105, 180, 0.22);
+    --color-primary-rgba-32: rgba(255, 105, 180, 0.32);
+    --color-primary-rgba-35: rgba(255, 105, 180, 0.35);
+    --color-primary-rgba-42: rgba(255, 105, 180, 0.42);
+    --color-primary-rgba-55: rgba(255, 105, 180, 0.55);
+    --color-primary-rgba-60: rgba(255, 105, 180, 0.6);
+    --color-primary-light-rgba-08: rgba(255, 158, 199, 0.08);
+    --color-primary-light-rgba-10: rgba(255, 158, 199, 0.1);
+    --color-primary-light-rgba-15: rgba(255, 158, 199, 0.15);
+    --color-primary-light-rgba-20: rgba(255, 158, 199, 0.2);
+    --color-primary-light-rgba-25: rgba(255, 158, 199, 0.25);
+    --color-primary-light-rgba-30: rgba(255, 158, 199, 0.3);
+    --color-primary-light-rgba-40: rgba(255, 158, 199, 0.4);
+    --bg-light-gradient: linear-gradient(135deg, var(--bg-white) 0%, #fff5f9 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, #fff5f9 0%, var(--bg-white) 100%);
+}

@@ -1,0 +1,38 @@
+﻿:root[data-theme="firefly"] {
+    --color-primary: #facc15;
+    --color-primary-light: #fde047;
+    --color-primary-lighter: #fef9c3;
+    --color-primary-dark: #eab308;
+    --bg-primary: linear-gradient(135deg, #0b1020 0%, #1a2b3f 100%);
+    --bg-gradient: linear-gradient(135deg, rgba(250, 204, 21, 0.35) 0%, rgba(96, 165, 250, 0.2) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(250, 204, 21, 0.12) 0%, rgba(250, 204, 21, 0.08) 100%);
+    --border-primary: #facc15;
+    --shadow-primary: 0 2px 8px rgba(250, 204, 21, 0.35);
+    --shadow-primary-lg: 0 4px 12px rgba(250, 204, 21, 0.45);
+    --color-primary-rgba-08: rgba(250, 204, 21, 0.08);
+    --color-primary-rgba-10: rgba(250, 204, 21, 0.1);
+    --color-primary-rgba-15: rgba(250, 204, 21, 0.15);
+    --color-primary-rgba-20: rgba(250, 204, 21, 0.2);
+    --color-primary-rgba-25: rgba(250, 204, 21, 0.25);
+    --color-primary-rgba-30: rgba(250, 204, 21, 0.3);
+    --color-primary-rgba-12: rgba(250, 204, 21, 0.12);
+    --color-primary-rgba-18: rgba(250, 204, 21, 0.18);
+    --color-primary-light-rgba-08: rgba(253, 224, 71, 0.08);
+    --color-primary-light-rgba-10: rgba(253, 224, 71, 0.1);
+    --color-primary-light-rgba-15: rgba(253, 224, 71, 0.15);
+    --color-primary-light-rgba-20: rgba(253, 224, 71, 0.2);
+    --color-primary-light-rgba-25: rgba(253, 224, 71, 0.25);
+    --color-primary-light-rgba-30: rgba(253, 224, 71, 0.3);
+    --color-primary-light-rgba-40: rgba(253, 224, 71, 0.4);
+    --bg-light-gradient: linear-gradient(135deg, #1a2b3f 0%, #0b1020 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, #0b1020 0%, #1a2b3f 100%);
+    --bg-white: #121a2b;
+    --bg-light: #1a2b3f;
+    --bg-lighter: #243449;
+    --text-primary: var(--bg-white);
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --text-tertiary: rgba(255, 255, 255, 0.75);
+    --border-light: rgba(250, 204, 21, 0.2);
+    --border-medium: rgba(250, 204, 21, 0.3);
+}
+

@@ -1,0 +1,312 @@
+:root[data-theme="blackCatCoinGalaxy"] {
+    --color-primary: #d4af37;
+    --color-primary-light: #ffe08a;
+    --color-primary-lighter: #fff2c8;
+    --color-primary-dark: #8e6e1e;
+
+    --color-secondary: #4cc9f0;
+    --color-secondary-light: #a8e8ff;
+    --color-secondary-dark: #1286b5;
+
+    --color-accent: #f59e0b;
+    --color-accent-light: #ffd38a;
+    --color-accent-dark: #c86a00;
+
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(2, 10, 18, 0.92) 0%,
+        rgba(6, 18, 34, 0.82) 42%,
+        rgba(12, 30, 52, 0.74) 72%,
+        rgba(212, 175, 55, 0.12) 100%);
+
+    --bg-body: rgba(2, 10, 18, 0.90);
+    --bg-body-strong: rgba(2, 10, 18, 0.96);
+    --bg-dark: rgba(2, 10, 18, 0.86);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(2, 10, 18, 0.92) 0%,
+        rgba(7, 20, 38, 0.88) 55%,
+        rgba(76, 201, 240, 0.12) 78%,
+        rgba(212, 175, 55, 0.10) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(76, 201, 240, 0.10) 0%,
+        rgba(212, 175, 55, 0.10) 100%);
+
+    --bg-white: rgba(8, 16, 26, 0.72);
+    --bg-card: rgba(10, 18, 28, 0.76);
+    --bg-light: rgba(14, 26, 40, 0.66);
+    --bg-lighter: rgba(16, 30, 48, 0.56);
+    --bg-soft: rgba(212, 175, 55, 0.10);
+    --bg-soft-strong: rgba(212, 175, 55, 0.16);
+
+    --text-primary: rgba(248, 250, 252, 0.96);
+    --text-secondary: rgba(248, 250, 252, 0.82);
+    --text-tertiary: rgba(248, 250, 252, 0.66);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(212, 175, 55, 0.62);
+    --border-light: rgba(248, 250, 252, 0.14);
+    --border-medium: rgba(212, 175, 55, 0.32);
+    --card-border-color: rgba(212, 175, 55, 0.28);
+    --control-border-color: rgba(248, 250, 252, 0.18);
+    --table-border-color: rgba(248, 250, 252, 0.12);
+
+    --shadow-primary: 0 22px 70px rgba(0, 0, 0, 0.55);
+    --shadow-primary-lg: 0 30px 90px rgba(0, 0, 0, 0.60);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, rgba(212, 175, 55, 1) 84%, rgba(255, 255, 255, 1)) 0%,
+        color-mix(in srgb, rgba(76, 201, 240, 1) 46%, rgba(212, 175, 55, 1)) 55%,
+        rgba(245, 158, 11, 0.98) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        rgba(255, 214, 140, 1) 0%,
+        color-mix(in srgb, rgba(76, 201, 240, 1) 54%, rgba(212, 175, 55, 1)) 60%,
+        rgba(245, 158, 11, 1) 100%);
+
+    --action-buy-text: rgba(2, 10, 18, 0.96);
+
+    --action-dca-bg: linear-gradient(135deg,
+        rgba(76, 201, 240, 0.98) 0%,
+        color-mix(in srgb, rgba(212, 175, 55, 1) 70%, rgba(76, 201, 240, 1)) 55%,
+        rgba(255, 214, 140, 0.98) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        rgba(76, 201, 240, 1) 0%,
+        rgba(212, 175, 55, 1) 55%,
+        rgba(255, 214, 140, 1) 100%);
+
+    --action-dca-text: rgba(2, 10, 18, 0.96);
+
+    --action-side-bg: color-mix(in srgb, rgba(10, 18, 28, 0.86) 78%, rgba(212, 175, 55, 0.10));
+    --action-side-bg-hover: color-mix(in srgb, rgba(10, 18, 28, 0.86) 68%, rgba(212, 175, 55, 0.22));
+    --action-side-text: var(--text-primary);
+}
+
+:root[data-theme="blackCatCoinGalaxy"] body {
+    background:
+        linear-gradient(135deg, rgba(2, 10, 18, 0.76) 0%, rgba(6, 18, 34, 0.62) 55%, rgba(212, 175, 55, 0.18) 100%),
+        url("https://i.pinimg.com/1200x/93/28/ab/9328ab5e8beb9c858fc42dd9a10d9407.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+:root[data-theme="blackCatCoinGalaxy"] body::before {
+    display: none;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .page-ledger,
+:root[data-theme="blackCatCoinGalaxy"] .page-input,
+:root[data-theme="blackCatCoinGalaxy"] .page-chart,
+:root[data-theme="blackCatCoinGalaxy"] .page-budget,
+:root[data-theme="blackCatCoinGalaxy"] .page-monthly-planner,
+:root[data-theme="blackCatCoinGalaxy"] .page-daily-budget,
+:root[data-theme="blackCatCoinGalaxy"] .page-settings,
+:root[data-theme="blackCatCoinGalaxy"] .page-category-manage,
+:root[data-theme="blackCatCoinGalaxy"] .page-investment,
+:root[data-theme="blackCatCoinGalaxy"] .page-wallet,
+:root[data-theme="blackCatCoinGalaxy"] .page-history,
+:root[data-theme="blackCatCoinGalaxy"] .page-planner,
+:root[data-theme="blackCatCoinGalaxy"] .page-manage-investment,
+:root[data-theme="blackCatCoinGalaxy"] .page-annual-report,
+:root[data-theme="blackCatCoinGalaxy"] .page-diary,
+:root[data-theme="blackCatCoinGalaxy"] .page-installment,
+:root[data-theme="blackCatCoinGalaxy"] .installment-page,
+:root[data-theme="blackCatCoinGalaxy"] .dca-page,
+:root[data-theme="blackCatCoinGalaxy"] .fixed-deposit-page,
+:root[data-theme="blackCatCoinGalaxy"] .dividend-page,
+:root[data-theme="blackCatCoinGalaxy"] .dca-management-page,
+:root[data-theme="blackCatCoinGalaxy"] .dca-setup-page,
+:root[data-theme="blackCatCoinGalaxy"] .investment-input-page,
+:root[data-theme="blackCatCoinGalaxy"] .wishlist-content,
+:root[data-theme="blackCatCoinGalaxy"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .card,
+:root[data-theme="blackCatCoinGalaxy"] .record-card,
+:root[data-theme="blackCatCoinGalaxy"] .ledger-card,
+:root[data-theme="blackCatCoinGalaxy"] .summary-card,
+:root[data-theme="blackCatCoinGalaxy"] .budget-card,
+:root[data-theme="blackCatCoinGalaxy"] .wallet-card,
+:root[data-theme="blackCatCoinGalaxy"] .chart-card,
+:root[data-theme="blackCatCoinGalaxy"] .investment-card,
+:root[data-theme="blackCatCoinGalaxy"] .holding-card,
+:root[data-theme="blackCatCoinGalaxy"] .buying-card,
+:root[data-theme="blackCatCoinGalaxy"] .selling-card,
+:root[data-theme="blackCatCoinGalaxy"] .dividend-card,
+:root[data-theme="blackCatCoinGalaxy"] .regular-investment-card,
+:root[data-theme="blackCatCoinGalaxy"] .investment-management-card,
+:root[data-theme="blackCatCoinGalaxy"] .stock-item-card,
+:root[data-theme="blackCatCoinGalaxy"] .monthly-planner-card,
+:root[data-theme="blackCatCoinGalaxy"] .dividend-stat-card,
+:root[data-theme="blackCatCoinGalaxy"] .manage-investment-card,
+:root[data-theme="blackCatCoinGalaxy"] .annual-report-card,
+:root[data-theme="blackCatCoinGalaxy"] .diary-card,
+:root[data-theme="blackCatCoinGalaxy"] .monthly-planning-card,
+:root[data-theme="blackCatCoinGalaxy"] .investment-settings-card,
+:root[data-theme="blackCatCoinGalaxy"] .wallet-budget-card,
+:root[data-theme="blackCatCoinGalaxy"] .dca-card,
+:root[data-theme="blackCatCoinGalaxy"] .installment-card,
+:root[data-theme="blackCatCoinGalaxy"] .fixed-deposit-card,
+:root[data-theme="blackCatCoinGalaxy"] .dca-item-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
+    color: var(--text-primary);
+    backdrop-filter: blur(14px);
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .investment-card::before,
+:root[data-theme="blackCatCoinGalaxy"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(76, 201, 240, 0.14) 0%,
+        rgba(212, 175, 55, 0.12) 55%,
+        rgba(245, 158, 11, 0.10) 100%);
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .theme-modal-overlay,
+:root[data-theme="blackCatCoinGalaxy"] .modal-overlay,
+:root[data-theme="blackCatCoinGalaxy"] .dialog-overlay {
+    background: color-mix(in srgb, rgba(0, 0, 0, 0.72) 78%, transparent) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .modal-content-standard,
+:root[data-theme="blackCatCoinGalaxy"] .budget-category-modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .budget-setting-modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .category-modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .dca-execute-modal .modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .account-modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .emoji-modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .history-modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .crop-modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .dialog-container,
+:root[data-theme="blackCatCoinGalaxy"] .xiaosen-dialog,
+:root[data-theme="blackCatCoinGalaxy"] .komori-dialog,
+:root[data-theme="blackCatCoinGalaxy"] .mori-dialog-box,
+:root[data-theme="blackCatCoinGalaxy"] .entry-detail-content,
+:root[data-theme="blackCatCoinGalaxy"] .theme-modal-content,
+:root[data-theme="blackCatCoinGalaxy"] .theme-modal-container {
+    background: rgba(2, 10, 18, 0.92) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.60) !important;
+    color: var(--text-primary) !important;
+    max-width: min(94vw, 520px);
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .form-input,
+:root[data-theme="blackCatCoinGalaxy"] .form-select,
+:root[data-theme="blackCatCoinGalaxy"] .form-textarea,
+:root[data-theme="blackCatCoinGalaxy"] .note-input,
+:root[data-theme="blackCatCoinGalaxy"] .theme-search-input {
+    background: rgba(10, 18, 28, 0.82) !important;
+    border: 1px solid rgba(248, 250, 252, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .form-input:focus,
+:root[data-theme="blackCatCoinGalaxy"] .form-select:focus,
+:root[data-theme="blackCatCoinGalaxy"] .form-textarea:focus,
+:root[data-theme="blackCatCoinGalaxy"] .note-input:focus,
+:root[data-theme="blackCatCoinGalaxy"] .theme-search-input:focus {
+    border-color: rgba(212, 175, 55, 0.62) !important;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .input-section {
+    background: rgba(2, 10, 18, 0.90) !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.32);
+    box-shadow: 0 -4px 22px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .bottom-nav {
+    background: rgba(2, 10, 18, 0.88) !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.22) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .btn,
+:root[data-theme="blackCatCoinGalaxy"] .buy-action-btn-large,
+:root[data-theme="blackCatCoinGalaxy"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid rgba(212, 175, 55, 0.42) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .btn:hover,
+:root[data-theme="blackCatCoinGalaxy"] .buy-action-btn-large:hover,
+:root[data-theme="blackCatCoinGalaxy"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid rgba(76, 201, 240, 0.30) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .back-btn,
+:root[data-theme="blackCatCoinGalaxy"] .modal-back-btn,
+:root[data-theme="blackCatCoinGalaxy"] .return-btn,
+:root[data-theme="blackCatCoinGalaxy"] .input-back-btn,
+:root[data-theme="blackCatCoinGalaxy"] .dca-back-btn,
+:root[data-theme="blackCatCoinGalaxy"] .dca-setup-back-btn {
+    background: rgba(10, 18, 28, 0.72) !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .back-btn:hover,
+:root[data-theme="blackCatCoinGalaxy"] .modal-back-btn:hover,
+:root[data-theme="blackCatCoinGalaxy"] .return-btn:hover,
+:root[data-theme="blackCatCoinGalaxy"] .input-back-btn:hover,
+:root[data-theme="blackCatCoinGalaxy"] .dca-back-btn:hover,
+:root[data-theme="blackCatCoinGalaxy"] .dca-setup-back-btn:hover {
+    background: rgba(212, 175, 55, 0.12) !important;
+    border-color: rgba(212, 175, 55, 0.42) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(59, 130, 246, 0.12)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(245, 158, 11, 0.12)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(239, 68, 68, 0.10)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="blackCatCoinGalaxy"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(34, 197, 94, 0.10)) !important;
+    border-left-color: var(--color-success) !important;
+}
+
+@media (max-width: 768px) {
+    :root[data-theme="blackCatCoinGalaxy"] .modal-content,
+    :root[data-theme="blackCatCoinGalaxy"] .dialog-content,
+    :root[data-theme="blackCatCoinGalaxy"] .theme-modal-container {
+        width: 95vw;
+        max-height: 90vh;
+    }
+}

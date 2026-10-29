@@ -1,0 +1,424 @@
+:root[data-theme="samoyedSnowWave"] {
+    --color-primary: #2d8fbe;
+    --color-primary-light: #8ad4f4;
+    --color-primary-lighter: #e3f7ff;
+    --color-primary-dark: #0a3b57;
+
+    --color-secondary: #5bbde8;
+    --color-secondary-light: #bfefff;
+    --color-secondary-dark: #176f96;
+
+    --color-accent: #ffffff;
+    --color-accent-light: rgba(255, 255, 255, 0.90);
+    --color-accent-dark: #cfefff;
+
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #f59e0b;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(12, 64, 92, 0.86) 0%,
+        rgba(45, 143, 190, 0.42) 48%,
+        rgba(138, 212, 244, 0.26) 100%);
+
+    --bg-body: rgba(234, 250, 255, 0.78);
+    --bg-body-strong: rgba(234, 250, 255, 0.90);
+    --bg-dark: rgba(12, 64, 92, 0.74);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(138, 212, 244, 0.26) 0%,
+        rgba(227, 247, 255, 0.22) 60%,
+        rgba(255, 255, 255, 0.16) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.70) 0%,
+        rgba(227, 247, 255, 0.30) 100%);
+
+    --bg-white: rgba(248, 253, 255, 0.88);
+    --bg-card: rgba(255, 255, 255, 0.86);
+    --bg-light: rgba(235, 250, 255, 0.80);
+    --bg-lighter: rgba(227, 247, 255, 0.68);
+    --bg-soft: rgba(45, 143, 190, 0.08);
+    --bg-soft-strong: rgba(45, 143, 190, 0.14);
+
+    --text-primary: rgba(6, 26, 38, 0.96);
+    --text-secondary: rgba(6, 26, 38, 0.78);
+    --text-tertiary: rgba(6, 26, 38, 0.62);
+    --text-strong: rgba(0, 0, 0, 0.96);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(45, 143, 190, 0.44);
+    --border-light: rgba(6, 26, 38, 0.12);
+    --border-medium: rgba(45, 143, 190, 0.22);
+    --card-border-color: rgba(45, 143, 190, 0.18);
+    --control-border-color: rgba(45, 143, 190, 0.22);
+    --table-border-color: rgba(6, 26, 38, 0.12);
+
+    --shadow-primary: 0 18px 54px rgba(12, 64, 92, 0.22);
+    --shadow-primary-lg: 0 28px 78px rgba(12, 64, 92, 0.20);
+
+    --color-primary-rgba-08: rgba(45, 143, 190, 0.08);
+    --color-primary-rgba-10: rgba(45, 143, 190, 0.10);
+    --color-primary-rgba-12: rgba(45, 143, 190, 0.12);
+    --color-primary-rgba-15: rgba(45, 143, 190, 0.15);
+    --color-primary-rgba-18: rgba(45, 143, 190, 0.18);
+    --color-primary-rgba-20: rgba(45, 143, 190, 0.20);
+    --color-primary-rgba-25: rgba(45, 143, 190, 0.25);
+    --color-primary-rgba-30: rgba(45, 143, 190, 0.30);
+    --color-primary-rgba-40: rgba(45, 143, 190, 0.40);
+
+    --color-primary-light-rgba-08: rgba(138, 212, 244, 0.08);
+    --color-primary-light-rgba-10: rgba(138, 212, 244, 0.10);
+    --color-primary-light-rgba-12: rgba(138, 212, 244, 0.12);
+    --color-primary-light-rgba-15: rgba(138, 212, 244, 0.15);
+    --color-primary-light-rgba-20: rgba(138, 212, 244, 0.20);
+    --color-primary-light-rgba-25: rgba(138, 212, 244, 0.25);
+    --color-primary-light-rgba-30: rgba(138, 212, 244, 0.30);
+    --color-primary-light-rgba-40: rgba(138, 212, 244, 0.40);
+
+    --color-secondary-rgba-20: rgba(91, 189, 232, 0.20);
+    --color-accent-rgba-30: rgba(255, 255, 255, 0.30);
+    --color-accent-rgba-40: rgba(255, 255, 255, 0.40);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.78) 0%,
+        rgba(227, 247, 255, 0.60) 100%);
+
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.78) 0%,
+        rgba(227, 247, 255, 0.60) 100%);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.86) 84%, rgba(45, 143, 190, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.86) 74%, rgba(45, 143, 190, 0.18));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 78%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 64%, var(--color-primary-dark)) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 80%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 80%, var(--color-primary-dark)) 100%);
+
+    --action-buy-text: rgba(255, 255, 255, 0.98);
+
+    --action-dca-bg: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.92) 0%,
+        color-mix(in srgb, var(--color-primary-light) 58%, white) 45%,
+        color-mix(in srgb, var(--color-secondary) 50%, var(--color-primary-dark)) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.96) 0%,
+        color-mix(in srgb, var(--color-primary-light) 65%, white) 100%);
+
+    --action-dca-text: rgba(6, 26, 38, 0.96);
+}
+
+:root[data-theme="samoyedSnowWave"] body {
+    background: url("https://i.pinimg.com/736x/d8/86/9b/d8869b7555b465b043ea42cf297d78eb.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="samoyedSnowWave"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.62), transparent 56%),
+        radial-gradient(circle at 70% 20%, rgba(138, 212, 244, 0.26), transparent 60%),
+        radial-gradient(circle at 58% 76%, rgba(45, 143, 190, 0.18), transparent 62%),
+        linear-gradient(135deg, rgba(12, 64, 92, 0.66) 0%, rgba(12, 64, 92, 0.42) 55%, rgba(12, 64, 92, 0.64) 100%);
+}
+
+:root[data-theme="samoyedSnowWave"] .page-ledger,
+:root[data-theme="samoyedSnowWave"] .page-input,
+:root[data-theme="samoyedSnowWave"] .page-chart,
+:root[data-theme="samoyedSnowWave"] .page-budget,
+:root[data-theme="samoyedSnowWave"] .page-monthly-planner,
+:root[data-theme="samoyedSnowWave"] .page-daily-budget,
+:root[data-theme="samoyedSnowWave"] .page-settings,
+:root[data-theme="samoyedSnowWave"] .page-category-manage,
+:root[data-theme="samoyedSnowWave"] .page-investment,
+:root[data-theme="samoyedSnowWave"] .page-wallet,
+:root[data-theme="samoyedSnowWave"] .page-history,
+:root[data-theme="samoyedSnowWave"] .page-planner,
+:root[data-theme="samoyedSnowWave"] .page-installment,
+:root[data-theme="samoyedSnowWave"] .installment-page,
+:root[data-theme="samoyedSnowWave"] .dca-page,
+:root[data-theme="samoyedSnowWave"] .fixed-deposit-page,
+:root[data-theme="samoyedSnowWave"] .dividend-page,
+:root[data-theme="samoyedSnowWave"] .dca-management-page,
+:root[data-theme="samoyedSnowWave"] .dca-setup-page,
+:root[data-theme="samoyedSnowWave"] .investment-input-page,
+:root[data-theme="samoyedSnowWave"] .wishlist-content,
+:root[data-theme="samoyedSnowWave"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="samoyedSnowWave"] .card,
+:root[data-theme="samoyedSnowWave"] .record-card,
+:root[data-theme="samoyedSnowWave"] .ledger-card,
+:root[data-theme="samoyedSnowWave"] .summary-card,
+:root[data-theme="samoyedSnowWave"] .budget-card,
+:root[data-theme="samoyedSnowWave"] .wallet-card,
+:root[data-theme="samoyedSnowWave"] .chart-card,
+:root[data-theme="samoyedSnowWave"] .investment-card,
+:root[data-theme="samoyedSnowWave"] .holding-card,
+:root[data-theme="samoyedSnowWave"] .buying-card,
+:root[data-theme="samoyedSnowWave"] .selling-card,
+:root[data-theme="samoyedSnowWave"] .dividend-card,
+:root[data-theme="samoyedSnowWave"] .regular-investment-card,
+:root[data-theme="samoyedSnowWave"] .investment-management-card,
+:root[data-theme="samoyedSnowWave"] .stock-item-card,
+:root[data-theme="samoyedSnowWave"] .monthly-planner-card,
+:root[data-theme="samoyedSnowWave"] .dividend-stat-card,
+:root[data-theme="samoyedSnowWave"] .dca-card,
+:root[data-theme="samoyedSnowWave"] .installment-card,
+:root[data-theme="samoyedSnowWave"] .fixed-deposit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--shadow-primary);
+    color: var(--text-primary);
+    backdrop-filter: blur(14px);
+}
+
+:root[data-theme="samoyedSnowWave"] .investment-card::before,
+:root[data-theme="samoyedSnowWave"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.64) 0%,
+        rgba(227, 247, 255, 0.40) 55%,
+        rgba(138, 212, 244, 0.18) 100%);
+}
+
+:root[data-theme="samoyedSnowWave"] .modal-content,
+:root[data-theme="samoyedSnowWave"] .modal-content-standard,
+:root[data-theme="samoyedSnowWave"] .budget-category-modal-content,
+:root[data-theme="samoyedSnowWave"] .budget-setting-modal-content,
+:root[data-theme="samoyedSnowWave"] .category-modal-content,
+:root[data-theme="samoyedSnowWave"] .dca-execute-modal .modal-content,
+:root[data-theme="samoyedSnowWave"] .account-modal-content,
+:root[data-theme="samoyedSnowWave"] .emoji-modal-content,
+:root[data-theme="samoyedSnowWave"] .history-modal-content,
+:root[data-theme="samoyedSnowWave"] .entry-detail-content,
+:root[data-theme="samoyedSnowWave"] .theme-modal-content {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(227, 247, 255, 0.70)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="samoyedSnowWave"] .theme-modal-overlay,
+:root[data-theme="samoyedSnowWave"] .modal-overlay {
+    background: color-mix(in srgb, rgba(8, 18, 28, 0.55) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="samoyedSnowWave"] .input-section {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(227, 247, 255, 0.60)) !important;
+    border-top: 2px solid rgba(45, 143, 190, 0.22) !important;
+    box-shadow: 0 -10px 28px rgba(12, 64, 92, 0.18);
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="samoyedSnowWave"] .bottom-nav {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.82) 90%, rgba(227, 247, 255, 0.65)) !important;
+    border-top: 1px solid rgba(45, 143, 190, 0.16) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="samoyedSnowWave"] .form-input,
+:root[data-theme="samoyedSnowWave"] .form-select,
+:root[data-theme="samoyedSnowWave"] .form-textarea,
+:root[data-theme="samoyedSnowWave"] .note-input,
+:root[data-theme="samoyedSnowWave"] .theme-search-input {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 2px solid rgba(45, 143, 190, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .form-input:focus,
+:root[data-theme="samoyedSnowWave"] .form-select:focus,
+:root[data-theme="samoyedSnowWave"] .form-textarea:focus,
+:root[data-theme="samoyedSnowWave"] .note-input:focus,
+:root[data-theme="samoyedSnowWave"] .theme-search-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(45, 143, 190, 0.18) !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .header-section,
+:root[data-theme="samoyedSnowWave"] .ledger-header,
+:root[data-theme="samoyedSnowWave"] .chart-header,
+:root[data-theme="samoyedSnowWave"] .budget-header,
+:root[data-theme="samoyedSnowWave"] .monthly-planner-header,
+:root[data-theme="samoyedSnowWave"] .theme-modal-header {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.78) 88%, rgba(227, 247, 255, 0.75)) !important;
+    border-bottom: 1px solid rgba(45, 143, 190, 0.14) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="samoyedSnowWave"] .tab-btn,
+:root[data-theme="samoyedSnowWave"] .chart-tab-btn,
+:root[data-theme="samoyedSnowWave"] .ledger-type-tab,
+:root[data-theme="samoyedSnowWave"] .record-type-tab,
+:root[data-theme="samoyedSnowWave"] .category-tab {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid rgba(45, 143, 190, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .tab-btn.active,
+:root[data-theme="samoyedSnowWave"] .chart-tab-btn.active,
+:root[data-theme="samoyedSnowWave"] .ledger-type-tab.active,
+:root[data-theme="samoyedSnowWave"] .record-type-tab.active,
+:root[data-theme="samoyedSnowWave"] .category-tab.active {
+    background: rgba(45, 143, 190, 0.14) !important;
+    border: 2px solid rgba(45, 143, 190, 0.32) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 12px 28px rgba(12, 64, 92, 0.16) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .tab-btn:hover,
+:root[data-theme="samoyedSnowWave"] .chart-tab-btn:hover,
+:root[data-theme="samoyedSnowWave"] .ledger-type-tab:hover,
+:root[data-theme="samoyedSnowWave"] .record-type-tab:hover,
+:root[data-theme="samoyedSnowWave"] .category-tab:hover {
+    background: rgba(45, 143, 190, 0.10) !important;
+    border-color: rgba(45, 143, 190, 0.22) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .key-btn {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 2px solid rgba(45, 143, 190, 0.18) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 26px rgba(12, 64, 92, 0.12) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .key-btn:hover {
+    background: rgba(45, 143, 190, 0.10) !important;
+    border-color: rgba(45, 143, 190, 0.26) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .key-btn.operator {
+    background: rgba(45, 143, 190, 0.14) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .nav-item.active {
+    background: rgba(45, 143, 190, 0.12);
+    box-shadow: 0 10px 26px rgba(12, 64, 92, 0.14);
+}
+
+:root[data-theme="samoyedSnowWave"] .btn,
+:root[data-theme="samoyedSnowWave"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 62%, white) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .btn:hover,
+:root[data-theme="samoyedSnowWave"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary-light) 55%, white) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .dca-add-btn,
+:root[data-theme="samoyedSnowWave"] .form-submit-btn,
+:root[data-theme="samoyedSnowWave"] .entry-detail-edit-btn,
+:root[data-theme="samoyedSnowWave"] .entry-edit-save,
+:root[data-theme="samoyedSnowWave"] .investment-form-submit-btn,
+:root[data-theme="samoyedSnowWave"] .buy-btn,
+:root[data-theme="samoyedSnowWave"] .dca-execute-btn,
+:root[data-theme="samoyedSnowWave"] .buy-action-btn-large,
+:root[data-theme="samoyedSnowWave"] .allocation-btn.primary,
+:root[data-theme="samoyedSnowWave"] .modal-btn.confirm-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .dca-add-btn:hover,
+:root[data-theme="samoyedSnowWave"] .form-submit-btn:hover,
+:root[data-theme="samoyedSnowWave"] .entry-detail-edit-btn:hover,
+:root[data-theme="samoyedSnowWave"] .entry-edit-save:hover,
+:root[data-theme="samoyedSnowWave"] .investment-form-submit-btn:hover,
+:root[data-theme="samoyedSnowWave"] .buy-btn:hover,
+:root[data-theme="samoyedSnowWave"] .dca-execute-btn:hover,
+:root[data-theme="samoyedSnowWave"] .allocation-btn.primary:hover,
+:root[data-theme="samoyedSnowWave"] .modal-btn.confirm-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .allocation-btn,
+:root[data-theme="samoyedSnowWave"] .modal-btn.cancel-btn {
+    background: var(--action-side-bg) !important;
+    color: var(--action-side-text) !important;
+    border: 1px solid rgba(45, 143, 190, 0.22) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .back-btn,
+:root[data-theme="samoyedSnowWave"] .modal-back-btn,
+:root[data-theme="samoyedSnowWave"] .return-btn,
+:root[data-theme="samoyedSnowWave"] .input-back-btn,
+:root[data-theme="samoyedSnowWave"] .dca-back-btn,
+:root[data-theme="samoyedSnowWave"] .dca-setup-back-btn {
+    background: rgba(255, 255, 255, 0.82) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(45, 143, 190, 0.18) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .back-btn:hover,
+:root[data-theme="samoyedSnowWave"] .modal-back-btn:hover,
+:root[data-theme="samoyedSnowWave"] .return-btn:hover,
+:root[data-theme="samoyedSnowWave"] .input-back-btn:hover,
+:root[data-theme="samoyedSnowWave"] .dca-back-btn:hover,
+:root[data-theme="samoyedSnowWave"] .dca-setup-back-btn:hover {
+    background: rgba(45, 143, 190, 0.10) !important;
+    border-color: rgba(45, 143, 190, 0.28) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 62%, white) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(37, 99, 235, 0.12)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(245, 158, 11, 0.12)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(220, 38, 38, 0.10)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="samoyedSnowWave"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(22, 163, 74, 0.10)) !important;
+    border-left-color: var(--color-success) !important;
+}

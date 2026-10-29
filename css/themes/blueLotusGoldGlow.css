@@ -1,0 +1,439 @@
+:root[data-theme="blueLotusGoldGlow"] {
+    --color-primary: #2b5ea8;
+    --color-primary-light: #7fb6e8;
+    --color-primary-lighter: #e1f0ff;
+    --color-primary-dark: #0c2a55;
+
+    --color-secondary: #4b92d6;
+    --color-secondary-light: #bfe3ff;
+    --color-secondary-dark: #1e5a92;
+
+    --color-accent: #f2b35b;
+    --color-accent-light: #ffe1b3;
+    --color-accent-dark: #c47c1e;
+
+    --color-success: #16a34a;
+    --color-danger: #dc2626;
+    --color-warning: #f59e0b;
+    --color-info: #2563eb;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(12, 42, 85, 0.88) 0%,
+        rgba(43, 94, 168, 0.44) 48%,
+        rgba(127, 182, 232, 0.26) 100%);
+
+    --bg-body: rgba(240, 248, 255, 0.78);
+    --bg-body-strong: rgba(240, 248, 255, 0.90);
+    --bg-dark: rgba(12, 42, 85, 0.76);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(127, 182, 232, 0.24) 0%,
+        rgba(225, 240, 255, 0.20) 60%,
+        rgba(242, 179, 91, 0.14) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.70) 0%,
+        rgba(225, 240, 255, 0.30) 100%);
+
+    --bg-white: rgba(248, 253, 255, 0.90);
+    --bg-card: rgba(255, 255, 255, 0.86);
+    --bg-light: rgba(235, 248, 255, 0.80);
+    --bg-lighter: rgba(225, 240, 255, 0.68);
+    --bg-soft: rgba(43, 94, 168, 0.08);
+    --bg-soft-strong: rgba(43, 94, 168, 0.14);
+
+    --text-primary: rgba(8, 20, 40, 0.96);
+    --text-secondary: rgba(8, 20, 40, 0.78);
+    --text-tertiary: rgba(8, 20, 40, 0.62);
+    --text-strong: rgba(0, 0, 0, 0.96);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(43, 94, 168, 0.46);
+    --border-light: rgba(8, 20, 40, 0.12);
+    --border-medium: rgba(43, 94, 168, 0.22);
+    --card-border-color: rgba(43, 94, 168, 0.18);
+    --control-border-color: rgba(43, 94, 168, 0.22);
+    --table-border-color: rgba(8, 20, 40, 0.12);
+
+    --shadow-primary: 0 18px 54px rgba(12, 42, 85, 0.22);
+    --shadow-primary-lg: 0 28px 78px rgba(12, 42, 85, 0.20);
+
+    --color-primary-rgba-08: rgba(43, 94, 168, 0.08);
+    --color-primary-rgba-10: rgba(43, 94, 168, 0.10);
+    --color-primary-rgba-12: rgba(43, 94, 168, 0.12);
+    --color-primary-rgba-15: rgba(43, 94, 168, 0.15);
+    --color-primary-rgba-18: rgba(43, 94, 168, 0.18);
+    --color-primary-rgba-20: rgba(43, 94, 168, 0.20);
+    --color-primary-rgba-25: rgba(43, 94, 168, 0.25);
+    --color-primary-rgba-30: rgba(43, 94, 168, 0.30);
+    --color-primary-rgba-40: rgba(43, 94, 168, 0.40);
+
+    --color-primary-light-rgba-08: rgba(127, 182, 232, 0.08);
+    --color-primary-light-rgba-10: rgba(127, 182, 232, 0.10);
+    --color-primary-light-rgba-12: rgba(127, 182, 232, 0.12);
+    --color-primary-light-rgba-15: rgba(127, 182, 232, 0.15);
+    --color-primary-light-rgba-20: rgba(127, 182, 232, 0.20);
+    --color-primary-light-rgba-25: rgba(127, 182, 232, 0.25);
+    --color-primary-light-rgba-30: rgba(127, 182, 232, 0.30);
+    --color-primary-light-rgba-40: rgba(127, 182, 232, 0.40);
+
+    --color-secondary-rgba-20: rgba(75, 146, 214, 0.20);
+    --color-accent-rgba-30: rgba(242, 179, 91, 0.30);
+    --color-accent-rgba-40: rgba(242, 179, 91, 0.40);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.78) 0%,
+        rgba(225, 240, 255, 0.60) 100%);
+
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.78) 0%,
+        rgba(225, 240, 255, 0.60) 100%);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.86) 84%, rgba(43, 94, 168, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.86) 74%, rgba(43, 94, 168, 0.18));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 78%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 64%, var(--color-primary-dark)) 100%);
+
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 80%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 80%, var(--color-primary-dark)) 100%);
+
+    --action-buy-text: rgba(255, 255, 255, 0.98);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent) 82%, white) 0%,
+        color-mix(in srgb, var(--color-accent-light) 72%, var(--color-primary-light)) 55%,
+        color-mix(in srgb, var(--color-secondary) 52%, var(--color-primary-dark)) 100%);
+
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 86%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 78%, var(--color-accent-dark)) 100%);
+
+    --action-dca-text: rgba(8, 20, 40, 0.96);
+}
+
+:root[data-theme="blueLotusGoldGlow"] body {
+    background: url("https://i.pinimg.com/1200x/09/1b/cd/091bcdf0eb9b1cc5125cb60f4fa3854d.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="blueLotusGoldGlow"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 70% 55%, rgba(242, 179, 91, 0.20), transparent 55%),
+        radial-gradient(circle at 82% 58%, rgba(255, 255, 255, 0.26), transparent 56%),
+        radial-gradient(circle at 30% 25%, rgba(127, 182, 232, 0.22), transparent 58%),
+        linear-gradient(135deg, rgba(12, 42, 85, 0.70) 0%, rgba(12, 42, 85, 0.42) 55%, rgba(12, 42, 85, 0.64) 100%);
+}
+
+:root[data-theme="blueLotusGoldGlow"] .page-ledger,
+:root[data-theme="blueLotusGoldGlow"] .page-input,
+:root[data-theme="blueLotusGoldGlow"] .page-chart,
+:root[data-theme="blueLotusGoldGlow"] .page-budget,
+:root[data-theme="blueLotusGoldGlow"] .page-monthly-planner,
+:root[data-theme="blueLotusGoldGlow"] .page-daily-budget,
+:root[data-theme="blueLotusGoldGlow"] .page-settings,
+:root[data-theme="blueLotusGoldGlow"] .page-category-manage,
+:root[data-theme="blueLotusGoldGlow"] .page-investment,
+:root[data-theme="blueLotusGoldGlow"] .page-wallet,
+:root[data-theme="blueLotusGoldGlow"] .page-history,
+:root[data-theme="blueLotusGoldGlow"] .page-planner,
+:root[data-theme="blueLotusGoldGlow"] .page-manage-investment,
+:root[data-theme="blueLotusGoldGlow"] .page-annual-report,
+:root[data-theme="blueLotusGoldGlow"] .page-diary,
+:root[data-theme="blueLotusGoldGlow"] .page-installment,
+:root[data-theme="blueLotusGoldGlow"] .installment-page,
+:root[data-theme="blueLotusGoldGlow"] .dca-page,
+:root[data-theme="blueLotusGoldGlow"] .fixed-deposit-page,
+:root[data-theme="blueLotusGoldGlow"] .dividend-page,
+:root[data-theme="blueLotusGoldGlow"] .dca-management-page,
+:root[data-theme="blueLotusGoldGlow"] .dca-setup-page,
+:root[data-theme="blueLotusGoldGlow"] .investment-input-page,
+:root[data-theme="blueLotusGoldGlow"] .wishlist-content,
+:root[data-theme="blueLotusGoldGlow"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .card,
+:root[data-theme="blueLotusGoldGlow"] .record-card,
+:root[data-theme="blueLotusGoldGlow"] .ledger-card,
+:root[data-theme="blueLotusGoldGlow"] .summary-card,
+:root[data-theme="blueLotusGoldGlow"] .budget-card,
+:root[data-theme="blueLotusGoldGlow"] .wallet-card,
+:root[data-theme="blueLotusGoldGlow"] .chart-card,
+:root[data-theme="blueLotusGoldGlow"] .investment-card,
+:root[data-theme="blueLotusGoldGlow"] .holding-card,
+:root[data-theme="blueLotusGoldGlow"] .buying-card,
+:root[data-theme="blueLotusGoldGlow"] .selling-card,
+:root[data-theme="blueLotusGoldGlow"] .dividend-card,
+:root[data-theme="blueLotusGoldGlow"] .regular-investment-card,
+:root[data-theme="blueLotusGoldGlow"] .investment-management-card,
+:root[data-theme="blueLotusGoldGlow"] .stock-item-card,
+:root[data-theme="blueLotusGoldGlow"] .monthly-planner-card,
+:root[data-theme="blueLotusGoldGlow"] .dividend-stat-card,
+:root[data-theme="blueLotusGoldGlow"] .manage-investment-card,
+:root[data-theme="blueLotusGoldGlow"] .annual-report-card,
+:root[data-theme="blueLotusGoldGlow"] .diary-card,
+:root[data-theme="blueLotusGoldGlow"] .monthly-planning-card,
+:root[data-theme="blueLotusGoldGlow"] .investment-settings-card,
+:root[data-theme="blueLotusGoldGlow"] .wallet-budget-card,
+:root[data-theme="blueLotusGoldGlow"] .dca-card,
+:root[data-theme="blueLotusGoldGlow"] .installment-card,
+:root[data-theme="blueLotusGoldGlow"] .fixed-deposit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--shadow-primary);
+    color: var(--text-primary);
+    backdrop-filter: blur(14px);
+}
+
+:root[data-theme="blueLotusGoldGlow"] .investment-card::before,
+:root[data-theme="blueLotusGoldGlow"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.62) 0%,
+        rgba(225, 240, 255, 0.38) 55%,
+        rgba(242, 179, 91, 0.16) 100%);
+}
+
+:root[data-theme="blueLotusGoldGlow"] .modal-content,
+:root[data-theme="blueLotusGoldGlow"] .modal-content-standard,
+:root[data-theme="blueLotusGoldGlow"] .budget-category-modal-content,
+:root[data-theme="blueLotusGoldGlow"] .budget-setting-modal-content,
+:root[data-theme="blueLotusGoldGlow"] .category-modal-content,
+:root[data-theme="blueLotusGoldGlow"] .dca-execute-modal .modal-content,
+:root[data-theme="blueLotusGoldGlow"] .account-modal-content,
+:root[data-theme="blueLotusGoldGlow"] .emoji-modal-content,
+:root[data-theme="blueLotusGoldGlow"] .history-modal-content,
+:root[data-theme="blueLotusGoldGlow"] .entry-detail-content,
+:root[data-theme="blueLotusGoldGlow"] .crop-modal-content,
+:root[data-theme="blueLotusGoldGlow"] .dialog-container,
+:root[data-theme="blueLotusGoldGlow"] .xiaosen-dialog,
+:root[data-theme="blueLotusGoldGlow"] .komori-dialog,
+:root[data-theme="blueLotusGoldGlow"] .mori-dialog-box,
+:root[data-theme="blueLotusGoldGlow"] .theme-modal-content,
+:root[data-theme="blueLotusGoldGlow"] .theme-modal-container {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(225, 240, 255, 0.70)) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="blueLotusGoldGlow"] .theme-modal-overlay,
+:root[data-theme="blueLotusGoldGlow"] .modal-overlay {
+    background: color-mix(in srgb, rgba(8, 18, 28, 0.55) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="blueLotusGoldGlow"] .input-section {
+    background: color-mix(in srgb, var(--bg-card) 92%, rgba(225, 240, 255, 0.60)) !important;
+    border-top: 2px solid rgba(43, 94, 168, 0.22) !important;
+    box-shadow: 0 -10px 28px rgba(12, 42, 85, 0.18);
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="blueLotusGoldGlow"] .bottom-nav {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.82) 90%, rgba(225, 240, 255, 0.65)) !important;
+    border-top: 1px solid rgba(43, 94, 168, 0.16) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="blueLotusGoldGlow"] .form-input,
+:root[data-theme="blueLotusGoldGlow"] .form-select,
+:root[data-theme="blueLotusGoldGlow"] .form-textarea,
+:root[data-theme="blueLotusGoldGlow"] .note-input,
+:root[data-theme="blueLotusGoldGlow"] .theme-search-input {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 2px solid rgba(43, 94, 168, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .form-input:focus,
+:root[data-theme="blueLotusGoldGlow"] .form-select:focus,
+:root[data-theme="blueLotusGoldGlow"] .form-textarea:focus,
+:root[data-theme="blueLotusGoldGlow"] .note-input:focus,
+:root[data-theme="blueLotusGoldGlow"] .theme-search-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(43, 94, 168, 0.18) !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .header-section,
+:root[data-theme="blueLotusGoldGlow"] .ledger-header,
+:root[data-theme="blueLotusGoldGlow"] .chart-header,
+:root[data-theme="blueLotusGoldGlow"] .budget-header,
+:root[data-theme="blueLotusGoldGlow"] .monthly-planner-header,
+:root[data-theme="blueLotusGoldGlow"] .theme-modal-header {
+    background: color-mix(in srgb, rgba(255, 255, 255, 0.78) 88%, rgba(225, 240, 255, 0.75)) !important;
+    border-bottom: 1px solid rgba(43, 94, 168, 0.14) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="blueLotusGoldGlow"] .tab-btn,
+:root[data-theme="blueLotusGoldGlow"] .chart-tab-btn,
+:root[data-theme="blueLotusGoldGlow"] .ledger-type-tab,
+:root[data-theme="blueLotusGoldGlow"] .record-type-tab,
+:root[data-theme="blueLotusGoldGlow"] .category-tab {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid rgba(43, 94, 168, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .tab-btn.active,
+:root[data-theme="blueLotusGoldGlow"] .chart-tab-btn.active,
+:root[data-theme="blueLotusGoldGlow"] .ledger-type-tab.active,
+:root[data-theme="blueLotusGoldGlow"] .record-type-tab.active,
+:root[data-theme="blueLotusGoldGlow"] .category-tab.active {
+    background: rgba(43, 94, 168, 0.14) !important;
+    border: 2px solid rgba(43, 94, 168, 0.32) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 12px 28px rgba(12, 42, 85, 0.16) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .tab-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .chart-tab-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .ledger-type-tab:hover,
+:root[data-theme="blueLotusGoldGlow"] .record-type-tab:hover,
+:root[data-theme="blueLotusGoldGlow"] .category-tab:hover {
+    background: rgba(43, 94, 168, 0.10) !important;
+    border-color: rgba(43, 94, 168, 0.22) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .key-btn {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border: 2px solid rgba(43, 94, 168, 0.18) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 10px 26px rgba(12, 42, 85, 0.12) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .key-btn:hover {
+    background: rgba(43, 94, 168, 0.10) !important;
+    border-color: rgba(43, 94, 168, 0.26) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .key-btn.operator {
+    background: rgba(43, 94, 168, 0.14) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .nav-item.active {
+    background: rgba(43, 94, 168, 0.12);
+    box-shadow: 0 10px 26px rgba(12, 42, 85, 0.14);
+}
+
+:root[data-theme="blueLotusGoldGlow"] .btn,
+:root[data-theme="blueLotusGoldGlow"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 62%, white) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 55%, white) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .dca-add-btn,
+:root[data-theme="blueLotusGoldGlow"] .form-submit-btn,
+:root[data-theme="blueLotusGoldGlow"] .entry-detail-edit-btn,
+:root[data-theme="blueLotusGoldGlow"] .entry-edit-save,
+:root[data-theme="blueLotusGoldGlow"] .investment-form-submit-btn,
+:root[data-theme="blueLotusGoldGlow"] .buy-btn,
+:root[data-theme="blueLotusGoldGlow"] .dca-execute-btn,
+:root[data-theme="blueLotusGoldGlow"] .buy-action-btn-large,
+:root[data-theme="blueLotusGoldGlow"] .allocation-btn.primary,
+:root[data-theme="blueLotusGoldGlow"] .modal-btn.confirm-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .dca-add-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .form-submit-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .entry-detail-edit-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .entry-edit-save:hover,
+:root[data-theme="blueLotusGoldGlow"] .investment-form-submit-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .buy-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .dca-execute-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .allocation-btn.primary:hover,
+:root[data-theme="blueLotusGoldGlow"] .modal-btn.confirm-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .allocation-btn,
+:root[data-theme="blueLotusGoldGlow"] .modal-btn.cancel-btn {
+    background: var(--action-side-bg) !important;
+    color: var(--action-side-text) !important;
+    border: 1px solid rgba(43, 94, 168, 0.22) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .back-btn,
+:root[data-theme="blueLotusGoldGlow"] .modal-back-btn,
+:root[data-theme="blueLotusGoldGlow"] .return-btn,
+:root[data-theme="blueLotusGoldGlow"] .input-back-btn,
+:root[data-theme="blueLotusGoldGlow"] .dca-back-btn,
+:root[data-theme="blueLotusGoldGlow"] .dca-setup-back-btn {
+    background: rgba(255, 255, 255, 0.82) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(43, 94, 168, 0.18) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .back-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .modal-back-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .return-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .input-back-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .dca-back-btn:hover,
+:root[data-theme="blueLotusGoldGlow"] .dca-setup-back-btn:hover {
+    background: rgba(43, 94, 168, 0.10) !important;
+    border-color: rgba(43, 94, 168, 0.28) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .smart-suggestion-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 62%, white) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .smart-suggestion-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .insight-item.info {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(37, 99, 235, 0.12)) !important;
+    border-left-color: var(--color-info) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .insight-item.warning {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(245, 158, 11, 0.12)) !important;
+    border-left-color: var(--color-warning) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .insight-item.error {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(220, 38, 38, 0.10)) !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+:root[data-theme="blueLotusGoldGlow"] .recommendation-item {
+    background: color-mix(in srgb, var(--bg-card) 86%, rgba(22, 163, 74, 0.10)) !important;
+    border-left-color: var(--color-success) !important;
+}

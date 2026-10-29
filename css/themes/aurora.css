@@ -1,0 +1,30 @@
+﻿:root[data-theme="aurora"] {
+    --color-primary: #00d4ff;
+    --color-primary-light: #34d399;
+    --color-primary-lighter: #a78bfa;
+    --color-primary-dark: #0284c7;
+    --bg-primary: linear-gradient(135deg, #071a52 0%, #0b8457 50%, #7c3aed 100%);
+    --bg-gradient: linear-gradient(135deg, #00d4ff 0%, #34d399 50%, #a78bfa 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(52, 211, 153, 0.12) 50%, rgba(167, 139, 250, 0.12) 100%);
+    --border-primary: #00d4ff;
+    --shadow-primary: 0 2px 8px rgba(0, 212, 255, 0.25);
+    --shadow-primary-lg: 0 4px 12px rgba(0, 212, 255, 0.3);
+    --color-primary-rgba-08: rgba(0, 212, 255, 0.08);
+    --color-primary-rgba-10: rgba(0, 212, 255, 0.1);
+    --color-primary-rgba-15: rgba(0, 212, 255, 0.15);
+    --color-primary-rgba-20: rgba(0, 212, 255, 0.2);
+    --color-primary-rgba-25: rgba(0, 212, 255, 0.25);
+    --color-primary-rgba-30: rgba(0, 212, 255, 0.3);
+    --color-primary-rgba-12: rgba(0, 212, 255, 0.12);
+    --color-primary-rgba-18: rgba(0, 212, 255, 0.18);
+    --color-primary-light-rgba-08: rgba(52, 211, 153, 0.08);
+    --color-primary-light-rgba-10: rgba(52, 211, 153, 0.1);
+    --color-primary-light-rgba-15: rgba(52, 211, 153, 0.15);
+    --color-primary-light-rgba-20: rgba(52, 211, 153, 0.2);
+    --color-primary-light-rgba-25: rgba(52, 211, 153, 0.25);
+    --color-primary-light-rgba-30: rgba(52, 211, 153, 0.3);
+    --color-primary-light-rgba-40: rgba(52, 211, 153, 0.4);
+    --bg-light-gradient: linear-gradient(135deg, var(--bg-white) 0%, rgba(0, 212, 255, 0.08) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(0, 212, 255, 0.08) 0%, var(--bg-white) 100%);
+}
+

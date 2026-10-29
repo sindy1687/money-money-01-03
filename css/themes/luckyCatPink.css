@@ -1,0 +1,333 @@
+﻿:root[data-theme="luckyCatPink"] {
+    --color-primary: #ff5fa2;
+    --color-primary-light: #ff8fc2;
+    --color-primary-lighter: #ffd1e6;
+    --color-primary-dark: #c2185b;
+    --color-secondary: #f4c65b;
+    --color-secondary-light: #ffe0a3;
+    --color-secondary-dark: #d9a126;
+
+    /* 狀態顏色 */
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    /* 背景 / 卡片（維持高對比，避免被圖片吃掉） */
+    --bg-primary: linear-gradient(135deg,
+        rgba(255, 244, 249, 0.96) 0%,
+        rgba(255, 230, 241, 0.92) 55%,
+        rgba(244, 198, 91, 0.22) 100%);
+    --bg-body: rgba(255, 246, 251, 0.88);
+    --bg-body-strong: rgba(255, 246, 251, 0.94);
+    --bg-gradient: linear-gradient(135deg, #fff4f9 0%, #ffe6f1 55%, #fff0d1 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(255, 95, 162, 0.10) 0%, rgba(244, 198, 91, 0.18) 100%);
+    --bg-white: rgba(255, 255, 255, 0.92);
+    --bg-card: rgba(255, 255, 255, 0.88);
+    --bg-light: rgba(255, 236, 245, 0.86);
+    --bg-lighter: rgba(255, 243, 249, 0.78);
+    --bg-soft: rgba(255, 250, 252, 0.74);
+    --bg-soft-strong: rgba(255, 250, 252, 0.88);
+
+    /* 文字 */
+    --text-primary: rgba(58, 28, 46, 0.96);
+    --text-secondary: rgba(58, 28, 46, 0.84);
+    --text-tertiary: rgba(58, 28, 46, 0.68);
+    --text-strong: rgba(35, 16, 28, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(255, 95, 162, 0.52);
+    --border-light: rgba(255, 95, 162, 0.18);
+    --border-medium: rgba(255, 95, 162, 0.28);
+    --card-border-color: rgba(255, 95, 162, 0.30);
+    --control-border-color: rgba(255, 95, 162, 0.22);
+    --table-border-color: rgba(255, 95, 162, 0.16);
+
+    --shadow-primary: 0 16px 44px rgba(58, 28, 46, 0.18);
+    --shadow-primary-lg: 0 22px 60px rgba(58, 28, 46, 0.22);
+
+    --color-primary-rgba-08: rgba(255, 95, 162, 0.08);
+    --color-primary-rgba-10: rgba(255, 95, 162, 0.10);
+    --color-primary-rgba-12: rgba(255, 95, 162, 0.12);
+    --color-primary-rgba-15: rgba(255, 95, 162, 0.15);
+    --color-primary-rgba-20: rgba(255, 95, 162, 0.20);
+    --color-primary-rgba-25: rgba(255, 95, 162, 0.25);
+    --color-primary-rgba-30: rgba(255, 95, 162, 0.30);
+    --color-primary-rgba-40: rgba(255, 95, 162, 0.40);
+
+    /* 買入 / 定期定額按鈕：用主題變數驅動 */
+    --action-buy-bg: linear-gradient(135deg, rgba(255, 95, 162, 0.98) 0%, rgba(244, 198, 91, 0.96) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg, rgba(255, 55, 140, 1) 0%, rgba(244, 198, 91, 1) 100%);
+    --action-buy-text: rgba(35, 16, 28, 0.96);
+
+    --action-dca-bg: linear-gradient(135deg, rgba(244, 198, 91, 0.98) 0%, rgba(255, 95, 162, 0.96) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg, rgba(244, 198, 91, 1) 0%, rgba(255, 55, 140, 1) 100%);
+    --action-dca-text: rgba(35, 16, 28, 0.96);
+    --action-dca-shadow: 0 4px 15px rgba(255, 95, 162, 0.24);
+    --action-dca-shadow-hover: 0 8px 25px rgba(255, 95, 162, 0.30);
+    --action-dca-focus-ring: 0 0 0 3px rgba(255, 95, 162, 0.22);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.86) 78%, rgba(255, 95, 162, 0.08));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.86) 68%, rgba(255, 95, 162, 0.18));
+    --action-side-text: var(--text-primary);
+}
+
+:root[data-theme="luckyCatPink"] body {
+    background:
+        linear-gradient(135deg, rgba(255, 250, 252, 0.88) 0%, rgba(255, 214, 234, 0.54) 55%, rgba(244, 198, 91, 0.18) 100%),
+        url("https://i.pinimg.com/1200x/ec/6a/b3/ec6ab38b73b1d50220475548dbab5853.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="luckyCatPink"] body::before {
+    display: none;
+}
+
+:root[data-theme="luckyCatPink"] .page-input,
+
+:root[data-theme="luckyCatPink"] .page-ledger,
+
+:root[data-theme="luckyCatPink"] .page-chart,
+
+:root[data-theme="luckyCatPink"] .page-budget,
+
+:root[data-theme="luckyCatPink"] .page-monthly-planner,
+
+:root[data-theme="luckyCatPink"] .page-daily-budget,
+
+:root[data-theme="luckyCatPink"] .page-settings,
+
+:root[data-theme="luckyCatPink"] .page-category-manage,
+
+:root[data-theme="luckyCatPink"] .page-investment,
+
+:root[data-theme="luckyCatPink"] .page-wallet,
+
+:root[data-theme="luckyCatPink"] .page-history,
+
+:root[data-theme="luckyCatPink"] .page-planner,
+
+:root[data-theme="luckyCatPink"] .page-manage-investment,
+
+:root[data-theme="luckyCatPink"] .page-annual-report,
+
+:root[data-theme="luckyCatPink"] .page-diary,
+
+:root[data-theme="luckyCatPink"] .page-installment,
+
+:root[data-theme="luckyCatPink"] .installment-page,
+
+:root[data-theme="luckyCatPink"] .dca-page,
+
+:root[data-theme="luckyCatPink"] .fixed-deposit-page,
+
+:root[data-theme="luckyCatPink"] .dividend-page,
+
+:root[data-theme="luckyCatPink"] .dca-management-page,
+
+:root[data-theme="luckyCatPink"] .dca-setup-page,
+
+:root[data-theme="luckyCatPink"] .investment-input-page,
+
+:root[data-theme="luckyCatPink"] .wishlist-content,
+
+:root[data-theme="luckyCatPink"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="luckyCatPink"] .card,
+
+:root[data-theme="luckyCatPink"] .record-card,
+
+:root[data-theme="luckyCatPink"] .ledger-card,
+
+:root[data-theme="luckyCatPink"] .summary-card,
+
+:root[data-theme="luckyCatPink"] .budget-card,
+
+:root[data-theme="luckyCatPink"] .wallet-card,
+
+:root[data-theme="luckyCatPink"] .chart-card,
+
+:root[data-theme="luckyCatPink"] .investment-card,
+
+:root[data-theme="luckyCatPink"] .stock-item-card,
+
+:root[data-theme="luckyCatPink"] .monthly-planner-card,
+
+:root[data-theme="luckyCatPink"] .dividend-stat-card,
+
+:root[data-theme="luckyCatPink"] .manage-investment-card,
+
+:root[data-theme="luckyCatPink"] .annual-report-card,
+
+:root[data-theme="luckyCatPink"] .diary-card,
+
+:root[data-theme="luckyCatPink"] .monthly-planning-card,
+
+:root[data-theme="luckyCatPink"] .investment-settings-card,
+
+:root[data-theme="luckyCatPink"] .wallet-budget-card,
+
+:root[data-theme="luckyCatPink"] .holding-card,
+
+:root[data-theme="luckyCatPink"] .buying-card,
+
+:root[data-theme="luckyCatPink"] .selling-card,
+
+:root[data-theme="luckyCatPink"] .dividend-card,
+
+:root[data-theme="luckyCatPink"] .regular-investment-card,
+
+:root[data-theme="luckyCatPink"] .investment-management-card,
+
+:root[data-theme="luckyCatPink"] .dca-card,
+
+:root[data-theme="luckyCatPink"] .installment-card,
+
+:root[data-theme="luckyCatPink"] .fixed-deposit-card,
+
+:root[data-theme="luckyCatPink"] .dca-item-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    border-radius: 20px;
+    box-shadow: 0 18px 60px rgba(58, 28, 46, 0.18);
+    backdrop-filter: blur(14px);
+}
+
+:root[data-theme="luckyCatPink"] .investment-card::before,
+
+:root[data-theme="luckyCatPink"] .stock-item-card::before {
+    background: linear-gradient(135deg, rgba(255, 95, 162, 0.14) 0%, rgba(244, 198, 91, 0.12) 55%, rgba(255, 255, 255, 0.10) 100%);
+}
+
+:root[data-theme="luckyCatPink"] .nav-item.active {
+    background: rgba(255, 95, 162, 0.14);
+    box-shadow: 0 6px 16px rgba(58, 28, 46, 0.14);
+}
+
+:root[data-theme="luckyCatPink"] .theme-modal-overlay,
+
+:root[data-theme="luckyCatPink"] .modal-overlay {
+    background: color-mix(in srgb, rgba(35, 16, 28, 0.46) 78%, transparent) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="luckyCatPink"] .modal-content,
+
+:root[data-theme="luckyCatPink"] .modal-content-standard,
+
+:root[data-theme="luckyCatPink"] .budget-category-modal-content,
+
+:root[data-theme="luckyCatPink"] .budget-setting-modal-content,
+
+:root[data-theme="luckyCatPink"] .category-modal-content,
+
+:root[data-theme="luckyCatPink"] .dca-execute-modal .modal-content,
+
+:root[data-theme="luckyCatPink"] .account-modal-content,
+
+:root[data-theme="luckyCatPink"] .emoji-modal-content,
+
+:root[data-theme="luckyCatPink"] .history-modal-content,
+
+:root[data-theme="luckyCatPink"] .crop-modal-content,
+
+:root[data-theme="luckyCatPink"] .dialog-container,
+
+:root[data-theme="luckyCatPink"] .xiaosen-dialog,
+
+:root[data-theme="luckyCatPink"] .komori-dialog,
+
+:root[data-theme="luckyCatPink"] .mori-dialog-box,
+
+:root[data-theme="luckyCatPink"] .theme-modal-content,
+
+:root[data-theme="luckyCatPink"] .theme-modal-container {
+    background: rgba(255, 255, 255, 0.94) !important;
+    border: 1px solid rgba(255, 95, 162, 0.28) !important;
+    box-shadow: 0 22px 70px rgba(58, 28, 46, 0.18) !important;
+}
+
+:root[data-theme="luckyCatPink"] .form-input,
+
+:root[data-theme="luckyCatPink"] .form-select,
+
+:root[data-theme="luckyCatPink"] .form-textarea,
+
+:root[data-theme="luckyCatPink"] .note-input {
+    background: rgba(255, 255, 255, 0.90) !important;
+    border: 1px solid rgba(255, 95, 162, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="luckyCatPink"] .form-input:focus,
+
+:root[data-theme="luckyCatPink"] .form-select:focus,
+
+:root[data-theme="luckyCatPink"] .form-textarea:focus,
+
+:root[data-theme="luckyCatPink"] .note-input:focus {
+    border-color: rgba(255, 95, 162, 0.55) !important;
+    box-shadow: 0 0 0 3px rgba(255, 95, 162, 0.16) !important;
+}
+
+:root[data-theme="luckyCatPink"] .input-section {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-top: 1px solid rgba(255, 95, 162, 0.18);
+    box-shadow: 0 -4px 22px rgba(58, 28, 46, 0.12);
+}
+
+:root[data-theme="luckyCatPink"] .bottom-nav {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border-top: 1px solid rgba(255, 95, 162, 0.22) !important;
+    backdrop-filter: blur(18px);
+}
+
+:root[data-theme="luckyCatPink"] .btn,
+
+:root[data-theme="luckyCatPink"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(255, 95, 162, 0.35) !important;
+}
+
+:root[data-theme="luckyCatPink"] .btn:hover,
+
+:root[data-theme="luckyCatPink"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="luckyCatPink"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 1px solid rgba(244, 198, 91, 0.46) !important;
+}
+
+:root[data-theme="luckyCatPink"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="luckyCatPink"] .back-btn {
+    background: rgba(255, 255, 255, 0.72) !important;
+    border: 1px solid rgba(255, 95, 162, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="luckyCatPink"] .return-btn {
+    background: rgba(255, 95, 162, 0.12) !important;
+    border: 1px solid rgba(255, 95, 162, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+
+
+:root[data-theme="luckyCatPink"] .fab-btn {
+    background: linear-gradient(135deg, rgba(255, 95, 162, 1) 0%, rgba(244, 198, 91, 1) 100%) !important;
+    color: rgba(35, 16, 28, 0.96) !important;
+    box-shadow: 0 10px 30px rgba(58, 28, 46, 0.18) !important;
+}
+

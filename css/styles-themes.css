@@ -1,0 +1,12 @@
+/* 這三個檔案含有所有主題共用的樣式，必須一直載入。
+   其他主題檔案由 index.html 依目前主題按需載入（見 loadThemeStylesheet）。 */
+@import url("themes/money.css");
+@import url("themes/obsidian.css");
+@import url("themes/mono.css");
+
+/* 原本由 cutecreatures.css / shinobu.css 提供、全站都會用到的動畫；
+   改成按需載入後移到這裡，讓其他主題的效果維持不變 */
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}

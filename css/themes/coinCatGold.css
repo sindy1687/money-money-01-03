@@ -1,0 +1,321 @@
+﻿:root[data-theme="coinCatGold"] {
+    --color-primary: #d9a126;
+    --color-primary-light: #f4c65b;
+    --color-primary-lighter: #ffe0a3;
+    --color-primary-dark: #8a5a28;
+    --color-secondary: #c77620;
+    --color-secondary-light: #ffd2a0;
+    --color-secondary-dark: #6b3d18;
+
+    /* 狀態顏色 */
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    /* 背景 / 卡片：深色玻璃 + 金色點綴，確保文字對比 */
+    --bg-primary: linear-gradient(135deg,
+        rgba(18, 12, 8, 0.92) 0%,
+        rgba(52, 32, 18, 0.88) 50%,
+        rgba(201, 122, 58, 0.22) 100%);
+    --bg-body: rgba(18, 12, 8, 0.92);
+    --bg-body-strong: rgba(18, 12, 8, 0.96);
+    --bg-gradient: linear-gradient(135deg, rgba(18, 12, 8, 0.92) 0%, rgba(52, 32, 18, 0.9) 55%, rgba(217, 164, 65, 0.18) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(217, 164, 65, 0.10) 0%, rgba(201, 122, 58, 0.14) 100%);
+    --bg-white: rgba(18, 12, 8, 0.74);
+    --bg-card: rgba(26, 18, 12, 0.86);
+    --bg-light: rgba(52, 32, 18, 0.72);
+    --bg-lighter: rgba(72, 44, 24, 0.62);
+    --bg-soft: rgba(217, 164, 65, 0.12);
+    --bg-soft-strong: rgba(217, 164, 65, 0.18);
+
+    /* 文字：用偏奶油白，避免在金色底上刺眼 */
+    --text-primary: rgba(255, 246, 234, 0.96);
+    --text-secondary: rgba(255, 246, 234, 0.84);
+    --text-tertiary: rgba(255, 246, 234, 0.68);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(244, 198, 91, 0.55);
+    --border-light: rgba(244, 198, 91, 0.18);
+    --border-medium: rgba(244, 198, 91, 0.30);
+    --card-border-color: rgba(244, 198, 91, 0.34);
+    --control-border-color: rgba(244, 198, 91, 0.22);
+    --table-border-color: rgba(244, 198, 91, 0.16);
+
+    --shadow-primary: 0 18px 52px rgba(0, 0, 0, 0.45);
+    --shadow-primary-lg: 0 26px 70px rgba(0, 0, 0, 0.52);
+
+    /* 買入 / 定期定額按鈕 */
+    --action-buy-bg: linear-gradient(135deg, rgba(244, 198, 91, 0.98) 0%, rgba(255, 122, 26, 0.96) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg, rgba(255, 214, 140, 1) 0%, rgba(255, 122, 26, 1) 100%);
+    --action-buy-text: rgba(20, 12, 8, 0.96);
+
+    --action-dca-bg: linear-gradient(135deg, rgba(255, 122, 26, 0.96) 0%, rgba(244, 198, 91, 0.98) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg, rgba(255, 122, 26, 1) 0%, rgba(255, 214, 140, 1) 100%);
+    --action-dca-text: rgba(20, 12, 8, 0.96);
+    --action-dca-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    --action-dca-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.42);
+    --action-dca-focus-ring: 0 0 0 3px rgba(244, 198, 91, 0.22);
+
+    --action-side-bg: color-mix(in srgb, rgba(26, 18, 12, 0.92) 78%, rgba(244, 198, 91, 0.10));
+    --action-side-bg-hover: color-mix(in srgb, rgba(26, 18, 12, 0.92) 68%, rgba(244, 198, 91, 0.22));
+    --action-side-text: var(--text-primary);
+}
+
+:root[data-theme="coinCatGold"] body {
+    background:
+        linear-gradient(135deg, rgba(18, 12, 8, 0.72) 0%, rgba(52, 32, 18, 0.58) 55%, rgba(244, 198, 91, 0.18) 100%),
+        url("https://i.pinimg.com/736x/28/20/3b/28203b8793e1c88974581f3f6c5c03c5.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="coinCatGold"] body::before {
+    display: none;
+}
+
+:root[data-theme="coinCatGold"] .page-input,
+
+:root[data-theme="coinCatGold"] .page-ledger,
+
+:root[data-theme="coinCatGold"] .page-chart,
+
+:root[data-theme="coinCatGold"] .page-budget,
+
+:root[data-theme="coinCatGold"] .page-monthly-planner,
+
+:root[data-theme="coinCatGold"] .page-daily-budget,
+
+:root[data-theme="coinCatGold"] .page-settings,
+
+:root[data-theme="coinCatGold"] .page-category-manage,
+
+:root[data-theme="coinCatGold"] .page-investment,
+
+:root[data-theme="coinCatGold"] .page-wallet,
+
+:root[data-theme="coinCatGold"] .page-history,
+
+:root[data-theme="coinCatGold"] .page-planner,
+
+:root[data-theme="coinCatGold"] .page-manage-investment,
+
+:root[data-theme="coinCatGold"] .page-annual-report,
+
+:root[data-theme="coinCatGold"] .page-diary,
+
+:root[data-theme="coinCatGold"] .page-installment,
+
+:root[data-theme="coinCatGold"] .installment-page,
+
+:root[data-theme="coinCatGold"] .dca-page,
+
+:root[data-theme="coinCatGold"] .fixed-deposit-page,
+
+:root[data-theme="coinCatGold"] .dividend-page,
+
+:root[data-theme="coinCatGold"] .dca-management-page,
+
+:root[data-theme="coinCatGold"] .dca-setup-page,
+
+:root[data-theme="coinCatGold"] .investment-input-page,
+
+:root[data-theme="coinCatGold"] .wishlist-content,
+
+:root[data-theme="coinCatGold"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="coinCatGold"] .card,
+
+:root[data-theme="coinCatGold"] .record-card,
+
+:root[data-theme="coinCatGold"] .ledger-card,
+
+:root[data-theme="coinCatGold"] .summary-card,
+
+:root[data-theme="coinCatGold"] .budget-card,
+
+:root[data-theme="coinCatGold"] .wallet-card,
+
+:root[data-theme="coinCatGold"] .chart-card,
+
+:root[data-theme="coinCatGold"] .investment-card,
+
+:root[data-theme="coinCatGold"] .stock-item-card,
+
+:root[data-theme="coinCatGold"] .monthly-planner-card,
+
+:root[data-theme="coinCatGold"] .dividend-stat-card,
+
+:root[data-theme="coinCatGold"] .manage-investment-card,
+
+:root[data-theme="coinCatGold"] .annual-report-card,
+
+:root[data-theme="coinCatGold"] .diary-card,
+
+:root[data-theme="coinCatGold"] .monthly-planning-card,
+
+:root[data-theme="coinCatGold"] .investment-settings-card,
+
+:root[data-theme="coinCatGold"] .wallet-budget-card,
+
+:root[data-theme="coinCatGold"] .holding-card,
+
+:root[data-theme="coinCatGold"] .buying-card,
+
+:root[data-theme="coinCatGold"] .selling-card,
+
+:root[data-theme="coinCatGold"] .dividend-card,
+
+:root[data-theme="coinCatGold"] .regular-investment-card,
+
+:root[data-theme="coinCatGold"] .investment-management-card,
+
+:root[data-theme="coinCatGold"] .dca-card,
+
+:root[data-theme="coinCatGold"] .installment-card,
+
+:root[data-theme="coinCatGold"] .fixed-deposit-card,
+
+:root[data-theme="coinCatGold"] .dca-item-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    border-radius: 20px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(14px) saturate(140%);
+}
+
+:root[data-theme="coinCatGold"] .theme-modal-overlay,
+
+:root[data-theme="coinCatGold"] .modal-overlay,
+
+:root[data-theme="coinCatGold"] .dialog-overlay {
+    background: color-mix(in srgb, rgba(0, 0, 0, 0.62) 75%, transparent) !important;
+    backdrop-filter: blur(10px);
+}
+
+:root[data-theme="coinCatGold"] .modal-content,
+
+:root[data-theme="coinCatGold"] .modal-content-standard,
+
+:root[data-theme="coinCatGold"] .budget-category-modal-content,
+
+:root[data-theme="coinCatGold"] .budget-setting-modal-content,
+
+:root[data-theme="coinCatGold"] .category-modal-content,
+
+:root[data-theme="coinCatGold"] .dca-execute-modal .modal-content,
+
+:root[data-theme="coinCatGold"] .account-modal-content,
+
+:root[data-theme="coinCatGold"] .emoji-modal-content,
+
+:root[data-theme="coinCatGold"] .history-modal-content,
+
+:root[data-theme="coinCatGold"] .crop-modal-content,
+
+:root[data-theme="coinCatGold"] .dialog-container,
+
+:root[data-theme="coinCatGold"] .xiaosen-dialog,
+
+:root[data-theme="coinCatGold"] .komori-dialog,
+
+:root[data-theme="coinCatGold"] .mori-dialog-box,
+
+:root[data-theme="coinCatGold"] .theme-modal-content,
+
+:root[data-theme="coinCatGold"] .theme-modal-container {
+    background: rgba(18, 12, 8, 0.92) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55) !important;
+    max-width: min(94vw, 520px);
+}
+
+:root[data-theme="coinCatGold"] .form-input,
+
+:root[data-theme="coinCatGold"] .form-select,
+
+:root[data-theme="coinCatGold"] .form-textarea,
+
+:root[data-theme="coinCatGold"] .note-input {
+    background: rgba(26, 18, 12, 0.82) !important;
+    border: 1px solid rgba(244, 198, 91, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="coinCatGold"] .form-input:focus,
+
+:root[data-theme="coinCatGold"] .form-select:focus,
+
+:root[data-theme="coinCatGold"] .form-textarea:focus,
+
+:root[data-theme="coinCatGold"] .note-input:focus {
+    border-color: rgba(244, 198, 91, 0.55) !important;
+    box-shadow: 0 0 0 3px rgba(244, 198, 91, 0.18) !important;
+}
+
+:root[data-theme="coinCatGold"] .btn,
+
+:root[data-theme="coinCatGold"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(244, 198, 91, 0.40) !important;
+}
+
+:root[data-theme="coinCatGold"] .btn:hover,
+
+:root[data-theme="coinCatGold"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="coinCatGold"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 1px solid rgba(255, 214, 140, 0.42) !important;
+}
+
+:root[data-theme="coinCatGold"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="coinCatGold"] .smart-suggestion-btn {
+    background: linear-gradient(135deg, rgba(244, 198, 91, 0.96), rgba(255, 122, 26, 0.92)) !important;
+    color: rgba(20, 12, 8, 0.96) !important;
+    border: 2px solid rgba(255, 214, 140, 0.35) !important;
+}
+
+:root[data-theme="coinCatGold"] .smart-suggestion-btn:hover {
+    box-shadow: 0 10px 26px rgba(244, 198, 91, 0.20) !important;
+}
+
+:root[data-theme="coinCatGold"] .back-btn {
+    background: linear-gradient(135deg, rgba(244, 198, 91, 0.94) 0%, rgba(255, 179, 92, 0.9) 55%, rgba(255, 122, 26, 0.88) 100%) !important;
+    border: 2px solid rgba(244, 198, 91, 0.45) !important;
+    color: rgba(20, 12, 8, 0.96) !important;
+}
+
+:root[data-theme="coinCatGold"] .return-btn {
+    background: rgba(244, 198, 91, 0.14) !important;
+    border: 1px solid rgba(244, 198, 91, 0.28) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="coinCatGold"] .fab-btn {
+    background: linear-gradient(135deg, rgba(244, 198, 91, 1) 0%, rgba(255, 122, 26, 1) 100%) !important;
+    color: rgba(20, 12, 8, 0.96) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+
+@media (max-width: 768px) {
+    :root[data-theme="coinCatGold"] .modal-content,
+    :root[data-theme="coinCatGold"] .dialog-content,
+    :root[data-theme="coinCatGold"] .theme-modal-container {
+        width: 95vw;
+        max-height: 90vh;
+    }
+}
+

@@ -1,0 +1,23 @@
+﻿:root[data-theme="galaxy"].dark,
+
+:root[data-theme="galaxy"] {
+    --color-primary: #8b5cf6;
+    --color-primary-light: #a78bfa;
+    --color-primary-lighter: #c4b5fd;
+    --color-primary-dark: #3b0764;
+    --bg-primary: linear-gradient(135deg, #0b1020 0%, #3b0764 50%, #1d4ed8 100%);
+    --bg-gradient: linear-gradient(135deg, #8b5cf6 0%, #1d4ed8 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(29, 78, 216, 0.10) 100%);
+    --border-primary: #8b5cf6;
+    --shadow-primary: 0 2px 8px rgba(139, 92, 246, 0.22);
+    --shadow-primary-lg: 0 4px 12px rgba(29, 78, 216, 0.18);
+
+     --bg-white: rgba(17, 24, 39, 0.78);
+     --bg-light: rgba(17, 24, 39, 0.62);
+     --bg-lighter: rgba(17, 24, 39, 0.48);
+     --text-primary: rgba(255, 255, 255, 0.96);
+     --text-secondary: rgba(255, 255, 255, 0.86);
+     --text-tertiary: rgba(255, 255, 255, 0.72);
+     --border-light: rgba(255, 255, 255, 0.14);
+     --border-medium: rgba(255, 255, 255, 0.20);
+}

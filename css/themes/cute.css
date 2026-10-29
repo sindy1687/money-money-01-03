@@ -1,0 +1,40 @@
+﻿:root[data-theme="cute"] {
+    --color-primary: #4dd0e1;
+    --color-primary-light: #81e6ef;
+    --color-primary-lighter: #b2f5f9;
+    --color-primary-dark: #00acc1;
+    --bg-primary: linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(230, 247, 255, 0.72) 100%);
+    --bg-gradient: linear-gradient(135deg, rgba(129, 230, 239, 0.9) 0%, rgba(77, 208, 225, 0.9) 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(230, 247, 255, 0.55) 100%);
+    --border-primary: #4dd0e1;
+    --shadow-primary: 0 2px 8px rgba(77, 208, 225, 0.25);
+    --shadow-primary-lg: 0 4px 12px rgba(77, 208, 225, 0.3);
+    --color-primary-rgba-08: rgba(77, 208, 225, 0.08);
+    --color-primary-rgba-10: rgba(77, 208, 225, 0.1);
+    --color-primary-rgba-15: rgba(77, 208, 225, 0.15);
+    --color-primary-rgba-20: rgba(77, 208, 225, 0.2);
+    --color-primary-rgba-25: rgba(77, 208, 225, 0.25);
+    --color-primary-rgba-30: rgba(77, 208, 225, 0.3);
+    --color-primary-rgba-12: rgba(77, 208, 225, 0.12);
+    --color-primary-rgba-18: rgba(77, 208, 225, 0.18);
+    --color-primary-light-rgba-08: rgba(129, 230, 239, 0.08);
+    --color-primary-light-rgba-10: rgba(129, 230, 239, 0.1);
+    --color-primary-light-rgba-15: rgba(129, 230, 239, 0.15);
+    --color-primary-light-rgba-20: rgba(129, 230, 239, 0.2);
+    --color-primary-light-rgba-25: rgba(129, 230, 239, 0.25);
+    --color-primary-light-rgba-30: rgba(129, 230, 239, 0.3);
+    --color-primary-light-rgba-40: rgba(129, 230, 239, 0.4);
+    --bg-light-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(230, 247, 255, 0.55) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, rgba(230, 247, 255, 0.55) 0%, rgba(255, 255, 255, 0.75) 100%);
+}
+
+:root[data-theme="cute"] body {
+    background-image:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.74) 0%, rgba(230, 247, 255, 0.66) 100%),
+        url("image/BMG.jpg"),
+        linear-gradient(135deg, #e6f7ff 0%, var(--bg-white) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+

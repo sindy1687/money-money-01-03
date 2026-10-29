@@ -1,0 +1,52 @@
+﻿:root[data-theme="forest"].dark,
+
+:root[data-theme="forest"] {
+    --color-primary: #2f855a;
+    --color-primary-light: #48b37f;
+    --color-primary-lighter: #a7f3d0;
+    --color-primary-dark: #1f4d32;
+    --bg-primary: linear-gradient(135deg, #03130d 0%, #103524 45%, #2f855a 100%);
+    --bg-gradient: linear-gradient(135deg, #1f4d32 0%, #48b37f 100%);
+    --bg-gradient-light: linear-gradient(135deg, rgba(47, 133, 90, 0.18) 0%, rgba(72, 179, 127, 0.14) 100%);
+    --bg-light-gradient: linear-gradient(135deg, #071c14 0%, #123525 60%, #1d4833 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg, #1d4833 0%, #071c14 100%);
+    --bg-card: linear-gradient(135deg, rgba(6, 26, 18, 0.95) 0%, rgba(17, 51, 36, 0.92) 55%, rgba(72, 179, 127, 0.18) 100%);
+    --bg-white: rgba(6, 22, 17, 0.9);
+    --bg-light: rgba(13, 35, 25, 0.82);
+    --bg-lighter: rgba(20, 54, 35, 0.72);
+    --text-primary: rgba(236, 252, 243, 0.95);
+    --text-secondary: rgba(209, 250, 229, 0.85);
+    --text-tertiary: rgba(167, 243, 208, 0.72);
+    --border-light: rgba(167, 230, 203, 0.18);
+    --border-medium: rgba(72, 179, 127, 0.35);
+    --card-border-color: rgba(72, 179, 127, 0.4);
+    --card-border-color-strong: rgba(47, 133, 90, 0.6);
+    --border-primary: #2f855a;
+    --shadow-primary: 0 2px 10px rgba(17, 51, 36, 0.45);
+    --shadow-primary-lg: 0 8px 24px rgba(6, 15, 11, 0.6);
+    --color-primary-rgba-08: rgba(47, 133, 90, 0.08);
+    --color-primary-rgba-10: rgba(47, 133, 90, 0.10);
+    --color-primary-rgba-12: rgba(47, 133, 90, 0.12);
+    --color-primary-rgba-15: rgba(47, 133, 90, 0.15);
+    --color-primary-rgba-20: rgba(47, 133, 90, 0.20);
+    --color-primary-rgba-25: rgba(47, 133, 90, 0.25);
+    --color-primary-rgba-30: rgba(47, 133, 90, 0.30);
+    --color-primary-rgba-40: rgba(47, 133, 90, 0.40);
+    --color-primary-light-rgba-08: rgba(72, 179, 127, 0.08);
+    --color-primary-light-rgba-10: rgba(72, 179, 127, 0.10);
+    --color-primary-light-rgba-12: rgba(72, 179, 127, 0.12);
+    --color-primary-light-rgba-15: rgba(72, 179, 127, 0.15);
+    --color-primary-light-rgba-20: rgba(72, 179, 127, 0.20);
+    --color-primary-light-rgba-25: rgba(72, 179, 127, 0.25);
+    --color-primary-light-rgba-30: rgba(72, 179, 127, 0.30);
+    --color-primary-light-rgba-40: rgba(72, 179, 127, 0.40);
+}
+
+:root[data-theme="forest"] body {
+    background-image:
+        linear-gradient(135deg, rgba(3, 19, 13, 0.92) 0%, rgba(16, 53, 36, 0.85) 50%, rgba(47, 133, 90, 0.65) 100%),
+        url("https://i.pinimg.com/1200x/38/38/dc/3838dc7e5b75fe3f285c01b0eb883c93.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

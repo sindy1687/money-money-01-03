@@ -1,0 +1,417 @@
+:root[data-theme="shibaPastel"] {
+    --color-primary: #f4a58e;
+    --color-primary-light: #f8c3b4;
+    --color-primary-lighter: #fde7df;
+    --color-primary-dark: #d98269;
+
+    --color-secondary: #9ed2e6;
+    --color-secondary-light: #cbeaf4;
+    --color-secondary-dark: #5fa9c4;
+
+    --color-accent: #f7d27a;
+    --color-accent-light: #ffebba;
+    --color-accent-dark: #d3a840;
+
+    --bg-primary: transparent;
+    --bg-body: rgba(255, 255, 255, 0.36);
+    --bg-body-strong: rgba(255, 255, 255, 0.56);
+
+    --bg-gradient: linear-gradient(135deg,
+        rgba(244, 165, 142, 0.38) 0%,
+        rgba(255, 236, 231, 0.18) 28%,
+        rgba(158, 210, 230, 0.22) 62%,
+        rgba(120, 148, 168, 0.18) 100%);
+
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(253, 231, 223, 0.64) 55%,
+        rgba(203, 234, 244, 0.52) 100%);
+
+    --bg-white: rgba(255, 255, 255, 0.90);
+    --bg-card: rgba(255, 255, 255, 0.86);
+    --bg-light: rgba(253, 231, 223, 0.50);
+    --bg-lighter: rgba(203, 234, 244, 0.42);
+    --bg-soft: rgba(244, 165, 142, 0.12);
+    --bg-soft-strong: rgba(244, 165, 142, 0.18);
+
+    --text-primary: rgba(28, 22, 32, 0.96);
+    --text-secondary: rgba(28, 22, 32, 0.74);
+    --text-tertiary: rgba(28, 22, 32, 0.58);
+    --text-strong: rgba(15, 12, 18, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(244, 165, 142, 0.56);
+    --border-light: rgba(120, 148, 168, 0.14);
+    --border-medium: rgba(158, 210, 230, 0.26);
+    --card-border-color: rgba(244, 165, 142, 0.24);
+    --control-border-color: rgba(120, 148, 168, 0.18);
+
+    --shadow-primary: 0 18px 54px rgba(26, 18, 30, 0.14);
+    --shadow-primary-lg: 0 28px 78px rgba(26, 18, 30, 0.16);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 86%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 86%, rgba(15, 12, 18, 1)) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 92%, white) 0%,
+        color-mix(in srgb, var(--color-primary-dark) 92%, rgba(15, 12, 18, 1)) 100%);
+    --action-buy-text: var(--text-white);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary-light) 78%, white) 0%,
+        color-mix(in srgb, var(--color-secondary-dark) 82%, var(--color-accent-light)) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary) 80%, white) 0%,
+        color-mix(in srgb, var(--color-secondary-dark) 88%, var(--color-accent)) 100%);
+    --action-dca-text: rgba(28, 22, 32, 0.96);
+
+    --action-side-bg: color-mix(in srgb, rgba(255, 255, 255, 0.92) 74%, rgba(158, 210, 230, 0.14));
+    --action-side-bg-hover: color-mix(in srgb, rgba(255, 255, 255, 0.92) 60%, rgba(244, 165, 142, 0.22));
+    --action-side-text: rgba(28, 22, 32, 0.96);
+
+    --card-background-image: url("https://i.pinimg.com/1200x/22/08/48/220848ccfb147982dacd366023399186.jpg");
+}
+
+:root[data-theme="shibaPastel"] body {
+    background: url("https://i.pinimg.com/1200x/22/08/48/220848ccfb147982dacd366023399186.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="shibaPastel"] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.65), transparent 56%),
+        radial-gradient(circle at 82% 20%, rgba(203, 234, 244, 0.40), transparent 62%),
+        radial-gradient(circle at 70% 78%, rgba(255, 235, 186, 0.26), transparent 62%),
+        linear-gradient(135deg, rgba(253, 231, 223, 0.62) 0%, rgba(203, 234, 244, 0.44) 55%, rgba(231, 238, 242, 0.38) 100%);
+    opacity: 0.92;
+    pointer-events: none;
+    z-index: -1;
+}
+
+:root[data-theme="shibaPastel"] .page-input,
+:root[data-theme="shibaPastel"] .page-ledger,
+:root[data-theme="shibaPastel"] .page-chart,
+:root[data-theme="shibaPastel"] .page-budget,
+:root[data-theme="shibaPastel"] .page-monthly-planner,
+:root[data-theme="shibaPastel"] .page-daily-budget,
+:root[data-theme="shibaPastel"] .page-settings,
+:root[data-theme="shibaPastel"] .page-category-manage,
+:root[data-theme="shibaPastel"] .page-investment,
+:root[data-theme="shibaPastel"] .page-wallet,
+:root[data-theme="shibaPastel"] .page-history,
+:root[data-theme="shibaPastel"] .page-planner,
+:root[data-theme="shibaPastel"] .page-manage-investment,
+:root[data-theme="shibaPastel"] .page-annual-report,
+:root[data-theme="shibaPastel"] .page-diary,
+:root[data-theme="shibaPastel"] .page-installment,
+:root[data-theme="shibaPastel"] .installment-page,
+:root[data-theme="shibaPastel"] .installment-management-page,
+:root[data-theme="shibaPastel"] .installment-setup-page,
+:root[data-theme="shibaPastel"] .dca-page,
+:root[data-theme="shibaPastel"] .fixed-deposit-page,
+:root[data-theme="shibaPastel"] .dividend-page,
+:root[data-theme="shibaPastel"] .dca-management-page,
+:root[data-theme="shibaPastel"] .dca-setup-page,
+:root[data-theme="shibaPastel"] .investment-input-page,
+:root[data-theme="shibaPastel"] .wishlist-content,
+:root[data-theme="shibaPastel"] .savings-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+:root[data-theme="shibaPastel"] .card,
+:root[data-theme="shibaPastel"] .record-card,
+:root[data-theme="shibaPastel"] .ledger-card,
+:root[data-theme="shibaPastel"] .summary-card,
+:root[data-theme="shibaPastel"] .budget-card,
+:root[data-theme="shibaPastel"] .wallet-card,
+:root[data-theme="shibaPastel"] .chart-card,
+:root[data-theme="shibaPastel"] .investment-card,
+:root[data-theme="shibaPastel"] .manage-investment-card,
+:root[data-theme="shibaPastel"] .annual-report-card,
+:root[data-theme="shibaPastel"] .diary-card,
+:root[data-theme="shibaPastel"] .monthly-planning-card,
+:root[data-theme="shibaPastel"] .investment-settings-card,
+:root[data-theme="shibaPastel"] .wallet-budget-card,
+:root[data-theme="shibaPastel"] .holding-card,
+:root[data-theme="shibaPastel"] .buying-card,
+:root[data-theme="shibaPastel"] .selling-card,
+:root[data-theme="shibaPastel"] .dividend-card,
+:root[data-theme="shibaPastel"] .regular-investment-card,
+:root[data-theme="shibaPastel"] .investment-management-card,
+:root[data-theme="shibaPastel"] .dca-card,
+:root[data-theme="shibaPastel"] .installment-card,
+:root[data-theme="shibaPastel"] .fixed-deposit-card,
+:root[data-theme="shibaPastel"] .stock-item-card {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--card-border-color) !important;
+    border-radius: 20px !important;
+    color: var(--text-primary) !important;
+    box-shadow: var(--shadow-primary) !important;
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    position: relative;
+    overflow: hidden;
+}
+
+:root[data-theme="shibaPastel"] .card::after,
+:root[data-theme="shibaPastel"] .record-card::after,
+:root[data-theme="shibaPastel"] .ledger-card::after,
+:root[data-theme="shibaPastel"] .summary-card::after,
+:root[data-theme="shibaPastel"] .budget-card::after,
+:root[data-theme="shibaPastel"] .wallet-card::after,
+:root[data-theme="shibaPastel"] .chart-card::after,
+:root[data-theme="shibaPastel"] .investment-card::after,
+:root[data-theme="shibaPastel"] .manage-investment-card::after,
+:root[data-theme="shibaPastel"] .annual-report-card::after,
+:root[data-theme="shibaPastel"] .diary-card::after,
+:root[data-theme="shibaPastel"] .monthly-planning-card::after,
+:root[data-theme="shibaPastel"] .investment-settings-card::after,
+:root[data-theme="shibaPastel"] .wallet-budget-card::after,
+:root[data-theme="shibaPastel"] .holding-card::after,
+:root[data-theme="shibaPastel"] .buying-card::after,
+:root[data-theme="shibaPastel"] .selling-card::after,
+:root[data-theme="shibaPastel"] .dividend-card::after,
+:root[data-theme="shibaPastel"] .regular-investment-card::after,
+:root[data-theme="shibaPastel"] .investment-management-card::after,
+:root[data-theme="shibaPastel"] .dca-card::after,
+:root[data-theme="shibaPastel"] .installment-card::after,
+:root[data-theme="shibaPastel"] .fixed-deposit-card::after,
+:root[data-theme="shibaPastel"] .stock-item-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--card-background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    filter: saturate(0.95) contrast(0.95);
+    pointer-events: none;
+    z-index: 0;
+}
+
+:root[data-theme="shibaPastel"] .card > *,
+:root[data-theme="shibaPastel"] .record-card > *,
+:root[data-theme="shibaPastel"] .ledger-card > *,
+:root[data-theme="shibaPastel"] .summary-card > *,
+:root[data-theme="shibaPastel"] .budget-card > *,
+:root[data-theme="shibaPastel"] .wallet-card > *,
+:root[data-theme="shibaPastel"] .chart-card > *,
+:root[data-theme="shibaPastel"] .investment-card > *,
+:root[data-theme="shibaPastel"] .manage-investment-card > *,
+:root[data-theme="shibaPastel"] .annual-report-card > *,
+:root[data-theme="shibaPastel"] .diary-card > *,
+:root[data-theme="shibaPastel"] .monthly-planning-card > *,
+:root[data-theme="shibaPastel"] .investment-settings-card > *,
+:root[data-theme="shibaPastel"] .wallet-budget-card > *,
+:root[data-theme="shibaPastel"] .holding-card > *,
+:root[data-theme="shibaPastel"] .buying-card > *,
+:root[data-theme="shibaPastel"] .selling-card > *,
+:root[data-theme="shibaPastel"] .dividend-card > *,
+:root[data-theme="shibaPastel"] .regular-investment-card > *,
+:root[data-theme="shibaPastel"] .investment-management-card > *,
+:root[data-theme="shibaPastel"] .dca-card > *,
+:root[data-theme="shibaPastel"] .installment-card > *,
+:root[data-theme="shibaPastel"] .fixed-deposit-card > *,
+:root[data-theme="shibaPastel"] .stock-item-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+:root[data-theme="shibaPastel"] .modal-content,
+:root[data-theme="shibaPastel"] .modal-content-standard,
+:root[data-theme="shibaPastel"] .budget-category-modal-content,
+:root[data-theme="shibaPastel"] .budget-setting-modal-content,
+:root[data-theme="shibaPastel"] .category-modal-content,
+:root[data-theme="shibaPastel"] .dca-execute-modal .modal-content,
+:root[data-theme="shibaPastel"] .account-modal-content,
+:root[data-theme="shibaPastel"] .emoji-modal-content,
+:root[data-theme="shibaPastel"] .history-modal-content,
+:root[data-theme="shibaPastel"] .crop-modal-content,
+:root[data-theme="shibaPastel"] .dialog-container,
+:root[data-theme="shibaPastel"] .xiaosen-dialog,
+:root[data-theme="shibaPastel"] .komori-dialog,
+:root[data-theme="shibaPastel"] .mori-dialog-box,
+:root[data-theme="shibaPastel"] .theme-custom-content,
+:root[data-theme="shibaPastel"] .theme-modal-content,
+:root[data-theme="shibaPastel"] .theme-modal-container,
+:root[data-theme="shibaPastel"] .dialog-content,
+:root[data-theme="shibaPastel"] .popup-content {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 22px 60px rgba(26, 18, 30, 0.18) !important;
+    color: var(--text-primary) !important;
+    max-width: 92vw;
+    box-sizing: border-box;
+}
+
+:root[data-theme="shibaPastel"] .theme-modal-overlay,
+:root[data-theme="shibaPastel"] .modal-overlay {
+    background: color-mix(in srgb, rgba(20, 14, 30, 0.55) 75%, transparent) !important;
+    backdrop-filter: blur(8px);
+}
+
+:root[data-theme="shibaPastel"] .form-input,
+:root[data-theme="shibaPastel"] .form-select,
+:root[data-theme="shibaPastel"] .form-textarea,
+:root[data-theme="shibaPastel"] .note-input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid rgba(158, 210, 230, 0.2) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="shibaPastel"] .form-input:focus,
+:root[data-theme="shibaPastel"] .form-select:focus,
+:root[data-theme="shibaPastel"] .form-textarea:focus,
+:root[data-theme="shibaPastel"] .note-input:focus {
+    border-color: rgba(244, 165, 142, 0.68) !important;
+    box-shadow: 0 0 0 3px rgba(244, 165, 142, 0.16) !important;
+}
+
+:root[data-theme="shibaPastel"] .btn,
+:root[data-theme="shibaPastel"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 52%, white) !important;
+}
+
+:root[data-theme="shibaPastel"] .btn:hover,
+:root[data-theme="shibaPastel"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="shibaPastel"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-secondary) 42%, white) !important;
+}
+
+:root[data-theme="shibaPastel"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="shibaPastel"] .dca-add-btn,
+:root[data-theme="shibaPastel"] .form-submit-btn,
+:root[data-theme="shibaPastel"] .entry-detail-edit-btn,
+:root[data-theme="shibaPastel"] .entry-edit-save,
+:root[data-theme="shibaPastel"] .investment-form-submit-btn,
+:root[data-theme="shibaPastel"] .buy-btn,
+:root[data-theme="shibaPastel"] .dca-execute-btn,
+:root[data-theme="shibaPastel"] .buy-action-btn-large,
+:root[data-theme="shibaPastel"] .allocation-btn.primary,
+:root[data-theme="shibaPastel"] .modal-btn.confirm-btn {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+:root[data-theme="shibaPastel"] .dca-add-btn:hover,
+:root[data-theme="shibaPastel"] .form-submit-btn:hover,
+:root[data-theme="shibaPastel"] .entry-detail-edit-btn:hover,
+:root[data-theme="shibaPastel"] .entry-edit-save:hover,
+:root[data-theme="shibaPastel"] .investment-form-submit-btn:hover,
+:root[data-theme="shibaPastel"] .buy-btn:hover,
+:root[data-theme="shibaPastel"] .dca-execute-btn:hover,
+:root[data-theme="shibaPastel"] .allocation-btn.primary:hover,
+:root[data-theme="shibaPastel"] .modal-btn.confirm-btn:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="shibaPastel"] .allocation-btn,
+:root[data-theme="shibaPastel"] .modal-btn.cancel-btn {
+    background: var(--action-side-bg) !important;
+    color: var(--action-side-text) !important;
+    border: 1px solid rgba(158, 210, 230, 0.22) !important;
+}
+
+:root[data-theme="shibaPastel"] .back-btn,
+:root[data-theme="shibaPastel"] .return-btn,
+:root[data-theme="shibaPastel"] .input-back-btn,
+:root[data-theme="shibaPastel"] .modal-back-btn,
+:root[data-theme="shibaPastel"] .dca-back-btn,
+:root[data-theme="shibaPastel"] .dca-setup-back-btn,
+:root[data-theme="shibaPastel"] .investment-form-back-btn,
+:root[data-theme="shibaPastel"] .dividend-back-btn {
+    background: var(--action-side-bg) !important;
+    border: 2px solid rgba(158, 210, 230, 0.24) !important;
+    color: var(--action-side-text) !important;
+}
+
+:root[data-theme="shibaPastel"] .back-btn:hover,
+:root[data-theme="shibaPastel"] .return-btn:hover,
+:root[data-theme="shibaPastel"] .input-back-btn:hover,
+:root[data-theme="shibaPastel"] .modal-back-btn:hover,
+:root[data-theme="shibaPastel"] .dca-back-btn:hover,
+:root[data-theme="shibaPastel"] .dca-setup-back-btn:hover,
+:root[data-theme="shibaPastel"] .investment-form-back-btn:hover,
+:root[data-theme="shibaPastel"] .dividend-back-btn:hover {
+    background: var(--action-side-bg-hover) !important;
+    border-color: rgba(244, 165, 142, 0.28) !important;
+}
+
+:root[data-theme="shibaPastel"] .spending-analysis-panel,
+:root[data-theme="shibaPastel"] .reminder-panel,
+:root[data-theme="shibaPastel"] .smart-notification,
+:root[data-theme="shibaPastel"] .quick-settings {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: 0 22px 60px rgba(26, 18, 30, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="shibaPastel"] .panel-header,
+:root[data-theme="shibaPastel"] .smart-suggestion-banner {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+    color: var(--text-white) !important;
+}
+
+:root[data-theme="shibaPastel"] .insight-item.info,
+:root[data-theme="shibaPastel"] .insight-item.warning,
+:root[data-theme="shibaPastel"] .insight-item.error,
+:root[data-theme="shibaPastel"] .recommendation-item,
+:root[data-theme="shibaPastel"] .error-message,
+:root[data-theme="shibaPastel"] .error-suggestion {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid rgba(158, 210, 230, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="shibaPastel"] .advisor-quick-btn {
+    background: rgba(244, 165, 142, 0.10) !important;
+    border: 1px solid rgba(244, 165, 142, 0.18) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="shibaPastel"] .advisor-quick-btn:hover {
+    background: rgba(158, 210, 230, 0.14) !important;
+    border-color: rgba(158, 210, 230, 0.22) !important;
+}
+
+:root[data-theme="shibaPastel"] .advisor-chat-input-container {
+    background: rgba(255, 255, 255, 0.92) !important;
+}
+
+:root[data-theme="shibaPastel"] .advisor-chat-input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(158, 210, 230, 0.22) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="shibaPastel"] .advisor-send-btn {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%) !important;
+    color: var(--text-white) !important;
+}
+
+@media (max-width: 480px) {
+    :root[data-theme="shibaPastel"] .history-advisor-chat {
+        width: 100% !important;
+        height: 70vh !important;
+        border-radius: 16px 16px 0 0 !important;
+    }
+}

@@ -1,0 +1,295 @@
+:root[data-theme="waveRonin"] {
+    --color-primary: #2c7db3;
+    --color-primary-light: #6bb7e6;
+    --color-primary-lighter: #cbe9fb;
+    --color-primary-dark: #071522;
+
+    --color-secondary: #1e4e73;
+    --color-secondary-light: #5da7d7;
+    --color-secondary-dark: #0b2a3f;
+
+    --color-accent: #e7d9bd;
+    --color-accent-light: #f6efe3;
+    --color-accent-dark: #b9a37d;
+
+    --color-success: #22c55e;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-error: var(--color-danger);
+
+    --bg-primary: linear-gradient(135deg,
+        rgba(7, 21, 34, 0.96) 0%,
+        rgba(11, 42, 63, 0.92) 45%,
+        rgba(44, 125, 179, 0.52) 100%);
+    --bg-body: rgba(7, 21, 34, 0.92);
+    --bg-body-strong: rgba(7, 21, 34, 0.96);
+    --bg-gradient: linear-gradient(135deg,
+        rgba(7, 21, 34, 0.96) 0%,
+        rgba(30, 78, 115, 0.86) 55%,
+        rgba(107, 183, 230, 0.40) 100%);
+    --bg-gradient-light: linear-gradient(135deg,
+        rgba(107, 183, 230, 0.10) 0%,
+        rgba(231, 217, 189, 0.10) 100%);
+
+    --bg-white: rgba(10, 20, 28, 0.84);
+    --bg-card: rgba(9, 18, 26, 0.88);
+    --bg-light: rgba(12, 29, 42, 0.80);
+    --bg-lighter: rgba(17, 44, 62, 0.62);
+    --bg-soft: rgba(107, 183, 230, 0.10);
+    --bg-soft-strong: rgba(30, 78, 115, 0.26);
+
+    --text-primary: rgba(244, 252, 255, 0.96);
+    --text-secondary: rgba(244, 252, 255, 0.78);
+    --text-tertiary: rgba(244, 252, 255, 0.62);
+    --text-strong: rgba(255, 255, 255, 0.98);
+    --text-white: rgba(255, 255, 255, 0.98);
+
+    --border-primary: rgba(107, 183, 230, 0.62);
+    --border-light: rgba(107, 183, 230, 0.18);
+    --border-medium: rgba(44, 125, 179, 0.30);
+    --card-border-color: rgba(107, 183, 230, 0.32);
+    --control-border-color: rgba(107, 183, 230, 0.22);
+    --table-border-color: rgba(107, 183, 230, 0.16);
+
+    --shadow-primary: 0 18px 54px rgba(0, 0, 0, 0.55);
+    --shadow-primary-lg: 0 28px 78px rgba(0, 0, 0, 0.48);
+
+    --color-primary-rgba-08: rgba(44, 125, 179, 0.08);
+    --color-primary-rgba-10: rgba(44, 125, 179, 0.10);
+    --color-primary-rgba-12: rgba(44, 125, 179, 0.12);
+    --color-primary-rgba-15: rgba(44, 125, 179, 0.15);
+    --color-primary-rgba-18: rgba(44, 125, 179, 0.18);
+    --color-primary-rgba-20: rgba(44, 125, 179, 0.20);
+    --color-primary-rgba-25: rgba(44, 125, 179, 0.25);
+    --color-primary-rgba-30: rgba(44, 125, 179, 0.30);
+    --color-primary-rgba-40: rgba(44, 125, 179, 0.40);
+
+    --color-primary-light-rgba-08: rgba(107, 183, 230, 0.08);
+    --color-primary-light-rgba-10: rgba(107, 183, 230, 0.10);
+    --color-primary-light-rgba-12: rgba(107, 183, 230, 0.12);
+    --color-primary-light-rgba-15: rgba(107, 183, 230, 0.15);
+    --color-primary-light-rgba-20: rgba(107, 183, 230, 0.20);
+    --color-primary-light-rgba-25: rgba(107, 183, 230, 0.25);
+    --color-primary-light-rgba-30: rgba(107, 183, 230, 0.30);
+    --color-primary-light-rgba-40: rgba(107, 183, 230, 0.40);
+
+    --color-secondary-rgba-20: rgba(30, 78, 115, 0.20);
+    --color-accent-rgba-30: rgba(231, 217, 189, 0.30);
+    --color-accent-rgba-40: rgba(231, 217, 189, 0.40);
+
+    --bg-light-gradient: linear-gradient(135deg,
+        rgba(7, 21, 34, 0.88) 0%,
+        rgba(11, 42, 63, 0.72) 100%);
+    --bg-light-gradient-reverse: linear-gradient(180deg,
+        rgba(7, 21, 34, 0.88) 0%,
+        rgba(11, 42, 63, 0.72) 100%);
+
+    --action-side-bg: color-mix(in srgb, rgba(9, 18, 26, 0.92) 78%, rgba(107, 183, 230, 0.12));
+    --action-side-bg-hover: color-mix(in srgb, rgba(9, 18, 26, 0.92) 66%, rgba(107, 183, 230, 0.22));
+    --action-side-text: var(--text-primary);
+
+    --action-buy-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary) 84%, white) 0%,
+        color-mix(in srgb, var(--color-secondary) 82%, var(--color-primary-dark)) 100%);
+    --action-buy-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-primary-light) 80%, white) 0%,
+        color-mix(in srgb, var(--color-primary) 84%, var(--color-primary-dark)) 100%);
+    --action-buy-text: rgba(6, 10, 18, 0.96);
+
+    --action-dca-bg: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-secondary-light) 72%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 68%, var(--color-secondary-dark)) 100%);
+    --action-dca-bg-hover: linear-gradient(135deg,
+        color-mix(in srgb, var(--color-accent-light) 70%, white) 0%,
+        color-mix(in srgb, var(--color-accent) 78%, var(--color-accent-dark)) 100%);
+    --action-dca-text: rgba(6, 10, 18, 0.96);
+}
+
+:root[data-theme="waveRonin"] body {
+    background: url("https://i.pinimg.com/736x/c5/d5/60/c5d5605539ede1eb0e8c9c1aef661dee.jpg") center/cover no-repeat fixed;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="waveRonin"] body::before {
+    display: none;
+}
+
+:root[data-theme="waveRonin"] .page-ledger,
+:root[data-theme="waveRonin"] .page-input,
+:root[data-theme="waveRonin"] .page-chart,
+:root[data-theme="waveRonin"] .page-budget,
+:root[data-theme="waveRonin"] .page-monthly-planner,
+:root[data-theme="waveRonin"] .page-daily-budget,
+:root[data-theme="waveRonin"] .page-settings,
+:root[data-theme="waveRonin"] .page-category-manage,
+:root[data-theme="waveRonin"] .page-investment,
+:root[data-theme="waveRonin"] .page-wallet,
+:root[data-theme="waveRonin"] .page-history,
+:root[data-theme="waveRonin"] .page-planner,
+:root[data-theme="waveRonin"] .page-installment,
+:root[data-theme="waveRonin"] .installment-page,
+:root[data-theme="waveRonin"] .dca-page,
+:root[data-theme="waveRonin"] .fixed-deposit-page,
+:root[data-theme="waveRonin"] .dividend-page,
+:root[data-theme="waveRonin"] .dca-management-page,
+:root[data-theme="waveRonin"] .dca-setup-page,
+:root[data-theme="waveRonin"] .investment-input-page,
+:root[data-theme="waveRonin"] .wishlist-content,
+:root[data-theme="waveRonin"] .savings-content {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+:root[data-theme="waveRonin"] .card,
+:root[data-theme="waveRonin"] .record-card,
+:root[data-theme="waveRonin"] .ledger-card,
+:root[data-theme="waveRonin"] .summary-card,
+:root[data-theme="waveRonin"] .budget-card,
+:root[data-theme="waveRonin"] .wallet-card,
+:root[data-theme="waveRonin"] .chart-card,
+:root[data-theme="waveRonin"] .investment-card,
+:root[data-theme="waveRonin"] .stock-item-card,
+:root[data-theme="waveRonin"] .monthly-planner-card,
+:root[data-theme="waveRonin"] .dividend-stat-card,
+:root[data-theme="waveRonin"] .dca-card,
+:root[data-theme="waveRonin"] .installment-card {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--shadow-primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="waveRonin"] .investment-card::before,
+:root[data-theme="waveRonin"] .stock-item-card::before {
+    background: linear-gradient(135deg,
+        rgba(107, 183, 230, 0.18) 0%,
+        rgba(7, 21, 34, 0.45) 65%,
+        rgba(231, 217, 189, 0.18) 100%);
+}
+
+:root[data-theme="waveRonin"] .modal-content,
+:root[data-theme="waveRonin"] .modal-content-standard,
+:root[data-theme="waveRonin"] .budget-category-modal-content,
+:root[data-theme="waveRonin"] .budget-setting-modal-content,
+:root[data-theme="waveRonin"] .category-modal-content,
+:root[data-theme="waveRonin"] .dca-execute-modal .modal-content,
+:root[data-theme="waveRonin"] .account-modal-content,
+:root[data-theme="waveRonin"] .emoji-modal-content,
+:root[data-theme="waveRonin"] .history-modal-content {
+    background: color-mix(in srgb, var(--bg-card) 88%, black) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-primary-lg) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="waveRonin"] .input-section {
+    background: color-mix(in srgb, var(--bg-card) 88%, black) !important;
+    border-top: 2px solid rgba(107, 183, 230, 0.35) !important;
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.55);
+}
+
+:root[data-theme="waveRonin"] .bottom-nav {
+    background: color-mix(in srgb, var(--bg-card) 90%, black) !important;
+    border-top: 1px solid rgba(107, 183, 230, 0.30) !important;
+    backdrop-filter: blur(16px);
+}
+
+:root[data-theme="waveRonin"] .form-input,
+:root[data-theme="waveRonin"] .form-select,
+:root[data-theme="waveRonin"] .form-textarea,
+:root[data-theme="waveRonin"] .note-input {
+    background: rgba(12, 29, 42, 0.85) !important;
+    border: 2px solid rgba(107, 183, 230, 0.35) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="waveRonin"] .form-input:focus,
+:root[data-theme="waveRonin"] .form-select:focus,
+:root[data-theme="waveRonin"] .form-textarea:focus,
+:root[data-theme="waveRonin"] .note-input:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(107, 183, 230, 0.25) !important;
+    background: rgba(7, 21, 34, 0.96) !important;
+}
+
+:root[data-theme="waveRonin"] .header-section {
+    background: rgba(7, 21, 34, 0.92) !important;
+    border-bottom: 1px solid rgba(107, 183, 230, 0.25) !important;
+    backdrop-filter: blur(12px);
+}
+
+:root[data-theme="waveRonin"] .tab-btn {
+    background: rgba(12, 29, 42, 0.85) !important;
+    border: 1px solid rgba(107, 183, 230, 0.25) !important;
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="waveRonin"] .tab-btn.active {
+    background: rgba(44, 125, 179, 0.25) !important;
+    border: 2px solid rgba(107, 183, 230, 0.55) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45) !important;
+}
+
+:root[data-theme="waveRonin"] .tab-btn:hover {
+    background: rgba(44, 125, 179, 0.18) !important;
+    border-color: rgba(107, 183, 230, 0.35) !important;
+}
+
+:root[data-theme="waveRonin"] .key-btn {
+    background: rgba(12, 29, 42, 0.85) !important;
+    border: 2px solid rgba(107, 183, 230, 0.35) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+:root[data-theme="waveRonin"] .key-btn:hover {
+    background: rgba(44, 125, 179, 0.18) !important;
+    border-color: rgba(107, 183, 230, 0.4) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6) !important;
+}
+
+:root[data-theme="waveRonin"] .key-btn.operator {
+    background: rgba(44, 125, 179, 0.35) !important;
+    color: rgba(6, 10, 18, 0.96) !important;
+}
+
+:root[data-theme="waveRonin"] .nav-item.active {
+    background: rgba(44, 125, 179, 0.16);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="waveRonin"] .btn,
+:root[data-theme="waveRonin"] .buy-action-btn-large {
+    background: var(--action-buy-bg) !important;
+    color: var(--action-buy-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-primary) 55%, white) !important;
+}
+
+:root[data-theme="waveRonin"] .btn:hover,
+:root[data-theme="waveRonin"] .buy-action-btn-large:hover {
+    background: var(--action-buy-bg-hover) !important;
+}
+
+:root[data-theme="waveRonin"] .dca-action-btn-large {
+    background: var(--action-dca-bg) !important;
+    color: var(--action-dca-text) !important;
+    border: 2px solid color-mix(in srgb, var(--color-accent) 45%, white) !important;
+}
+
+:root[data-theme="waveRonin"] .dca-action-btn-large:hover {
+    background: var(--action-dca-bg-hover) !important;
+}
+
+:root[data-theme="waveRonin"] .back-btn {
+    background: color-mix(in srgb, var(--bg-card) 85%, transparent) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+:root[data-theme="waveRonin"] .back-btn:hover {
+    background: color-mix(in srgb, var(--bg-card) 92%, transparent) !important;
+    border-color: var(--border-primary) !important;
+}
